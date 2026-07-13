@@ -1,0 +1,14 @@
+/**
+ * Crazxy UI theme bridge — maps design tokens onto the crazxy component root.
+ */
+
+.ui-root {
+  --cx-accent: var(--accent);
+  --cx-accent-hover: var(--accent-hover);
+  --cx-accent-muted: var(--accent-muted);
+  --cx-surface: var(--surface);
+  --cx-surface-elevated: var(--surface-elevated);
+  --cx-text: var(--text-primary);
+  --cx-text-muted: var(--text-secondary);
+  --cx-border: var(--border);
+}

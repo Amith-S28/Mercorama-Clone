@@ -1,0 +1,162 @@
+{
+  "AUS": {
+    "countryIso3": "AUS",
+    "countryName": "Australia",
+    "year": 2024,
+    "totalImportsUsd": 296340000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 1.51535803855596
+  },
+  "BRA": {
+    "countryIso3": "BRA",
+    "countryName": "Brazil",
+    "year": 2024,
+    "totalImportsUsd": 277954000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 5.3889349057096
+  },
+  "CAN": {
+    "countryIso3": "CAN",
+    "countryName": "Canada",
+    "year": 2024,
+    "totalImportsUsd": 573098000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 1.36935976604092
+  },
+  "CHN": {
+    "countryIso3": "CHN",
+    "countryName": "China",
+    "year": 2024,
+    "totalImportsUsd": 2583218000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 7.19749110789917
+  },
+  "DEU": {
+    "countryIso3": "DEU",
+    "countryName": "Germany",
+    "year": 2024,
+    "totalImportsUsd": 1414153000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 0.923889546117607
+  },
+  "FRA": {
+    "countryIso3": "FRA",
+    "countryName": "France",
+    "year": 2024,
+    "totalImportsUsd": 751836000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 0.923889546117607
+  },
+  "GBR": {
+    "countryIso3": "GBR",
+    "countryName": "United Kingdom",
+    "year": 2024,
+    "totalImportsUsd": 820194000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 0.782414580986262
+  },
+  "IDN": {
+    "countryIso3": "IDN",
+    "countryName": "Indonesia",
+    "year": 2024,
+    "totalImportsUsd": 233659000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 15855.4482866711
+  },
+  "IND": {
+    "countryIso3": "IND",
+    "countryName": "India",
+    "year": 2024,
+    "totalImportsUsd": 718284000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 83.669281580941
+  },
+  "ITA": {
+    "countryIso3": "ITA",
+    "countryName": "Italy",
+    "year": 2024,
+    "totalImportsUsd": 621388000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 0.923889546117607
+  },
+  "JPN": {
+    "countryIso3": "JPN",
+    "countryName": "Japan",
+    "year": 2024,
+    "totalImportsUsd": 743498000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 151.366291302752
+  },
+  "KOR": {
+    "countryIso3": "KOR",
+    "countryName": "Korea, Rep.",
+    "year": 2024,
+    "totalImportsUsd": 631767000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 1363.375
+  },
+  "MEX": {
+    "countryIso3": "MEX",
+    "countryName": "Mexico",
+    "year": 2024,
+    "totalImportsUsd": 655300000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 18.3048583333333
+  },
+  "MYS": {
+    "countryIso3": "MYS",
+    "countryName": "Malaysia",
+    "year": 2024,
+    "totalImportsUsd": 300216000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 4.5764279106858
+  },
+  "NLD": {
+    "countryIso3": "NLD",
+    "countryName": "Netherlands",
+    "year": 2024,
+    "totalImportsUsd": 816621000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 0.923889546117607
+  },
+  "SGP": {
+    "countryIso3": "SGP",
+    "countryName": "Singapore",
+    "year": 2024,
+    "totalImportsUsd": 458686000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 1.33623333333333
+  },
+  "THA": {
+    "countryIso3": "THA",
+    "countryName": "Thailand",
+    "year": 2024,
+    "totalImportsUsd": 305523000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 35.2935380808081
+  },
+  "USA": {
+    "countryIso3": "USA",
+    "countryName": "United States",
+    "year": 2024,
+    "totalImportsUsd": 3358247000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 1
+  },
+  "VNM": {
+    "countryIso3": "VNM",
+    "countryName": "Viet Nam",
+    "year": 2024,
+    "totalImportsUsd": 380515000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 24164.8858333333
+  },
+  "ZAF": {
+    "countryIso3": "ZAF",
+    "countryName": "South Africa",
+    "year": 2024,
+    "totalImportsUsd": 123470000000,
+    "tariffWeightedAll": 0,
+    "exchangeRateLcuPerUsd": 18.3286575505
+  }
+}
