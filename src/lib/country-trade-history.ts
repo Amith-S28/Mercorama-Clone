@@ -14,7 +14,7 @@ export interface YearlyTradeRecord {
 export interface CountryTradeHistory {
   iso3: string;
   name: string;
-  region: string;
+  region?: string;
   timeSeries: YearlyTradeRecord[];
 }
 
@@ -51,6 +51,6 @@ export function getAllTrackedTradeCountries(): { iso3: string; name: string; reg
   return Object.values(historyMap).map((item) => ({
     iso3: item.iso3,
     name: item.name,
-    region: item.region,
+    region: item.region ?? 'Global',
   }));
 }
