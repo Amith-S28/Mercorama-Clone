@@ -31,6 +31,11 @@ import {
   ClockCounterClockwise,
   Airplane,
   Boat,
+  TrendUp,
+  TrendDown,
+  Globe as PGlobe,
+  Stack as PStack,
+  Funnel as PFunnel,
   IconProps
 } from '@phosphor-icons/react';
 
@@ -71,3 +76,8 @@ export const RefreshCcw = withDefaults(ArrowsClockwise);
 export const RotateCcw = withDefaults(ClockCounterClockwise);
 export const Plane = withDefaults(Airplane);
 export const Ship = withDefaults(Boat);
+export const ArrowUpRight = withDefaults(TrendUp);
+export const ArrowDownRight = withDefaults(TrendDown);
+export const Globe = withDefaults(PGlobe);
+export const Layers = withDefaults(PStack);
+export const Filter = withDefaults(PFunnel);

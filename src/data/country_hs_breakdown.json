@@ -1,0 +1,1874 @@
+{
+  "USA": {
+    "iso3": "USA",
+    "name": "United States",
+    "topImports": [
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 792500000000,
+        "sharePct": 25,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 602300000000,
+        "sharePct": 19,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 538900000000,
+        "sharePct": 17,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 475500000000,
+        "sharePct": 15,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 412100000000,
+        "sharePct": 13,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 221900000000,
+        "sharePct": 7,
+        "yoyChangePct": -4
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 484560000000,
+        "sharePct": 24,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 434085000000,
+        "sharePct": 21.5,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 383610000000,
+        "sharePct": 19,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 333135000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 282660000000,
+        "sharePct": 14,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 131235000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 3
+      }
+    ]
+  },
+  "CHN": {
+    "iso3": "CHN",
+    "name": "China",
+    "topImports": [
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 562320000000,
+        "sharePct": 22,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 511200000000,
+        "sharePct": 20,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 460080000000,
+        "sharePct": 18,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 408960000000,
+        "sharePct": 16,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 255600000000,
+        "sharePct": 10,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 204480000000,
+        "sharePct": 8,
+        "yoyChangePct": 8
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 912600000000,
+        "sharePct": 27,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 828100000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 574600000000,
+        "sharePct": 17,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 490100000000,
+        "sharePct": 14.5,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 405600000000,
+        "sharePct": 12,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 321100000000,
+        "sharePct": 9.5,
+        "yoyChangePct": 8
+      }
+    ]
+  },
+  "JPN": {
+    "iso3": "JPN",
+    "name": "Japan",
+    "topImports": [
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 163569560000,
+        "sharePct": 22,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 148699600000,
+        "sharePct": 20,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 133829640000,
+        "sharePct": 18,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 118959680000,
+        "sharePct": 16,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 74349800000,
+        "sharePct": 10,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 59479840000,
+        "sharePct": 8,
+        "yoyChangePct": 0
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 193746600000,
+        "sharePct": 27,
+        "yoyChangePct": -5
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 175807100000,
+        "sharePct": 24.5,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 121988600000,
+        "sharePct": 17,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 104049100000,
+        "sharePct": 14.5,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 86109600000,
+        "sharePct": 12,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 68170100000,
+        "sharePct": 9.5,
+        "yoyChangePct": 0
+      }
+    ]
+  },
+  "DEU": {
+    "iso3": "DEU",
+    "name": "Germany",
+    "topImports": [
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 336030000000,
+        "sharePct": 23,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 306810000000,
+        "sharePct": 21,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 277590000000,
+        "sharePct": 19,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 189930000000,
+        "sharePct": 13,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 160710000000,
+        "sharePct": 11,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 131490000000,
+        "sharePct": 9,
+        "yoyChangePct": 9
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 405120000000,
+        "sharePct": 24,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 362920000000,
+        "sharePct": 21.5,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 320720000000,
+        "sharePct": 19,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 278520000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 236320000000,
+        "sharePct": 14,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 109720000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 5
+      }
+    ]
+  },
+  "GBR": {
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "topImports": [
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 189840000000,
+        "sharePct": 24,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 174020000000,
+        "sharePct": 22,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 126560000000,
+        "sharePct": 16,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 110740000000,
+        "sharePct": 14,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 94920000000,
+        "sharePct": 12,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 79100000000,
+        "sharePct": 10,
+        "yoyChangePct": -3
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 135460000000,
+        "sharePct": 26,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 122435000000,
+        "sharePct": 23.5,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 109410000000,
+        "sharePct": 21,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 70335000000,
+        "sharePct": 13.5,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 57310000000,
+        "sharePct": 11,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 44285000000,
+        "sharePct": 8.5,
+        "yoyChangePct": 2
+      }
+    ]
+  },
+  "FRA": {
+    "iso3": "FRA",
+    "name": "France",
+    "topImports": [
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 186720000000,
+        "sharePct": 24,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 171160000000,
+        "sharePct": 22,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 124480000000,
+        "sharePct": 16,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 108920000000,
+        "sharePct": 14,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 93360000000,
+        "sharePct": 12,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 77800000000,
+        "sharePct": 10,
+        "yoyChangePct": -4
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 155520000000,
+        "sharePct": 24,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 139320000000,
+        "sharePct": 21.5,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 123120000000,
+        "sharePct": 19,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 106920000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 90720000000,
+        "sharePct": 14,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 42120000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 2
+      }
+    ]
+  },
+  "IND": {
+    "iso3": "IND",
+    "name": "India",
+    "topImports": [
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 161280000000,
+        "sharePct": 24,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 147840000000,
+        "sharePct": 22,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 107520000000,
+        "sharePct": 16,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 94080000000,
+        "sharePct": 14,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 80640000000,
+        "sharePct": 12,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 67200000000,
+        "sharePct": 10,
+        "yoyChangePct": -1
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 117990000000,
+        "sharePct": 27,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 107065000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 74290000000,
+        "sharePct": 17,
+        "yoyChangePct": -5
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 63365000000,
+        "sharePct": 14.5,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 52440000000,
+        "sharePct": 12,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 41515000000,
+        "sharePct": 9.5,
+        "yoyChangePct": -2
+      }
+    ]
+  },
+  "BRA": {
+    "iso3": "BRA",
+    "name": "Brazil",
+    "topImports": [
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 60480000000,
+        "sharePct": 24,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 55440000000,
+        "sharePct": 22,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 40320000000,
+        "sharePct": 16,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 35280000000,
+        "sharePct": 14,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 30240000000,
+        "sharePct": 12,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 25200000000,
+        "sharePct": 10,
+        "yoyChangePct": 7
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 81360000000,
+        "sharePct": 24,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 72885000000,
+        "sharePct": 21.5,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 64410000000,
+        "sharePct": 19,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 55935000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 47460000000,
+        "sharePct": 14,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 22035000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 2
+      }
+    ]
+  },
+  "CAN": {
+    "iso3": "CAN",
+    "name": "Canada",
+    "topImports": [
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 128340000000,
+        "sharePct": 23,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 117180000000,
+        "sharePct": 21,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 106020000000,
+        "sharePct": 19,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 72540000000,
+        "sharePct": 13,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 61380000000,
+        "sharePct": 11,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 50220000000,
+        "sharePct": 9,
+        "yoyChangePct": 8
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 153630000000,
+        "sharePct": 27,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 139405000000,
+        "sharePct": 24.5,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 96730000000,
+        "sharePct": 17,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 82505000000,
+        "sharePct": 14.5,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 68280000000,
+        "sharePct": 12,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 54055000000,
+        "sharePct": 9.5,
+        "yoyChangePct": 1
+      }
+    ]
+  },
+  "ITA": {
+    "iso3": "ITA",
+    "name": "Italy",
+    "topImports": [
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 140580000000,
+        "sharePct": 22,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 127800000000,
+        "sharePct": 20,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 115020000000,
+        "sharePct": 18,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 102240000000,
+        "sharePct": 16,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 63900000000,
+        "sharePct": 10,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 51120000000,
+        "sharePct": 8,
+        "yoyChangePct": -1
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 162480000000,
+        "sharePct": 24,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 145555000000,
+        "sharePct": 21.5,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 128630000000,
+        "sharePct": 19,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 111705000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 94780000000,
+        "sharePct": 14,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 44005000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 4
+      }
+    ]
+  },
+  "KOR": {
+    "iso3": "KOR",
+    "name": "South Korea",
+    "topImports": [
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 160500000000,
+        "sharePct": 25,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 121980000000,
+        "sharePct": 19,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 109140000000,
+        "sharePct": 17,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 96300000000,
+        "sharePct": 15,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 83460000000,
+        "sharePct": 13,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 44940000000,
+        "sharePct": 7,
+        "yoyChangePct": 1
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 164320000000,
+        "sharePct": 26,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 148520000000,
+        "sharePct": 23.5,
+        "yoyChangePct": -5
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 132720000000,
+        "sharePct": 21,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 85320000000,
+        "sharePct": 13.5,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 69520000000,
+        "sharePct": 11,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 53720000000,
+        "sharePct": 8.5,
+        "yoyChangePct": -1
+      }
+    ]
+  },
+  "MEX": {
+    "iso3": "MEX",
+    "name": "Mexico",
+    "topImports": [
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 137540000000,
+        "sharePct": 23,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 125580000000,
+        "sharePct": 21,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 113620000000,
+        "sharePct": 19,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 77740000000,
+        "sharePct": 13,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 65780000000,
+        "sharePct": 11,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 53820000000,
+        "sharePct": 9,
+        "yoyChangePct": 3
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 160110000000,
+        "sharePct": 27,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 145285000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 100810000000,
+        "sharePct": 17,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 85985000000,
+        "sharePct": 14.5,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 71160000000,
+        "sharePct": 12,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 56335000000,
+        "sharePct": 9.5,
+        "yoyChangePct": 5
+      }
+    ]
+  },
+  "AUS": {
+    "iso3": "AUS",
+    "name": "Australia",
+    "topImports": [
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 66240000000,
+        "sharePct": 23,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 60480000000,
+        "sharePct": 21,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 54720000000,
+        "sharePct": 19,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 37440000000,
+        "sharePct": 13,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 31680000000,
+        "sharePct": 11,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 25920000000,
+        "sharePct": 9,
+        "yoyChangePct": 6
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 99900000000,
+        "sharePct": 27,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 90650000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 62900000000,
+        "sharePct": 17,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 53650000000,
+        "sharePct": 14.5,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 44400000000,
+        "sharePct": 12,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 35150000000,
+        "sharePct": 9.5,
+        "yoyChangePct": 5
+      }
+    ]
+  },
+  "NLD": {
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "topImports": [
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 158400000000,
+        "sharePct": 22,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 144000000000,
+        "sharePct": 20,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 129600000000,
+        "sharePct": 18,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 115200000000,
+        "sharePct": 16,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 72000000000,
+        "sharePct": 10,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 57600000000,
+        "sharePct": 8,
+        "yoyChangePct": 4
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 224100000000,
+        "sharePct": 27,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 203350000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 141100000000,
+        "sharePct": 17,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 120350000000,
+        "sharePct": 14.5,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 99600000000,
+        "sharePct": 12,
+        "yoyChangePct": -5
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 78850000000,
+        "sharePct": 9.5,
+        "yoyChangePct": -4
+      }
+    ]
+  },
+  "SGP": {
+    "iso3": "SGP",
+    "name": "Singapore",
+    "topImports": [
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 105750000000,
+        "sharePct": 25,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 80370000000,
+        "sharePct": 19,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 71910000000,
+        "sharePct": 17,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 63450000000,
+        "sharePct": 15,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 54990000000,
+        "sharePct": 13,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 29610000000,
+        "sharePct": 7,
+        "yoyChangePct": 9
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 114000000000,
+        "sharePct": 24,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 102125000000,
+        "sharePct": 21.5,
+        "yoyChangePct": 3
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 90250000000,
+        "sharePct": 19,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 78375000000,
+        "sharePct": 16.5,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 66500000000,
+        "sharePct": 14,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 30875000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 7
+      }
+    ]
+  },
+  "MYS": {
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "topImports": [
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 60950000000,
+        "sharePct": 23,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 55650000000,
+        "sharePct": 21,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 50350000000,
+        "sharePct": 19,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 34450000000,
+        "sharePct": 13,
+        "yoyChangePct": 1
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 29150000000,
+        "sharePct": 11,
+        "yoyChangePct": 2
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 23850000000,
+        "sharePct": 9,
+        "yoyChangePct": 3
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 84240000000,
+        "sharePct": 27,
+        "yoyChangePct": 4
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 76440000000,
+        "sharePct": 24.5,
+        "yoyChangePct": 5
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 53040000000,
+        "sharePct": 17,
+        "yoyChangePct": 6
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 45240000000,
+        "sharePct": 14.5,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 37440000000,
+        "sharePct": 12,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 29640000000,
+        "sharePct": 9.5,
+        "yoyChangePct": 9
+      }
+    ]
+  },
+  "VNM": {
+    "iso3": "VNM",
+    "name": "Vietnam",
+    "topImports": [
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 78240000000,
+        "sharePct": 24,
+        "yoyChangePct": 7
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 71720000000,
+        "sharePct": 22,
+        "yoyChangePct": 8
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 52160000000,
+        "sharePct": 16,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 45640000000,
+        "sharePct": 14,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 39120000000,
+        "sharePct": 12,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 32600000000,
+        "sharePct": 10,
+        "yoyChangePct": -3
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 92300000000,
+        "sharePct": 26,
+        "yoyChangePct": 9
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 83425000000,
+        "sharePct": 23.5,
+        "yoyChangePct": 10
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 74550000000,
+        "sharePct": 21,
+        "yoyChangePct": -5
+      },
+      {
+        "hsCode": "87",
+        "hsName": "Vehicles, Tractors & Railway Rolling Stock",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 47925000000,
+        "sharePct": 13.5,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "85",
+        "hsName": "Electrical Machinery, Equipment & Sound Recorders",
+        "sector": "Tech & Electronics",
+        "valueUsd": 39050000000,
+        "sharePct": 11,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 30175000000,
+        "sharePct": 8.5,
+        "yoyChangePct": -2
+      }
+    ]
+  },
+  "ZAF": {
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "topImports": [
+      {
+        "hsCode": "30",
+        "hsName": "Pharmaceutical Products",
+        "sector": "Chemical & Medical",
+        "valueUsd": 24610000000,
+        "sharePct": 23,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "39",
+        "hsName": "Plastics & Articles Thereof",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 22470000000,
+        "sharePct": 21,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "61",
+        "hsName": "Articles of Apparel & Clothing Accessories (Knitted)",
+        "sector": "Textiles & Goods",
+        "valueUsd": 20330000000,
+        "sharePct": 19,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "72",
+        "hsName": "Iron & Steel",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 13910000000,
+        "sharePct": 13,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "71",
+        "hsName": "Natural Pearls, Precious Stones & Metals",
+        "sector": "Minerals & Energy",
+        "valueUsd": 11770000000,
+        "sharePct": 11,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "84",
+        "hsName": "Nuclear Reactors, Boilers, Machinery & Mechanical Appliances",
+        "sector": "Industrial & Machinery",
+        "valueUsd": 9630000000,
+        "sharePct": 9,
+        "yoyChangePct": 1
+      }
+    ],
+    "topExports": [
+      {
+        "hsCode": "22",
+        "hsName": "Beverages, Spirits & Vinegar",
+        "sector": "Food & CPG",
+        "valueUsd": 26400000000,
+        "sharePct": 24,
+        "yoyChangePct": -4
+      },
+      {
+        "hsCode": "27",
+        "hsName": "Mineral Fuels, Mineral Oils & Bituminous Substances",
+        "sector": "Minerals & Energy",
+        "valueUsd": 23650000000,
+        "sharePct": 21.5,
+        "yoyChangePct": -3
+      },
+      {
+        "hsCode": "02",
+        "hsName": "Meat & Edible Meat Offal",
+        "sector": "Food & CPG",
+        "valueUsd": 20900000000,
+        "sharePct": 19,
+        "yoyChangePct": -2
+      },
+      {
+        "hsCode": "03",
+        "hsName": "Fish & Crustaceans, Molluscs & Aquatic Invertebrates",
+        "sector": "Food & CPG",
+        "valueUsd": 18150000000,
+        "sharePct": 16.5,
+        "yoyChangePct": -1
+      },
+      {
+        "hsCode": "09",
+        "hsName": "Coffee, Tea, Maté & Spices",
+        "sector": "Food & CPG",
+        "valueUsd": 15400000000,
+        "sharePct": 14,
+        "yoyChangePct": 0
+      },
+      {
+        "hsCode": "90",
+        "hsName": "Optical, Photographic, Medical & Precision Instruments",
+        "sector": "Tech & Electronics",
+        "valueUsd": 7150000000,
+        "sharePct": 6.5,
+        "yoyChangePct": 1
+      }
+    ]
+  }
+}

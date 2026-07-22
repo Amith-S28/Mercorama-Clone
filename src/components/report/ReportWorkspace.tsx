@@ -22,17 +22,19 @@ import { CountryPlaybook } from '@/components/map/CountryPlaybook';
 import { LogisticsTrackerMap } from '@/components/report/LogisticsTrackerMap';
 import { MacroEconomicsPanel } from '@/components/report/MacroEconomicsPanel';
 import { QuestionnaireWizard } from '@/components/questionnaire/QuestionnaireWizard';
+import { CountryTradeHistoryDashboard } from '@/components/report/CountryTradeHistoryDashboard';
 import { snappy } from '@/lib/animation/presets';
 import { useGsapReveal } from '@/hooks';
 import { VantaNetBackground } from '@/components/ambient/VantaNetBackground';
 import { ResizableCard } from '@/components/ui/ResizableCard';
 import { DirectionAwareTabs } from '@/components/ui/DirectionAwareTabs';
 
-type TabId = 'scorecard' | 'intel' | 'landed';
+type TabId = 'scorecard' | 'intel' | 'history' | 'landed';
 
 const TABS: { id: TabId; label: string }[] = [
   { id: 'scorecard', label: 'Scorecard' },
   { id: 'intel', label: 'Trade Intel + Map' },
+  { id: 'history', label: 'Country Trade History' },
   { id: 'landed', label: 'Landed Cost' },
 ];
 
@@ -293,6 +295,16 @@ export function ReportWorkspace() {
             </ResizableCard>
             <div className="bento-card bento-card--span-3">
               <CountryPlaybook iso3={selectedCountry ?? sme.targetCountry} />
+            </div>
+          </div>
+        </motion.div>
+      ) : null}
+
+      {activeTab === 'history' ? (
+        <motion.div key="history" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={snappy}>
+          <div className="bento-grid">
+            <div className="bento-card--span-12">
+              <CountryTradeHistoryDashboard countryIso3={sme?.targetCountry ?? selectedCountry ?? 'JPN'} />
             </div>
           </div>
         </motion.div>

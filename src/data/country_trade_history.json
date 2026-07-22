@@ -1,0 +1,1748 @@
+{
+  "USA": {
+    "iso3": "USA",
+    "name": "United States",
+    "region": "North America",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 2794942000000,
+        "exportsUsd": 2270622000000,
+        "netBalanceUsd": -524320000000,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 27.7
+      },
+      {
+        "year": 2016,
+        "importsUsd": 2738830000000,
+        "exportsUsd": 2235558000000,
+        "netBalanceUsd": -503272000000,
+        "yoyImportGrowthPct": -2,
+        "yoyExportGrowthPct": -1.5,
+        "tradePctGdp": 26.5
+      },
+      {
+        "year": 2017,
+        "importsUsd": 2931589000000,
+        "exportsUsd": 2388260000000,
+        "netBalanceUsd": -543329000000,
+        "yoyImportGrowthPct": 7,
+        "yoyExportGrowthPct": 6.8,
+        "tradePctGdp": 27.1
+      },
+      {
+        "year": 2018,
+        "importsUsd": 3131166000000,
+        "exportsUsd": 2538089000000,
+        "netBalanceUsd": -593077000000,
+        "yoyImportGrowthPct": 6.8,
+        "yoyExportGrowthPct": 6.3,
+        "tradePctGdp": 27.4
+      },
+      {
+        "year": 2019,
+        "importsUsd": 3116681000000,
+        "exportsUsd": 2539391000000,
+        "netBalanceUsd": -577290000000,
+        "yoyImportGrowthPct": -0.5,
+        "yoyExportGrowthPct": 0.1,
+        "tradePctGdp": 26.3
+      },
+      {
+        "year": 2020,
+        "importsUsd": 2782391000000,
+        "exportsUsd": 2163837000000,
+        "netBalanceUsd": -618554000000,
+        "yoyImportGrowthPct": -10.7,
+        "yoyExportGrowthPct": -14.8,
+        "tradePctGdp": 23.1
+      },
+      {
+        "year": 2021,
+        "importsUsd": 3417930000000,
+        "exportsUsd": 2568697000000,
+        "netBalanceUsd": -849233000000,
+        "yoyImportGrowthPct": 22.8,
+        "yoyExportGrowthPct": 18.7,
+        "tradePctGdp": 25.2
+      },
+      {
+        "year": 2022,
+        "importsUsd": 3974319000000,
+        "exportsUsd": 3036430000000,
+        "netBalanceUsd": -937889000000,
+        "yoyImportGrowthPct": 16.3,
+        "yoyExportGrowthPct": 18.2,
+        "tradePctGdp": 26.9
+      },
+      {
+        "year": 2023,
+        "importsUsd": 3859856000000,
+        "exportsUsd": 3073360000000,
+        "netBalanceUsd": -786496000000,
+        "yoyImportGrowthPct": -2.9,
+        "yoyExportGrowthPct": 1.2,
+        "tradePctGdp": 24.9
+      },
+      {
+        "year": 2024,
+        "importsUsd": 4113828000000,
+        "exportsUsd": 3215368000000,
+        "netBalanceUsd": -898460000000,
+        "yoyImportGrowthPct": 6.6,
+        "yoyExportGrowthPct": 4.6,
+        "tradePctGdp": 25
+      }
+    ]
+  },
+  "CHN": {
+    "iso3": "CHN",
+    "name": "China",
+    "region": "East Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 2003260696069,
+        "exportsUsd": 2362097053275,
+        "netBalanceUsd": 358836357206,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 38.7
+      },
+      {
+        "year": 2016,
+        "importsUsd": 1944490534275,
+        "exportsUsd": 2199974853570,
+        "netBalanceUsd": 255484319295,
+        "yoyImportGrowthPct": -2.9,
+        "yoyExportGrowthPct": -6.9,
+        "tradePctGdp": 36.2
+      },
+      {
+        "year": 2017,
+        "importsUsd": 2208518918632,
+        "exportsUsd": 2424216052098,
+        "netBalanceUsd": 215697133466,
+        "yoyImportGrowthPct": 13.6,
+        "yoyExportGrowthPct": 10.2,
+        "tradePctGdp": 37
+      },
+      {
+        "year": 2018,
+        "importsUsd": 2564121910995,
+        "exportsUsd": 2655609176087,
+        "netBalanceUsd": 91487265092,
+        "yoyImportGrowthPct": 16.1,
+        "yoyExportGrowthPct": 9.5,
+        "tradePctGdp": 36.9
+      },
+      {
+        "year": 2019,
+        "importsUsd": 2521036548137,
+        "exportsUsd": 2641188436776,
+        "netBalanceUsd": 120151888639,
+        "yoyImportGrowthPct": -1.7,
+        "yoyExportGrowthPct": -0.5,
+        "tradePctGdp": 35.5
+      },
+      {
+        "year": 2020,
+        "importsUsd": 2409650385964,
+        "exportsUsd": 2739785089628,
+        "netBalanceUsd": 330134703664,
+        "yoyImportGrowthPct": -4.4,
+        "yoyExportGrowthPct": 3.7,
+        "tradePctGdp": 34.3
+      },
+      {
+        "year": 2021,
+        "importsUsd": 3132116155606,
+        "exportsUsd": 3537510275664,
+        "netBalanceUsd": 405394120058,
+        "yoyImportGrowthPct": 30,
+        "yoyExportGrowthPct": 29.1,
+        "tradePctGdp": 36.6
+      },
+      {
+        "year": 2022,
+        "importsUsd": 3166016135468,
+        "exportsUsd": 3705070541733,
+        "netBalanceUsd": 539054406265,
+        "yoyImportGrowthPct": 1.1,
+        "yoyExportGrowthPct": 4.7,
+        "tradePctGdp": 37.5
+      },
+      {
+        "year": 2023,
+        "importsUsd": 3167502597276,
+        "exportsUsd": 3544871083631,
+        "netBalanceUsd": 377368486355,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": -4.3,
+        "tradePctGdp": 36.7
+      },
+      {
+        "year": 2024,
+        "importsUsd": 3280170243047,
+        "exportsUsd": 3828873971972,
+        "netBalanceUsd": 548703728925,
+        "yoyImportGrowthPct": 3.6,
+        "yoyExportGrowthPct": 8,
+        "tradePctGdp": 38
+      }
+    ]
+  },
+  "JPN": {
+    "iso3": "JPN",
+    "name": "Japan",
+    "region": "Asia-Pacific",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 799671850412,
+        "exportsUsd": 775031229091,
+        "netBalanceUsd": -24640621321,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 34.7
+      },
+      {
+        "year": 2016,
+        "importsUsd": 763174802439,
+        "exportsUsd": 803470630550,
+        "netBalanceUsd": 40295828111,
+        "yoyImportGrowthPct": -4.6,
+        "yoyExportGrowthPct": 3.7,
+        "tradePctGdp": 30.7
+      },
+      {
+        "year": 2017,
+        "importsUsd": 829948316864,
+        "exportsUsd": 867373157903,
+        "netBalanceUsd": 37424841039,
+        "yoyImportGrowthPct": 8.7,
+        "yoyExportGrowthPct": 8,
+        "tradePctGdp": 33.7
+      },
+      {
+        "year": 2018,
+        "importsUsd": 922228472389,
+        "exportsUsd": 923192943803,
+        "netBalanceUsd": 964471414,
+        "yoyImportGrowthPct": 11.1,
+        "yoyExportGrowthPct": 6.4,
+        "tradePctGdp": 35.8
+      },
+      {
+        "year": 2019,
+        "importsUsd": 908590987611,
+        "exportsUsd": 893761110034,
+        "netBalanceUsd": -14829877577,
+        "yoyImportGrowthPct": -1.5,
+        "yoyExportGrowthPct": -3.2,
+        "tradePctGdp": 34.4
+      },
+      {
+        "year": 2020,
+        "importsUsd": 798645128767,
+        "exportsUsd": 785057625362,
+        "netBalanceUsd": -13587503405,
+        "yoyImportGrowthPct": -12.1,
+        "yoyExportGrowthPct": -12.2,
+        "tradePctGdp": 30.5
+      },
+      {
+        "year": 2021,
+        "importsUsd": 938755726387,
+        "exportsUsd": 912551747360,
+        "netBalanceUsd": -26203979027,
+        "yoyImportGrowthPct": 17.5,
+        "yoyExportGrowthPct": 16.2,
+        "tradePctGdp": 35.4
+      },
+      {
+        "year": 2022,
+        "importsUsd": 1076977967309,
+        "exportsUsd": 918412226914,
+        "netBalanceUsd": -158565740395,
+        "yoyImportGrowthPct": 14.7,
+        "yoyExportGrowthPct": 0.6,
+        "tradePctGdp": 44.9
+      },
+      {
+        "year": 2023,
+        "importsUsd": 988160815442,
+        "exportsUsd": 923420059651,
+        "netBalanceUsd": -64740755791,
+        "yoyImportGrowthPct": -8.2,
+        "yoyExportGrowthPct": 0.5,
+        "tradePctGdp": 43.6
+      },
+      {
+        "year": 2024,
+        "importsUsd": 958381808469,
+        "exportsUsd": 920960002390,
+        "netBalanceUsd": -37421806079,
+        "yoyImportGrowthPct": -3,
+        "yoyExportGrowthPct": -0.3,
+        "tradePctGdp": 44.9
+      }
+    ]
+  },
+  "DEU": {
+    "iso3": "DEU",
+    "name": "Germany",
+    "region": "Europe",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 1204648073432,
+        "exportsUsd": 1458592274325,
+        "netBalanceUsd": 253944200893,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 77.8
+      },
+      {
+        "year": 2016,
+        "importsUsd": 1215609853746,
+        "exportsUsd": 1472560807846,
+        "netBalanceUsd": 256950954100,
+        "yoyImportGrowthPct": 0.9,
+        "yoyExportGrowthPct": 1,
+        "tradePctGdp": 76
+      },
+      {
+        "year": 2017,
+        "importsUsd": 1327357307454,
+        "exportsUsd": 1589089750187,
+        "netBalanceUsd": 261732442733,
+        "yoyImportGrowthPct": 9.2,
+        "yoyExportGrowthPct": 7.9,
+        "tradePctGdp": 77.5
+      },
+      {
+        "year": 2018,
+        "importsUsd": 1485437649158,
+        "exportsUsd": 1723433049609,
+        "netBalanceUsd": 237995400451,
+        "yoyImportGrowthPct": 11.9,
+        "yoyExportGrowthPct": 8.5,
+        "tradePctGdp": 79.1
+      },
+      {
+        "year": 2019,
+        "importsUsd": 1454588084839,
+        "exportsUsd": 1676629137012,
+        "netBalanceUsd": 222041052173,
+        "yoyImportGrowthPct": -2.1,
+        "yoyExportGrowthPct": -2.7,
+        "tradePctGdp": 79.1
+      },
+      {
+        "year": 2020,
+        "importsUsd": 1332733837256,
+        "exportsUsd": 1541867660412,
+        "netBalanceUsd": 209133823156,
+        "yoyImportGrowthPct": -8.4,
+        "yoyExportGrowthPct": -8,
+        "tradePctGdp": 72.9
+      },
+      {
+        "year": 2021,
+        "importsUsd": 1628851031194,
+        "exportsUsd": 1851846071996,
+        "netBalanceUsd": 222995040802,
+        "yoyImportGrowthPct": 22.2,
+        "yoyExportGrowthPct": 20.1,
+        "tradePctGdp": 79.9
+      },
+      {
+        "year": 2022,
+        "importsUsd": 1813049636002,
+        "exportsUsd": 1916859170749,
+        "netBalanceUsd": 103809534747,
+        "yoyImportGrowthPct": 11.3,
+        "yoyExportGrowthPct": 3.5,
+        "tradePctGdp": 88.8
+      },
+      {
+        "year": 2023,
+        "importsUsd": 1779045873341,
+        "exportsUsd": 1960255682616,
+        "netBalanceUsd": 181209809275,
+        "yoyImportGrowthPct": -1.9,
+        "yoyExportGrowthPct": 2.3,
+        "tradePctGdp": 82
+      },
+      {
+        "year": 2024,
+        "importsUsd": 1764438191611,
+        "exportsUsd": 1941431210622,
+        "netBalanceUsd": 176993019011,
+        "yoyImportGrowthPct": -0.8,
+        "yoyExportGrowthPct": -1,
+        "tradePctGdp": 79.1
+      }
+    ]
+  },
+  "GBR": {
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "region": "Europe",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 861463440127,
+        "exportsUsd": 821200386072,
+        "netBalanceUsd": -40263054055,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 57.1
+      },
+      {
+        "year": 2016,
+        "importsUsd": 833100578280,
+        "exportsUsd": 786640412454,
+        "netBalanceUsd": -46460165826,
+        "yoyImportGrowthPct": -3.3,
+        "yoyExportGrowthPct": -4.2,
+        "tradePctGdp": 59.8
+      },
+      {
+        "year": 2017,
+        "importsUsd": 869550502969,
+        "exportsUsd": 836020370556,
+        "netBalanceUsd": -33530132413,
+        "yoyImportGrowthPct": 4.4,
+        "yoyExportGrowthPct": 6.3,
+        "tradePctGdp": 63.2
+      },
+      {
+        "year": 2018,
+        "importsUsd": 957619509260,
+        "exportsUsd": 922834772428,
+        "netBalanceUsd": -34784736832,
+        "yoyImportGrowthPct": 10.1,
+        "yoyExportGrowthPct": 10.4,
+        "tradePctGdp": 64.9
+      },
+      {
+        "year": 2019,
+        "importsUsd": 951880342949,
+        "exportsUsd": 917433768894,
+        "netBalanceUsd": -34446574055,
+        "yoyImportGrowthPct": -0.6,
+        "yoyExportGrowthPct": -0.6,
+        "tradePctGdp": 65
+      },
+      {
+        "year": 2020,
+        "importsUsd": 795714534395,
+        "exportsUsd": 815801724784,
+        "netBalanceUsd": 20087190389,
+        "yoyImportGrowthPct": -16.4,
+        "yoyExportGrowthPct": -11.1,
+        "tradePctGdp": 59.2
+      },
+      {
+        "year": 2021,
+        "importsUsd": 934375952194,
+        "exportsUsd": 935667446175,
+        "netBalanceUsd": 1291493981,
+        "yoyImportGrowthPct": 17.4,
+        "yoyExportGrowthPct": 14.7,
+        "tradePctGdp": 58.5
+      },
+      {
+        "year": 2022,
+        "importsUsd": 1117793765633,
+        "exportsUsd": 1083593172366,
+        "netBalanceUsd": -34200593267,
+        "yoyImportGrowthPct": 19.6,
+        "yoyExportGrowthPct": 15.8,
+        "tradePctGdp": 69.2
+      },
+      {
+        "year": 2023,
+        "importsUsd": 1131603446868,
+        "exportsUsd": 1091653856201,
+        "netBalanceUsd": -39949590667,
+        "yoyImportGrowthPct": 1.2,
+        "yoyExportGrowthPct": 0.7,
+        "tradePctGdp": 65
+      },
+      {
+        "year": 2024,
+        "importsUsd": 1174549941083,
+        "exportsUsd": 1147692057155,
+        "netBalanceUsd": -26857883928,
+        "yoyImportGrowthPct": 3.8,
+        "yoyExportGrowthPct": 5.1,
+        "tradePctGdp": 62.8
+      }
+    ]
+  },
+  "FRA": {
+    "iso3": "FRA",
+    "name": "France",
+    "region": "Europe",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 776983112153,
+        "exportsUsd": 774108364253,
+        "netBalanceUsd": -2874747900,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 63.5
+      },
+      {
+        "year": 2016,
+        "importsUsd": 786690099965,
+        "exportsUsd": 778134181664,
+        "netBalanceUsd": -8555918301,
+        "yoyImportGrowthPct": 1.2,
+        "yoyExportGrowthPct": 0.5,
+        "tradePctGdp": 63.3
+      },
+      {
+        "year": 2017,
+        "importsUsd": 856501561408,
+        "exportsUsd": 836510836278,
+        "netBalanceUsd": -19990725130,
+        "yoyImportGrowthPct": 8.9,
+        "yoyExportGrowthPct": 7.5,
+        "tradePctGdp": 65.4
+      },
+      {
+        "year": 2018,
+        "importsUsd": 942517078079,
+        "exportsUsd": 915638789627,
+        "netBalanceUsd": -26878288452,
+        "yoyImportGrowthPct": 10,
+        "yoyExportGrowthPct": 9.5,
+        "tradePctGdp": 66.8
+      },
+      {
+        "year": 2019,
+        "importsUsd": 913209092424,
+        "exportsUsd": 895514342479,
+        "netBalanceUsd": -17694749945,
+        "yoyImportGrowthPct": -3.1,
+        "yoyExportGrowthPct": -2.2,
+        "tradePctGdp": 66.4
+      },
+      {
+        "year": 2020,
+        "importsUsd": 801836174373,
+        "exportsUsd": 756174143647,
+        "netBalanceUsd": -45662030726,
+        "yoyImportGrowthPct": -12.2,
+        "yoyExportGrowthPct": -15.6,
+        "tradePctGdp": 58.8
+      },
+      {
+        "year": 2021,
+        "importsUsd": 964103785592,
+        "exportsUsd": 928139254791,
+        "netBalanceUsd": -35964530801,
+        "yoyImportGrowthPct": 20.2,
+        "yoyExportGrowthPct": 22.7,
+        "tradePctGdp": 63.8
+      },
+      {
+        "year": 2022,
+        "importsUsd": 1099664152806,
+        "exportsUsd": 1023340977697,
+        "netBalanceUsd": -76323175109,
+        "yoyImportGrowthPct": 14.1,
+        "yoyExportGrowthPct": 10.3,
+        "tradePctGdp": 76
+      },
+      {
+        "year": 2023,
+        "importsUsd": 1105442442028,
+        "exportsUsd": 1053069574155,
+        "netBalanceUsd": -52372867873,
+        "yoyImportGrowthPct": 0.5,
+        "yoyExportGrowthPct": 2.9,
+        "tradePctGdp": 70.6
+      },
+      {
+        "year": 2024,
+        "importsUsd": 1081453951069,
+        "exportsUsd": 1071066237472,
+        "netBalanceUsd": -10387713597,
+        "yoyImportGrowthPct": -2.2,
+        "yoyExportGrowthPct": 1.7,
+        "tradePctGdp": 68.1
+      }
+    ]
+  },
+  "IND": {
+    "iso3": "IND",
+    "name": "India",
+    "region": "South Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 465097595426,
+        "exportsUsd": 416787940848,
+        "netBalanceUsd": -48309654578,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 41.9
+      },
+      {
+        "year": 2016,
+        "importsUsd": 480169055768,
+        "exportsUsd": 439642578076,
+        "netBalanceUsd": -40526477692,
+        "yoyImportGrowthPct": 3.2,
+        "yoyExportGrowthPct": 5.5,
+        "tradePctGdp": 40.1
+      },
+      {
+        "year": 2017,
+        "importsUsd": 582018012522,
+        "exportsUsd": 498258808232,
+        "netBalanceUsd": -83759204290,
+        "yoyImportGrowthPct": 21.2,
+        "yoyExportGrowthPct": 13.3,
+        "tradePctGdp": 40.7
+      },
+      {
+        "year": 2018,
+        "importsUsd": 640300806739,
+        "exportsUsd": 538635186135,
+        "netBalanceUsd": -101665620604,
+        "yoyImportGrowthPct": 10,
+        "yoyExportGrowthPct": 8.1,
+        "tradePctGdp": 43.6
+      },
+      {
+        "year": 2019,
+        "importsUsd": 602315056053,
+        "exportsUsd": 529245063167,
+        "netBalanceUsd": -73069992886,
+        "yoyImportGrowthPct": -5.9,
+        "yoyExportGrowthPct": -1.7,
+        "tradePctGdp": 39.9
+      },
+      {
+        "year": 2020,
+        "importsUsd": 510244747372,
+        "exportsUsd": 499728529073,
+        "netBalanceUsd": -10516218299,
+        "yoyImportGrowthPct": -15.3,
+        "yoyExportGrowthPct": -5.6,
+        "tradePctGdp": 37.8
+      },
+      {
+        "year": 2021,
+        "importsUsd": 760902891806,
+        "exportsUsd": 677769255429,
+        "netBalanceUsd": -83133636377,
+        "yoyImportGrowthPct": 49.1,
+        "yoyExportGrowthPct": 35.6,
+        "tradePctGdp": 45.4
+      },
+      {
+        "year": 2022,
+        "importsUsd": 866361019119,
+        "exportsUsd": 781290791564,
+        "netBalanceUsd": -85070227555,
+        "yoyImportGrowthPct": 13.9,
+        "yoyExportGrowthPct": 15.3,
+        "tradePctGdp": 50.7
+      },
+      {
+        "year": 2023,
+        "importsUsd": 839102411987,
+        "exportsUsd": 782620610192,
+        "netBalanceUsd": -56481801795,
+        "yoyImportGrowthPct": -3.1,
+        "yoyExportGrowthPct": 0.2,
+        "tradePctGdp": 46.3
+      },
+      {
+        "year": 2024,
+        "importsUsd": 897055898132,
+        "exportsUsd": 829785193474,
+        "netBalanceUsd": -67270704658,
+        "yoyImportGrowthPct": 6.9,
+        "yoyExportGrowthPct": 6,
+        "tradePctGdp": 45.9
+      }
+    ]
+  },
+  "BRA": {
+    "iso3": "BRA",
+    "name": "Brazil",
+    "region": "Latin America",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 253272712378,
+        "exportsUsd": 232488824445,
+        "netBalanceUsd": -20783887933,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 27
+      },
+      {
+        "year": 2016,
+        "importsUsd": 216686387070,
+        "exportsUsd": 223863343103,
+        "netBalanceUsd": 7176956033,
+        "yoyImportGrowthPct": -14.4,
+        "yoyExportGrowthPct": -3.7,
+        "tradePctGdp": 24.5
+      },
+      {
+        "year": 2017,
+        "importsUsd": 243510584263,
+        "exportsUsd": 258330777007,
+        "netBalanceUsd": 14820192744,
+        "yoyImportGrowthPct": 12.4,
+        "yoyExportGrowthPct": 15.4,
+        "tradePctGdp": 24.3
+      },
+      {
+        "year": 2018,
+        "importsUsd": 272994464677,
+        "exportsUsd": 280543266303,
+        "netBalanceUsd": 7548801626,
+        "yoyImportGrowthPct": 12.1,
+        "yoyExportGrowthPct": 8.6,
+        "tradePctGdp": 28.9
+      },
+      {
+        "year": 2019,
+        "importsUsd": 276634813667,
+        "exportsUsd": 264562979421,
+        "netBalanceUsd": -12071834246,
+        "yoyImportGrowthPct": 1.3,
+        "yoyExportGrowthPct": -5.7,
+        "tradePctGdp": 28.9
+      },
+      {
+        "year": 2020,
+        "importsUsd": 233941246230,
+        "exportsUsd": 242872071018,
+        "netBalanceUsd": 8930824788,
+        "yoyImportGrowthPct": -15.4,
+        "yoyExportGrowthPct": -8.2,
+        "tradePctGdp": 32.3
+      },
+      {
+        "year": 2021,
+        "importsUsd": 309853308959,
+        "exportsUsd": 319251201403,
+        "netBalanceUsd": 9397892444,
+        "yoyImportGrowthPct": 32.4,
+        "yoyExportGrowthPct": 31.4,
+        "tradePctGdp": 37.7
+      },
+      {
+        "year": 2022,
+        "importsUsd": 374482483051,
+        "exportsUsd": 383177602116,
+        "netBalanceUsd": 8695119065,
+        "yoyImportGrowthPct": 20.9,
+        "yoyExportGrowthPct": 20,
+        "tradePctGdp": 38.8
+      },
+      {
+        "year": 2023,
+        "importsUsd": 343939883229,
+        "exportsUsd": 393731572888,
+        "netBalanceUsd": 49791689659,
+        "yoyImportGrowthPct": -8.2,
+        "yoyExportGrowthPct": 2.8,
+        "tradePctGdp": 33.7
+      },
+      {
+        "year": 2024,
+        "importsUsd": 385708868264,
+        "exportsUsd": 392105346047,
+        "netBalanceUsd": 6396477783,
+        "yoyImportGrowthPct": 12.1,
+        "yoyExportGrowthPct": -0.4,
+        "tradePctGdp": 35.6
+      }
+    ]
+  },
+  "CAN": {
+    "iso3": "CAN",
+    "name": "Canada",
+    "region": "North America",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 534115083556,
+        "exportsUsd": 495747450358,
+        "netBalanceUsd": -38367633198,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 66.2
+      },
+      {
+        "year": 2016,
+        "importsUsd": 517396012626,
+        "exportsUsd": 481357649980,
+        "netBalanceUsd": -36038362646,
+        "yoyImportGrowthPct": -3.1,
+        "yoyExportGrowthPct": -2.9,
+        "tradePctGdp": 65.4
+      },
+      {
+        "year": 2017,
+        "importsUsd": 554922650425,
+        "exportsUsd": 518766780220,
+        "netBalanceUsd": -36155870205,
+        "yoyImportGrowthPct": 7.3,
+        "yoyExportGrowthPct": 7.8,
+        "tradePctGdp": 65.1
+      },
+      {
+        "year": 2018,
+        "importsUsd": 591347645767,
+        "exportsUsd": 557719627178,
+        "netBalanceUsd": -33628018589,
+        "yoyImportGrowthPct": 6.6,
+        "yoyExportGrowthPct": 7.5,
+        "tradePctGdp": 66.6
+      },
+      {
+        "year": 2019,
+        "importsUsd": 589706748631,
+        "exportsUsd": 564142104615,
+        "netBalanceUsd": -25564644016,
+        "yoyImportGrowthPct": -0.3,
+        "yoyExportGrowthPct": 1.2,
+        "tradePctGdp": 66.2
+      },
+      {
+        "year": 2020,
+        "importsUsd": 524572641557,
+        "exportsUsd": 487990676643,
+        "netBalanceUsd": -36581964914,
+        "yoyImportGrowthPct": -11,
+        "yoyExportGrowthPct": -13.5,
+        "tradePctGdp": 61.2
+      },
+      {
+        "year": 2021,
+        "importsUsd": 628388638999,
+        "exportsUsd": 630478158310,
+        "netBalanceUsd": 2089519311,
+        "yoyImportGrowthPct": 19.8,
+        "yoyExportGrowthPct": 29.2,
+        "tradePctGdp": 62.2
+      },
+      {
+        "year": 2022,
+        "importsUsd": 731290006744,
+        "exportsUsd": 742056361163,
+        "netBalanceUsd": 10766354419,
+        "yoyImportGrowthPct": 16.4,
+        "yoyExportGrowthPct": 17.7,
+        "tradePctGdp": 67
+      },
+      {
+        "year": 2023,
+        "importsUsd": 729991623300,
+        "exportsUsd": 732380673864,
+        "netBalanceUsd": 2389050564,
+        "yoyImportGrowthPct": -0.2,
+        "yoyExportGrowthPct": -1.3,
+        "tradePctGdp": 66.6
+      },
+      {
+        "year": 2024,
+        "importsUsd": 741233987716,
+        "exportsUsd": 737073649329,
+        "netBalanceUsd": -4160338387,
+        "yoyImportGrowthPct": 1.5,
+        "yoyExportGrowthPct": 0.6,
+        "tradePctGdp": 65.1
+      }
+    ]
+  },
+  "ITA": {
+    "iso3": "ITA",
+    "name": "Italy",
+    "region": "Europe",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 485192095145,
+        "exportsUsd": 537833599948,
+        "netBalanceUsd": 52641504803,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 55.4
+      },
+      {
+        "year": 2016,
+        "importsUsd": 483730717981,
+        "exportsUsd": 543464412394,
+        "netBalanceUsd": 59733694413,
+        "yoyImportGrowthPct": -0.3,
+        "yoyExportGrowthPct": 1,
+        "tradePctGdp": 54.4
+      },
+      {
+        "year": 2017,
+        "importsUsd": 540827068435,
+        "exportsUsd": 593973032350,
+        "netBalanceUsd": 53145963915,
+        "yoyImportGrowthPct": 11.8,
+        "yoyExportGrowthPct": 9.3,
+        "tradePctGdp": 57.6
+      },
+      {
+        "year": 2018,
+        "importsUsd": 597530269521,
+        "exportsUsd": 646909638535,
+        "netBalanceUsd": 49379369014,
+        "yoyImportGrowthPct": 10.5,
+        "yoyExportGrowthPct": 8.9,
+        "tradePctGdp": 59.3
+      },
+      {
+        "year": 2019,
+        "importsUsd": 560326098494,
+        "exportsUsd": 625065757186,
+        "netBalanceUsd": 64739658692,
+        "yoyImportGrowthPct": -6.2,
+        "yoyExportGrowthPct": -3.4,
+        "tradePctGdp": 58.7
+      },
+      {
+        "year": 2020,
+        "importsUsd": 480945200913,
+        "exportsUsd": 547940256805,
+        "netBalanceUsd": 66995055892,
+        "yoyImportGrowthPct": -14.2,
+        "yoyExportGrowthPct": -12.3,
+        "tradePctGdp": 53.9
+      },
+      {
+        "year": 2021,
+        "importsUsd": 634811260436,
+        "exportsUsd": 679294123498,
+        "netBalanceUsd": 44482863062,
+        "yoyImportGrowthPct": 32,
+        "yoyExportGrowthPct": 24,
+        "tradePctGdp": 60.3
+      },
+      {
+        "year": 2022,
+        "importsUsd": 776766269323,
+        "exportsUsd": 738509644129,
+        "netBalanceUsd": -38256625194,
+        "yoyImportGrowthPct": 22.4,
+        "yoyExportGrowthPct": 8.7,
+        "tradePctGdp": 72
+      },
+      {
+        "year": 2023,
+        "importsUsd": 736153956396,
+        "exportsUsd": 772202263040,
+        "netBalanceUsd": 36048306644,
+        "yoyImportGrowthPct": -5.2,
+        "yoyExportGrowthPct": 4.6,
+        "tradePctGdp": 65.1
+      },
+      {
+        "year": 2024,
+        "importsUsd": 721169108147,
+        "exportsUsd": 770685525117,
+        "netBalanceUsd": 49516416970,
+        "yoyImportGrowthPct": -2,
+        "yoyExportGrowthPct": -0.2,
+        "tradePctGdp": 62.6
+      }
+    ]
+  },
+  "KOR": {
+    "iso3": "KOR",
+    "name": "Korea, Rep.",
+    "region": "East Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 529797582127,
+        "exportsUsd": 630586518886,
+        "netBalanceUsd": 100788936759,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 75.4
+      },
+      {
+        "year": 2016,
+        "importsUsd": 501960383970,
+        "exportsUsd": 601861440814,
+        "netBalanceUsd": 99901056844,
+        "yoyImportGrowthPct": -5.3,
+        "yoyExportGrowthPct": -4.6,
+        "tradePctGdp": 69.9
+      },
+      {
+        "year": 2017,
+        "importsUsd": 587337161919,
+        "exportsUsd": 664392456663,
+        "netBalanceUsd": 77055294744,
+        "yoyImportGrowthPct": 17,
+        "yoyExportGrowthPct": 10.4,
+        "tradePctGdp": 73.2
+      },
+      {
+        "year": 2018,
+        "importsUsd": 643142886152,
+        "exportsUsd": 719710064860,
+        "netBalanceUsd": 76567178708,
+        "yoyImportGrowthPct": 9.5,
+        "yoyExportGrowthPct": 8.3,
+        "tradePctGdp": 74.7
+      },
+      {
+        "year": 2019,
+        "importsUsd": 602460189255,
+        "exportsUsd": 648610576583,
+        "netBalanceUsd": 46150387328,
+        "yoyImportGrowthPct": -6.3,
+        "yoyExportGrowthPct": -9.9,
+        "tradePctGdp": 71.4
+      },
+      {
+        "year": 2020,
+        "importsUsd": 539436709934,
+        "exportsUsd": 603713417774,
+        "netBalanceUsd": 64276707840,
+        "yoyImportGrowthPct": -10.5,
+        "yoyExportGrowthPct": -6.9,
+        "tradePctGdp": 65.5
+      },
+      {
+        "year": 2021,
+        "importsUsd": 698601348291,
+        "exportsUsd": 764083221346,
+        "netBalanceUsd": 65481873055,
+        "yoyImportGrowthPct": 29.5,
+        "yoyExportGrowthPct": 26.6,
+        "tradePctGdp": 75.3
+      },
+      {
+        "year": 2022,
+        "importsUsd": 814936711591,
+        "exportsUsd": 815019022384,
+        "netBalanceUsd": 82310793,
+        "yoyImportGrowthPct": 16.7,
+        "yoyExportGrowthPct": 6.7,
+        "tradePctGdp": 90.6
+      },
+      {
+        "year": 2023,
+        "importsUsd": 755197457230,
+        "exportsUsd": 762299062736,
+        "netBalanceUsd": 7101605506,
+        "yoyImportGrowthPct": -7.3,
+        "yoyExportGrowthPct": -6.5,
+        "tradePctGdp": 82.3
+      },
+      {
+        "year": 2024,
+        "importsUsd": 755486201522,
+        "exportsUsd": 831889172091,
+        "netBalanceUsd": 76402970569,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 9.1,
+        "tradePctGdp": 84.6
+      }
+    ]
+  },
+  "MEX": {
+    "iso3": "MEX",
+    "name": "Mexico",
+    "region": "Latin America",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 439821695268,
+        "exportsUsd": 414495031034,
+        "netBalanceUsd": -25326664234,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 70.4
+      },
+      {
+        "year": 2016,
+        "importsUsd": 432376614132,
+        "exportsUsd": 409476294705,
+        "netBalanceUsd": -22900319427,
+        "yoyImportGrowthPct": -1.7,
+        "yoyExportGrowthPct": -1.2,
+        "tradePctGdp": 75.7
+      },
+      {
+        "year": 2017,
+        "importsUsd": 469597181246,
+        "exportsUsd": 446688309687,
+        "netBalanceUsd": -22908871559,
+        "yoyImportGrowthPct": 8.6,
+        "yoyExportGrowthPct": 9.1,
+        "tradePctGdp": 77
+      },
+      {
+        "year": 2018,
+        "importsUsd": 517202845543,
+        "exportsUsd": 490508969545,
+        "netBalanceUsd": -26693875998,
+        "yoyImportGrowthPct": 10.1,
+        "yoyExportGrowthPct": 9.8,
+        "tradePctGdp": 80.2
+      },
+      {
+        "year": 2019,
+        "importsUsd": 507718819550,
+        "exportsUsd": 502467566320,
+        "netBalanceUsd": -5251253230,
+        "yoyImportGrowthPct": -1.8,
+        "yoyExportGrowthPct": 2.4,
+        "tradePctGdp": 77.5
+      },
+      {
+        "year": 2020,
+        "importsUsd": 421735413259,
+        "exportsUsd": 439853932828,
+        "netBalanceUsd": 18118519569,
+        "yoyImportGrowthPct": -16.9,
+        "yoyExportGrowthPct": -12.5,
+        "tradePctGdp": 76.9
+      },
+      {
+        "year": 2021,
+        "importsUsd": 559543398298,
+        "exportsUsd": 534121610565,
+        "netBalanceUsd": -25421787733,
+        "yoyImportGrowthPct": 32.7,
+        "yoyExportGrowthPct": 21.4,
+        "tradePctGdp": 83.1
+      },
+      {
+        "year": 2022,
+        "importsUsd": 672827146644,
+        "exportsUsd": 629788673074,
+        "netBalanceUsd": -43038473570,
+        "yoyImportGrowthPct": 20.2,
+        "yoyExportGrowthPct": 17.9,
+        "tradePctGdp": 88.8
+      },
+      {
+        "year": 2023,
+        "importsUsd": 674539332149,
+        "exportsUsd": 648642274777,
+        "netBalanceUsd": -25897057372,
+        "yoyImportGrowthPct": 0.3,
+        "yoyExportGrowthPct": 3,
+        "tradePctGdp": 73.7
+      },
+      {
+        "year": 2024,
+        "importsUsd": 698190455616,
+        "exportsUsd": 682472609894,
+        "netBalanceUsd": -15717845722,
+        "yoyImportGrowthPct": 3.5,
+        "yoyExportGrowthPct": 5.2,
+        "tradePctGdp": 75.4
+      }
+    ]
+  },
+  "AUS": {
+    "iso3": "AUS",
+    "name": "Australia",
+    "region": "Asia-Pacific",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 291850364122,
+        "exportsUsd": 271152836561,
+        "netBalanceUsd": -20697527561,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 41.5
+      },
+      {
+        "year": 2016,
+        "importsUsd": 261827324556,
+        "exportsUsd": 232663011513,
+        "netBalanceUsd": -29164313043,
+        "yoyImportGrowthPct": -10.3,
+        "yoyExportGrowthPct": -14.2,
+        "tradePctGdp": 40.8
+      },
+      {
+        "year": 2017,
+        "importsUsd": 277671313150,
+        "exportsUsd": 281774035050,
+        "netBalanceUsd": 4102721900,
+        "yoyImportGrowthPct": 6.1,
+        "yoyExportGrowthPct": 21.1,
+        "tradePctGdp": 42
+      },
+      {
+        "year": 2018,
+        "importsUsd": 311861687285,
+        "exportsUsd": 312605804111,
+        "netBalanceUsd": 744116826,
+        "yoyImportGrowthPct": 12.3,
+        "yoyExportGrowthPct": 10.9,
+        "tradePctGdp": 43.6
+      },
+      {
+        "year": 2019,
+        "importsUsd": 306786753626,
+        "exportsUsd": 336477593836,
+        "netBalanceUsd": 29690840210,
+        "yoyImportGrowthPct": -1.6,
+        "yoyExportGrowthPct": 7.6,
+        "tradePctGdp": 46
+      },
+      {
+        "year": 2020,
+        "importsUsd": 274154332727,
+        "exportsUsd": 319174580744,
+        "netBalanceUsd": 45020248017,
+        "yoyImportGrowthPct": -10.6,
+        "yoyExportGrowthPct": -5.1,
+        "tradePctGdp": 44.5
+      },
+      {
+        "year": 2021,
+        "importsUsd": 284038962018,
+        "exportsUsd": 343364164706,
+        "netBalanceUsd": 59325202688,
+        "yoyImportGrowthPct": 3.6,
+        "yoyExportGrowthPct": 7.6,
+        "tradePctGdp": 40.2
+      },
+      {
+        "year": 2022,
+        "importsUsd": 343078219088,
+        "exportsUsd": 431732710876,
+        "netBalanceUsd": 88654491788,
+        "yoyImportGrowthPct": 20.8,
+        "yoyExportGrowthPct": 25.7,
+        "tradePctGdp": 45.7
+      },
+      {
+        "year": 2023,
+        "importsUsd": 387533147572,
+        "exportsUsd": 463117015978,
+        "netBalanceUsd": 75583868406,
+        "yoyImportGrowthPct": 13,
+        "yoyExportGrowthPct": 7.3,
+        "tradePctGdp": 49
+      },
+      {
+        "year": 2024,
+        "importsUsd": 395749225409,
+        "exportsUsd": 432605705549,
+        "netBalanceUsd": 36856480140,
+        "yoyImportGrowthPct": 2.1,
+        "yoyExportGrowthPct": -6.6,
+        "tradePctGdp": 47.1
+      }
+    ]
+  },
+  "NLD": {
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "region": "Europe",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 592155905830,
+        "exportsUsd": 651561445020,
+        "netBalanceUsd": 59405539190,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 160.3
+      },
+      {
+        "year": 2016,
+        "importsUsd": 558461399909,
+        "exportsUsd": 644981374821,
+        "netBalanceUsd": 86519974912,
+        "yoyImportGrowthPct": -5.7,
+        "yoyExportGrowthPct": -1,
+        "tradePctGdp": 151
+      },
+      {
+        "year": 2017,
+        "importsUsd": 631649933012,
+        "exportsUsd": 722521486847,
+        "netBalanceUsd": 90871553835,
+        "yoyImportGrowthPct": 13.1,
+        "yoyExportGrowthPct": 12,
+        "tradePctGdp": 159.6
+      },
+      {
+        "year": 2018,
+        "importsUsd": 711271186937,
+        "exportsUsd": 809393154293,
+        "netBalanceUsd": 98121967356,
+        "yoyImportGrowthPct": 12.6,
+        "yoyExportGrowthPct": 12,
+        "tradePctGdp": 163.6
+      },
+      {
+        "year": 2019,
+        "importsUsd": 699981663067,
+        "exportsUsd": 792548771333,
+        "netBalanceUsd": 92567108266,
+        "yoyImportGrowthPct": -1.6,
+        "yoyExportGrowthPct": -2.1,
+        "tradePctGdp": 160.7
+      },
+      {
+        "year": 2020,
+        "importsUsd": 662040850865,
+        "exportsUsd": 757626674439,
+        "netBalanceUsd": 95585823574,
+        "yoyImportGrowthPct": -5.4,
+        "yoyExportGrowthPct": -4.4,
+        "tradePctGdp": 152.2
+      },
+      {
+        "year": 2021,
+        "importsUsd": 808831153930,
+        "exportsUsd": 911591180291,
+        "netBalanceUsd": 102760026361,
+        "yoyImportGrowthPct": 22.2,
+        "yoyExportGrowthPct": 20.3,
+        "tradePctGdp": 163.2
+      },
+      {
+        "year": 2022,
+        "importsUsd": 917438087562,
+        "exportsUsd": 1009321846482,
+        "netBalanceUsd": 91883758920,
+        "yoyImportGrowthPct": 13.4,
+        "yoyExportGrowthPct": 10.7,
+        "tradePctGdp": 184.1
+      },
+      {
+        "year": 2023,
+        "importsUsd": 880497587437,
+        "exportsUsd": 993383113412,
+        "netBalanceUsd": 112885525975,
+        "yoyImportGrowthPct": -4,
+        "yoyExportGrowthPct": -1.6,
+        "tradePctGdp": 165
+      },
+      {
+        "year": 2024,
+        "importsUsd": 867461920495,
+        "exportsUsd": 1001469281570,
+        "netBalanceUsd": 134007361075,
+        "yoyImportGrowthPct": -1.5,
+        "yoyExportGrowthPct": 0.8,
+        "tradePctGdp": 154
+      }
+    ]
+  },
+  "SGP": {
+    "iso3": "SGP",
+    "name": "Singapore",
+    "region": "Southeast Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 465345116651,
+        "exportsUsd": 549421999164,
+        "netBalanceUsd": 84076882513,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 329.5
+      },
+      {
+        "year": 2016,
+        "importsUsd": 441180387768,
+        "exportsUsd": 525391771248,
+        "netBalanceUsd": 84211383480,
+        "yoyImportGrowthPct": -5.2,
+        "yoyExportGrowthPct": -4.4,
+        "tradePctGdp": 301.3
+      },
+      {
+        "year": 2017,
+        "importsUsd": 497980411681,
+        "exportsUsd": 589508336803,
+        "netBalanceUsd": 91527925122,
+        "yoyImportGrowthPct": 12.9,
+        "yoyExportGrowthPct": 12.2,
+        "tradePctGdp": 315.4
+      },
+      {
+        "year": 2018,
+        "importsUsd": 559453294011,
+        "exportsUsd": 671713291846,
+        "netBalanceUsd": 112259997835,
+        "yoyImportGrowthPct": 12.3,
+        "yoyExportGrowthPct": 13.9,
+        "tradePctGdp": 325.7
+      },
+      {
+        "year": 2019,
+        "importsUsd": 555635930735,
+        "exportsUsd": 666302583718,
+        "netBalanceUsd": 110666652983,
+        "yoyImportGrowthPct": -0.7,
+        "yoyExportGrowthPct": -0.8,
+        "tradePctGdp": 324.3
+      },
+      {
+        "year": 2020,
+        "importsUsd": 526490604765,
+        "exportsUsd": 636352158592,
+        "netBalanceUsd": 109861553827,
+        "yoyImportGrowthPct": -5.2,
+        "yoyExportGrowthPct": -4.5,
+        "tradePctGdp": 331.1
+      },
+      {
+        "year": 2021,
+        "importsUsd": 641260365781,
+        "exportsUsd": 799113423839,
+        "netBalanceUsd": 157853058058,
+        "yoyImportGrowthPct": 21.8,
+        "yoyExportGrowthPct": 25.6,
+        "tradePctGdp": 326.5
+      },
+      {
+        "year": 2022,
+        "importsUsd": 746881154042,
+        "exportsUsd": 951421989501,
+        "netBalanceUsd": 204540835459,
+        "yoyImportGrowthPct": 16.5,
+        "yoyExportGrowthPct": 19.1,
+        "tradePctGdp": 330.2
+      },
+      {
+        "year": 2023,
+        "importsUsd": 732376279727,
+        "exportsUsd": 922325317795,
+        "netBalanceUsd": 189949038068,
+        "yoyImportGrowthPct": -1.9,
+        "yoyExportGrowthPct": -3.1,
+        "tradePctGdp": 323.7
+      },
+      {
+        "year": 2024,
+        "importsUsd": 794257214124,
+        "exportsUsd": 1000563674150,
+        "netBalanceUsd": 206306460026,
+        "yoyImportGrowthPct": 8.4,
+        "yoyExportGrowthPct": 8.5,
+        "tradePctGdp": 313.3
+      }
+    ]
+  },
+  "MYS": {
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "region": "Southeast Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 186603344673,
+        "exportsUsd": 209287287857,
+        "netBalanceUsd": 22683943184,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 131.4
+      },
+      {
+        "year": 2016,
+        "importsUsd": 181125866049,
+        "exportsUsd": 201165058575,
+        "netBalanceUsd": 20039192526,
+        "yoyImportGrowthPct": -2.9,
+        "yoyExportGrowthPct": -3.9,
+        "tradePctGdp": 126.9
+      },
+      {
+        "year": 2017,
+        "importsUsd": 201496430250,
+        "exportsUsd": 223413837325,
+        "netBalanceUsd": 21917407075,
+        "yoyImportGrowthPct": 11.2,
+        "yoyExportGrowthPct": 11.1,
+        "tradePctGdp": 133.2
+      },
+      {
+        "year": 2018,
+        "importsUsd": 221902484183,
+        "exportsUsd": 245967590635,
+        "netBalanceUsd": 24065106452,
+        "yoyImportGrowthPct": 10.1,
+        "yoyExportGrowthPct": 10.1,
+        "tradePctGdp": 130.4
+      },
+      {
+        "year": 2019,
+        "importsUsd": 210893037729,
+        "exportsUsd": 238379861290,
+        "netBalanceUsd": 27486823561,
+        "yoyImportGrowthPct": -5,
+        "yoyExportGrowthPct": -3.1,
+        "tradePctGdp": 123
+      },
+      {
+        "year": 2020,
+        "importsUsd": 186310380061,
+        "exportsUsd": 207798540353,
+        "netBalanceUsd": 21488160292,
+        "yoyImportGrowthPct": -11.7,
+        "yoyExportGrowthPct": -12.8,
+        "tradePctGdp": 116.8
+      },
+      {
+        "year": 2021,
+        "importsUsd": 236990392678,
+        "exportsUsd": 264015450976,
+        "netBalanceUsd": 27025058298,
+        "yoyImportGrowthPct": 27.2,
+        "yoyExportGrowthPct": 27.1,
+        "tradePctGdp": 134
+      },
+      {
+        "year": 2022,
+        "importsUsd": 283918591272,
+        "exportsUsd": 313245644474,
+        "netBalanceUsd": 29327053202,
+        "yoyImportGrowthPct": 19.8,
+        "yoyExportGrowthPct": 18.6,
+        "tradePctGdp": 146.4
+      },
+      {
+        "year": 2023,
+        "importsUsd": 255625703550,
+        "exportsUsd": 274681075590,
+        "netBalanceUsd": 19055372040,
+        "yoyImportGrowthPct": -10,
+        "yoyExportGrowthPct": -12.3,
+        "tradePctGdp": 132.6
+      },
+      {
+        "year": 2024,
+        "importsUsd": 278760544031,
+        "exportsUsd": 301221326764,
+        "netBalanceUsd": 22460782733,
+        "yoyImportGrowthPct": 9.1,
+        "yoyExportGrowthPct": 9.7,
+        "tradePctGdp": 137.4
+      }
+    ]
+  },
+  "VNM": {
+    "iso3": "VNM",
+    "name": "Viet Nam",
+    "region": "Southeast Asia",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 172245363654,
+        "exportsUsd": 174473996313,
+        "netBalanceUsd": 2228632659,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 144.9
+      },
+      {
+        "year": 2016,
+        "importsUsd": 183315160787,
+        "exportsUsd": 190526869545,
+        "netBalanceUsd": 7211708758,
+        "yoyImportGrowthPct": 6.4,
+        "yoyExportGrowthPct": 9.2,
+        "tradePctGdp": 145.4
+      },
+      {
+        "year": 2017,
+        "importsUsd": 222881466765,
+        "exportsUsd": 230041803530,
+        "netBalanceUsd": 7160336765,
+        "yoyImportGrowthPct": 21.6,
+        "yoyExportGrowthPct": 20.7,
+        "tradePctGdp": 161
+      },
+      {
+        "year": 2018,
+        "importsUsd": 248830928923,
+        "exportsUsd": 261802606599,
+        "netBalanceUsd": 12971677676,
+        "yoyImportGrowthPct": 11.6,
+        "yoyExportGrowthPct": 13.8,
+        "tradePctGdp": 164.7
+      },
+      {
+        "year": 2019,
+        "importsUsd": 265976296626,
+        "exportsUsd": 284737397483,
+        "netBalanceUsd": 18761100857,
+        "yoyImportGrowthPct": 6.9,
+        "yoyExportGrowthPct": 8.8,
+        "tradePctGdp": 164.7
+      },
+      {
+        "year": 2020,
+        "importsUsd": 273355953900,
+        "exportsUsd": 292479899129,
+        "netBalanceUsd": 19123945229,
+        "yoyImportGrowthPct": 2.8,
+        "yoyExportGrowthPct": 2.7,
+        "tradePctGdp": 163.2
+      },
+      {
+        "year": 2021,
+        "importsUsd": 340182482326,
+        "exportsUsd": 343937314546,
+        "netBalanceUsd": 3754832220,
+        "yoyImportGrowthPct": 24.4,
+        "yoyExportGrowthPct": 17.6,
+        "tradePctGdp": 186.7
+      },
+      {
+        "year": 2022,
+        "importsUsd": 370998835149,
+        "exportsUsd": 386241068015,
+        "netBalanceUsd": 15242232866,
+        "yoyImportGrowthPct": 9.1,
+        "yoyExportGrowthPct": 12.3,
+        "tradePctGdp": 183.2
+      },
+      {
+        "year": 2023,
+        "importsUsd": 339491142718,
+        "exportsUsd": 376268017649,
+        "netBalanceUsd": 36776874931,
+        "yoyImportGrowthPct": -8.5,
+        "yoyExportGrowthPct": -2.6,
+        "tradePctGdp": 165
+      },
+      {
+        "year": 2024,
+        "importsUsd": 398774125641,
+        "exportsUsd": 429484097217,
+        "netBalanceUsd": 30709971576,
+        "yoyImportGrowthPct": 17.5,
+        "yoyExportGrowthPct": 14.1,
+        "tradePctGdp": 173.9
+      }
+    ]
+  },
+  "ZAF": {
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "region": "Africa",
+    "timeSeries": [
+      {
+        "year": 2015,
+        "importsUsd": 100591042327,
+        "exportsUsd": 96085897668,
+        "netBalanceUsd": -4505144659,
+        "yoyImportGrowthPct": 0,
+        "yoyExportGrowthPct": 0,
+        "tradePctGdp": 56.7
+      },
+      {
+        "year": 2016,
+        "importsUsd": 89649913399,
+        "exportsUsd": 91109021409,
+        "netBalanceUsd": 1459108010,
+        "yoyImportGrowthPct": -10.9,
+        "yoyExportGrowthPct": -5.2,
+        "tradePctGdp": 55.9
+      },
+      {
+        "year": 2017,
+        "importsUsd": 99923782384,
+        "exportsUsd": 104288394993,
+        "netBalanceUsd": 4364612609,
+        "yoyImportGrowthPct": 11.5,
+        "yoyExportGrowthPct": 14.5,
+        "tradePctGdp": 53.5
+      },
+      {
+        "year": 2018,
+        "importsUsd": 109373822795,
+        "exportsUsd": 111434691806,
+        "netBalanceUsd": 2060869011,
+        "yoyImportGrowthPct": 9.5,
+        "yoyExportGrowthPct": 6.9,
+        "tradePctGdp": 54.5
+      },
+      {
+        "year": 2019,
+        "importsUsd": 103935027605,
+        "exportsUsd": 105906059179,
+        "netBalanceUsd": 1971031574,
+        "yoyImportGrowthPct": -5,
+        "yoyExportGrowthPct": -5,
+        "tradePctGdp": 53.9
+      },
+      {
+        "year": 2020,
+        "importsUsd": 78355182004,
+        "exportsUsd": 93199600859,
+        "netBalanceUsd": 14844418855,
+        "yoyImportGrowthPct": -24.6,
+        "yoyExportGrowthPct": -12,
+        "tradePctGdp": 50.8
+      },
+      {
+        "year": 2021,
+        "importsUsd": 104883607898,
+        "exportsUsd": 131000485997,
+        "netBalanceUsd": 26116878099,
+        "yoyImportGrowthPct": 33.9,
+        "yoyExportGrowthPct": 40.6,
+        "tradePctGdp": 56.2
+      },
+      {
+        "year": 2022,
+        "importsUsd": 128016518313,
+        "exportsUsd": 136705431597,
+        "netBalanceUsd": 8688913284,
+        "yoyImportGrowthPct": 22.1,
+        "yoyExportGrowthPct": 4.4,
+        "tradePctGdp": 64.9
+      },
+      {
+        "year": 2023,
+        "importsUsd": 123686210464,
+        "exportsUsd": 126843584296,
+        "netBalanceUsd": 3157373832,
+        "yoyImportGrowthPct": -3.4,
+        "yoyExportGrowthPct": -7.2,
+        "tradePctGdp": 65.7
+      },
+      {
+        "year": 2024,
+        "importsUsd": 119761291334,
+        "exportsUsd": 127531645077,
+        "netBalanceUsd": 7770353743,
+        "yoyImportGrowthPct": -3.2,
+        "yoyExportGrowthPct": 0.5,
+        "tradePctGdp": 61.6
+      }
+    ]
+  }
+}

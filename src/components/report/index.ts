@@ -1,4 +1,5 @@
 export * from './AdvisorNotesPanel';
+export * from './CountryTradeHistoryDashboard';
 export * from './CriticalGapAnalyzer';
 export * from './LandedCostSolver';
 export * from './LogisticsTrackerMap';
