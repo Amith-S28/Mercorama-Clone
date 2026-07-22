@@ -47,7 +47,7 @@ function getNomenclature(): HsSearchResult[] {
   };
   if (!globalCache[CACHE_KEY]) {
     try {
-      const filePath = path.join(process.cwd(), 'src', 'data', 'hs_codes.csv');
+      const filePath = path.join(process.cwd(), 'src', 'data', 'official_hs_nomenclature.csv');
       const content = fs.readFileSync(filePath, 'utf-8');
       const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
       const entries: HsSearchResult[] = [];

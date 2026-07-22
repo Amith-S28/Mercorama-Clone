@@ -1,6 +1,5 @@
 import type { CountryProfileFallback } from '@/types';
-import witsSummaries from '@/data/wits_country_summaries.json';
-import witsTrends from '@/data/wits_country_trends.json';
+import historyData from '@/data/country_trade_history.json';
 
 const MONTHS = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -122,14 +121,6 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
   },
 };
 
-interface WitsCountrySummary {
-  countryIso3: string;
-  countryName: string;
-  year: number;
-  totalImportsUsd: number;
-  tariffWeightedAll: number;
-  exchangeRateLcuPerUsd: number;
-}
 
 export function getCountryFallback(iso3: string): CountryProfileFallback {
   const key = iso3.toUpperCase();
@@ -155,14 +146,12 @@ export function getCountryFallback(iso3: string): CountryProfileFallback {
     seasonality: seasonality(6),
   };
 
-  const witsRecord = (witsSummaries as Record<string, WitsCountrySummary>)[key];
-  if (witsRecord) {
+  const tradeEntry = (historyData as Record<string, { timeSeries: { year: number; importsUsd: number }[] }>)[key];
+  if (tradeEntry && tradeEntry.timeSeries.length > 0) {
+    const latest = tradeEntry.timeSeries[tradeEntry.timeSeries.length - 1];
     return {
       ...base,
-      name: witsRecord.countryName,
-      tariffRateDefault: witsRecord.tariffWeightedAll > 0 ? witsRecord.tariffWeightedAll / 100 : base.tariffRateDefault,
-      comtradeImportVolumeUsd: witsRecord.totalImportsUsd > 0 ? witsRecord.totalImportsUsd : base.comtradeImportVolumeUsd,
-      fxRateFromCad: witsRecord.exchangeRateLcuPerUsd > 0 ? witsRecord.exchangeRateLcuPerUsd / 1.35 : base.fxRateFromCad,
+      comtradeImportVolumeUsd: latest.importsUsd > 0 ? latest.importsUsd : base.comtradeImportVolumeUsd,
     };
   }
 
@@ -171,7 +160,9 @@ export function getCountryFallback(iso3: string): CountryProfileFallback {
 
 export function getWitsCountryTrend(iso3: string): { year: number; value: number }[] {
   const key = iso3.toUpperCase();
-  return (witsTrends as Record<string, { year: number; value: number }[]>)[key] ?? [];
+  const tradeEntry = (historyData as Record<string, { timeSeries: { year: number; importsUsd: number }[] }>)[key];
+  if (!tradeEntry) return [];
+  return tradeEntry.timeSeries.map((t) => ({ year: t.year, value: t.importsUsd }));
 }
 
 export function mockComtradePayload(hsCode: string, country: string) {
