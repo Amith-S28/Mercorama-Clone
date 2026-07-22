@@ -2,12 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Building2, Loader2, Package, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Building2, Loader2, Package, X } from '@/components/ui/icons';
 import type { IndustrySector, SmeRecord } from '@/types';
 import { SectorSelector } from '@/components/onboarding/SectorSelector';
 import { CountrySelect } from '@/components/onboarding/CountrySelect';
 import { HsCodeSearch } from '@/components/onboarding/HsCodeSearch';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { buttonSpring, smooth, snappy } from '@/lib/animation/presets';
 
 export interface SmeOnboardingPayload {

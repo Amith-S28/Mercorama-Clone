@@ -1,10 +1,10 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from '@/components/ui/icons';
 import { AnimatePresence, motion } from 'motion/react';
 import { ApiStatusBadge } from '@/components/health/ApiStatusBadge';
-import { Loader } from '@/components/ui/crazxy/Loader';
+import { Loader } from '@/components/ui/Loader';
 import type { ApiHealthStatus, ApiServiceHealth, ApiServiceId } from '@/types';
 
 const SERVICE_ORDER: ApiServiceId[] = [

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Early Access — Mercorama | AI-Powered Trade Intelligence</title>
+  <meta name="description" content="Apply for founding member early access to Mercorama — AI-powered trade intelligence for Canadian SMEs. Locked pricing, features keep shipping.">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --navy:       #0B1F3A;
+      --navy-mid:   #152d52;
+      --teal:       #009CA6;
+      --teal-dark:  #007D87;
+      --teal-light: #E6F7F8;
+      --bg:         #FFFFFF;
+      --light-bg:   #F0F4F8;
+      --text:       #0B1F3A;
+      --muted:      #5A6A7A;
+      --border:     #DDE3EA;
+      --wide:       1200px;
+      --font-head:  'Plus Jakarta Sans', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; font-family: var(--font-body); border: none; }
+
+    /* ── SOLUTIONS DROPDOWN ── */
+    .nav-has-drop { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 4px; font-size: var(--text-sm); font-weight: 500; color: var(--muted); cursor: default; }
+    .nav-drop-trigger:hover { color: var(--navy); }
+    .nav-drop-trigger svg.chevron { width: 14px; height: 14px; transition: transform var(--transition); }
+    .nav-has-drop:hover .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(11,31,58,0.12); padding: 0.375rem; min-width: 220px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--transition), transform var(--transition); }
+    .nav-has-drop:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: flex; align-items: center; gap: 0.875rem; padding: 0.7rem 0.875rem; border-radius: 8px; transition: background var(--transition); color: var(--text); text-decoration: none; }
+    .nav-drop-item:hover, .nav-drop-item.active { background: var(--light-bg); }
+    .nav-drop-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; background: var(--teal-light); border: 1px solid rgba(0,156,166,0.2); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+    .nav-drop-icon svg { width: 16px; height: 16px; }
+    .nav-drop-title { font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .nav-drop-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--wide); margin: 0 auto;
+      padding: 0 2rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .nav-logo img { height: clamp(48px,6vw,80px); width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-ctas { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.875rem; font-weight: 700;
+      white-space: nowrap; transition: all var(--transition);
+    }
+    .btn-primary { background: var(--teal); color: white; border: 2px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border); padding: 1rem 2rem 1.5rem; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .nav-mobile a:hover { color: var(--teal); }
+    .nav-mobile-ctas { margin-top: 1rem; }
+
+    /* ── FOOTER ── */
+    .footer { background: #F0F4F8; padding: 3rem 2rem 0; }
+    .footer-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 200px repeat(6, 1fr);
+      gap: 1.5rem; padding-bottom: 2.5rem;
+    }
+    .footer-brand-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-brand-col img { height: 64px; width: auto; display: block; margin-bottom: 0.5rem; }
+    .footer-powered { font-size: 0.68rem; color: var(--muted); }
+    .footer-col-head { font-family: var(--font-head); font-size: var(--text-xs); font-weight: 700; color: var(--navy); margin-bottom: 0.875rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-link { font-size: var(--text-xs); color: #4A5568; }
+    .footer-link:hover { color: var(--navy); }
+    .footer-social-icons { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+    .footer-social-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy); transition: all var(--transition);
+    }
+    .footer-social-icon:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .footer-social-icon svg { width: 16px; height: 16px; }
+    .footer-bottom { background: var(--navy); margin: 0 -2rem; padding: 1.1rem 2rem; }
+    .footer-bottom-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 1rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.85);
+    }
+    .footer-bottom-center { color: white; font-weight: 500; white-space: nowrap; }
+    .footer-bottom-right { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; }
+    .footer-bottom-right a { color: rgba(255,255,255,0.85); }
+    .footer-bottom-right a:hover { color: white; }
+    .footer-bottom-divider { color: rgba(255,255,255,0.3); }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar { background: var(--teal); padding: 0.6rem 2rem; text-align: center; }
+    .announce-bar-inner { max-width: var(--wide); margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: var(--text-xs); font-weight: 600; color: white; flex-wrap: wrap; }
+    .announce-bar a { color: white; text-decoration: underline; text-underline-offset: 2px; font-weight: 700; }
+    .announce-bar a:hover { opacity: 0.85; }
+
+    /* ── BETA HERO ── */
+    .beta-hero { background: var(--navy); padding: 5rem 2rem 4rem; position: relative; overflow: hidden; }
+    .beta-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%, rgba(0,156,166,0.18) 0%, transparent 55%), radial-gradient(ellipse at 10% 80%, rgba(0,156,166,0.10) 0%, transparent 50%); pointer-events: none; }
+    .beta-hero-inner { max-width: var(--wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+    .beta-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); background: rgba(0,156,166,0.12); border: 1px solid rgba(0,156,166,0.25); border-radius: 20px; padding: 0.3rem 0.875rem; margin-bottom: 1.5rem; }
+    .beta-eyebrow svg { width: 13px; height: 13px; }
+    .beta-hero h1 { font-family: var(--font-head); font-size: clamp(1.8rem, 1.2rem + 2.2vw, 3rem); font-weight: 800; color: white; line-height: 1.1; margin-bottom: 1.25rem; }
+    .beta-hero h1 em { font-style: normal; color: var(--teal); }
+    .beta-hero-desc { font-size: var(--text-sm); color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 50ch; margin-bottom: 2rem; }
+    .beta-trust-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .beta-trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: var(--text-xs); color: rgba(255,255,255,0.5); }
+    .beta-trust-item svg { width: 13px; height: 13px; color: var(--teal); }
+
+    /* ── COUNTDOWN ── */
+    .countdown-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; backdrop-filter: blur(8px); }
+    .countdown-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; text-align: center; }
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.5rem; }
+    .countdown-unit { text-align: center; }
+    .countdown-num { font-family: var(--font-head); font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 800; color: white; line-height: 1; display: block; }
+    .countdown-unit-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.3rem; display: block; }
+    .countdown-sep { display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: rgba(255,255,255,0.3); padding-top: 0.1rem; }
+    .btn-apply-hero { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 0.875rem 2rem; border-radius: 10px; font-family: var(--font-head); font-size: 1rem; font-weight: 700; background: var(--teal); color: white; border: 2px solid var(--teal); cursor: pointer; transition: all var(--transition); text-decoration: none; margin-bottom: 0.75rem; }
+    .btn-apply-hero:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .countdown-note { text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.4); }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: linear-gradient(to bottom, var(--navy) 0%, #0e2840 100%); padding: 0 2rem 3.5rem; }
+    .stats-bar-inner { max-width: var(--wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 3rem; }
+    .stat-card { text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; }
+    .stat-value { font-family: var(--font-head); font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 800; color: white; line-height: 1; margin-bottom: 0.5rem; }
+    .stat-value em { font-style: normal; color: var(--teal); }
+    .stat-desc { font-size: var(--text-xs); color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+    /* ── TOOLS SECTION ── */
+    .tools-section { background: var(--light-bg); padding: 5rem 2rem; }
+    .tools-inner { max-width: var(--wide); margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .section-header h2 { font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 0.75rem; }
+    .section-header p { font-size: var(--text-sm); color: var(--muted); max-width: 52ch; margin: 0 auto; line-height: 1.65; }
+    .section-divider { width: 40px; height: 3px; background: var(--teal); border-radius: 2px; margin: 0.875rem auto 0; }
+    .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .tool-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow var(--transition), border-color var(--transition); }
+    .tool-card:hover { box-shadow: 0 6px 24px rgba(11,31,58,0.10); border-color: rgba(0,156,166,0.25); }
+    .tool-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--teal-light); border: 1px solid rgba(0,156,166,0.2); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+    .tool-card-icon svg { width: 20px; height: 20px; }
+    .tool-card-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-dark); background: var(--teal-light); border-radius: 4px; padding: 0.15rem 0.45rem; align-self: flex-start; }
+    .tool-card h3 { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .tool-card p { font-size: var(--text-xs); color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--bg); padding: 5rem 2rem; }
+    .pricing-inner { max-width: var(--wide); margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+    .pricing-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; }
+    .pricing-card.featured { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 12px 40px rgba(0,156,166,0.12); }
+    .pricing-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--teal); color: white; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 1rem; border-radius: 20px; white-space: nowrap; }
+    .pricing-top { display: flex; flex-direction: column; gap: 0.5rem; }
+    .pricing-tier { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .pricing-plan { font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800; color: var(--navy); line-height: 1; }
+    .pricing-rate-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.68rem; font-weight: 700; background: #dcfce7; color: #166534; border-radius: 6px; padding: 0.2rem 0.5rem; margin-top: 0.25rem; align-self: flex-start; }
+    .pricing-rate-badge svg { width: 12px; height: 12px; }
+    .pricing-avail { display: inline-flex; align-items: center; gap: 4px; font-size: 0.68rem; font-weight: 700; background: var(--teal-light); color: var(--teal-dark); border-radius: 6px; padding: 0.2rem 0.5rem; }
+    .pricing-divider { height: 1px; background: var(--border); }
+    .pricing-features { display: flex; flex-direction: column; gap: 0.625rem; }
+    .pricing-feature { display: flex; align-items: flex-start; gap: 0.625rem; }
+    .pricing-feature svg.check { width: 15px; height: 15px; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+    .pricing-feature svg.cross { width: 15px; height: 15px; color: var(--muted); opacity: 0.4; flex-shrink: 0; margin-top: 1px; }
+    .pricing-feature-text { flex: 1; }
+    .pricing-feature-name { font-size: var(--text-xs); font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .pricing-feature-desc { font-size: 0.7rem; color: var(--muted); line-height: 1.45; margin-top: 1px; }
+    .pricing-feature-locked { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; color: var(--muted); opacity: 0.6; margin-top: 1px; }
+    .pricing-coming { margin-top: 0.5rem; }
+    .pricing-coming-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--border); }
+    .pricing-cta { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 0.75rem 2rem; border-radius: 10px; font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all var(--transition); text-decoration: none; margin-top: auto; border: 2px solid var(--teal); }
+    .pricing-cta.primary { background: var(--teal); color: white; }
+    .pricing-cta.primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .pricing-cta.outline { background: transparent; color: var(--navy); }
+    .pricing-cta.outline:hover { background: var(--light-bg); }
+    .pricing-support { text-align: center; font-size: var(--text-xs); color: var(--muted); margin-top: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
+    .pricing-support svg { width: 13px; height: 13px; }
+
+    /* ── APPLICATION FORM ── */
+    .apply-section { background: var(--light-bg); padding: 5rem 2rem; }
+    .apply-section-inner { max-width: 620px; margin: 0 auto; }
+    .apply-form-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 32px rgba(11,31,58,0.08); }
+    .apply-step-indicator { display: flex; align-items: center; gap: 0; margin-bottom: 2.25rem; }
+    .apply-step { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; flex: 1; position: relative; }
+    .apply-step:not(:last-child)::after { content: ''; position: absolute; top: 16px; left: calc(50% + 16px); right: calc(-50% + 16px); height: 2px; background: var(--border); z-index: 0; }
+    .apply-step.completed:not(:last-child)::after { background: var(--teal); }
+    .apply-step-circle { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; color: var(--muted); position: relative; z-index: 1; transition: all var(--transition); }
+    .apply-step.active .apply-step-circle { border-color: var(--teal); background: var(--teal); color: white; }
+    .apply-step.completed .apply-step-circle { border-color: var(--teal); background: var(--teal); color: white; }
+    .apply-step-label { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-align: center; }
+    .apply-step.active .apply-step-label { color: var(--navy); }
+    .apply-step.completed .apply-step-label { color: var(--teal-dark); }
+    .apply-form-title { font-family: var(--font-head); font-size: var(--text-lg); font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
+    .apply-form-sub { font-size: var(--text-xs); color: var(--muted); margin-bottom: 1.75rem; line-height: 1.55; }
+    .apply-form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .apply-form-group:last-of-type { margin-bottom: 0; }
+    .apply-form-label { font-size: var(--text-xs); font-weight: 600; color: var(--navy); }
+    .apply-form-label .req { color: var(--teal); }
+    .apply-form-input { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.65rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; transition: border-color var(--transition); }
+    .apply-form-input:focus { border-color: var(--teal); }
+    .apply-form-input::placeholder { color: var(--muted); }
+    .apply-form-select { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.65rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; background: white; cursor: pointer; transition: border-color var(--transition); }
+    .apply-form-select:focus { border-color: var(--teal); }
+    .apply-form-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .btn-form-next { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 2rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: var(--teal); color: white; border: 2px solid var(--teal); cursor: pointer; transition: all var(--transition); }
+    .btn-form-next:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .btn-form-prev { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 1.5rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: transparent; color: var(--navy); border: 2px solid var(--border); cursor: pointer; transition: all var(--transition); }
+    .btn-form-prev:hover { border-color: var(--navy); }
+    .apply-note { text-align: center; font-size: var(--text-xs); color: var(--muted); margin-top: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
+    .apply-note svg { width: 13px; height: 13px; color: var(--teal); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-inner { grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-ctas { display: none; }
+      .nav-hamburger { display: flex; }
+      .beta-hero-inner { grid-template-columns: 1fr; }
+      .countdown-card { max-width: 400px; }
+      .stats-bar-inner { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .apply-form-card { padding: 1.5rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .footer-bottom-inner { grid-template-columns: 1fr; text-align: center; gap: 0.5rem; }
+      .footer-bottom-right { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .tools-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer { padding: 2rem 1rem 0; }
+      .footer-bottom { margin: 0 -1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="announce-bar">
+  <div class="announce-bar-inner">
+    <svg data-lucide="zap" style="width:14px;height:14px"></svg>
+    <span>Founding member applications are open — <a href="#apply-form">Apply before spots close →</a></span>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/new/home.html" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/new/home.html">Home</a></li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Solutions <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/solutions/foodbeverage.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="shopping-bag"></svg></div>
+            <div>
+              <div class="nav-drop-title">Food &amp; Beverage</div>
+              <div class="nav-drop-sub">CPG export intelligence</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Experts <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/experts.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="help-circle"></svg></div>
+            <div>
+              <div class="nav-drop-title">Why Experts?</div>
+              <div class="nav-drop-sub">The case for human guidance</div>
+            </div>
+          </a>
+          <a href="/new/experts/search.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="search"></svg></div>
+            <div>
+              <div class="nav-drop-title">Find Experts</div>
+              <div class="nav-drop-sub">Browse by country or industry</div>
+            </div>
+          </a>
+          <a href="/new/experts/join.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="user-plus"></svg></div>
+            <div>
+              <div class="nav-drop-title">Join as Expert</div>
+              <div class="nav-drop-sub">Apply to the network</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">About <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/about.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="flag"></svg></div>
+            <div>
+              <div class="nav-drop-title">Mission</div>
+              <div class="nav-drop-sub">Our story and values</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li><a href="/new/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="#apply-form" class="btn btn-primary">Apply for Access</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/new/home.html">Home</a>
+    <a href="/new/solutions/foodbeverage.html">Food &amp; Beverage</a>
+    <a href="/new/experts.html">Why Experts?</a>
+    <a href="/new/experts/search.html">Find Experts</a>
+    <a href="/new/experts/join.html">Join as Expert</a>
+    <a href="/new/about.html">About</a>
+    <a href="/new/contact.html">Contact</a>
+    <div class="nav-mobile-ctas" style="margin-top:1rem;">
+      <a href="#apply-form" class="btn btn-primary" style="width:100%;justify-content:center;">Apply for Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── BETA HERO ── -->
+<section class="beta-hero">
+  <div class="beta-hero-inner">
+    <div class="beta-hero-left">
+      <div class="beta-eyebrow"><svg data-lucide="lock"></svg> Founding Member Access · Early Access Open</div>
+      <h1>Know exactly where your product sells —<em>before you spend a dollar on export.</em></h1>
+      <p class="beta-hero-desc">Mercorama gives Canadian SMEs AI-powered market intelligence: demand signals, landed costs, and HS code analysis — in minutes, not months.</p>
+      <div class="beta-trust-row">
+        <div class="beta-trust-item"><svg data-lucide="database"></svg> Stats Canada · UN Comtrade data</div>
+        <div class="beta-trust-item"><svg data-lucide="map-pin"></svg> Built in Bedford, Nova Scotia</div>
+        <div class="beta-trust-item"><svg data-lucide="clock"></svg> Response within 48 hours</div>
+        <div class="beta-trust-item"><svg data-lucide="credit-card"></svg> No credit card required</div>
+      </div>
+    </div>
+    <div class="beta-hero-right">
+      <div class="countdown-card">
+        <div class="countdown-label"><svg data-lucide="timer" style="width:13px;height:13px;display:inline;margin-right:4px"></svg> Founding Rate Closes In</div>
+        <div class="countdown-grid">
+          <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-unit-label">Days</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-unit-label">Hours</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-unit-label">Minutes</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-unit-label">Seconds</span></div>
+        </div>
+        <a href="#apply-form" class="btn-apply-hero"><svg data-lucide="send" style="width:16px;height:16px"></svg> Apply for Early Access</a>
+        <div class="countdown-note">We review every application personally</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-card">
+      <div class="stat-value">25<em>%+</em></div>
+      <div class="stat-desc">Canadian goods facing active US tariff exposure need new market routes now</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">$28<em>B</em></div>
+      <div class="stat-desc">In underserved trade corridors across South America, Southeast Asia, and Gulf states</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">48<em>hr</em></div>
+      <div class="stat-desc">From application approval to your first market intelligence report</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLS SECTION ── -->
+<section class="tools-section">
+  <div class="tools-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">What You Get</div>
+      <h2>Tools available from day one,<br>plus more shipping every two weeks.</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="tag"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>HS Code Assistant</h3>
+        <p>Classify your products accurately — audit-ready from day one with GRI-based reasoning and duty rates.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="file-check"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>Incoterms Analyzer</h3>
+        <p>Understand your trade terms and obligations for every shipment — plain-language breakdown of risk and cost.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="file-text"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>Deal Summary Generator</h3>
+        <p>Export-ready deal summaries built from your product and market inputs — ready for advisor or buyer review.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="wand-2"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>Deal Wizard</h3>
+        <p>Full landed cost calculator before you commit to any market — end-to-end from HS code to deal summary.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="compass"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>Export Compass</h3>
+        <p>Find your best international markets — scored using Stats Canada and UN Comtrade demand, FTA access, and risk data.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="package"></svg></div>
+        <div class="tool-card-badge">Day One</div>
+        <h3>Freight Connect</h3>
+        <p>Match with CIFFA-verified freight forwarders by lane, shipping mode, and HS chapter — receive quotes directly.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="landmark"></svg></div>
+        <div class="tool-card-badge">Growth</div>
+        <h3>FTA Diversify Wizard</h3>
+        <p>Find the best Free Trade Agreement rate across active Canadian FTAs — see duty savings by market.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon"><svg data-lucide="banknote"></svg></div>
+        <div class="tool-card-badge">Growth</div>
+        <h3>Fund My Export</h3>
+        <p>Identify BDC, EDC, and federal/provincial grant programs matched to your specific export scenario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING SECTION ── -->
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Founding Member Access</div>
+      <h2>Locked pricing. Features keep shipping.<br>Your rate stays fixed for 12 months.</h2>
+      <p>Applications close when founding cohort is full.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- STARTER -->
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-plan">Founding Rate</div>
+          <div class="pricing-avail"><svg data-lucide="check-circle" style="width:12px;height:12px"></svg> Available Now</div>
+        </div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">HS Code Assistant</div><div class="pricing-feature-desc">Classify products accurately — duty rates, misclassification risks, GRI reasoning</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Incoterms Analyzer</div><div class="pricing-feature-desc">Recommended Incoterm with plain-language breakdown of who pays and who bears risk</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Deal Summary Generator</div><div class="pricing-feature-desc">Export-ready deal summaries from product, buyer, and market inputs</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Deal Wizard</div><div class="pricing-feature-desc">Full landed-cost estimate end-to-end in one flow</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Export Compass</div><div class="pricing-feature-desc">Score and rank international markets using Stats Canada + UN Comtrade data</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Freight Connect</div><div class="pricing-feature-desc">Match with CIFFA-verified forwarders by lane, mode, and HS chapter</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="x" class="cross"></svg><div class="pricing-feature-text"><div class="pricing-feature-name" style="color:var(--muted)">FTA Diversify</div><div class="pricing-feature-locked">Growth only</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="x" class="cross"></svg><div class="pricing-feature-text"><div class="pricing-feature-name" style="color:var(--muted)">Fund My Export</div><div class="pricing-feature-locked">Growth only</div></div></div>
+        </div>
+        <div class="pricing-support"><svg data-lucide="mail"></svg> Support: Email</div>
+        <a href="#apply-form" class="pricing-cta outline">Apply — Starter <svg data-lucide="arrow-right" style="width:15px;height:15px"></svg></a>
+      </div>
+
+      <!-- GROWTH (featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-top">
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-plan">Founding Rate</div>
+          <div class="pricing-avail"><svg data-lucide="check-circle" style="width:12px;height:12px"></svg> Available Now</div>
+        </div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">HS Code Assistant</div><div class="pricing-feature-desc">Classify products accurately — duty rates, misclassification risks, GRI reasoning</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Incoterms Analyzer</div><div class="pricing-feature-desc">Recommended Incoterm with plain-language breakdown of who pays and who bears risk</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Deal Summary Generator</div><div class="pricing-feature-desc">Export-ready deal summaries from product, buyer, and market inputs</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Deal Wizard</div><div class="pricing-feature-desc">Full landed-cost estimate end-to-end in one flow</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Export Compass</div><div class="pricing-feature-desc">Score and rank international markets using Stats Canada + UN Comtrade data</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Freight Connect</div><div class="pricing-feature-desc">Match with CIFFA-verified forwarders by lane, mode, and HS chapter</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">FTA Diversify</div><div class="pricing-feature-desc">Best FTA rate for your product across all active Canadian FTAs — duty savings by market</div></div></div>
+          <div class="pricing-feature"><svg data-lucide="check" class="check"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Fund My Export</div><div class="pricing-feature-desc">BDC, EDC, and federal/provincial grant programs matched to your scenario</div></div></div>
+        </div>
+        <div class="pricing-coming">
+          <div class="pricing-coming-title">Coming During Your Lock — Enabled Automatically</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><svg data-lucide="clock" style="width:15px;height:15px;color:var(--teal);flex-shrink:0;margin-top:1px"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Tariff Engine</div><div class="pricing-feature-desc">Live duty rates and FTA savings updated from official tariff schedules</div></div></div>
+            <div class="pricing-feature"><svg data-lucide="clock" style="width:15px;height:15px;color:var(--teal);flex-shrink:0;margin-top:1px"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">Buyer Intelligence</div><div class="pricing-feature-desc">Find verified distributors and buyers in target markets</div></div></div>
+            <div class="pricing-feature"><svg data-lucide="clock" style="width:15px;height:15px;color:var(--teal);flex-shrink:0;margin-top:1px"></svg><div class="pricing-feature-text"><div class="pricing-feature-name">AI HS Classifier + GRI Reasoning</div><div class="pricing-feature-desc">Full 10-digit HS classification with complete legal reasoning trail</div></div></div>
+          </div>
+        </div>
+        <div class="pricing-support"><svg data-lucide="headphones"></svg> Support: Priority + onboarding call</div>
+        <a href="#apply-form" class="pricing-cta primary">Apply — Growth <svg data-lucide="arrow-right" style="width:15px;height:15px"></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── APPLICATION FORM ── -->
+<section class="apply-section" id="apply-form">
+  <div class="apply-section-inner">
+    <div class="section-header" style="margin-bottom:2.5rem">
+      <div class="section-eyebrow">Founding Member Application</div>
+      <h2>Apply for Early Access</h2>
+      <p>Locked pricing. Features keep shipping. Your rate stays fixed for 12 months.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="apply-form-card">
+      <!-- Step Indicator -->
+      <div class="apply-step-indicator">
+        <div class="apply-step active" id="astep1-ind">
+          <div class="apply-step-circle">1</div>
+          <div class="apply-step-label">About You</div>
+        </div>
+        <div class="apply-step" id="astep2-ind">
+          <div class="apply-step-circle">2</div>
+          <div class="apply-step-label">Export Context</div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div id="astep1">
+        <div class="apply-form-title">About You</div>
+        <div class="apply-form-sub">Tell us who you are and where you are based.</div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Full Name <span class="req">*</span></label>
+          <input class="apply-form-input" type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Work Email <span class="req">*</span></label>
+          <input class="apply-form-input" type="email" placeholder="jane@company.ca" />
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Company Name <span class="req">*</span></label>
+          <input class="apply-form-input" type="text" placeholder="Acme Export Co." />
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Province / Territory <span class="req">*</span></label>
+          <select class="apply-form-select">
+            <option value="">Select province…</option>
+            <option>Alberta (AB)</option>
+            <option>British Columbia (BC)</option>
+            <option>Manitoba (MB)</option>
+            <option>New Brunswick (NB)</option>
+            <option>Newfoundland and Labrador (NL)</option>
+            <option>Northwest Territories (NT)</option>
+            <option>Nova Scotia (NS)</option>
+            <option>Nunavut (NU)</option>
+            <option>Ontario (ON)</option>
+            <option>Prince Edward Island (PE)</option>
+            <option>Quebec (QC)</option>
+            <option>Saskatchewan (SK)</option>
+            <option>Yukon (YT)</option>
+          </select>
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Website URL</label>
+          <input class="apply-form-input" type="url" placeholder="https://" />
+        </div>
+        <div class="apply-form-actions">
+          <button class="btn-form-next" onclick="goApplyStep(2)">Continue <svg data-lucide="arrow-right" style="width:15px;height:15px"></svg></button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="astep2" style="display:none">
+        <div class="apply-form-title">Export Context</div>
+        <div class="apply-form-sub">Help us understand your export goals so we can set up your account for success.</div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">What products do you export or plan to export? <span class="req">*</span></label>
+          <input class="apply-form-input" type="text" placeholder="e.g., Maple syrup, industrial valves, software" />
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Which markets are you targeting? <span class="req">*</span></label>
+          <input class="apply-form-input" type="text" placeholder="e.g., Germany, UAE, Southeast Asia" />
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Export experience level <span class="req">*</span></label>
+          <select class="apply-form-select">
+            <option value="">Select…</option>
+            <option>New to exporting — exploring for the first time</option>
+            <option>Early stage — have done some research but no deals yet</option>
+            <option>Active exporter — currently selling in 1–2 markets</option>
+            <option>Experienced — selling in 3+ international markets</option>
+          </select>
+        </div>
+        <div class="apply-form-group">
+          <label class="apply-form-label">Which plan interests you? <span class="req">*</span></label>
+          <select class="apply-form-select">
+            <option value="">Select…</option>
+            <option>Starter — Founding Rate</option>
+            <option>Growth — Founding Rate (Most Popular)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="apply-form-actions">
+          <button class="btn-form-prev" onclick="goApplyStep(1)"><svg data-lucide="arrow-left" style="width:15px;height:15px"></svg> Back</button>
+          <button class="btn-form-next">Submit Application <svg data-lucide="send" style="width:15px;height:15px"></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="apply-note">
+      <svg data-lucide="shield-check"></svg>
+      We review every application personally. You will hear back within 48 hours.
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+      <div class="footer-powered">Powered by <a href="#" style="font-weight:600;">MightyIQ Inc.</a></div>
+    </div>
+    <div>
+      <div class="footer-col-head">Platform</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/export-compass">Export Compass</a>
+        <a class="footer-link" href="/hscode">Trade Intelligence</a>
+        <a class="footer-link" href="/deal">Deal Readiness</a>
+        <a class="footer-link" href="/dashboard">Buyer Intelligence</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Solutions</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/solutions/foodbeverage.html">Food &amp; Beverage</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Experts</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/experts.html">Why Experts?</a>
+        <a class="footer-link" href="/new/experts/search.html">Find Experts</a>
+        <a class="footer-link" href="/new/experts/join.html">Join as Expert</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">About</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/about.html">Mission</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Contact</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/contact.html">Get in Touch</a>
+        <a class="footer-link" href="/new/contact.html">Book a Demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Follow Us</div>
+      <div class="footer-social-icons">
+        <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hello@mercorama.com" class="footer-social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2026 Mercorama. All rights reserved. · Powered by <a href="#" style="color:inherit;font-weight:600;">MightyIQ Inc.</a></div>
+      <div class="footer-bottom-center">Halifax, Nova Scotia, Canada 🍁</div>
+      <div class="footer-bottom-right">
+        <a href="/new/privacy.html">Privacy Policy</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/new/terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobile');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 20 ? '0 4px 16px rgba(11,31,58,0.10)' : '');
+
+  // Multi-step apply form
+  function goApplyStep(n) {
+    [1, 2].forEach(i => {
+      document.getElementById('astep' + i).style.display = i === n ? 'block' : 'none';
+      const ind = document.getElementById('astep' + i + '-ind');
+      ind.classList.remove('active', 'completed');
+      if (i < n) ind.classList.add('completed');
+      if (i === n) ind.classList.add('active');
+    });
+    document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    lucide.createIcons();
+  }
+
+  // Countdown timer — target date: 30 days from now
+  // Replace targetDate with the real closing date when connecting
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 30);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

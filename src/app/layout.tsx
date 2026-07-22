@@ -1,8 +1,16 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono, Outfit } from 'next/font/google';
+import { JetBrains_Mono, Outfit, Inter } from 'next/font/google';
 import { GrainOverlay } from '@/components/ambient/GrainOverlay';
+import { LenisProvider } from '@/components/ambient/LenisProvider';
+import { GsapRegistrar } from '@/components/ambient/GsapRegistrar';
 import './globals.css';
-import '@/components/ui/crazxy/theme-overrides.css';
+import './theme-overrides.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter-loaded',
+  display: 'swap',
+});
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -43,9 +51,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${outfit.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-        <GrainOverlay />
-        {children}
+      <body className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+        <LenisProvider>
+          <GsapRegistrar />
+          <GrainOverlay />
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

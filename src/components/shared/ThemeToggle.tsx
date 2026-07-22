@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from '@/components/ui/icons';
 import { motion } from 'motion/react';
 
 export function ThemeToggle() {

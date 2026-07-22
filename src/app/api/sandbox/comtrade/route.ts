@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 import { withMockFallback } from '@/lib/api-client';
 import { env, isServiceConfigured } from '@/lib/env';
 import { mockComtradePayload, getWitsCountryTrend } from '@/lib/mock-fallback-data';
@@ -15,16 +16,16 @@ const COMTRADE_NUMERIC_TO_ISO3: Record<string, string> = Object.entries(ISO3_TO_
   {} as Record<string, string>
 );
 
-interface ComtradeRecord {
-  partnerCode: number;
-  partnerDesc?: string;
-  primaryValue: number;
-  period: number;
-}
-
-interface ComtradeResponse {
-  data?: ComtradeRecord[];
-}
+const comtradeSchema = z.object({
+  data: z.array(
+    z.object({
+      partnerCode: z.number(),
+      partnerDesc: z.string().optional(),
+      primaryValue: z.number(),
+      period: z.number(),
+    })
+  ).optional(),
+});
 
 interface HistoricalRecord {
   country: string;
@@ -89,8 +90,14 @@ export async function GET(request: NextRequest) {
         headers: env.COMTRADE_API_KEY ? { 'Ocp-Apim-Subscription-Key': env.COMTRADE_API_KEY } : {},
       });
       if (!res.ok) throw new Error(`Comtrade HTTP ${res.status}`);
-      const payload = (await res.json()) as ComtradeResponse;
+      const rawData = await res.json();
       
+      const parsedData = comtradeSchema.safeParse(rawData);
+      if (!parsedData.success) {
+         throw new Error('Invalid Comtrade response structure');
+      }
+      
+      const payload = parsedData.data;
       let processedData: unknown = payload;
       
       if (type === 'summary') {
@@ -105,19 +112,19 @@ export async function GET(request: NextRequest) {
       } else if (type === 'partners') {
         // Find top 10 partners, excluding world (0)
         const partners = (payload?.data || [])
-          .filter((d: ComtradeRecord) => d.partnerCode !== 0)
-          .sort((a: ComtradeRecord, b: ComtradeRecord) => b.primaryValue - a.primaryValue)
+          .filter(d => d.partnerCode !== 0)
+          .sort((a, b) => b.primaryValue - a.primaryValue)
           .slice(0, 10)
-          .map((d: ComtradeRecord) => ({
+          .map(d => ({
             country: COMTRADE_NUMERIC_TO_ISO3[String(d.partnerCode)] ?? d.partnerDesc ?? 'Unknown',
             value: d.primaryValue,
           }));
         processedData = { partners, dataOrigin: 'live' };
       } else if (type === 'trend') {
         const trend = (payload?.data || [])
-          .filter((d: ComtradeRecord) => d.partnerCode === 0)
-          .sort((a: ComtradeRecord, b: ComtradeRecord) => a.period - b.period)
-          .map((d: ComtradeRecord) => ({
+          .filter(d => d.partnerCode === 0)
+          .sort((a, b) => a.period - b.period)
+          .map(d => ({
             year: d.period,
             value: d.primaryValue,
           }));

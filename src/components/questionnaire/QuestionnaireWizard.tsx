@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from '@/components/ui/icons';
 import type { AssessmentRecord, OptionKey } from '@/types';
 import {
   getQuestionPillarMap,
@@ -14,8 +14,9 @@ import {
 } from '@/lib/scoring-engine';
 import { QuestionCard } from '@/components/questionnaire/QuestionCard';
 import { PillarProgressBar } from '@/components/questionnaire/PillarProgressBar';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { buttonSpring, snappy } from '@/lib/animation/presets';
+import { MagneticButton } from '@/components/ui/effects/MagneticButton';
 
 export interface QuestionnaireWizardProps {
   smeId: string;
@@ -173,29 +174,27 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
         </motion.button>
 
         {!isLast ? (
-          <motion.button
-            type="button"
+          <MagneticButton
             onClick={goNext}
             disabled={!currentAnswered || submitting}
             className={cn(
               'inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40'
             )}
-            {...buttonSpring}
+            strength={15}
           >
             Next
             <ArrowRight size={16} />
-          </motion.button>
+          </MagneticButton>
         ) : (
-          <motion.button
-            type="button"
+          <MagneticButton
             onClick={() => void handleSubmit()}
             disabled={!currentAnswered || submitting}
-            className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-success)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40"
-            {...buttonSpring}
+            className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--success)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40"
+            strength={15}
           >
             {submitting ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle2 size={16} />}
             Submit assessment
-          </motion.button>
+          </MagneticButton>
         )}
       </footer>
     </div>

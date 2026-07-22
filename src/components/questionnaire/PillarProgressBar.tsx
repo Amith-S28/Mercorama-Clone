@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import type { PillarKey } from '@/types';
 import { PILLAR_KEYS, PILLAR_LABELS, createEmptyPillarCompletion, type PillarProgress } from '@/lib/scoring-engine';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { smooth } from '@/lib/animation/presets';
 
 export type { PillarProgress };

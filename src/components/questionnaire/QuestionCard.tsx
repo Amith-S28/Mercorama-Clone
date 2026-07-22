@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import type { OptionKey, Question } from '@/types';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { buttonSpring } from '@/lib/animation/presets';
 
 export interface QuestionCardProps {

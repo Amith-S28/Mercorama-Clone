@@ -2,11 +2,15 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
+import { RefreshCcw, RotateCcw } from '@/components/ui/icons';
 import type { SmeRecord } from '@/types';
 import { calculateLandedCost } from '@/lib/landed-cost-calculator';
 import { getCountryFallback } from '@/lib/mock-fallback-data';
 import { FolderDisclosure } from '@/components/shared/FolderDisclosure';
 import { snappy } from '@/lib/animation/presets';
+import { FormattedNumberInput } from '@/components/ui/FormattedNumberInput';
+import { LiveIndicator } from '@/components/ui/LiveIndicator';
+import { Slider } from '@/components/ui/Slider';
 
 export interface LandedCostSolverProps {
   sme: SmeRecord;
@@ -17,14 +21,21 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
   const [freight, setFreight] = useState(fallback.freightRateCadPerFeu);
   const [tariffPct, setTariffPct] = useState(fallback.tariffRateDefault * 100);
   const [quantity, setQuantity] = useState(sme.exportQuantity);
+  
+  const [apiFreight, setApiFreight] = useState<number | null>(null);
+  const [apiTariffPct, setApiTariffPct] = useState<number | null>(null);
+  
   const [volatility30d, setVolatility30d] = useState<number | null>(fallback.volatility30d);
   const [volatility90d, setVolatility90d] = useState<number | null>(fallback.volatility90d);
   const [dataOrigin, setDataOrigin] = useState('structured-fallback');
   const [detailsOpen, setDetailsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
     async function loadMarketInputs() {
+      setLoading(true);
       const params = new URLSearchParams({
         origin: 'CAN',
         destination: sme.targetCountry,
@@ -46,16 +57,23 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
         const origins = [freightRes, tariffRes, ratesRes]
           .map((res) => res.headers.get('data-origin'))
           .filter(Boolean);
-        if (origins.includes('live')) setDataOrigin('live');
+        if (origins.includes('live') || origins.includes('live-usda-agtransport')) setDataOrigin('live');
         else if (origins.includes('mock-fallback')) setDataOrigin('mock-fallback');
+        else if (origins.includes('historical-offline')) setDataOrigin('historical-offline');
 
         if (freightRes.ok) {
           const freightData = (await freightRes.json()) as { containerRateCad?: number };
-          if (freightData.containerRateCad) setFreight(freightData.containerRateCad);
+          if (freightData.containerRateCad) {
+            setFreight(freightData.containerRateCad);
+            setApiFreight(freightData.containerRateCad);
+          }
         }
         if (tariffRes.ok) {
           const tariffData = (await tariffRes.json()) as { rate?: number };
-          if (typeof tariffData.rate === 'number') setTariffPct(tariffData.rate * 100);
+          if (typeof tariffData.rate === 'number') {
+            setTariffPct(tariffData.rate * 100);
+            setApiTariffPct(tariffData.rate * 100);
+          }
         }
         if (ratesRes.ok) {
           const ratesData = (await ratesRes.json()) as {
@@ -67,6 +85,8 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
         }
       } catch {
         if (!cancelled) setDataOrigin('structured-fallback');
+      } finally {
+        if (!cancelled) setLoading(false);
       }
     }
 
@@ -74,7 +94,7 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
     return () => {
       cancelled = true;
     };
-  }, [sme.targetCountry, sme.hsCode, fallback.currency]);
+  }, [sme.targetCountry, sme.hsCode, fallback.currency, refreshKey]);
 
   const result = useMemo(
     () =>
@@ -93,44 +113,105 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
 
   const statusColor = result.insolvent ? '#EF4444' : result.meetsTarget ? '#22C55E' : '#F59E0B';
 
+  const freightModified = apiFreight !== null && freight !== apiFreight;
+  const tariffModified = apiTariffPct !== null && tariffPct !== apiTariffPct;
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-      <div>
-        <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>
-          Landed Cost Solver
-        </p>
-        <p style={{ margin: 0, fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
-          {sme.targetCountryName} · HS {sme.hsCode} · market inputs: {dataOrigin}
-        </p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div>
+          <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>
+            Landed Cost Solver
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
+              {sme.targetCountryName} · HS {sme.hsCode}
+            </span>
+            <LiveIndicator origin={dataOrigin} />
+          </div>
+        </div>
+        <button
+          onClick={() => setRefreshKey(k => k + 1)}
+          disabled={loading}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--border)] text-xs font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-muted)] hover:text-[var(--text-primary)] transition-colors disabled:opacity-50"
+        >
+          <RefreshCcw size={14} className={loading ? 'animate-spin' : ''} />
+          Refresh
+        </button>
       </div>
 
-      <SliderField
-        label="Container freight (CAD)"
-        value={freight}
-        min={1500}
-        max={12000}
-        step={100}
-        format={(v) => `$${v.toLocaleString()}`}
-        onChange={setFreight}
-      />
-      <SliderField
-        label="Tariff rate (%)"
-        value={tariffPct}
-        min={0}
-        max={35}
-        step={0.5}
-        format={(v) => `${v.toFixed(1)}%`}
-        onChange={setTariffPct}
-      />
-      <SliderField
-        label="Export quantity (units)"
-        value={quantity}
-        min={500}
-        max={50000}
-        step={500}
-        format={(v) => v.toLocaleString()}
-        onChange={setQuantity}
-      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '-0.25rem' }}>
+           <span style={{ color: 'var(--text-secondary)', fontSize: '0.8125rem' }}>Container freight (CAD)</span>
+           {freightModified && (
+              <button 
+                onClick={() => setFreight(apiFreight)}
+                className="flex items-center gap-1 text-[10px] uppercase font-mono tracking-wider text-[var(--accent-vivid)] hover:text-[var(--accent-hover)] transition-colors"
+              >
+                <RotateCcw size={10} />
+                Revert to ${apiFreight.toLocaleString()}
+              </button>
+           )}
+        </div>
+        <FormattedNumberInput
+          value={freight}
+          onChange={setFreight}
+          prefix="$"
+        />
+        <Slider
+          value={Math.max(500, Math.min(25000, freight))}
+          onChange={setFreight}
+          min={500}
+          max={25000}
+          step={100}
+          className="mb-2"
+        />
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '-0.25rem' }}>
+           <span style={{ color: 'var(--text-secondary)', fontSize: '0.8125rem' }}>Tariff rate (%)</span>
+           {tariffModified && (
+              <button 
+                onClick={() => setTariffPct(apiTariffPct)}
+                className="flex items-center gap-1 text-[10px] uppercase font-mono tracking-wider text-[var(--accent-vivid)] hover:text-[var(--accent-hover)] transition-colors"
+              >
+                <RotateCcw size={10} />
+                Revert to {apiTariffPct.toFixed(1)}%
+              </button>
+           )}
+        </div>
+        <FormattedNumberInput
+          value={tariffPct}
+          onChange={setTariffPct}
+          suffix="%"
+          step={0.1}
+          max={100}
+        />
+        <Slider
+          value={Math.max(0, Math.min(100, tariffPct))}
+          onChange={setTariffPct}
+          min={0}
+          max={100}
+          step={0.5}
+          className="mb-2"
+        />
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '-0.25rem' }}>
+           <span style={{ color: 'var(--text-secondary)', fontSize: '0.8125rem' }}>Export quantity (units)</span>
+        </div>
+        <FormattedNumberInput
+          value={quantity}
+          onChange={setQuantity}
+          min={1}
+        />
+        <Slider
+          value={Math.max(1, Math.min(50000, quantity))}
+          onChange={setQuantity}
+          min={1}
+          max={50000}
+          step={100}
+          className="mb-2"
+        />
+      </div>
 
       <motion.div
         layout
@@ -195,51 +276,6 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
         </dl>
       </FolderDisclosure>
     </div>
-  );
-}
-
-function SliderField({
-  label,
-  value,
-  min,
-  max,
-  step,
-  format,
-  onChange,
-}: {
-  label: string;
-  value: number;
-  min: number;
-  max: number;
-  step: number;
-  format: (v: number) => string;
-  onChange: (v: number) => void;
-}) {
-  return (
-    <label style={{ display: 'block' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginBottom: '0.375rem',
-          fontSize: '0.8125rem',
-        }}
-      >
-        <span style={{ color: 'var(--text-secondary)' }}>{label}</span>
-        <span className="mono-label" style={{ color: 'var(--text-primary)', fontSize: '0.6875rem' }}>
-          {format(value)}
-        </span>
-      </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        style={{ width: '100%', accentColor: 'var(--accent-premium)' }}
-      />
-    </label>
   );
 }
 

@@ -1,5 +1,5 @@
 import type { ApiHealthStatus } from '@/types';
-import { Badge, type BadgeVariant } from '@/components/ui/crazxy/Badge';
+import { Badge, type BadgeVariant } from '@/components/ui/Badge';
 import { cn } from '@/lib/utils';
 
 const STATUS_LABELS: Record<ApiHealthStatus, string> = {

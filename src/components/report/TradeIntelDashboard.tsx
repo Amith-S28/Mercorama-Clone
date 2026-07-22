@@ -1,10 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2 } from '@/components/ui/icons';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar
 } from 'recharts';
+import { useGsapStagger, useGsapCounter } from '@/hooks';
+import { LiveIndicator } from '@/components/ui/LiveIndicator';
+import { RefreshCcw } from '@/components/ui/icons';
 
 interface PartnerData {
   country: string;
@@ -33,6 +36,24 @@ export interface TradeIntelDashboardProps {
 export function TradeIntelDashboard({ countryIso3, hsCode }: TradeIntelDashboardProps) {
   const [data, setData] = useState<TradeIntelData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const tableRef = useGsapStagger<HTMLTableSectionElement>({ 
+    staggerEach: 0.05, 
+    direction: 'up', 
+    distance: 15,
+    triggerValue: data?.partners?.length 
+  });
+  
+  const isBillion = data?.importVolumeUsd ? data.importVolumeUsd > 1000000000 : false;
+  const targetValue = data?.importVolumeUsd ? (isBillion ? data.importVolumeUsd / 1000000000 : data.importVolumeUsd / 1000000) : 0;
+  
+  const { ref: volumeRef, value: volumeValue } = useGsapCounter<HTMLHeadingElement>({
+    end: targetValue,
+    decimals: isBillion ? 2 : 1,
+    prefix: '$',
+    suffix: isBillion ? 'B' : 'M'
+  });
 
   useEffect(() => {
     let cancelled = false;
@@ -74,7 +95,7 @@ export function TradeIntelDashboard({ countryIso3, hsCode }: TradeIntelDashboard
     return () => {
       cancelled = true;
     };
-  }, [countryIso3, hsCode]);
+  }, [countryIso3, hsCode, refreshKey]);
 
   if (loading) {
     return (
@@ -88,17 +109,29 @@ export function TradeIntelDashboard({ countryIso3, hsCode }: TradeIntelDashboard
   if (!data) return null;
 
   const formatCurrency = (val: number) => `$${(val / 1000000).toFixed(1)}M`;
-  const formatCompact = (val: number) => `$${(val / 1000000000).toFixed(2)}B`;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div>
-        <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>
-          Trade Intelligence
-        </p>
-        <p style={{ margin: 0, fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
-          HS {hsCode} · data source: {data.dataOrigin}
-        </p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div>
+          <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>
+            Trade Intelligence
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
+              HS {hsCode}
+            </span>
+            <LiveIndicator origin={data.dataOrigin} />
+          </div>
+        </div>
+        <button
+          onClick={() => setRefreshKey(k => k + 1)}
+          disabled={loading}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--border)] text-xs font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-muted)] hover:text-[var(--text-primary)] transition-colors disabled:opacity-50"
+        >
+          <RefreshCcw size={14} className={loading ? 'animate-spin' : ''} />
+          Refresh
+        </button>
       </div>
 
       <div className="bento-grid">
@@ -107,8 +140,8 @@ export function TradeIntelDashboard({ countryIso3, hsCode }: TradeIntelDashboard
           <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}>
             Total Import Volume
           </p>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0 0 0.5rem 0' }}>
-            {data.importVolumeUsd > 1000000000 ? formatCompact(data.importVolumeUsd) : formatCurrency(data.importVolumeUsd)}
+          <h2 ref={volumeRef} style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0 0 0.5rem 0' }}>
+            {volumeValue}
           </h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ color: data.yoyChange >= 0 ? '#10b981' : '#ef4444', fontWeight: 600 }}>
@@ -162,11 +195,11 @@ export function TradeIntelDashboard({ countryIso3, hsCode }: TradeIntelDashboard
                   <th style={{ padding: '0.75rem 0.5rem', fontWeight: 500, width: '45%' }}>Market Share</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody ref={tableRef}>
                 {data.partners.slice(0, 10).map((p, i) => {
                   const pct = data.importVolumeUsd > 0 ? ((p.value / data.importVolumeUsd) * 100) : 0;
                   return (
-                    <tr key={p.country} style={{ borderBottom: '1px solid var(--border-low-contrast)', color: 'var(--text-primary)' }}>
+                    <tr key={p.country} className="opacity-0" style={{ borderBottom: '1px solid var(--border-low-contrast)', color: 'var(--text-primary)' }}>
                       <td style={{ padding: '0.625rem 0.5rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
                         #{i + 1}
                       </td>

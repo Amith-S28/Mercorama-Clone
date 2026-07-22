@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Retention Policy — Mercorama | MightyIQ Inc.</title>
+  <meta name="description" content="Data Retention Policy for Mercorama by MightyIQ Inc. — AI providers, what we store, and your rights.">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --navy:       #0B1F3A;
+      --navy-mid:   #152d52;
+      --teal:       #009CA6;
+      --teal-dark:  #007D87;
+      --teal-light: #E6F7F8;
+      --bg:         #FFFFFF;
+      --light-bg:   #F0F4F8;
+      --text:       #0B1F3A;
+      --muted:      #5A6A7A;
+      --border:     #DDE3EA;
+      --wide:       1200px;
+      --font-head:  'Plus Jakarta Sans', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; font-family: var(--font-body); border: none; }
+
+    /* ── SOLUTIONS DROPDOWN ── */
+    .nav-has-drop { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 4px; font-size: var(--text-sm); font-weight: 500; color: var(--muted); cursor: default; }
+    .nav-drop-trigger:hover { color: var(--navy); }
+    .nav-drop-trigger svg.chevron { width: 14px; height: 14px; transition: transform var(--transition); }
+    .nav-has-drop:hover .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 2px); left: 50%; transform: translateX(-50%) translateY(-4px); background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(11,31,58,0.12); padding: 0.375rem; min-width: 160px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--transition), transform var(--transition); }
+    .nav-dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+    .nav-has-drop:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-has-drop.open .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-has-drop.open .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: block; padding: 0.55rem 0.875rem; border-radius: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; transition: background var(--transition), color var(--transition); white-space: nowrap; }
+    .nav-drop-item:hover, .nav-drop-item.active { background: var(--light-bg); color: var(--navy); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--wide); margin: 0 auto;
+      padding: 0 2rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .nav-logo img { height: clamp(44px,4.5vw,60px); width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-ctas { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.875rem; font-weight: 700;
+      white-space: nowrap; transition: all var(--transition);
+    }
+    .btn-primary { background: var(--teal); color: white; border: 2px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border); padding: 1rem 2rem 1.5rem; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .nav-mobile a:hover { color: var(--teal); }
+    .nav-mobile-ctas { margin-top: 1rem; }
+
+    /* ── FOOTER ── */
+    .footer { background: #F0F4F8; padding: 3rem 2rem 0; border-top: 3px solid var(--teal); }
+    .footer-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 200px repeat(6, 1fr);
+      gap: 1.5rem; padding-bottom: 2.5rem;
+    }
+    .footer-brand-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-tagline { font-size: 0.8rem; color: var(--muted); line-height: 1.55; max-width: 26ch; }
+    .footer-brand-col img { height: 44px; width: auto; max-width: 160px; display: block; margin-bottom: 0; }
+    .footer-powered { font-size: 0.68rem; color: var(--muted); }
+    .footer-col-head { font-family: var(--font-head); font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 0; }
+    .footer-link { font-size: var(--text-xs); color: #4A5568; display: block; padding: 0.55rem 0; min-height: 44px; display: flex; align-items: center; }
+    .footer-link:hover { color: var(--navy); }
+    .footer-social-icons { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+    .footer-social-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy); transition: all var(--transition);
+    }
+    .footer-social-icon:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .footer-social-icon svg { width: 16px; height: 16px; }
+    .footer-bottom { background: #081629; margin: 0 -2rem; padding: 1.1rem 2rem; }
+    .footer-bottom-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 1rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.85);
+    }
+    .footer-bottom-center { color: white; font-weight: 500; white-space: nowrap; }
+    .footer-bottom-right { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; }
+    .footer-bottom-right a { color: rgba(255,255,255,0.85); }
+    .footer-bottom-right a:hover { color: white; }
+    .footer-bottom-divider { color: rgba(255,255,255,0.3); }
+
+    /* ── LEGAL HEADER ── */
+    .legal-header { background: var(--navy); padding: 3rem 2rem 2.5rem; }
+    .legal-header-inner { max-width: var(--wide); margin: 0 auto; }
+    .legal-breadcrumb { font-size: var(--text-xs); color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .legal-breadcrumb a { color: rgba(255,255,255,0.5); }
+    .legal-breadcrumb a:hover { color: white; }
+    .legal-breadcrumb .sep { opacity: 0.4; }
+    .legal-header h1 { font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 0.6rem; }
+    .legal-meta { font-size: var(--text-xs); color: rgba(255,255,255,0.5); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .legal-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .legal-meta svg { width: 12px; height: 12px; }
+
+    /* ── LEGAL BODY ── */
+    .legal-body { background: var(--bg); padding: 4rem 2rem; }
+    .legal-body-inner { max-width: var(--wide); margin: 0 auto; display: grid; grid-template-columns: 240px 1fr; gap: 4rem; align-items: start; }
+
+    .legal-toc { position: sticky; top: 100px; }
+    .legal-toc-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; }
+    .legal-toc a { display: flex; align-items: baseline; gap: 0.5rem; font-size: var(--text-xs); color: var(--muted); padding: 0.35rem 0; border-left: 2px solid var(--border); padding-left: 0.75rem; transition: all var(--transition); text-decoration: none; line-height: 1.4; }
+    .legal-toc a:hover { color: var(--navy); border-left-color: var(--teal); }
+    .legal-toc a.active { color: var(--teal-dark); border-left-color: var(--teal); font-weight: 600; }
+    .legal-toc-num { font-size: 0.65rem; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+    .legal-toc-related { margin-top: 1.5rem; padding: 1rem; background: var(--light-bg); border: 1px solid var(--border); border-radius: 10px; }
+    .legal-toc-related-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+    .legal-toc-related a { display: flex; align-items: center; gap: 0.4rem; font-size: var(--text-xs); color: var(--teal); font-weight: 600; padding: 0.3rem 0; border: none; padding-left: 0; }
+    .legal-toc-related a svg { width: 13px; height: 13px; }
+
+    .legal-content { min-width: 0; }
+    .legal-intro { font-size: var(--text-sm); color: var(--muted); line-height: 1.75; padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+    .legal-intro strong { color: var(--navy); }
+    .legal-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); scroll-margin-top: 100px; }
+    .legal-section:last-child { border-bottom: none; }
+    .legal-section-header { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.25rem; }
+    .legal-section-num { font-size: 0.7rem; font-weight: 700; color: white; background: var(--teal); border-radius: 6px; padding: 0.2rem 0.5rem; flex-shrink: 0; }
+    .legal-section h2 { font-family: var(--font-head); font-size: var(--text-lg); font-weight: 700; color: var(--navy); margin: 0; }
+    .legal-section p { font-size: var(--text-sm); color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-list { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .legal-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--muted); line-height: 1.65; }
+    .legal-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 0.5rem; }
+    .legal-list li strong { color: var(--navy); }
+    .legal-contact-card { background: var(--light-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; }
+    .legal-contact-card h4 { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .legal-contact-card p { font-size: var(--text-xs); color: var(--muted); line-height: 1.65; margin: 0; }
+    .legal-contact-card a { color: var(--teal); font-weight: 600; }
+    .legal-also { display: inline-flex; align-items: center; gap: 0.4rem; font-size: var(--text-xs); font-weight: 600; color: var(--teal); margin-bottom: 1.5rem; }
+    .legal-also svg { width: 13px; height: 13px; }
+
+    /* ── PROVIDER CARDS ── */
+    .provider-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.25rem 0; }
+    .provider-card { background: var(--light-bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .provider-card-header { display: flex; align-items: center; gap: 0.75rem; }
+    .provider-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--teal-light); border: 1px solid rgba(0,156,166,0.2); display: flex; align-items: center; justify-content: center; color: var(--teal); flex-shrink: 0; }
+    .provider-icon svg { width: 18px; height: 18px; }
+    .provider-name { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); }
+    .provider-sub { font-size: var(--text-xs); color: var(--muted); }
+    .provider-desc { font-size: var(--text-xs); color: var(--muted); line-height: 1.65; }
+    .provider-rows { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .provider-row { display: grid; grid-template-columns: 120px 1fr; font-size: var(--text-xs); border-bottom: 1px solid var(--border); }
+    .provider-row:last-child { border-bottom: none; }
+    .provider-row-key { padding: 0.55rem 0.75rem; background: white; font-weight: 600; color: var(--navy); border-right: 1px solid var(--border); }
+    .provider-row-val { padding: 0.55rem 0.75rem; color: var(--muted); line-height: 1.5; }
+    .provider-link { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-xs); font-weight: 600; color: var(--teal); margin-top: 0.25rem; }
+    .provider-link svg { width: 12px; height: 12px; }
+    .provider-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .badge-live { background: #dcfce7; color: #166534; }
+    .badge-planned { background: #fef9c3; color: #854d0e; }
+
+    /* ── RETENTION TABLE ── */
+    .retention-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); margin: 1rem 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .retention-table th { background: var(--navy); color: white; font-family: var(--font-head); font-weight: 600; padding: 0.75rem 1rem; text-align: left; font-size: 0.72rem; letter-spacing: 0.04em; }
+    .retention-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: top; line-height: 1.55; }
+    .retention-table tr:last-child td { border-bottom: none; }
+    .retention-table tr:nth-child(even) td { background: var(--light-bg); }
+    .retention-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
+    .right-card { background: var(--light-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .right-card-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; color: var(--teal); margin-bottom: 0.75rem; }
+    .right-card-icon svg { width: 15px; height: 15px; }
+    .right-card h4 { font-family: var(--font-head); font-size: var(--text-xs); font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .right-card p { font-size: 0.72rem; color: var(--muted); line-height: 1.55; margin: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-ctas { display: none; }
+      .nav-hamburger { display: flex; }
+      .legal-body-inner { grid-template-columns: 1fr; }
+      .legal-toc { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .footer-bottom-inner { grid-template-columns: 1fr; text-align: center; gap: 0.5rem; }
+      .footer-bottom-right { justify-content: center; }
+      .provider-grid { grid-template-columns: 1fr; }
+      .rights-grid { grid-template-columns: 1fr 1fr; }
+      .retention-table { display: block; overflow-x: auto; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer { padding: 2rem 1rem 0; }
+      .footer-bottom { margin: 0 -1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Solutions <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/solutions/foodbeverage.html" class="nav-drop-item">Food &amp; Beverage</a>
+          <a href="/solutions/seafood.html" class="nav-drop-item">Seafood &amp; Ocean Products</a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Experts <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/experts.html#why-experts" class="nav-drop-item">Why Experts?</a>
+          <a href="/experts/search.html" class="nav-drop-item">Find Experts</a>
+          <a href="/experts/join.html" class="nav-drop-item">Join as Expert</a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">About <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/about.html" class="nav-drop-item">Mission &amp; Story</a>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="/early-access.html" class="btn btn-primary">Book a Demo</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/">Home</a>
+    <a href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+    <a href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+    <a href="/experts.html">Why Experts?</a>
+    <a href="/experts/search.html">Find Experts</a>
+    <a href="/experts/join.html">Join as Expert</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <div class="nav-mobile-ctas" style="margin-top:1rem;">
+      <a href="/early-access.html" style="width:100%;justify-content:center;">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── LEGAL HEADER ── -->
+<section class="legal-header">
+  <div class="legal-header-inner">
+    <div class="legal-breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <span style="color:rgba(255,255,255,0.8)">Data Retention Policy</span>
+    </div>
+    <h1>Data Retention Policy</h1>
+    <div class="legal-meta">
+      <span><svg data-lucide="calendar"></svg> Last updated: March 2026</span>
+      <span><svg data-lucide="building-2"></svg> MightyIQ Inc., Bedford, NS, Canada</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEGAL BODY ── -->
+<section class="legal-body">
+  <div class="legal-body-inner">
+
+    <!-- TOC -->
+    <aside class="legal-toc">
+      <div class="legal-toc-title">Contents</div>
+      <a href="#core-principle"><span class="legal-toc-num">1</span> Core Principle</a>
+      <a href="#ai-providers"><span class="legal-toc-num">2</span> AI Provider Data</a>
+      <a href="#platform-data"><span class="legal-toc-num">3</span> What Mercorama Stores</a>
+      <a href="#third-parties"><span class="legal-toc-num">4</span> Other Third-Party Services</a>
+      <a href="#your-rights"><span class="legal-toc-num">5</span> Your Rights</a>
+      <a href="#policy-updates"><span class="legal-toc-num">6</span> Policy Updates</a>
+      <div class="legal-toc-related">
+        <div class="legal-toc-related-title">Related</div>
+        <a href="/privacy.html"><svg data-lucide="shield"></svg> Privacy Policy</a>
+        <a href="/data-sources.html"><svg data-lucide="layers"></svg> Data Sources</a>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="legal-content">
+      <p class="legal-intro">Mercorama is an AI-powered platform. Every query you submit may be processed by one or more language models. This page explains exactly which AI providers we use, what data they receive, how long they hold it, and what Mercorama itself retains.</p>
+
+      <!-- 1. Core Principle -->
+      <div class="legal-section" id="core-principle">
+        <div class="legal-section-header"><span class="legal-section-num">1</span><h2>Core Principle</h2></div>
+        <p>Your account data — email address, password, and billing details — is never included in AI prompts. Most tools send only product descriptions, HS codes, and trade parameters. The one exception is the <strong>Deal Summary Generator</strong>, which sends seller and buyer party names to Claude because a trade agreement cannot be drafted without them. Where processing can be handled locally via Ollama, we prefer that over sending data to an external service.</p>
+      </div>
+
+      <!-- 2. AI Provider Data -->
+      <div class="legal-section" id="ai-providers">
+        <div class="legal-section-header"><span class="legal-section-num">2</span><h2>AI Provider Data</h2></div>
+        <div class="provider-grid">
+
+          <!-- Anthropic -->
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="cpu"></svg></div>
+              <div>
+                <div class="provider-name">Anthropic — Claude <span class="provider-badge badge-live">LIVE</span></div>
+                <div class="provider-sub">Haiku &amp; Sonnet</div>
+              </div>
+            </div>
+            <p class="provider-desc">Primary AI engine for trade analysis, deal document generation, HS code classification, Incoterm recommendations, and Export Compass results.</p>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Input retention</div>
+                <div class="provider-row-val">Not used for model training. Anthropic may retain API inputs and outputs for up to 30 days for trust &amp; safety review. Exception: Deal Summary Generator sends party names (seller, buyer) — required to draft a valid trade agreement.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Output retention</div>
+                <div class="provider-row-val">Responses returned in real time; not stored by Anthropic beyond the 30-day safety window.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Data location</div>
+                <div class="provider-row-val">Anthropic infrastructure (United States). SOC 2 Type II certified.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">PII in prompts</div>
+                <div class="provider-row-val">Account data (email, password) never included. Most tools send only product/trade descriptions.</div>
+              </div>
+            </div>
+            <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener" class="provider-link">
+              <svg data-lucide="external-link"></svg> Anthropic Privacy Policy
+            </a>
+          </div>
+
+          <!-- Ollama -->
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="server"></svg></div>
+              <div>
+                <div class="provider-name">Ollama — Local SLM <span class="provider-badge badge-planned">PLANNED</span></div>
+                <div class="provider-sub">Mistral / Phi-4 Mini</div>
+              </div>
+            </div>
+            <p class="provider-desc">On-premise small language model for lightweight definitional queries (Incoterm definitions, HS heading lookups, clause templates).</p>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Input retention</div>
+                <div class="provider-row-val">Zero. Model runs entirely on Mercorama Hetzner VPS. No data transmitted externally.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Output retention</div>
+                <div class="provider-row-val">Zero. Inference is local; no logs leave the server.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Data location</div>
+                <div class="provider-row-val">Mercorama production server — Hetzner VPS (Germany, EU). Data never leaves this server.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">PII in prompts</div>
+                <div class="provider-row-val">Full control — processing is local.</div>
+              </div>
+            </div>
+            <a href="https://ollama.com" target="_blank" rel="noopener" class="provider-link">
+              <svg data-lucide="external-link"></svg> Ollama
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. What Mercorama Stores -->
+      <div class="legal-section" id="platform-data">
+        <div class="legal-section-header"><span class="legal-section-num">3</span><h2>What Mercorama Stores</h2></div>
+        <p>Separate from AI providers, Mercorama's own platform retains the following:</p>
+        <table class="retention-table">
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>What's Stored</th>
+              <th>Retention Period</th>
+              <th>Legal Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account Data</td>
+              <td>Email, name, password hash (Supabase Auth), plan tier, beta cohort</td>
+              <td>Lifetime of account. Deleted within 30 days of deletion request.</td>
+              <td>Contract performance · Legitimate interest (fraud prevention)</td>
+            </tr>
+            <tr>
+              <td>Tool Inputs &amp; Outputs</td>
+              <td>Text entered into tools and AI-generated responses</td>
+              <td>Session data not persisted by default. If saved results are introduced, retention period will be stated at point of save.</td>
+              <td>Legitimate interest (service improvement, error diagnosis)</td>
+            </tr>
+            <tr>
+              <td>Usage Logs</td>
+              <td>API route hits, tool run counts, feature access timestamps. No prompt content stored.</td>
+              <td>Rolling 90-day window. Auto-purged after 90 days.</td>
+              <td>Legitimate interest (rate limiting, abuse prevention)</td>
+            </tr>
+            <tr>
+              <td>Billing &amp; Payment</td>
+              <td>Stripe customer ID, subscription status, plan history. Card details held exclusively by Stripe.</td>
+              <td>7 years (Canadian financial record-keeping obligations)</td>
+              <td>Legal obligation (CRA) · Contract performance</td>
+            </tr>
+            <tr>
+              <td>Export Compass Reports</td>
+              <td>Market intelligence results for your product–country combination</td>
+              <td>Not currently persisted. If saving introduced: 12 months or until deleted.</td>
+              <td>Contract performance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4. Other Third-Party Services -->
+      <div class="legal-section" id="third-parties">
+        <div class="legal-section-header"><span class="legal-section-num">4</span><h2>Other Third-Party Services</h2></div>
+        <div class="provider-grid">
+
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="database"></svg></div>
+              <div>
+                <div class="provider-name">Supabase</div>
+                <div class="provider-sub">Authentication &amp; database (Postgres)</div>
+              </div>
+            </div>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Data held</div>
+                <div class="provider-row-val">User accounts, session tokens, subscription records, saved analyses.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Location</div>
+                <div class="provider-row-val">AWS ca-central-1 (Canada). SOC 2 Type II certified.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="credit-card"></svg></div>
+              <div>
+                <div class="provider-name">Stripe</div>
+                <div class="provider-sub">Payment processing</div>
+              </div>
+            </div>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Data held</div>
+                <div class="provider-row-val">Card details, billing address, payment history. Card data never touches Mercorama servers.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Compliance</div>
+                <div class="provider-row-val">PCI DSS Level 1.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="mail"></svg></div>
+              <div>
+                <div class="provider-name">Resend</div>
+                <div class="provider-sub">Transactional email delivery</div>
+              </div>
+            </div>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Data held</div>
+                <div class="provider-row-val">Sends Export Compass and FTA reports. Only email address and report content transmitted.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Note</div>
+                <div class="provider-row-val">Not used for marketing communications.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-card-header">
+              <div class="provider-icon"><svg data-lucide="server"></svg></div>
+              <div>
+                <div class="provider-name">Hetzner</div>
+                <div class="provider-sub">VPS hosting</div>
+              </div>
+            </div>
+            <div class="provider-rows">
+              <div class="provider-row">
+                <div class="provider-row-key">Location</div>
+                <div class="provider-row-val">Germany, EU. GDPR-compliant data centre.</div>
+              </div>
+              <div class="provider-row">
+                <div class="provider-row-key">Data held</div>
+                <div class="provider-row-val">Application logs, static assets, Ollama model files (planned).</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 5. Your Rights -->
+      <div class="legal-section" id="your-rights">
+        <div class="legal-section-header"><span class="legal-section-num">5</span><h2>Your Rights</h2></div>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="right-card-icon"><svg data-lucide="eye"></svg></div>
+            <h4>Access</h4>
+            <p>Request a copy of all personal data we hold about you.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-card-icon"><svg data-lucide="trash-2"></svg></div>
+            <h4>Deletion</h4>
+            <p>Request deletion of account and data. Actioned within 30 days.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-card-icon"><svg data-lucide="edit-3"></svg></div>
+            <h4>Correction</h4>
+            <p>Ask us to correct inaccurate data. Account details can be updated in your profile.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.25rem;">To exercise any of these rights, email <a href="mailto:privacy@mercorama.com" style="color:var(--teal);font-weight:600">privacy@mercorama.com</a>. We respond within 30 days.</p>
+      </div>
+
+      <!-- 6. Policy Updates -->
+      <div class="legal-section" id="policy-updates">
+        <div class="legal-section-header"><span class="legal-section-num">6</span><h2>Policy Updates</h2></div>
+        <p>We will update this page whenever we add a new AI provider, change a retention period, or modify how we handle data. Material changes will be communicated by email to registered users at least 14 days before taking effect.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+    <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+      <p class="footer-tagline">AI-powered trade intelligence for Canadian exporters.</p>
+      <div class="footer-social-icons">
+        <a href="https://linkedin.com/company/mercorama" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hello@mercorama.com" class="footer-social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Solutions</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+        <a class="footer-link" href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+        <a class="footer-link" href="/auth/signin" target="_blank" rel="noopener">Member Login</a>
+        <a class="footer-link" href="/early-access.html">Early Access</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Experts</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/experts.html">Why Experts?</a>
+        <a class="footer-link" href="/experts/search.html">Find Experts</a>
+        <a class="footer-link" href="/experts/join.html">Join as Expert</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Company</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/about.html">About</a>
+        <a class="footer-link" href="/data-sources.html">Data Sources</a>
+        <a class="footer-link" href="/data-retention.html">Data Retention</a>
+        <a class="footer-link" href="/contact.html">Contact Us</a>
+        <a class="footer-link" href="/early-access.html">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2026 Mercorama · Powered by <a href="https://mightyiq.ca" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700;">MightyIQ Inc.</a></div>
+      <div class="footer-bottom-center">Halifax, Nova Scotia, Canada 🍁</div>
+      <div class="footer-bottom-right">
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobile');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 20 ? '0 4px 16px rgba(11,31,58,0.10)' : '');
+
+  // Highlight active TOC item on scroll
+  const sections = document.querySelectorAll('.legal-section[id]');
+  const tocLinks = document.querySelectorAll('.legal-toc a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Touch-friendly dropdowns (touch devices lose :hover before tap completes)
+  (function() {
+    var drops = document.querySelectorAll('.nav-has-drop');
+    drops.forEach(function(drop) {
+      var trigger = drop.querySelector('.nav-drop-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        // Only intercept on touch/non-pointer devices
+        if (window.matchMedia('(hover: none)').matches || e.pointerType === 'touch') {
+          e.preventDefault();
+          var isOpen = drop.classList.contains('open');
+          // Close all
+          drops.forEach(function(d) { d.classList.remove('open'); });
+          if (!isOpen) drop.classList.add('open');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-has-drop')) {
+        drops.forEach(function(d) { d.classList.remove('open'); });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

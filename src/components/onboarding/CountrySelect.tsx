@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Search, X } from 'lucide-react';
+import { ChevronDown, Search, X } from '@/components/ui/icons';
 import { COUNTRY_OPTIONS, type CountryOption } from '@/lib/countries';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { snappy } from '@/lib/animation/presets';
 
 export interface CountrySelectProps {

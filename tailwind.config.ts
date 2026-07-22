@@ -6,23 +6,23 @@ const config: Config = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: '#2563EB',
-          hover: '#1D4ED8',
-          muted: 'rgba(37, 99, 235, 0.12)',
+          DEFAULT: 'var(--accent)',
+          hover: 'var(--accent-hover)',
+          muted: 'var(--accent-muted)',
         },
-        obsidian: '#0A0A0A',
-        paper: '#FAFAFA',
-        'paper-white': '#FFFFFF',
+        obsidian: 'var(--obsidian)',
+        paper: 'var(--paper)',
+        'paper-white': 'var(--paper-white)',
         border: {
-          dark: '#1F1F1F',
-          light: '#E5E5E5',
+          dark: 'var(--border-dark)',
+          light: 'var(--border-light)',
         },
         status: {
-          healthy: '#22C55E',
-          degraded: '#F59E0B',
-          down: '#EF4444',
-          unconfigured: '#6B7280',
-          unknown: '#9CA3AF',
+          healthy: 'var(--status-healthy)',
+          degraded: 'var(--status-degraded)',
+          down: 'var(--status-down)',
+          unconfigured: 'var(--status-unconfigured)',
+          unknown: 'var(--status-unknown)',
         },
       },
       fontFamily: {

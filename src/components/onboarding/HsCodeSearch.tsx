@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { AlertTriangle, Check, Loader2, Search, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/cn';
+import { AlertTriangle, Check, Loader2, Search, Sparkles } from '@/components/ui/icons';
+import { cn } from '@/lib/utils';
 import { buttonSpring, snappy } from '@/lib/animation/presets';
 
 export interface HsCodeResult {

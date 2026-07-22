@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'motion/react';
-import { ArrowLeft, Loader2 } from 'lucide-react';
+import { ArrowLeft, Loader2 } from '@/components/ui/icons';
 import type { AssessmentRecord, SmeRecord } from '@/types';
 import { ReadinessScorecard } from '@/components/report/ReadinessScorecard';
 import { ScoreGauge } from '@/components/report/ScoreGauge';
@@ -19,8 +19,14 @@ import { RoadmapTimeline } from '@/components/report/RoadmapTimeline';
 import { PdfBriefGenerator } from '@/components/report/PdfBriefGenerator';
 import { EdcCountryRiskMap } from '@/components/map/EdcCountryRiskMap';
 import { CountryPlaybook } from '@/components/map/CountryPlaybook';
+import { LogisticsTrackerMap } from '@/components/report/LogisticsTrackerMap';
+import { MacroEconomicsPanel } from '@/components/report/MacroEconomicsPanel';
 import { QuestionnaireWizard } from '@/components/questionnaire/QuestionnaireWizard';
 import { snappy } from '@/lib/animation/presets';
+import { useGsapReveal } from '@/hooks';
+import { VantaNetBackground } from '@/components/ambient/VantaNetBackground';
+import { ResizableCard } from '@/components/ui/ResizableCard';
+import { DirectionAwareTabs } from '@/components/ui/DirectionAwareTabs';
 
 type TabId = 'scorecard' | 'intel' | 'landed';
 
@@ -75,6 +81,8 @@ export function ReportWorkspace() {
       setSelectedCountry(sme.targetCountry);
     }
   }, [sme?.targetCountry]);
+
+  const headerRef = useGsapReveal<HTMLElement>({ direction: 'down', distance: 15 });
 
   if (loading) {
     return (
@@ -159,45 +167,50 @@ export function ReportWorkspace() {
         Back to portfolio
       </Link>
 
-      <header style={{ marginBottom: '1.5rem' }}>
-        <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
-          Report Workspace
-        </p>
-        <h1 style={{ fontSize: '1.75rem', fontWeight: 600, letterSpacing: '-0.02em', margin: 0 }}>
-          {sme.name}
-        </h1>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem',
-            marginTop: '0.75rem',
-          }}
-        >
-          <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.875rem' }}>
-            {sme.targetCountryName} · {sme.industry} · Grade {assessment.grade}
+      <header ref={headerRef} className="opacity-0" style={{ 
+        marginBottom: '1.5rem',
+        position: 'relative',
+        padding: '2.5rem',
+        borderRadius: 'var(--radius-card)',
+        border: '1px solid var(--border)',
+        overflow: 'hidden',
+        background: 'linear-gradient(to right, var(--success-muted), var(--surface-muted))',
+        boxShadow: '0 4px 20px -2px rgba(1, 105, 111, 0.05)',
+      }}>
+        <VantaNetBackground />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+            Report Workspace
           </p>
-          <PdfBriefGenerator assessmentId={assessment.id} />
+          <h1 style={{ fontSize: '1.75rem', fontWeight: 600, letterSpacing: '-0.02em', margin: 0 }}>
+            {sme.name}
+          </h1>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1rem',
+              marginTop: '0.75rem',
+            }}
+          >
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.875rem' }}>
+              {sme.targetCountryName} · {sme.industry} · Grade {assessment.grade}
+            </p>
+            <PdfBriefGenerator assessmentId={assessment.id} />
+          </div>
         </div>
       </header>
 
       <div className="shipping-lane" style={{ marginBottom: '1.5rem' }} aria-hidden />
 
-      <div className="report-tabs" role="tablist">
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            type="button"
-            role="tab"
-            aria-selected={activeTab === tab.id}
-            className={`report-tab${activeTab === tab.id ? ' report-tab--active' : ''}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <DirectionAwareTabs
+          tabs={TABS}
+          activeTab={activeTab}
+          onChange={(id) => setActiveTab(id as TabId)}
+        />
       </div>
 
       {activeTab === 'scorecard' ? (
@@ -211,12 +224,16 @@ export function ReportWorkspace() {
             </div>
           </div>
           <div className="bento-grid" style={{ marginBottom: '1.25rem' }}>
-            <div className="bento-card bento-card--span-9">
-              <EdcCountryRiskMap
-                selectedIso3={selectedCountry}
-                onSelectCountry={setSelectedCountry}
-              />
-            </div>
+            <ResizableCard className="bento-card--span-9" defaultHeight={420} minHeight={280} maxHeight={700}>
+              {({ width, height }) => (
+                <EdcCountryRiskMap
+                  selectedIso3={selectedCountry}
+                  onSelectCountry={setSelectedCountry}
+                  width={width}
+                  height={height}
+                />
+              )}
+            </ResizableCard>
             <div className="bento-card bento-card--span-3">
               <CountryPlaybook iso3={selectedCountry} />
             </div>
@@ -250,14 +267,30 @@ export function ReportWorkspace() {
 
       {activeTab === 'intel' ? (
         <motion.div key="intel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={snappy}>
-          <TradeIntelDashboard countryIso3={sme.targetCountry} hsCode={sme.hsCode} />
-          <div className="bento-grid" style={{ marginTop: '1.25rem' }}>
-            <div className="bento-card bento-card--span-9">
-              <EdcCountryRiskMap
-                selectedIso3={selectedCountry ?? sme.targetCountry}
-                onSelectCountry={setSelectedCountry}
-              />
+          <div className="bento-grid">
+            <div className="bento-card--span-12">
+               <TradeIntelDashboard countryIso3={sme.targetCountry} hsCode={sme.hsCode} />
             </div>
+          </div>
+          <div className="bento-grid" style={{ marginTop: '1.25rem' }}>
+            <div className="bento-card--span-8">
+              <LogisticsTrackerMap countryIso3={sme.targetCountry} />
+            </div>
+            <div className="bento-card--span-4">
+              <MacroEconomicsPanel countryIso3={sme.targetCountry} />
+            </div>
+          </div>
+          <div className="bento-grid" style={{ marginTop: '1.25rem' }}>
+            <ResizableCard className="bento-card--span-9" defaultHeight={420} minHeight={280} maxHeight={700}>
+              {({ width, height }) => (
+                <EdcCountryRiskMap
+                  selectedIso3={selectedCountry ?? sme.targetCountry}
+                  onSelectCountry={setSelectedCountry}
+                  width={width}
+                  height={height}
+                />
+              )}
+            </ResizableCard>
             <div className="bento-card bento-card--span-3">
               <CountryPlaybook iso3={selectedCountry ?? sme.targetCountry} />
             </div>

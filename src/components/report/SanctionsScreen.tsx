@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { motion } from 'motion/react';
-import { AlertTriangle, Search, ShieldCheck } from 'lucide-react';
+import { AlertTriangle, Search, ShieldCheck } from '@/components/ui/icons';
 import type { SanctionsScreeningResult } from '@/types';
 import { normalizeQuery } from '@/lib/sanctions-checker';
 import { snappy } from '@/lib/animation/presets';
@@ -88,7 +88,7 @@ export function SanctionsScreen({ defaultQuery = '' }: SanctionsScreenProps) {
             opacity: loading || !query.trim() ? 0.5 : 1,
           }}
         >
-          <Search size={16} />
+          <Search size={16} style={{ animation: loading ? 'pulse-glow 2s infinite' : 'none' }} />
         </motion.button>
       </div>
 

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Early Access — Mercorama | AI-Powered Trade Intelligence for Canadian SMEs</title>
+  <meta name="description" content="Apply for founding member early access to Mercorama — AI-powered trade intelligence built for Canadian exporters. Locked pricing, 48-hour response.">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --navy:       #0B1F3A;
+      --navy-mid:   #152d52;
+      --teal:       #009CA6;
+      --teal-dark:  #007D87;
+      --teal-light: #E6F7F8;
+      --bg:         #FFFFFF;
+      --light-bg:   #F0F4F8;
+      --text:       #0B1F3A;
+      --muted:      #5A6A7A;
+      --border:     #DDE3EA;
+      --wide:       1200px;
+      --font-head:  'Plus Jakarta Sans', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; font-family: var(--font-body); border: none; }
+
+    /* ── SOLUTIONS DROPDOWN ── */
+    .nav-has-drop { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 4px; font-size: var(--text-sm); font-weight: 500; color: var(--muted); cursor: default; }
+    .nav-drop-trigger:hover { color: var(--navy); }
+    .nav-drop-trigger svg.chevron { width: 14px; height: 14px; transition: transform var(--transition); }
+    .nav-has-drop:hover .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(11,31,58,0.12); padding: 0.375rem; min-width: 220px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--transition), transform var(--transition); }
+    .nav-has-drop:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: flex; align-items: center; gap: 0.875rem; padding: 0.7rem 0.875rem; border-radius: 8px; transition: background var(--transition); color: var(--text); text-decoration: none; }
+    .nav-drop-item:hover, .nav-drop-item.active { background: var(--light-bg); }
+    .nav-drop-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; background: var(--teal-light); border: 1px solid rgba(0,156,166,0.2); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+    .nav-drop-icon svg { width: 16px; height: 16px; }
+    .nav-drop-title { font-size: 0.875rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .nav-drop-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--wide); margin: 0 auto;
+      padding: 0 2rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .nav-logo img { height: clamp(48px,6vw,80px); width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-ctas { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.875rem; font-weight: 700;
+      white-space: nowrap; transition: all var(--transition);
+    }
+    .btn-primary { background: var(--teal); color: white; border: 2px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border); padding: 1rem 2rem 1.5rem; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .nav-mobile a:hover { color: var(--teal); }
+    .nav-mobile-ctas { margin-top: 1rem; }
+
+    /* ── FOOTER ── */
+    .footer { background: #F0F4F8; padding: 3rem 2rem 0; }
+    .footer-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 200px repeat(6, 1fr);
+      gap: 1.5rem; padding-bottom: 2.5rem;
+    }
+    .footer-brand-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-brand-col img { height: 64px; width: auto; display: block; margin-bottom: 0.5rem; }
+    .footer-powered { font-size: 0.68rem; color: var(--muted); }
+    .footer-col-head { font-family: var(--font-head); font-size: var(--text-xs); font-weight: 700; color: var(--navy); margin-bottom: 0.875rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-link { font-size: var(--text-xs); color: #4A5568; }
+    .footer-link:hover { color: var(--navy); }
+    .footer-social-icons { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+    .footer-social-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy); transition: all var(--transition);
+    }
+    .footer-social-icon:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .footer-social-icon svg { width: 16px; height: 16px; }
+    .footer-bottom { background: var(--navy); margin: 0 -2rem; padding: 1.1rem 2rem; }
+    .footer-bottom-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 1rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.85);
+    }
+    .footer-bottom-center { color: white; font-weight: 500; white-space: nowrap; }
+    .footer-bottom-right { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; }
+    .footer-bottom-right a { color: rgba(255,255,255,0.85); }
+    .footer-bottom-right a:hover { color: white; }
+    .footer-bottom-divider { color: rgba(255,255,255,0.3); }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar { background: var(--teal); padding: 0.55rem 2rem; }
+    .announce-bar-inner { max-width: var(--wide); margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0.625rem; font-size: var(--text-xs); font-weight: 600; color: white; flex-wrap: wrap; }
+    .announce-bar svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── SPLIT HERO ── */
+    .ea-hero { background: var(--navy); min-height: 100vh; display: grid; grid-template-columns: 1fr 520px; }
+    .ea-hero-left { padding: 6rem 4rem 5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .ea-hero-left::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 30%, rgba(0,156,166,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(0,156,166,0.08) 0%, transparent 50%); pointer-events: none; }
+    .ea-hero-left-inner { position: relative; z-index: 1; max-width: 520px; }
+    .ea-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); background: rgba(0,156,166,0.12); border: 1px solid rgba(0,156,166,0.25); border-radius: 20px; padding: 0.3rem 0.875rem; margin-bottom: 1.75rem; }
+    .ea-eyebrow svg { width: 12px; height: 12px; }
+    .ea-hero h1 { font-family: var(--font-head); font-size: clamp(1.9rem, 1.2rem + 2.5vw, 3.25rem); font-weight: 800; color: white; line-height: 1.1; margin-bottom: 1.5rem; }
+    .ea-hero h1 em { font-style: normal; color: var(--teal); display: block; }
+    .ea-hero-desc { font-size: var(--text-sm); color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 48ch; margin-bottom: 2.5rem; }
+    .ea-value-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+    .ea-value-item { display: flex; align-items: flex-start; gap: 0.875rem; }
+    .ea-value-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(0,156,166,0.15); border: 1px solid rgba(0,156,166,0.25); display: flex; align-items: center; justify-content: center; color: var(--teal); flex-shrink: 0; }
+    .ea-value-icon svg { width: 16px; height: 16px; }
+    .ea-value-text { flex: 1; }
+    .ea-value-title { font-family: var(--font-head); font-size: var(--text-xs); font-weight: 700; color: white; line-height: 1.3; margin-bottom: 0.2rem; }
+    .ea-value-desc { font-size: 0.72rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+    .ea-trust-strip { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .ea-trust-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .ea-trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: rgba(255,255,255,0.4); }
+    .ea-trust-item svg { width: 12px; height: 12px; color: var(--teal); }
+
+    /* ── FORM PANEL ── */
+    .ea-hero-right { background: var(--light-bg); padding: 4rem 2.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(255,255,255,0.06); overflow-y: auto; }
+    .ea-form-wrap { width: 100%; max-width: 420px; margin: 0 auto; }
+    .ea-form-header { margin-bottom: 2rem; }
+    .ea-form-header h2 { font-family: var(--font-head); font-size: var(--text-lg); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 0.4rem; }
+    .ea-form-header p { font-size: var(--text-xs); color: var(--muted); line-height: 1.55; }
+
+    /* ── STEP PROGRESS ── */
+    .ea-progress { display: flex; align-items: center; gap: 0; margin-bottom: 2rem; }
+    .ea-step { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex: 1; position: relative; }
+    .ea-step:not(:last-child)::after { content: ''; position: absolute; top: 14px; left: calc(50% + 14px); right: calc(-50% + 14px); height: 2px; background: var(--border); z-index: 0; transition: background 0.3s; }
+    .ea-step.completed:not(:last-child)::after { background: var(--teal); }
+    .ea-step-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; color: var(--muted); position: relative; z-index: 1; transition: all 0.25s; }
+    .ea-step.active .ea-step-dot { border-color: var(--teal); background: var(--teal); color: white; }
+    .ea-step.completed .ea-step-dot { border-color: var(--teal); background: var(--teal); color: white; }
+    .ea-step-lbl { font-size: 0.6rem; font-weight: 600; color: var(--muted); text-align: center; line-height: 1.3; white-space: nowrap; }
+    .ea-step.active .ea-step-lbl { color: var(--navy); font-weight: 700; }
+    .ea-step.completed .ea-step-lbl { color: var(--teal-dark); }
+
+    /* ── FORM FIELDS ── */
+    .ea-form-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; box-shadow: 0 2px 16px rgba(11,31,58,0.06); }
+    .ea-step-title { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .ea-step-sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.5; }
+    .ea-field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.1rem; }
+    .ea-field:last-of-type { margin-bottom: 0; }
+    .ea-label { font-size: var(--text-xs); font-weight: 600; color: var(--navy); }
+    .ea-label .req { color: var(--teal); }
+    .ea-input { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; transition: border-color var(--transition), box-shadow var(--transition); background: white; }
+    .ea-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,156,166,0.08); }
+    .ea-input::placeholder { color: var(--muted); opacity: 0.75; }
+    .ea-select { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; background: white; cursor: pointer; transition: border-color var(--transition); appearance: auto; }
+    .ea-select:focus { border-color: var(--teal); }
+    .ea-select option[value=''] { color: var(--muted); }
+    .ea-textarea { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; min-height: 90px; resize: vertical; transition: border-color var(--transition); }
+    .ea-textarea:focus { border-color: var(--teal); }
+    .ea-textarea::placeholder { color: var(--muted); opacity: 0.75; }
+    .ea-hint { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+    .ea-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    .ea-inline-group { display: flex; gap: 0; }
+    .ea-prefix { border: 1.5px solid var(--border); border-right: none; border-radius: 8px 0 0 8px; padding: 0.6rem 0.75rem; background: var(--light-bg); font-size: var(--text-xs); color: var(--muted); white-space: nowrap; display: flex; align-items: center; }
+    .ea-input.suffix { border-radius: 0 8px 8px 0; }
+
+    /* ── CHECKBOX TAGS ── */
+    .ea-tag-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem; }
+    .ea-tag-option { display: none; }
+    .ea-tag-option + label { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-xs); font-weight: 500; color: var(--navy); background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 20px; padding: 0.3rem 0.875rem; cursor: pointer; transition: all var(--transition); user-select: none; }
+    .ea-tag-option:checked + label { background: var(--teal-light); border-color: var(--teal); color: var(--teal-dark); font-weight: 700; }
+    .ea-tag-option + label:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ── FORM ACTIONS ── */
+    .ea-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); gap: 0.75rem; }
+    .ea-actions.right { justify-content: flex-end; }
+    .btn-ea-next { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 1.75rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: var(--teal); color: white; border: 2px solid var(--teal); cursor: pointer; transition: all var(--transition); }
+    .btn-ea-next:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .btn-ea-back { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 1.25rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: transparent; color: var(--navy); border: 2px solid var(--border); cursor: pointer; transition: all var(--transition); }
+    .btn-ea-back:hover { border-color: var(--navy); }
+    .ea-step-counter { font-size: 0.68rem; color: var(--muted); font-weight: 500; }
+
+    /* ── CONFIRMATION ── */
+    .ea-confirm { text-align: center; padding: 1rem 0; display: none; flex-direction: column; align-items: center; gap: 1rem; }
+    .ea-confirm-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--teal-light); border: 2px solid var(--teal); display: flex; align-items: center; justify-content: center; color: var(--teal); margin: 0 auto 0.5rem; }
+    .ea-confirm-icon svg { width: 28px; height: 28px; }
+    .ea-confirm h3 { font-family: var(--font-head); font-size: var(--text-lg); font-weight: 800; color: var(--navy); }
+    .ea-confirm p { font-size: var(--text-xs); color: var(--muted); line-height: 1.65; max-width: 34ch; margin: 0 auto; }
+    .ea-confirm-detail { font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
+    .ea-confirm-detail svg { width: 12px; height: 12px; color: var(--teal); }
+
+    /* ── PRIVACY NOTE ── */
+    .ea-privacy-note { text-align: center; margin-top: 1rem; font-size: 0.68rem; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 0.4rem; line-height: 1.5; }
+    .ea-privacy-note svg { width: 12px; height: 12px; color: var(--teal); flex-shrink: 0; }
+    .ea-privacy-note a { color: var(--teal); font-weight: 600; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-inner { grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+      .ea-hero { grid-template-columns: 1fr; min-height: unset; }
+      .ea-hero-left { padding: 5rem 2rem 3rem; }
+      .ea-hero-left-inner { max-width: 100%; }
+      .ea-hero-right { border-left: none; border-top: 1px solid var(--border); padding: 3rem 2rem; }
+      .ea-form-wrap { max-width: 520px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-ctas { display: none; }
+      .nav-hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .footer-bottom-inner { grid-template-columns: 1fr; text-align: center; gap: 0.5rem; }
+      .footer-bottom-right { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .ea-2col { grid-template-columns: 1fr; }
+      .ea-form-card { padding: 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer { padding: 2rem 1rem 0; }
+      .footer-bottom { margin: 0 -1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="announce-bar">
+  <div class="announce-bar-inner">
+    <svg data-lucide="zap"></svg>
+    <span>Founding member applications are open — spots are limited and reviewed personally.</span>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/new/home.html" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/new/home.html">Home</a></li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Solutions <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/solutions/foodbeverage.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="shopping-bag"></svg></div>
+            <div>
+              <div class="nav-drop-title">Food &amp; Beverage</div>
+              <div class="nav-drop-sub">CPG export intelligence</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Experts <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/experts.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="help-circle"></svg></div>
+            <div>
+              <div class="nav-drop-title">Why Experts?</div>
+              <div class="nav-drop-sub">The case for human guidance</div>
+            </div>
+          </a>
+          <a href="/new/experts/search.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="search"></svg></div>
+            <div>
+              <div class="nav-drop-title">Find Experts</div>
+              <div class="nav-drop-sub">Browse by country or industry</div>
+            </div>
+          </a>
+          <a href="/new/experts/join.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="user-plus"></svg></div>
+            <div>
+              <div class="nav-drop-title">Join as Expert</div>
+              <div class="nav-drop-sub">Apply to the network</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">About <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/new/about.html" class="nav-drop-item">
+            <div class="nav-drop-icon"><svg data-lucide="flag"></svg></div>
+            <div>
+              <div class="nav-drop-title">Mission</div>
+              <div class="nav-drop-sub">Our story and values</div>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li><a href="/new/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="#apply-form" class="btn btn-primary">Apply for Access</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/new/home.html">Home</a>
+    <a href="/new/solutions/foodbeverage.html">Food &amp; Beverage</a>
+    <a href="/new/experts.html">Why Experts?</a>
+    <a href="/new/experts/search.html">Find Experts</a>
+    <a href="/new/experts/join.html">Join as Expert</a>
+    <a href="/new/about.html">About</a>
+    <a href="/new/contact.html">Contact</a>
+    <div class="nav-mobile-ctas" style="margin-top:1rem;">
+      <a href="#apply-form" class="btn btn-primary" style="width:100%;justify-content:center;">Apply for Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO + FORM ── -->
+<section class="ea-hero" id="apply-form">
+
+  <!-- LEFT: Value prop -->
+  <div class="ea-hero-left">
+    <div class="ea-hero-left-inner">
+      <div class="ea-eyebrow"><svg data-lucide="lock"></svg> Founding Member Access · Applications Open</div>
+      <h1>Trade smarter.<em>Grow globally.</em></h1>
+      <p class="ea-hero-desc">Mercorama gives Canadian exporters the intelligence to find better markets, reduce costly mistakes, and move faster than the competition — before ever spending a dollar on export.</p>
+
+      <div class="ea-value-list">
+        <div class="ea-value-item">
+          <div class="ea-value-icon"><svg data-lucide="compass"></svg></div>
+          <div class="ea-value-text">
+            <div class="ea-value-title">Know which markets are actually ready for your product</div>
+            <div class="ea-value-desc">AI-scored market demand signals drawn from Stats Canada, UN Comtrade, and FTA access — ranked for your specific product and business.</div>
+          </div>
+        </div>
+        <div class="ea-value-item">
+          <div class="ea-value-icon"><svg data-lucide="shield-check"></svg></div>
+          <div class="ea-value-text">
+            <div class="ea-value-title">Reduce classification and compliance risk before you ship</div>
+            <div class="ea-value-desc">Built-in intelligence to help you understand duty exposure, trade terms, and market requirements — so you can move with confidence.</div>
+          </div>
+        </div>
+        <div class="ea-value-item">
+          <div class="ea-value-icon"><svg data-lucide="zap"></svg></div>
+          <div class="ea-value-text">
+            <div class="ea-value-title">Go from question to insight in minutes, not months</div>
+            <div class="ea-value-desc">Mercorama replaces weeks of scattered research with a focused AI-powered workflow — built specifically for Canadian SMEs.</div>
+          </div>
+        </div>
+        <div class="ea-value-item">
+          <div class="ea-value-icon"><svg data-lucide="users"></svg></div>
+          <div class="ea-value-text">
+            <div class="ea-value-title">Connect with verified trade professionals on demand</div>
+            <div class="ea-value-desc">When you need human expertise — customs brokers, market entry advisors, freight specialists — our verified expert network is one request away.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ea-trust-strip">
+        <div class="ea-trust-row">
+          <div class="ea-trust-item"><svg data-lucide="map-pin"></svg> Built in Bedford, Nova Scotia 🍁</div>
+          <div class="ea-trust-item"><svg data-lucide="clock"></svg> Response within 48 hours</div>
+          <div class="ea-trust-item"><svg data-lucide="credit-card"></svg> No credit card to apply</div>
+        </div>
+        <div class="ea-trust-row">
+          <div class="ea-trust-item"><svg data-lucide="database"></svg> Data from Stats Canada, UN Comtrade &amp; Global Affairs Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form panel -->
+  <div class="ea-hero-right">
+    <div class="ea-form-wrap">
+      <div class="ea-form-header">
+        <h2>Apply for Early Access</h2>
+        <p>Locked pricing. Your rate stays fixed for 12 months. Every application is reviewed personally.</p>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="ea-progress">
+        <div class="ea-step active" id="s1-ind">
+          <div class="ea-step-dot">1</div>
+          <div class="ea-step-lbl">You</div>
+        </div>
+        <div class="ea-step" id="s2-ind">
+          <div class="ea-step-dot">2</div>
+          <div class="ea-step-lbl">Business</div>
+        </div>
+        <div class="ea-step" id="s3-ind">
+          <div class="ea-step-dot">3</div>
+          <div class="ea-step-lbl">Goals</div>
+        </div>
+        <div class="ea-step" id="s4-ind">
+          <div class="ea-step-dot">4</div>
+          <div class="ea-step-lbl">Access</div>
+        </div>
+      </div>
+
+      <!-- STEP 1: About You -->
+      <div id="s1" class="ea-form-card">
+        <div class="ea-step-title">About You</div>
+        <div class="ea-step-sub">Your contact details — so we can reach you personally.</div>
+
+        <div class="ea-2col">
+          <div class="ea-field">
+            <label class="ea-label">First Name <span class="req">*</span></label>
+            <input class="ea-input" id="f-first" type="text" placeholder="Jane" />
+          </div>
+          <div class="ea-field">
+            <label class="ea-label">Last Name <span class="req">*</span></label>
+            <input class="ea-input" id="f-last" type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Work Email <span class="req">*</span></label>
+          <input class="ea-input" id="f-email" type="email" placeholder="jane@company.ca" />
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Phone <span style="font-size:0.65rem;color:var(--muted);font-weight:400">(optional — for onboarding call)</span></label>
+          <div class="ea-inline-group">
+            <span class="ea-prefix">🇨🇦 +1</span>
+            <input class="ea-input suffix" id="f-phone" type="tel" placeholder="(555) 123-4567" />
+          </div>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Your Role / Title <span class="req">*</span></label>
+          <select class="ea-select" id="f-role">
+            <option value="">Select your role…</option>
+            <option>Founder / Co-founder</option>
+            <option>CEO / President</option>
+            <option>VP / Director of Sales or Business Development</option>
+            <option>Export / Trade Manager</option>
+            <option>Operations Manager</option>
+            <option>Trade Consultant / Advisor</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="ea-actions right">
+          <span class="ea-step-counter">Step 1 of 4</span>
+          <button class="btn-ea-next" onclick="goStep(2)">Continue <svg data-lucide="arrow-right" style="width:14px;height:14px"></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Business Context -->
+      <div id="s2" class="ea-form-card" style="display:none">
+        <div class="ea-step-title">Your Business</div>
+        <div class="ea-step-sub">Help us understand your business so we can set up your account the right way.</div>
+
+        <div class="ea-field">
+          <label class="ea-label">Company Name <span class="req">*</span></label>
+          <input class="ea-input" id="f-company" type="text" placeholder="Acme Export Co." />
+        </div>
+        <div class="ea-2col">
+          <div class="ea-field">
+            <label class="ea-label">Province / Territory <span class="req">*</span></label>
+            <select class="ea-select" id="f-province">
+              <option value="">Select…</option>
+              <option>Alberta (AB)</option>
+              <option>British Columbia (BC)</option>
+              <option>Manitoba (MB)</option>
+              <option>New Brunswick (NB)</option>
+              <option>Newfoundland and Labrador (NL)</option>
+              <option>Northwest Territories (NT)</option>
+              <option>Nova Scotia (NS)</option>
+              <option>Nunavut (NU)</option>
+              <option>Ontario (ON)</option>
+              <option>Prince Edward Island (PE)</option>
+              <option>Quebec (QC)</option>
+              <option>Saskatchewan (SK)</option>
+              <option>Yukon (YT)</option>
+            </select>
+          </div>
+          <div class="ea-field">
+            <label class="ea-label">Company Size <span class="req">*</span></label>
+            <select class="ea-select" id="f-size">
+              <option value="">Select…</option>
+              <option>1–5 employees</option>
+              <option>6–20 employees</option>
+              <option>21–100 employees</option>
+              <option>100+ employees</option>
+            </select>
+          </div>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Primary Industry <span class="req">*</span></label>
+          <select class="ea-select" id="f-industry">
+            <option value="">Select your industry…</option>
+            <option>Food &amp; Beverage</option>
+            <option>Agriculture &amp; Agri-Food</option>
+            <option>Technology &amp; Software</option>
+            <option>Advanced Manufacturing</option>
+            <option>Clean Energy &amp; Cleantech</option>
+            <option>Life Sciences &amp; Health</option>
+            <option>Aerospace &amp; Defence</option>
+            <option>Natural Resources &amp; Mining</option>
+            <option>Consumer Goods &amp; Retail</option>
+            <option>Professional Services</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Company Website</label>
+          <div class="ea-inline-group">
+            <span class="ea-prefix">https://</span>
+            <input class="ea-input suffix" id="f-website" type="text" placeholder="yourcompany.ca" />
+          </div>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">LinkedIn Profile <span style="font-size:0.65rem;color:var(--muted);font-weight:400">(optional)</span></label>
+          <div class="ea-inline-group">
+            <span class="ea-prefix">linkedin.com/in/</span>
+            <input class="ea-input suffix" id="f-linkedin" type="text" placeholder="yourname" />
+          </div>
+        </div>
+
+        <div class="ea-actions">
+          <button class="btn-ea-back" onclick="goStep(1)"><svg data-lucide="arrow-left" style="width:14px;height:14px"></svg> Back</button>
+          <span class="ea-step-counter">Step 2 of 4</span>
+          <button class="btn-ea-next" onclick="goStep(3)">Continue <svg data-lucide="arrow-right" style="width:14px;height:14px"></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Export Goals -->
+      <div id="s3" class="ea-form-card" style="display:none">
+        <div class="ea-step-title">Your Export Goals</div>
+        <div class="ea-step-sub">This helps us understand where you are on your export journey and what matters most to you.</div>
+
+        <div class="ea-field">
+          <label class="ea-label">What product(s) or service(s) do you export or plan to export? <span class="req">*</span></label>
+          <input class="ea-input" id="f-product" type="text" placeholder="e.g., Organic oat flour, SaaS platform, industrial sensors" />
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Export experience <span class="req">*</span></label>
+          <select class="ea-select" id="f-experience">
+            <option value="">Select…</option>
+            <option>Just starting — exploring export for the first time</option>
+            <option>Researching — building a plan but no deals yet</option>
+            <option>Active — currently exporting to 1–2 markets</option>
+            <option>Scaling — exporting to 3+ markets and growing</option>
+          </select>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Target markets you are most focused on</label>
+          <input class="ea-input" id="f-markets" type="text" placeholder="e.g., Germany, UAE, Japan, Southeast Asia" />
+          <span class="ea-hint">Enter countries or regions — separate with commas</span>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">What is your biggest export challenge right now? <span class="req">*</span></label>
+          <div class="ea-tag-group">
+            <input class="ea-tag-option" type="checkbox" id="ch1" name="challenge" value="finding-markets"><label for="ch1">Finding the right markets</label>
+            <input class="ea-tag-option" type="checkbox" id="ch2" name="challenge" value="hs-classification"><label for="ch2">Product classification &amp; duty rates</label>
+            <input class="ea-tag-option" type="checkbox" id="ch3" name="challenge" value="compliance"><label for="ch3">Trade compliance &amp; regulations</label>
+            <input class="ea-tag-option" type="checkbox" id="ch4" name="challenge" value="logistics"><label for="ch4">Freight &amp; logistics costs</label>
+            <input class="ea-tag-option" type="checkbox" id="ch5" name="challenge" value="buyers"><label for="ch5">Finding buyers or distributors</label>
+            <input class="ea-tag-option" type="checkbox" id="ch6" name="challenge" value="financing"><label for="ch6">Export financing &amp; funding</label>
+            <input class="ea-tag-option" type="checkbox" id="ch7" name="challenge" value="research"><label for="ch7">Time-consuming market research</label>
+            <input class="ea-tag-option" type="checkbox" id="ch8" name="challenge" value="us-tariffs"><label for="ch8">US tariff exposure</label>
+          </div>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">What would success look like for you in the next 12 months?</label>
+          <textarea class="ea-textarea" id="f-success" placeholder="e.g., Sign our first EU distributor, understand which 3 markets are best for our product, reduce compliance errors..."></textarea>
+        </div>
+
+        <div class="ea-actions">
+          <button class="btn-ea-back" onclick="goStep(2)"><svg data-lucide="arrow-left" style="width:14px;height:14px"></svg> Back</button>
+          <span class="ea-step-counter">Step 3 of 4</span>
+          <button class="btn-ea-next" onclick="goStep(4)">Continue <svg data-lucide="arrow-right" style="width:14px;height:14px"></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Access Preferences -->
+      <div id="s4" class="ea-form-card" style="display:none">
+        <div class="ea-step-title">Access Preferences</div>
+        <div class="ea-step-sub">A few final details to complete your application.</div>
+
+        <div class="ea-field">
+          <label class="ea-label">Which plan interests you? <span class="req">*</span></label>
+          <select class="ea-select" id="f-plan">
+            <option value="">Select…</option>
+            <option>Starter — Core intelligence tools, email support</option>
+            <option>Growth — Full platform + priority support + onboarding call</option>
+            <option>Not sure yet — I'd like guidance</option>
+          </select>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Preferred contact method for onboarding <span class="req">*</span></label>
+          <select class="ea-select" id="f-contact-pref">
+            <option value="">Select…</option>
+            <option>Email only</option>
+            <option>Phone call</option>
+            <option>Video call (Google Meet / Teams)</option>
+          </select>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">How did you hear about Mercorama?</label>
+          <select class="ea-select" id="f-source">
+            <option value="">Select…</option>
+            <option>Google / Web search</option>
+            <option>LinkedIn</option>
+            <option>Referred by a colleague or friend</option>
+            <option>EDC / BDC / Trade Commissioner</option>
+            <option>Nova Scotia government or accelerator</option>
+            <option>News article or podcast</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Referral name <span style="font-size:0.65rem;color:var(--muted);font-weight:400">(if someone referred you)</span></label>
+          <input class="ea-input" id="f-referral" type="text" placeholder="Name of person who referred you" />
+        </div>
+        <div class="ea-field">
+          <label class="ea-label">Anything else you want us to know?</label>
+          <textarea class="ea-textarea" id="f-notes" style="min-height:70px" placeholder="Optional — share anything specific about your situation, questions you have, or context that would help us prepare your account."></textarea>
+        </div>
+
+        <div class="ea-actions">
+          <button class="btn-ea-back" onclick="goStep(3)"><svg data-lucide="arrow-left" style="width:14px;height:14px"></svg> Back</button>
+          <span class="ea-step-counter">Step 4 of 4</span>
+          <button class="btn-ea-next" id="submit-btn" onclick="submitApplication()">Submit Application <svg data-lucide="send" style="width:14px;height:14px"></svg></button>
+        </div>
+      </div>
+
+      <!-- CONFIRMATION STATE -->
+      <div id="ea-confirm" class="ea-confirm ea-form-card">
+        <div class="ea-confirm-icon"><svg data-lucide="check"></svg></div>
+        <h3>Application received!</h3>
+        <p>Thank you — we review every application personally and will be in touch within 48 hours.</p>
+        <div class="ea-confirm-detail"><svg data-lucide="mail"></svg> <span id="confirm-email-display">Check your inbox for a confirmation.</span></div>
+        <div class="ea-confirm-detail"><svg data-lucide="clock"></svg> Response within 48 business hours</div>
+        <div class="ea-confirm-detail"><svg data-lucide="map-pin"></svg> Mercorama · Bedford, Nova Scotia 🍁</div>
+      </div>
+
+      <div class="ea-privacy-note">
+        <svg data-lucide="shield"></svg>
+        Your data is never sold. <a href="/new/privacy.html">Privacy Policy</a> · <a href="/new/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+      <div class="footer-powered">Powered by <a href="#" style="font-weight:600;">MightyIQ Inc.</a></div>
+    </div>
+    <div>
+      <div class="footer-col-head">Platform</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/export-compass">Export Compass</a>
+        <a class="footer-link" href="/hscode">Trade Intelligence</a>
+        <a class="footer-link" href="/deal">Deal Readiness</a>
+        <a class="footer-link" href="/dashboard">Buyer Intelligence</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Solutions</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/solutions/foodbeverage.html">Food &amp; Beverage</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Experts</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/experts.html">Why Experts?</a>
+        <a class="footer-link" href="/new/experts/search.html">Find Experts</a>
+        <a class="footer-link" href="/new/experts/join.html">Join as Expert</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">About</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/about.html">Mission</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Contact</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/new/contact.html">Get in Touch</a>
+        <a class="footer-link" href="/new/contact.html">Book a Demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Follow Us</div>
+      <div class="footer-social-icons">
+        <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hello@mercorama.com" class="footer-social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2026 Mercorama. All rights reserved. · Powered by <a href="#" style="color:inherit;font-weight:600;">MightyIQ Inc.</a></div>
+      <div class="footer-bottom-center">Halifax, Nova Scotia, Canada 🍁</div>
+      <div class="footer-bottom-right">
+        <a href="/new/privacy.html">Privacy Policy</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/new/terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobile');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 20 ? '0 4px 16px rgba(11,31,58,0.10)' : '');
+
+  function goStep(n) {
+    [1,2,3,4].forEach(i => {
+      const panel = document.getElementById('s'+i);
+      const ind = document.getElementById('s'+i+'-ind');
+      if (panel) panel.style.display = (i === n) ? 'block' : 'none';
+      if (ind) {
+        ind.classList.remove('active','completed');
+        if (i < n) ind.classList.add('completed');
+        if (i === n) ind.classList.add('active');
+        const dot = ind.querySelector('.ea-step-dot');
+        if (i < n) { dot.innerHTML = '<svg data-lucide="check" style="width:12px;height:12px"></svg>'; }
+        else { dot.textContent = i; }
+      }
+    });
+    document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    lucide.createIcons();
+  }
+
+  function submitApplication() {
+    const data = {
+      first: document.getElementById('f-first')?.value,
+      last: document.getElementById('f-last')?.value,
+      email: document.getElementById('f-email')?.value,
+      phone: document.getElementById('f-phone')?.value,
+      role: document.getElementById('f-role')?.value,
+      company: document.getElementById('f-company')?.value,
+      province: document.getElementById('f-province')?.value,
+      size: document.getElementById('f-size')?.value,
+      industry: document.getElementById('f-industry')?.value,
+      website: document.getElementById('f-website')?.value,
+      linkedin: document.getElementById('f-linkedin')?.value,
+      product: document.getElementById('f-product')?.value,
+      experience: document.getElementById('f-experience')?.value,
+      markets: document.getElementById('f-markets')?.value,
+      challenges: [...document.querySelectorAll('input[name="challenge"]:checked')].map(c => c.value).join(', '),
+      success: document.getElementById('f-success')?.value,
+      plan: document.getElementById('f-plan')?.value,
+      contactPref: document.getElementById('f-contact-pref')?.value,
+      source: document.getElementById('f-source')?.value,
+      referral: document.getElementById('f-referral')?.value,
+      notes: document.getElementById('f-notes')?.value,
+      submittedAt: new Date().toISOString()
+    };
+    console.log('Application data:', data); // Replace with Supabase insert or fetch() POST
+
+    [1,2,3,4].forEach(i => {
+      document.getElementById('s'+i).style.display = 'none';
+      const ind = document.getElementById('s'+i+'-ind');
+      ind.classList.remove('active'); ind.classList.add('completed');
+      const dot = ind.querySelector('.ea-step-dot');
+      dot.innerHTML = '<svg data-lucide="check" style="width:12px;height:12px"></svg>';
+    });
+
+    const conf = document.getElementById('ea-confirm');
+    conf.style.display = 'flex';
+    const emailEl = document.getElementById('confirm-email-display');
+    if (data.email) emailEl.textContent = 'Confirmation sent to ' + data.email;
+
+    lucide.createIcons();
+  }
+</script>
+</body>
+</html>

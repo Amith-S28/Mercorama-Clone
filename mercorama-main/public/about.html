@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Mercorama | Intelligent Trade. Endless Opportunities.</title>
+  <meta name="description" content="Mercorama is built to make global growth more accessible, intelligent, and actionable for Canadian businesses.">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --navy:       #0B1F3A;
+      --navy-mid:   #152d52;
+      --teal:       #009CA6;
+      --teal-dark:  #007D87;
+      --teal-light: #E6F7F8;
+      --bg:         #FFFFFF;
+      --light-bg:   #F0F4F8;
+      --text:       #0B1F3A;
+      --muted:      #5A6A7A;
+      --border:     #DDE3EA;
+      --wide:       1200px;
+      --font-head:  'Plus Jakarta Sans', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; font-family: var(--font-body); border: none; }
+
+    /* ── SOLUTIONS DROPDOWN ── */
+    .nav-has-drop { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 4px; font-size: var(--text-sm); font-weight: 500; color: var(--muted); cursor: default; }
+    .nav-drop-trigger:hover { color: var(--navy); }
+    .nav-drop-trigger svg.chevron { width: 14px; height: 14px; transition: transform var(--transition); }
+    .nav-has-drop:hover .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 2px); left: 50%; transform: translateX(-50%) translateY(-4px); background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(11,31,58,0.12); padding: 0.375rem; min-width: 160px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--transition), transform var(--transition); }
+    .nav-dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+    .nav-has-drop:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-has-drop.open .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-has-drop.open .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: block; padding: 0.55rem 0.875rem; border-radius: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; transition: background var(--transition), color var(--transition); white-space: nowrap; }
+    .nav-drop-item:hover, .nav-drop-item.active { background: var(--light-bg); color: var(--navy); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--wide); margin: 0 auto;
+      padding: 0 2rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .nav-logo img { height: clamp(44px,4.5vw,60px); width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-ctas { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.875rem; font-weight: 700;
+      white-space: nowrap; transition: all var(--transition);
+    }
+    .btn-primary { background: var(--teal); color: white; border: 2px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border); padding: 1rem 2rem 1.5rem; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .nav-mobile a:hover { color: var(--teal); }
+    .nav-mobile-ctas { margin-top: 1rem; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      position: relative; top: auto; left: auto; right: auto;
+      max-width: none; margin: 0 0 1.5rem; padding: 0;
+      font-size: var(--text-xs); color: rgba(255,255,255,0.85);
+      display: flex; align-items: center; gap: 0.4rem; z-index: 2;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.85); }
+    .breadcrumb a:hover { color: white; }
+    .breadcrumb-sep { opacity: 0.5; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--light-bg);
+      padding: 3rem 2rem;
+    }
+    .hero-img { display: none; }
+    .hero-overlay { display: none; }
+    .hero-inner {
+      max-width: var(--wide); margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      min-height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 56px rgba(11,31,58,0.18);
+    }
+    .hero-inner::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(11,31,58,0.92) 0%, rgba(11,31,58,0.60) 38%, rgba(11,31,58,0.0) 62%);
+    }
+    .hero-left {
+      position: relative; z-index: 2;
+      flex: 0 0 44%;
+      padding: 3.5rem 3rem;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .hero-right {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; z-index: 0;
+    }
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: right center;
+      display: block;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem);
+      font-weight: 800; color: white; line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--teal); display: block; }
+    .hero-divider { width: 40px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 1.25rem; }
+    .hero-body {
+      font-size: var(--text-sm); color: rgba(255,255,255,1);
+      line-height: 1.7; margin-bottom: 1rem; max-width: 420px;
+    }
+    .hero-instinct { font-size: var(--text-sm); color: white; }
+    .hero-instinct strong { color: var(--teal); font-style: italic; }
+    .hero-stat {
+      text-align: right; color: white;
+    }
+    .hero-stat-value {
+      font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800;
+      color: white; line-height: 1;
+    }
+    .hero-stat-label { font-size: var(--text-xs); color: rgba(255,255,255,0.9); margin-top: 4px; }
+    .hero-stat-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: white; border: 2px solid var(--teal);
+      margin: 0 auto 6px;
+    }
+    /* ── SECTION SHARED ── */
+    section { padding: 4rem 2rem; }
+    .section-inner { max-width: var(--wide); margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 1rem;
+    }
+
+    /* ── MISSION + STORY ── */
+    .mission-story {
+      background: var(--bg);
+      padding: 4rem 2rem;
+    }
+    .mission-story-grid {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; align-items: stretch;
+    }
+    .mission-card, .story-card {
+      padding: 2.5rem 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .mission-card { background: white; }
+    .story-card { background: white; margin-left: 1.5rem; }
+    .mission-card h2, .story-card h2 {
+      font-family: var(--font-head);
+      font-size: var(--text-lg); font-weight: 800;
+      color: var(--navy); margin-bottom: 1rem; line-height: 1.2;
+    }
+    .mission-divider { width: 32px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 1.25rem; }
+    .mission-card p, .story-card p {
+      font-size: var(--text-sm); color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem;
+    }
+    .mission-pillars {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin-top: 2rem;
+    }
+    .pillar { text-align: center; }
+    .pillar-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--teal-light); border: 1.5px solid rgba(0,156,166,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.6rem; color: var(--teal);
+    }
+    .pillar-icon svg { width: 20px; height: 20px; }
+    .pillar-label { font-size: var(--text-xs); font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+    /* ── VALUES ── */
+    .values-section { background: var(--light-bg); padding: 3.5rem 2rem; }
+    .values-inner { max-width: var(--wide); margin: 0 auto; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .value-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem 1.25rem;
+    }
+    .value-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--teal-light); border: 1.5px solid rgba(0,156,166,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal); margin-bottom: 0.875rem;
+    }
+    .value-icon svg { width: 18px; height: 18px; }
+    .value-card h3 { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .value-card p { font-size: var(--text-xs); color: var(--muted); line-height: 1.55; }
+
+    /* ── CANADA + COMMITMENT ── */
+    .canada-section { background: var(--bg); padding: 3.5rem 2rem; }
+    .canada-grid {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 2rem; align-items: center;
+    }
+    .canada-left { padding-right: 1rem; }
+    .canada-left h3 {
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+    }
+    .canada-left p { font-size: var(--text-sm); color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .canada-location {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--navy);
+    }
+    .canada-location svg { width: 14px; height: 14px; color: var(--teal); }
+    .canada-img {
+      width: 360px; height: 260px;
+      object-fit: cover; object-position: center 40%;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(11,31,58,0.15);
+      flex-shrink: 0;
+    }
+    .canada-right { padding-left: 1rem; }
+    .canada-right h3 {
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+    }
+    .canada-right p { font-size: var(--text-sm); color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .canada-right .tagline { font-size: var(--text-sm); font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+    .canada-right .tagline-sub { font-size: var(--text-sm); color: var(--teal); font-style: italic; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    .footer { background: #F0F4F8; padding: 3rem 2rem 0; border-top: 3px solid var(--teal); }
+    .footer-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 200px repeat(6, 1fr);
+      gap: 1.5rem; padding-bottom: 2.5rem;
+    }
+    .footer-brand-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-tagline { font-size: 0.8rem; color: var(--muted); line-height: 1.55; max-width: 26ch; }
+    .footer-brand-col img { height: 44px; width: auto; max-width: 160px; display: block; margin-bottom: 0; }
+    .footer-powered { font-size: 0.68rem; color: var(--muted); }
+    .footer-col-head { font-family: var(--font-head); font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 0; }
+    .footer-link { font-size: var(--text-xs); color: #4A5568; display: block; padding: 0.55rem 0; min-height: 44px; display: flex; align-items: center; }
+    .footer-link:hover { color: var(--navy); }
+    .footer-social-icons { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+    .footer-social-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy); transition: all var(--transition);
+    }
+    .footer-social-icon:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .footer-social-icon svg { width: 16px; height: 16px; }
+    .footer-bottom { background: #081629; margin: 0 -2rem; padding: 1.1rem 2rem; }
+    .footer-bottom-inner {
+      max-width: var(--wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 1rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.85);
+    }
+    .footer-bottom-center { color: white; font-weight: 500; white-space: nowrap; }
+    .footer-bottom-right { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; }
+    .footer-bottom-right a { color: rgba(255,255,255,0.85); }
+    .footer-bottom-right a:hover { color: white; }
+    .footer-bottom-divider { color: rgba(255,255,255,0.3); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav-inner { gap: 1rem; padding: 0 1.25rem; }
+      .values-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-ctas { display: none; }
+      .nav-hamburger { display: flex; }
+      .mission-story-grid { grid-template-columns: 1fr; }
+      .story-card { margin-left: 0; margin-top: 1.5rem; }
+      .mission-pillars { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .canada-grid { grid-template-columns: 1fr; }
+      .canada-img { width: 100%; height: 240px; }
+      .canada-right { padding-left: 0; }
+      .canada-left { padding-right: 0; }
+      .hero-inner { min-height: 340px; border-radius: 14px; }
+      .hero-inner::after { background: linear-gradient(to bottom, rgba(11,31,58,0.0) 0%, rgba(11,31,58,0.0) 30%, rgba(11,31,58,0.88) 62%, rgba(11,31,58,0.97) 100%); }
+      .hero-left { flex: none; width: 100%; padding: 0 1.75rem 2rem; justify-content: flex-end; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .footer-bottom-inner { grid-template-columns: 1fr; text-align: center; gap: 0.5rem; }
+      .footer-bottom-right { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .mission-pillars { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer { padding: 2rem 1rem 0; }
+      .footer-bottom { margin: 0 -1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Solutions <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/solutions/foodbeverage.html" class="nav-drop-item">Food &amp; Beverage</a>
+          <a href="/solutions/seafood.html" class="nav-drop-item">Seafood &amp; Ocean Products</a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Experts <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/experts.html#why-experts" class="nav-drop-item">Why Experts?</a>
+          <a href="/experts/search.html" class="nav-drop-item">Find Experts</a>
+          <a href="/experts/join.html" class="nav-drop-item">Join as Expert</a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger active">About <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/about.html" class="nav-drop-item">Mission &amp; Story</a>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="/early-access.html" class="btn btn-primary">Book a Demo</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/">Home</a>
+    <a href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+    <a href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+    <a href="/experts.html">Why Experts?</a>
+    <a href="/experts/search.html">Find Experts</a>
+    <a href="/experts/join.html">Join as Expert</a>
+    <a href="/about.html" class="active">About</a>
+    <a href="/contact.html">Contact</a>
+    <div class="nav-mobile-ctas" style="margin-top:1rem;">
+      <a href="/early-access.html" style="width:100%;justify-content:center;">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/about.html">About</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Mission</span>
+      </div>
+      <h1>Built to Navigate<br><em>Global Opportunity.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-body">The falcon is one of nature's most precise navigators. Some species travel over 40,000 km in a season, crossing borders, climates, and uncertainty — yet always finding their way home.</p>
+      <p class="hero-instinct"><strong>That instinct inspires</strong> everything we do.</p>
+      <div class="hero-stat" style="margin-top:2rem;text-align:left;">
+        <div class="hero-stat-dot" style="margin:0 0 6px;"></div>
+        <div class="hero-stat-value">40,000+ km</div>
+        <div class="hero-stat-label">in a season</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="/about-hero-falcon.webp" alt="Falcon in flight over mountains" />
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION + STORY ── -->
+<section class="mission-story">
+  <div class="mission-story-grid">
+
+    <!-- Mission -->
+    <div class="mission-card fade-in">
+      <div class="eyebrow">Our Mission</div>
+      <h2>To make global growth more accessible, intelligent, and actionable for businesses.</h2>
+      <div class="mission-divider"></div>
+      <p>Mercorama empowers companies—especially SMEs—to confidently explore new markets, connect with the right partners, and navigate trade complexity with clarity.</p>
+      <div class="mission-pillars">
+        <div class="pillar">
+          <div class="pillar-icon"><svg data-lucide="globe"></svg></div>
+          <div class="pillar-label">Discover opportunities</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg data-lucide="users"></svg></div>
+          <div class="pillar-label">Connect with trusted experts</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg data-lucide="bar-chart-2"></svg></div>
+          <div class="pillar-label">Make smarter decisions</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg data-lucide="trending-up"></svg></div>
+          <div class="pillar-label">Grow with confidence</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story -->
+    <div class="story-card fade-in fade-in-delay-1">
+      <div class="eyebrow">Our Story</div>
+      <h2>From Global Experience to Global Impact.</h2>
+      <p>Mercorama was founded by a team with deep experience in international trade, market development, and business growth.</p>
+      <p>We saw firsthand how challenging it is for businesses to access the right intelligence and expertise to expand globally.</p>
+      <p>So we built Mercorama—a platform that combines AI-powered trade intelligence with a global network of experts to help businesses move forward with clarity and confidence.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── VALUES ── -->
+<section class="values-section">
+  <div class="values-inner">
+    <div class="eyebrow">Our Values</div>
+    <div class="values-grid">
+      <div class="value-card fade-in">
+        <div class="value-icon"><svg data-lucide="target"></svg></div>
+        <h3>Precision</h3>
+        <p>We deliver accurate, reliable, and actionable insights.</p>
+      </div>
+      <div class="value-card fade-in fade-in-delay-1">
+        <div class="value-icon"><svg data-lucide="handshake"></svg></div>
+        <h3>Trust</h3>
+        <p>We build trust through transparency, expertise, and integrity.</p>
+      </div>
+      <div class="value-card fade-in fade-in-delay-2">
+        <div class="value-icon"><svg data-lucide="globe"></svg></div>
+        <h3>Global Mindset</h3>
+        <p>We embrace diversity, understand local nuances, and think beyond borders.</p>
+      </div>
+      <div class="value-card fade-in fade-in-delay-3">
+        <div class="value-icon"><svg data-lucide="lightbulb"></svg></div>
+        <h3>Innovation</h3>
+        <p>We leverage technology and human expertise to solve complex trade challenges.</p>
+      </div>
+      <div class="value-card fade-in fade-in-delay-3">
+        <div class="value-icon"><svg data-lucide="rocket"></svg></div>
+        <h3>Empowerment</h3>
+        <p>We empower businesses to take confident steps toward their global potential.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CANADA + COMMITMENT ── -->
+<section class="canada-section">
+  <div class="canada-grid">
+
+    <div class="canada-left fade-in">
+      <h3>Built in Canada. Connected Globally.</h3>
+      <p>Mercorama is proudly headquartered in Halifax, Nova Scotia, Canada—a global gateway with a rich trade legacy and a forward-looking business community.</p>
+      <div class="canada-location">
+        <svg data-lucide="map-pin"></svg>
+        Halifax, Nova Scotia, Canada 🍁
+      </div>
+    </div>
+
+    <img src="/halifax-footer.webp" alt="Halifax skyline at dusk" class="canada-img fade-in fade-in-delay-1"
+      onerror="this.style.background='#0B1F3A';this.removeAttribute('src')" />
+
+    <div class="canada-right fade-in fade-in-delay-2">
+      <h3>Our Commitment</h3>
+      <p>We are committed to helping businesses of all sizes navigate the complexities of global trade and build sustainable, long-term growth.</p>
+      <p class="tagline">Wherever you are, we'll help you find your way.</p>
+      <p class="tagline-sub">Intelligent Trade. Endless Opportunities.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+    <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+      <p class="footer-tagline">AI-powered trade intelligence for Canadian exporters.</p>
+      <div class="footer-social-icons">
+        <a href="https://linkedin.com/company/mercorama" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hello@mercorama.com" class="footer-social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Solutions</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+        <a class="footer-link" href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+        <a class="footer-link" href="/auth/signin" target="_blank" rel="noopener">Member Login</a>
+        <a class="footer-link" href="/early-access.html">Early Access</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Experts</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/experts.html">Why Experts?</a>
+        <a class="footer-link" href="/experts/search.html">Find Experts</a>
+        <a class="footer-link" href="/experts/join.html">Join as Expert</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Company</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/about.html">About</a>
+        <a class="footer-link" href="/data-sources.html">Data Sources</a>
+        <a class="footer-link" href="/data-retention.html">Data Retention</a>
+        <a class="footer-link" href="/contact.html">Contact Us</a>
+        <a class="footer-link" href="/early-access.html">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2026 Mercorama · Powered by <a href="https://mightyiq.ca" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700;">MightyIQ Inc.</a></div>
+      <div class="footer-bottom-center">Halifax, Nova Scotia, Canada 🍁</div>
+      <div class="footer-bottom-right">
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobile');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 20 ? '0 4px 16px rgba(11,31,58,0.10)' : '');
+
+  // Touch-friendly dropdowns (touch devices lose :hover before tap completes)
+  (function() {
+    var drops = document.querySelectorAll('.nav-has-drop');
+    drops.forEach(function(drop) {
+      var trigger = drop.querySelector('.nav-drop-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        // Only intercept on touch/non-pointer devices
+        if (window.matchMedia('(hover: none)').matches || e.pointerType === 'touch') {
+          e.preventDefault();
+          var isOpen = drop.classList.contains('open');
+          // Close all
+          drops.forEach(function(d) { d.classList.remove('open'); });
+          if (!isOpen) drop.classList.add('open');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-has-drop')) {
+        drops.forEach(function(d) { d.classList.remove('open'); });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

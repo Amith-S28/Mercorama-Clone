@@ -1,0 +1,512 @@
+id;name;country_code;unlocode;enabled;is_hub;source;display_name;aliases
+# ── NORTH AMERICA ───────────────────────────────────────────────
+ca_cavan_vancouver;Vancouver;CA;CAVAN;true;true;upply;Vancouver;Vancouver,Port of Vancouver,Port Metro Vancouver
+ca_cahal_halifax;Halifax;CA;CAHAL;true;true;upply;Halifax;Halifax,Port of Halifax
+ca_camtr_montreal;Montreal;CA;CAMTR;true;true;upply;Montreal;Montreal,Port of Montreal
+ca_caprr_prince_rupert;Prince Rupert;CA;CAPRR;true;true;upply;Prince Rupert;Prince Rupert,Port of Prince Rupert
+ca_cator_toronto;Toronto;CA;CATOR;true;false;upply;Toronto;Toronto,Port of Toronto
+ca_caque_quebec_city;Quebec City;CA;CAQUE;true;false;upply;Quebec City;Quebec,Quebec City,Port of Quebec
+ca_cavic_victoria;Victoria;CA;CAVIC;true;false;upply;Victoria;Victoria BC,Port of Victoria
+ca_casei_sept_iles;Sept-Iles;CA;CASEI;true;false;upply;Sept-Iles;Sept-Iles,Sept-Îles,Port of Sept-Îles
+ca_canwe_new_westminster;New Westminster;CA;CANWE;true;false;upply;New Westminster;New Westminster,Fraser River
+mx_mxzlo_manzanillo;Manzanillo;MX;MXZLO;true;true;upply;Manzanillo;Manzanillo,Port of Manzanillo
+mx_mxver_veracruz;Veracruz;MX;MXVER;true;true;upply;Veracruz;Veracruz,Port of Veracruz
+mx_mxatm_altamira;Altamira;MX;MXATM;true;true;upply;Altamira;Altamira,Puerto Altamira
+mx_mxlzc_lazaro_cardenas;Lazaro Cardenas;MX;MXLZC;true;true;upply;Lazaro Cardenas;Lazaro Cardenas,Lázaro Cárdenas
+mx_mxese_ensenada;Ensenada;MX;MXESE;true;false;upply;Ensenada;Ensenada,Port of Ensenada
+mx_mxtam_tampico;Tampico;MX;MXTAM;true;false;upply;Tampico;Tampico,Puerto Tampico
+mx_mxcoa_coatzacoalcos;Coatzacoalcos;MX;MXCOA;true;false;upply;Coatzacoalcos;Coatzacoalcos,Puerto Coatzacoalcos
+mx_mxscx_salina_cruz;Salina Cruz;MX;MXSCX;true;false;upply;Salina Cruz;Salina Cruz,Puerto Salina Cruz
+mx_mxtpb_topolobampo;Topolobampo;MX;MXTPB;true;false;upply;Topolobampo;Topolobampo
+mx_mxpgo_progreso;Progreso;MX;MXPGO;true;false;upply;Progreso;Progreso,Puerto Progreso
+us_usnyc_new_york;New York;US;USNYC;true;true;upply;New York;New York,NYC,Port of New York,New York & New Jersey
+us_uslax_los_angeles;Los Angeles;US;USLAX;true;true;upply;Los Angeles;Los Angeles,Port of Los Angeles,LA
+us_uslgb_long_beach;Long Beach;US;USLGB;true;true;upply;Long Beach;Long Beach,Port of Long Beach
+us_ushou_houston;Houston;US;USHOU;true;true;upply;Houston;Houston,Port of Houston
+us_ussav_savannah;Savannah;US;USSAV;true;true;upply;Savannah;Savannah,Port of Savannah
+us_uschs_charleston;Charleston;US;USCHS;true;true;upply;Charleston;Charleston,Port of Charleston
+us_ussea_seattle;Seattle;US;USSEA;true;true;upply;Seattle;Seattle,Port of Seattle
+us_ustiw_tacoma;Tacoma;US;USTIW;true;true;upply;Tacoma;Tacoma,Port of Tacoma
+us_usbal_baltimore;Baltimore;US;USBAL;true;true;upply;Baltimore;Baltimore,Port of Baltimore
+us_usorf_norfolk;Norfolk;US;USORF;true;true;upply;Norfolk;Norfolk,Port of Virginia,Virginia Port
+us_usmia_miami;Miami;US;USMIA;true;true;upply;Miami;Miami,Port of Miami,PortMiami
+us_usmsy_new_orleans;New Orleans;US;USMSY;true;true;upply;New Orleans;New Orleans,Port of New Orleans
+us_usoak_oakland;Oakland;US;USOAK;true;false;upply;Oakland;Oakland,Port of Oakland
+us_usbos_boston;Boston;US;USBOS;true;false;upply;Boston;Boston,Port of Boston
+us_usphl_philadelphia;Philadelphia;US;USPHL;true;false;upply;Philadelphia;Philadelphia,Port of Philadelphia
+us_usjax_jacksonville;Jacksonville;US;USJAX;true;false;upply;Jacksonville;Jacksonville,JAXPORT
+us_usmob_mobile;Mobile;US;USMOB;true;false;upply;Mobile;Mobile,Port of Mobile
+us_uspef_port_everglades;Port Everglades;US;USPEF;true;false;upply;Port Everglades;Port Everglades,Fort Lauderdale
+us_uscrp_corpus_christi;Corpus Christi;US;USCRP;true;false;upply;Corpus Christi;Corpus Christi,Port of Corpus Christi
+us_usssi_brunswick;Brunswick;US;USSSI;true;false;upply;Brunswick;Brunswick,Port of Brunswick,Georgia Ports
+us_usilm_wilmington;Wilmington;US;USILM;true;false;upply;Wilmington;Wilmington NC,Port of Wilmington
+us_uspdx_portland;Portland;US;USPDX;true;false;upply;Portland;Portland OR,Port of Portland
+us_usgpt_gulfport;Gulfport;US;USGPT;true;false;upply;Gulfport;Gulfport,Port of Gulfport
+us_usbtr_baton_rouge;Baton Rouge;US;USBTR;true;false;upply;Baton Rouge;Baton Rouge,Port of Baton Rouge
+us_usgls_galveston;Galveston;US;USGLS;true;false;upply;Galveston;Galveston,Port of Galveston
+us_usbpt_beaumont;Beaumont;US;USBPT;true;false;upply;Beaumont;Beaumont,Port of Beaumont
+us_uslch_lake_charles;Lake Charles;US;USLCH;true;false;upply;Lake Charles;Lake Charles,Port of Lake Charles
+us_uspns_pensacola;Pensacola;US;USPNS;true;false;upply;Pensacola;Pensacola,Port of Pensacola
+us_uscle_cleveland;Cleveland;US;USCLE;true;false;upply;Cleveland;Cleveland,Port of Cleveland
+us_usric_richmond;Richmond;US;USRIC;true;false;upply;Richmond;Richmond VA,Port of Richmond
+# ── CENTRAL AMERICA & CARIBBEAN ─────────────────────────────────
+cu_cuhav_havana;Havana;CU;CUHAV;true;false;upply;Havana;Havana,La Habana,Port of Havana
+do_docau_caucedo;Caucedo;DO;DOCAU;true;false;upply;Caucedo;Caucedo,DP World Caucedo,Boca Chica
+do_dohai_haina;Haina;DO;DOHAI;true;false;upply;Haina;Haina,Rio Haina,Port of Haina
+do_dosdq_santo_domingo;Santo Domingo;DO;DOSDQ;true;false;upply;Santo Domingo;Santo Domingo,Port of Santo Domingo
+gt_gtprq_puerto_quetzal;Puerto Quetzal;GT;GTPRQ;true;false;upply;Puerto Quetzal;Puerto Quetzal,Port Quetzal
+gt_gtstc_santo_tomas;Santo Tomas;GT;GTSTC;true;false;upply;Santo Tomas;Santo Tomas,Puerto Santo Tomas de Castilla
+hn_hnpcr_puerto_cortes;Puerto Cortes;HN;HNPCR;true;false;upply;Puerto Cortes;Puerto Cortes,Puerto Cortés
+ht_htpap_port_au_prince;Port-au-Prince;HT;HTPAP;true;false;upply;Port-au-Prince;Port-au-Prince,Port of Port-au-Prince
+jm_jmkin_kingston;Kingston;JM;JMKIN;true;false;upply;Kingston;Kingston,Port of Kingston,Kingston Freeport Terminal
+jm_jmmbj_montego_bay;Montego Bay;JM;JMMBJ;true;false;upply;Montego Bay;Montego Bay,Port of Montego Bay
+ni_nicio_corinto;Corinto;NI;NICIO;true;false;upply;Corinto;Corinto,Port of Corinto
+pa_pablb_balboa;Balboa;PA;PABLB;true;true;upply;Balboa;Balboa,Port of Balboa,Panama Pacific
+pa_pactb_cristobal;Cristobal;PA;PACTB;true;false;upply;Cristobal;Cristobal,Port of Cristobal,Colon
+pa_pamit_manzanillo_panama;Manzanillo Panama;PA;PAMIT;true;false;upply;Manzanillo Panama;Manzanillo Panama,MIT,Colon Container Terminal
+sv_svaqj_acajutla;Acajutla;SV;SVAQJ;true;false;upply;Acajutla;Acajutla,Port of Acajutla
+tt_ttpls_point_lisas;Point Lisas;TT;TTPLS;true;false;upply;Point Lisas;Point Lisas,Trinidad,Port of Point Lisas
+tt_ttptp_port_of_spain;Port of Spain;TT;TTPTP;true;false;upply;Port of Spain;Port of Spain,Trinidad,Port of Spain Terminal
+# ── SOUTH AMERICA ───────────────────────────────────────────────
+ar_arbue_buenos_aires;Buenos Aires;AR;ARBUE;true;true;upply;Buenos Aires;Buenos Aires,Port of Buenos Aires,Exolgan
+ar_arros_rosario;Rosario;AR;ARROS;true;true;upply;Rosario;Rosario,Port of Rosario
+ar_arbhi_bahia_blanca;Bahia Blanca;AR;ARBHI;true;false;upply;Bahia Blanca;Bahia Blanca,Bahía Blanca
+ar_armdq_mar_del_plata;Mar del Plata;AR;ARMDQ;true;false;upply;Mar del Plata;Mar del Plata
+ar_arush_ushuaia;Ushuaia;AR;ARUSH;true;false;upply;Ushuaia;Ushuaia,Puerto Ushuaia
+br_brssz_santos;Santos;BR;BRSSZ;true;true;upply;Santos;Santos,Port of Santos
+br_brpng_paranagua;Paranagua;BR;BRPNG;true;true;upply;Paranagua;Paranagua,Port of Paranagua
+br_brrio_rio_de_janeiro;Rio de Janeiro;BR;BRRIO;true;true;upply;Rio de Janeiro;Rio de Janeiro,Rio,Port of Rio de Janeiro
+br_britj_itajai;Itajai;BR;BRITJ;true;false;upply;Itajai;Itajai,Itajaí,Port of Itajai
+br_brfor_fortaleza;Fortaleza;BR;BRFOR;true;false;upply;Fortaleza;Fortaleza,Pecém
+br_brssa_salvador;Salvador;BR;BRSSA;true;false;upply;Salvador;Salvador,Porto de Salvador
+br_brsua_suape;Suape;BR;BRSUA;true;false;upply;Suape;Suape,Porto de Suape
+br_brmao_manaus;Manaus;BR;BRMAO;true;false;upply;Manaus;Manaus,Port of Manaus
+br_brbel_belem;Belem;BR;BRBEL;true;false;upply;Belem;Belem,Belém,Porto de Belém
+br_brpoa_porto_alegre;Porto Alegre;BR;BRPOA;true;false;upply;Porto Alegre;Porto Alegre
+br_bribb_imbituba;Imbituba;BR;BRIBB;true;false;upply;Imbituba;Imbituba,Port of Imbituba
+br_brvix_vitoria;Vitoria;BR;BRVIX;true;false;upply;Vitoria;Vitoria,Victoria,Port of Vitoria
+br_brrec_recife;Recife;BR;BRREC;true;false;upply;Recife;Recife,Port of Recife
+br_brpec_pecem;Pecem;BR;BRPEC;true;false;upply;Pecem;Pecem,Pecém,Port of Pecem
+br_bradr_angra_dos_reis;Angra dos Reis;BR;BRADR;true;false;upply;Angra dos Reis;Angra dos Reis,Porto do Açu
+cl_clvap_valparaiso;Valparaiso;CL;CLVAP;true;true;upply;Valparaiso;Valparaiso,Valparaíso,Port of Valparaíso
+cl_clsai_san_antonio;San Antonio;CL;CLSAI;true;true;upply;San Antonio;San Antonio,Port of San Antonio
+cl_cliqq_iquique;Iquique;CL;CLIQQ;true;false;upply;Iquique;Iquique,Puerto Iquique
+cl_clant_antofagasta;Antofagasta;CL;CLANT;true;false;upply;Antofagasta;Antofagasta,Puerto Antofagasta
+cl_clari_arica;Arica;CL;CLARI;true;false;upply;Arica;Arica,Puerto Arica
+cl_cltal_talcahuano;Talcahuano;CL;CLTAL;true;false;upply;Talcahuano;Talcahuano,San Vicente
+cl_clcqq_coquimbo;Coquimbo;CL;CLCQQ;true;false;upply;Coquimbo;Coquimbo,Port of Coquimbo
+cl_clpmc_puerto_montt;Puerto Montt;CL;CLPMC;true;false;upply;Puerto Montt;Puerto Montt
+co_coctg_cartagena;Cartagena;CO;COCTG;true;true;upply;Cartagena;Cartagena,Puerto Cartagena,SPRC
+co_cobun_buenaventura;Buenaventura;CO;COBUN;true;true;upply;Buenaventura;Buenaventura,Puerto Buenaventura
+co_cobaq_barranquilla;Barranquilla;CO;COBAQ;true;false;upply;Barranquilla;Barranquilla,Puerto Colombia
+pe_pecll_callao;Callao;PE;PECLL;true;true;upply;Callao;Callao,El Callao,Port of Callao
+pe_pepai_paita;Paita;PE;PEPAI;true;false;upply;Paita;Paita,Puerto Paita
+pe_peilo_ilo;Ilo;PE;PEILO;true;false;upply;Ilo;Ilo,Puerto Ilo
+# ── EUROPE ──────────────────────────────────────────────────────
+at_atbrz_bregenz;Bregenz;AT;ATBRZ;true;false;upply;Bregenz;Bregenz,Lake Constance
+be_beanr_antwerpen;Antwerpen;BE;BEANR;true;true;upply;Antwerpen;Antwerp,Antwerpen,Port of Antwerp
+be_bezee_zeebrugge;Zeebrugge;BE;BEZEE;true;true;upply;Zeebrugge;Zeebrugge,Port of Zeebrugge
+be_begne_ghent;Ghent;BE;BEGNE;true;false;upply;Ghent;Ghent,Gent,Port of Ghent
+be_belgg_liege;Liege;BE;BELGG;true;false;upply;Liege;Liege,Liège
+bg_bgvar_varna;Varna;BG;BGVAR;true;false;upply;Varna;Varna,Port of Varna
+bg_bgboj_burgas;Burgas;BG;BGBOJ;true;false;upply;Burgas;Burgas,Port of Burgas
+ch_chrgu_klingnau;Klingnau;CH;CHRGU;true;false;upply;Klingnau;Klingnau,Rhine river port
+cy_cylms_limassol;Limassol;CY;CYLMS;true;false;upply;Limassol;Limassol,Lemesos,Port of Limassol
+cy_cylca_larnaca;Larnaca;CY;CYLCA;true;false;upply;Larnaca;Larnaca,Port of Larnaca
+cz_czuln_usti_nad_labem;Usti nad Labem;CZ;CZULN;true;false;upply;Usti nad Labem;Usti nad Labem,Ústí nad Labem,Elbe river port
+de_deham_hamburg;Hamburg;DE;DEHAM;true;true;upply;Hamburg;Hamburg,Port of Hamburg
+de_debrv_bremerhaven;Bremerhaven;DE;DEBRV;true;true;upply;Bremerhaven;Bremerhaven,Port of Bremerhaven
+de_debre_bremen;Bremen;DE;DEBRE;true;false;upply;Bremen;Bremen,Port of Bremen
+de_dedui_duisburg;Duisburg;DE;DEDUI;true;false;upply;Duisburg;Duisburg,Duisport
+de_dewvn_wilhelmshaven;Wilhelmshaven;DE;DEWVN;true;false;upply;Wilhelmshaven;Wilhelmshaven,JadeWeserPort
+de_dekel_kiel;Kiel;DE;DEKEL;true;false;upply;Kiel;Kiel,Port of Kiel
+de_dersk_rostock;Rostock;DE;DERSK;true;false;upply;Rostock;Rostock,Port of Rostock
+de_deeme_emden;Emden;DE;DEEME;true;false;upply;Emden;Emden,Port of Emden
+de_delbc_lubeck;Lubeck;DE;DELBC;true;false;upply;Lubeck;Lubeck,Lübeck,Travemunde
+dk_dkaar_aarhus;Aarhus;DK;DKAAR;true;true;upply;Aarhus;Aarhus,Århus,Port of Aarhus
+dk_dkcph_copenhagen;Copenhagen;DK;DKCPH;true;false;upply;Copenhagen;Copenhagen,København,Port of Copenhagen
+dk_dkaal_aalborg;Aalborg;DK;DKAAL;true;false;upply;Aalborg;Aalborg,Ålborg
+dk_dkode_odense;Odense;DK;DKODE;true;false;upply;Odense;Odense,Port of Odense
+dk_dkfrc_fredericia;Fredericia;DK;DKFRC;true;false;upply;Fredericia;Fredericia
+ee_eetll_tallinn;Tallinn;EE;EETLL;true;false;upply;Tallinn;Tallinn,Port of Tallinn,Old City Harbour
+ee_eemug_muuga;Muuga;EE;EEMUG;true;false;upply;Muuga;Muuga,Muuga Harbour
+es_esalg_algeciras;Algeciras;ES;ESALG;true;true;upply;Algeciras;Algeciras,Port of Algeciras
+es_esvlc_valencia;Valencia;ES;ESVLC;true;true;upply;Valencia;Valencia,Port of Valencia
+es_esbcn_barcelona;Barcelona;ES;ESBCN;true;true;upply;Barcelona;Barcelona,Port of Barcelona
+es_esbio_bilbao;Bilbao;ES;ESBIO;true;false;upply;Bilbao;Bilbao,Port of Bilbao
+es_eslpa_las_palmas;Las Palmas;ES;ESLPA;true;false;upply;Las Palmas;Las Palmas,Las Palmas de Gran Canaria
+es_esvgo_vigo;Vigo;ES;ESVGO;true;false;upply;Vigo;Vigo,Port of Vigo
+es_escar_cartagena;Cartagena;ES;ESCAR;true;false;upply;Cartagena;Cartagena ES,Port of Cartagena
+es_estar_tarragona;Tarragona;ES;ESTAR;true;false;upply;Tarragona;Tarragona,Port of Tarragona
+es_essct_santa_cruz_de_tenerife;Santa Cruz de Tenerife;ES;ESSCT;true;false;upply;Santa Cruz de Tenerife;Tenerife,Santa Cruz de Tenerife
+es_eshuv_huelva;Huelva;ES;ESHUV;true;false;upply;Huelva;Huelva,Port of Huelva
+es_esgij_gijon;Gijon;ES;ESGIJ;true;false;upply;Gijon;Gijon,Gijón,Port of Gijon
+es_essdr_santander;Santander;ES;ESSDR;true;false;upply;Santander;Santander,Port of Santander
+es_esfro_ferrol;Ferrol;ES;ESFRO;true;false;upply;Ferrol;Ferrol,El Ferrol
+fi_fihel_helsinki;Helsinki;FI;FIHEL;true;true;upply;Helsinki;Helsinki,Port of Helsinki
+fi_fiktk_kotka;Kotka;FI;FIKTK;true;true;upply;Kotka;Kotka,HaminaKotka
+fi_fitku_turku;Turku;FI;FITKU;true;false;upply;Turku;Turku,Port of Turku
+fi_firau_rauma;Rauma;FI;FIRAU;true;false;upply;Rauma;Rauma,Port of Rauma
+fi_fioul_oulu;Oulu;FI;FIOUL;true;false;upply;Oulu;Oulu,Port of Oulu
+fi_fivaa_vaasa;Vaasa;FI;FIVAA;true;false;upply;Vaasa;Vaasa,Port of Vaasa
+fi_fipor_pori;Pori;FI;FIPOR;true;false;upply;Pori;Pori,Bjorneborg
+fr_frleh_le_havre;Le Havre;FR;FRLEH;true;true;upply;Le Havre;Le Havre,Port of Le Havre
+fr_frmrs_marseille;Marseille;FR;FRMRS;true;true;upply;Marseille;Marseille,Marseilles,Port of Marseille
+fr_frirk_dunkirk;Dunkirk;FR;FRIRK;true;false;upply;Dunkirk;Dunkirk,Dunkerque,Port of Dunkirk
+fr_fruro_rouen;Rouen;FR;FRURO;true;false;upply;Rouen;Rouen,Port of Rouen
+fr_frnte_nantes;Nantes;FR;FRNTE;true;false;upply;Nantes;Nantes,Saint-Nazaire
+fr_frbod_bordeaux;Bordeaux;FR;FRBOD;true;false;upply;Bordeaux;Bordeaux,Port of Bordeaux
+fr_frfos_fos_sur_mer;Fos-sur-Mer;FR;FRFOS;true;false;upply;Fos-sur-Mer;Fos-sur-Mer,Fos,Port of Fos
+fr_frcqf_calais;Calais;FR;FRCQF;true;false;upply;Calais;Calais,Port of Calais
+fr_frsxb_strasbourg;Strasbourg;FR;FRSXB;true;false;upply;Strasbourg;Strasbourg,Port of Strasbourg
+fr_frtln_toulon;Toulon;FR;FRTLN;true;false;upply;Toulon;Toulon,Port of Toulon
+fr_frlrh_la_rochelle;La Rochelle;FR;FRLRH;true;false;upply;La Rochelle;La Rochelle,Port of La Rochelle,Pallice
+gb_gbfxt_felixstowe;Felixstowe;GB;GBFXT;true;true;upply;Felixstowe;Felixstowe,Port of Felixstowe
+gb_gbsou_southampton;Southampton;GB;GBSOU;true;true;upply;Southampton;Southampton,Port of Southampton
+gb_gbliv_liverpool;Liverpool;GB;GBLIV;true;true;upply;Liverpool;Liverpool,Port of Liverpool
+gb_gbtil_tilbury;Tilbury;GB;GBTIL;true;false;upply;Tilbury;Tilbury,London Tilbury,Port of Tilbury
+gb_gbtee_teesport;Teesport;GB;GBTEE;true;false;upply;Teesport;Teesport,Middlesbrough,Port of Tees
+gb_gbhul_hull;Hull;GB;GBHUL;true;false;upply;Hull;Hull,Kingston upon Hull,Port of Hull
+gb_gbabd_aberdeen;Aberdeen;GB;GBABD;true;false;upply;Aberdeen;Aberdeen,Port of Aberdeen
+gb_gbbel_belfast;Belfast;GB;GBBEL;true;false;upply;Belfast;Belfast,Belfast Harbour
+gb_gbgsy_grimsby;Grimsby;GB;GBGSY;true;false;upply;Grimsby;Grimsby,Immingham,Port of Grimsby
+gb_gblgp_london_gateway;London Gateway;GB;GBLGP;true;false;upply;London Gateway;London Gateway,DP World London Gateway
+gb_gbbrs_bristol;Bristol;GB;GBBRS;true;false;upply;Bristol;Bristol,Avonmouth
+gb_gbgrg_grangemouth;Grangemouth;GB;GBGRG;true;false;upply;Grangemouth;Grangemouth,Forth Ports
+gb_gbhrw_harwich;Harwich;GB;GBHRW;true;false;upply;Harwich;Harwich,Parkeston Quay
+gb_gbncl_newcastle_tyne;Newcastle Tyne;GB;GBNCL;true;false;upply;Newcastle Tyne;Newcastle,Tyne,Port of Tyne
+gb_gbsun_sunderland;Sunderland;GB;GBSUN;true;false;upply;Sunderland;Sunderland,Port of Sunderland
+gb_gbdun_dundee;Dundee;GB;GBDUN;true;false;upply;Dundee;Dundee,Port of Dundee
+gb_gbnhp_hull_riverside;Hull Riverside;GB;GBNHP;true;false;upply;Hull Riverside;Hull,North Humber Port
+gr_grpir_piraeus;Piraeus;GR;GRPIR;true;true;upply;Piraeus;Piraeus,Pireaus,Port of Piraeus
+gr_grskg_thessaloniki;Thessaloniki;GR;GRSKG;true;false;upply;Thessaloniki;Thessaloniki,Salonika,Port of Thessaloniki
+gr_grgpa_patras;Patras;GR;GRGPA;true;false;upply;Patras;Patras,Port of Patras
+gr_grvol_volos;Volos;GR;GRVOL;true;false;upply;Volos;Volos,Port of Volos
+gr_grher_heraklion;Heraklion;GR;GRHER;true;false;upply;Heraklion;Heraklion,Iraklion,Crete
+gr_grigo_igoumenitsa;Igoumenitsa;GR;GRIGO;true;false;upply;Igoumenitsa;Igoumenitsa
+gr_grkva_kavala;Kavala;GR;GRKVA;true;false;upply;Kavala;Kavala,Port of Kavala
+hr_hrrjk_rijeka;Rijeka;HR;HRRJK;true;false;upply;Rijeka;Rijeka,Port of Rijeka
+hr_hrspu_split;Split;HR;HRSPU;true;false;upply;Split;Split,Port of Split
+hr_hrdbv_dubrovnik;Dubrovnik;HR;HRDBV;true;false;upply;Dubrovnik;Dubrovnik
+hr_hrple_ploce;Ploce;HR;HRPLE;true;false;upply;Ploce;Ploce,Ploče
+hr_hrzad_zadar;Zadar;HR;HRZAD;true;false;upply;Zadar;Zadar
+ie_iedub_dublin;Dublin;IE;IEDUB;true;true;upply;Dublin;Dublin,Dublin Port
+ie_ieork_cork;Cork;IE;IEORK;true;false;upply;Cork;Cork,Port of Cork,Ringaskiddy
+it_itgoa_genova;Genova;IT;ITGOA;true;true;upply;Genova;Genoa,Genova,Port of Genova
+it_ittrs_trieste;Trieste;IT;ITTRS;true;true;upply;Trieste;Trieste,Port of Trieste
+it_itliv_livorno;Livorno;IT;ITLIV;true;true;upply;Livorno;Livorno,Leghorn,Port of Livorno
+it_itnap_napoli;Napoli;IT;ITNAP;true;false;upply;Napoli;Naples,Napoli,Port of Naples
+it_itgit_gioia_tauro;Gioia Tauro;IT;ITGIT;true;true;upply;Gioia Tauro;Gioia Tauro,Port of Gioia Tauro
+it_itvce_venezia;Venezia;IT;ITVCE;true;false;upply;Venezia;Venice,Venezia,Port of Venice
+it_itspe_la_spezia;La Spezia;IT;ITSPE;true;false;upply;La Spezia;La Spezia,Port of La Spezia
+it_ittar_taranto;Taranto;IT;ITTAR;true;false;upply;Taranto;Taranto,Port of Taranto
+it_itcvv_civitavecchia;Civitavecchia;IT;ITCVV;true;false;upply;Civitavecchia;Civitavecchia,Port of Civitavecchia,Rome
+it_itsal_salerno;Salerno;IT;ITSAL;true;false;upply;Salerno;Salerno,Port of Salerno
+it_itaoi_ancona;Ancona;IT;ITAOI;true;false;upply;Ancona;Ancona,Port of Ancona
+it_itpmo_palermo;Palermo;IT;ITPMO;true;false;upply;Palermo;Palermo,Port of Palermo
+it_itbri_bari;Bari;IT;ITBRI;true;false;upply;Bari;Bari,Port of Bari
+lt_ltklj_klaipeda;Klaipeda;LT;LTKLJ;true;false;upply;Klaipeda;Klaipeda,Klaipėda,Port of Klaipeda
+lv_lvrix_riga;Riga;LV;LVRIX;true;false;upply;Riga;Riga,Port of Riga,Freeport of Riga
+lv_lvvnt_ventspils;Ventspils;LV;LVVNT;true;false;upply;Ventspils;Ventspils,Port of Ventspils
+lv_lvlpx_liepaja;Liepaja;LV;LVLPX;true;false;upply;Liepaja;Liepaja,Liepāja
+mt_mtmar_marsaxlokk;Marsaxlokk;MT;MTMAR;true;false;upply;Marsaxlokk;Marsaxlokk,Malta Freeport,Port of Marsaxlokk
+mt_mtmla_valletta;Valletta;MT;MTMLA;true;false;upply;Valletta;Valletta,Grand Harbour,Malta
+nl_nlrtm_rotterdam;Rotterdam;NL;NLRTM;true;true;upply;Rotterdam;Rotterdam,Port of Rotterdam
+nl_nlams_amsterdam;Amsterdam;NL;NLAMS;true;true;upply;Amsterdam;Amsterdam,Port of Amsterdam
+nl_nlvli_vlissingen;Vlissingen;NL;NLVLI;true;false;upply;Vlissingen;Vlissingen,Flushing
+nl_nltnz_terneuzen;Terneuzen;NL;NLTNZ;true;false;upply;Terneuzen;Terneuzen,Port of Terneuzen
+nl_nlmoe_moerdijk;Moerdijk;NL;NLMOE;true;false;upply;Moerdijk;Moerdijk,Port of Moerdijk
+no_nobgo_bergen;Bergen;NO;NOBGO;true;true;upply;Bergen;Bergen,Port of Bergen
+no_noosl_oslo;Oslo;NO;NOOSL;true;true;upply;Oslo;Oslo,Port of Oslo
+no_nosvg_stavanger;Stavanger;NO;NOSVG;true;false;upply;Stavanger;Stavanger,Port of Stavanger
+no_nokrs_kristiansand;Kristiansand;NO;NOKRS;true;false;upply;Kristiansand;Kristiansand
+no_notrd_trondheim;Trondheim;NO;NOTRD;true;false;upply;Trondheim;Trondheim
+no_noaes_alesund;Alesund;NO;NOAES;true;false;upply;Alesund;Alesund,Ålesund
+no_nohau_haugesund;Haugesund;NO;NOHAU;true;false;upply;Haugesund;Haugesund
+no_nofrk_fredrikstad;Fredrikstad;NO;NOFRK;true;false;upply;Fredrikstad;Fredrikstad
+no_nonvk_narvik;Narvik;NO;NONVK;true;false;upply;Narvik;Narvik,Port of Narvik
+no_nomon_mongstad;Mongstad;NO;NOMON;true;false;upply;Mongstad;Mongstad
+no_nopor_porsgrunn;Porsgrunn;NO;NOPOR;true;false;upply;Porsgrunn;Porsgrunn,Grenland
+pl_plgdn_gdansk;Gdansk;PL;PLGDN;true;true;upply;Gdansk;Gdansk,Gdańsk,Port of Gdansk
+pl_plgdy_gdynia;Gdynia;PL;PLGDY;true;true;upply;Gdynia;Gdynia,Port of Gdynia
+pl_plszz_szczecin;Szczecin;PL;PLSZZ;true;false;upply;Szczecin;Szczecin,Port of Szczecin
+pl_plswi_swinoujscie;Swinoujscie;PL;PLSWI;true;false;upply;Swinoujscie;Swinoujscie,Świnoujście
+pt_ptlis_lisboa;Lisboa;PT;PTLIS;true;true;upply;Lisboa;Lisbon,Lisboa,Port of Lisbon
+pt_ptsie_sines;Sines;PT;PTSIE;true;true;upply;Sines;Sines,Port of Sines
+pt_ptlei_leixoes;Leixoes;PT;PTLEI;true;false;upply;Leixoes;Leixoes,Leixões,Port of Leixoes
+pt_ptfnc_funchal;Funchal;PT;PTFNC;true;false;upply;Funchal;Funchal,Madeira
+pt_ptpdl_ponta_delgada;Ponta Delgada;PT;PTPDL;true;false;upply;Ponta Delgada;Ponta Delgada,Azores
+pt_ptset_setubal;Setubal;PT;PTSET;true;false;upply;Setubal;Setubal,Setúbal
+ro_rocnd_constanta;Constanta;RO;ROCND;true;true;upply;Constanta;Constanta,Constanța,Port of Constanta
+ro_rogal_galati;Galati;RO;ROGAL;true;false;upply;Galati;Galati,Galați
+ro_rotce_tulcea;Tulcea;RO;ROTCE;true;false;upply;Tulcea;Tulcea
+ru_runvs_novorossiysk;Novorossiysk;RU;RUNVS;true;true;upply;Novorossiysk;Novorossiysk,Port of Novorossiysk
+ru_ruled_saint_petersburg;Saint Petersburg;RU;RULED;true;false;upply;Saint Petersburg;St Petersburg,Saint Petersburg,Leningrad
+ru_ruvvo_vladivostok;Vladivostok;RU;RUVVO;true;true;upply;Vladivostok;Vladivostok,Port of Vladivostok
+ru_ruvyp_vostochny;Vostochny;RU;RUVYP;true;false;upply;Vostochny;Vostochny,Vostochnyy Port
+ru_runjk_nakhodka;Nakhodka;RU;RUNJK;true;false;upply;Nakhodka;Nakhodka
+ru_rukgd_kaliningrad;Kaliningrad;RU;RUKGD;true;false;upply;Kaliningrad;Kaliningrad,Koenigsberg
+ru_rummk_murmansk;Murmansk;RU;RUMMK;true;false;upply;Murmansk;Murmansk,Port of Murmansk
+se_segot_gothenburg;Gothenburg;SE;SEGOT;true;true;upply;Gothenburg;Gothenburg,Göteborg,Port of Gothenburg
+se_semma_malmo;Malmo;SE;SEMMA;true;false;upply;Malmo;Malmo,Malmö,Port of Malmö
+se_sesto_stockholm;Stockholm;SE;SESTO;true;false;upply;Stockholm;Stockholm,Port of Stockholm
+se_sehel_helsingborg;Helsingborg;SE;SEHEL;true;false;upply;Helsingborg;Helsingborg,Port of Helsingborg
+se_segvx_gavle;Gavle;SE;SEGVX;true;false;upply;Gavle;Gavle,Gävle,Port of Gavle
+se_sella_lulea;Lulea;SE;SELLA;true;false;upply;Lulea;Lulea,Luleå,Port of Lulea
+se_sekaa_karlskrona;Karlskrona;SE;SEKAA;true;false;upply;Karlskrona;Karlskrona
+se_seume_umea;Umea;SE;SEUME;true;false;upply;Umea;Umea,Umeå
+si_sikop_koper;Koper;SI;SIKOP;true;false;upply;Koper;Koper,Capodistria,Port of Koper
+ua_uaods_odesa;Odesa;UA;UAODS;true;false;upply;Odesa;Odessa,Odesa,Port of Odessa
+ua_uailk_chornomorsk;Chornomorsk;UA;UAILK;true;false;upply;Chornomorsk;Chornomorsk,Illichivsk,Port of Chornomorsk
+ua_uanlv_mykolaiv;Mykolaiv;UA;UANLV;true;false;upply;Mykolaiv;Mykolaiv,Nikolaev
+ua_uakhe_kherson;Kherson;UA;UAKHE;true;false;upply;Kherson;Kherson
+ua_uampw_mariupol;Mariupol;UA;UAMPW;true;false;upply;Mariupol;Mariupol,Mariupol Port
+# ── ASIA ────────────────────────────────────────────────────────
+bd_bdcgp_chittagong;Chittagong;BD;BDCGP;true;true;upply;Chittagong;Chittagong,Chattogram,Port of Chittagong
+cn_cnsha_shanghai;Shanghai;CN;CNSHA;true;true;upply;Shanghai;Shanghai,Port of Shanghai,SIPG
+cn_cntao_qingdao;Qingdao;CN;CNTAO;true;true;upply;Qingdao;Qingdao,Qingdao Port
+cn_cnnbo_ningbo;Ningbo;CN;CNNBO;true;true;upply;Ningbo;Ningbo,Ningbo-Zhoushan,Port of Ningbo
+cn_cnsnz_shenzhen;Shenzhen;CN;CNSNZ;true;true;upply;Shenzhen;Shenzhen,Port of Shenzhen,Yantian,Shekou
+cn_cntsn_tianjin;Tianjin;CN;CNTSN;true;true;upply;Tianjin;Tianjin,Tianjin Xingang,Port of Tianjin
+cn_cnggz_guangzhou;Guangzhou;CN;CNGGZ;true;true;upply;Guangzhou;Guangzhou,Canton,Nansha,Port of Guangzhou
+cn_cnxmn_xiamen;Xiamen;CN;CNXMN;true;true;upply;Xiamen;Xiamen,Port of Xiamen
+cn_cndlc_dalian;Dalian;CN;CNDLC;true;true;upply;Dalian;Dalian,Port of Dalian
+cn_cnlyg_lianyungang;Lianyungang;CN;CNLYG;true;false;upply;Lianyungang;Lianyungang
+cn_cnnji_nanjing;Nanjing;CN;CNNJI;true;false;upply;Nanjing;Nanjing,Nanking
+cn_cncqi_chongqing;Chongqing;CN;CNCQI;true;false;upply;Chongqing;Chongqing,Chungking
+cn_cnfzh_fuzhou;Fuzhou;CN;CNFZH;true;false;upply;Fuzhou;Fuzhou,Port of Fuzhou
+cn_cnyat_yantai;Yantai;CN;CNYAT;true;false;upply;Yantai;Yantai,Port of Yantai
+cn_cnntg_nantong;Nantong;CN;CNNTG;true;false;upply;Nantong;Nantong
+cn_cnwnz_wenzhou;Wenzhou;CN;CNWNZ;true;false;upply;Wenzhou;Wenzhou
+cn_cnzng_zhanjiang;Zhanjiang;CN;CNZNG;true;false;upply;Zhanjiang;Zhanjiang
+cn_cnhko_haikou;Haikou;CN;CNHKO;true;false;upply;Haikou;Haikou,Hainan
+cn_cnrzh_rizhao;Rizhao;CN;CNRZH;true;false;upply;Rizhao;Rizhao
+cn_cnqzl_quanzhou;Quanzhou;CN;CNQZL;true;false;upply;Quanzhou;Quanzhou
+cn_cnfan_fangcheng;Fangcheng;CN;CNFAN;true;false;upply;Fangcheng;Fangcheng,Fangchenggang
+cn_cnqsn_zhuhai;Zhuhai;CN;CNQSN;true;false;upply;Zhuhai;Zhuhai,Qianshan
+cn_cnwei_weihai;Weihai;CN;CNWEI;true;false;upply;Weihai;Weihai
+cn_cnyik_yingkou;Yingkou;CN;CNYIK;true;false;upply;Yingkou;Yingkou
+hk_hkhkg_hong_kong;Hong Kong;HK;HKHKG;true;true;upply;Hong Kong;Hong Kong,Kwai Chung,Hongkong
+id_idtpp_tanjung_priok;Tanjung Priok;ID;IDTPP;true;true;upply;Tanjung Priok;Tanjung Priok,Jakarta,Port of Jakarta
+id_idsub_surabaya;Surabaya;ID;IDSUB;true;true;upply;Surabaya;Surabaya,Tanjung Perak
+id_idblw_belawan;Belawan;ID;IDBLW;true;false;upply;Belawan;Belawan,Medan,Port of Belawan
+id_idsrg_semarang;Semarang;ID;IDSRG;true;false;upply;Semarang;Semarang,Tanjung Emas
+id_idmak_makassar;Makassar;ID;IDMAK;true;false;upply;Makassar;Makassar,Ujung Pandang
+id_idbpn_balikpapan;Balikpapan;ID;IDBPN;true;false;upply;Balikpapan;Balikpapan
+id_idpnk_pontianak;Pontianak;ID;IDPNK;true;false;upply;Pontianak;Pontianak
+id_idbdj_banjarmasin;Banjarmasin;ID;IDBDJ;true;false;upply;Banjarmasin;Banjarmasin
+id_idbit_bitung;Bitung;ID;IDBIT;true;false;upply;Bitung;Bitung,Sulawesi
+id_idplm_palembang;Palembang;ID;IDPLM;true;false;upply;Palembang;Palembang,Port of Palembang
+id_idkoe_kupang;Kupang;ID;IDKOE;true;false;upply;Kupang;Kupang,Timor
+id_idsoq_sorong;Sorong;ID;IDSOQ;true;false;upply;Sorong;Sorong,West Papua
+id_idamq_ambon;Ambon;ID;IDAMQ;true;false;upply;Ambon;Ambon,Maluku
+in_inmun_mundra;Mundra;IN;INMUN;true;true;upply;Mundra;Mundra,Port of Mundra
+in_innsa_nhava_sheva;Nhava Sheva;IN;INNSA;true;true;upply;Nhava Sheva;Nhava Sheva,JNPT,Navi Mumbai,Jawaharlal Nehru Port
+in_inmaa_chennai;Chennai;IN;INMAA;true;true;upply;Chennai;Chennai,Madras,Port of Chennai
+in_inccu_kolkata;Kolkata;IN;INCCU;true;false;upply;Kolkata;Kolkata,Calcutta,Port of Kolkata
+in_incok_cochin;Cochin;IN;INCOK;true;false;upply;Cochin;Cochin,Kochi,Port of Cochin
+in_inixy_kandla;Kandla;IN;INIXY;true;false;upply;Kandla;Kandla,Deendayal Port
+in_inhal_haldia;Haldia;IN;INHAL;true;false;upply;Haldia;Haldia,Haldia Dock Complex
+in_inpav_pipavav;Pipavav;IN;INPAV;true;false;upply;Pipavav;Pipavav,APM Terminals Pipavav
+in_inviz_vizag;Vizag;IN;INVIZ;true;false;upply;Vizag;Visakhapatnam,Vizag,Port of Visakhapatnam
+in_intut_tuticorin;Tuticorin;IN;INTUT;true;false;upply;Tuticorin;Tuticorin,Thoothukudi,V.O.C Port
+in_inixe_mangalore;Mangalore;IN;INIXE;true;false;upply;Mangalore;Mangalore,New Mangalore Port
+in_inppt_paradip;Paradip;IN;INPPT;true;false;upply;Paradip;Paradip,Paradeep,Paradip Port
+in_inkri_krishnapatnam;Krishnapatnam;IN;INKRI;true;false;upply;Krishnapatnam;Krishnapatnam,KPCL
+in_indah_dahej;Dahej;IN;INDAH;true;false;upply;Dahej;Dahej,Port of Dahej
+in_inmrm_mormugao;Mormugao;IN;INMRM;true;false;upply;Mormugao;Mormugao,Marmagao,Goa Port
+in_inenr_ennore;Ennore;IN;INENR;true;false;upply;Ennore;Ennore,Kamarajar Port,Chennai North
+jp_jpyok_yokohama;Yokohama;JP;JPYOK;true;true;upply;Yokohama;Yokohama,Port of Yokohama
+jp_jpngo_nagoya;Nagoya;JP;JPNGO;true;true;upply;Nagoya;Nagoya,Port of Nagoya
+jp_jpukb_kobe;Kobe;JP;JPUKB;true;true;upply;Kobe;Kobe,Port of Kobe
+jp_jptyo_tokyo;Tokyo;JP;JPTYO;true;true;upply;Tokyo;Tokyo,Port of Tokyo
+jp_jposa_osaka;Osaka;JP;JPOSA;true;false;upply;Osaka;Osaka,Port of Osaka
+jp_jphkt_hakata;Hakata;JP;JPHKT;true;false;upply;Hakata;Hakata,Fukuoka,Port of Hakata
+jp_jpsmz_shimizu;Shimizu;JP;JPSMZ;true;false;upply;Shimizu;Shimizu,Port of Shimizu
+jp_jpkij_niigata;Niigata;JP;JPKIJ;true;false;upply;Niigata;Niigata,Port of Niigata
+jp_jpkkj_kitakyushu;Kitakyushu;JP;JPKKJ;true;false;upply;Kitakyushu;Kitakyushu,Port of Kitakyushu
+jp_jptmk_tomakomai;Tomakomai;JP;JPTMK;true;false;upply;Tomakomai;Tomakomai,Port of Tomakomai
+jp_jphij_hiroshima;Hiroshima;JP;JPHIJ;true;false;upply;Hiroshima;Hiroshima,Port of Hiroshima
+jp_jpmur_muroran;Muroran;JP;JPMUR;true;false;upply;Muroran;Muroran,Port of Muroran
+jp_jpchb_chiba;Chiba;JP;JPCHB;true;false;upply;Chiba;Chiba,Port of Chiba
+jp_jpngs_nagasaki;Nagasaki;JP;JPNGS;true;false;upply;Nagasaki;Nagasaki,Port of Nagasaki
+kh_khshv_sihanoukville;Sihanoukville;KH;KHSHV;true;false;upply;Sihanoukville;Sihanoukville,Preah Sihanouk
+kh_khpnh_phnom_penh;Phnom Penh;KH;KHPNH;true;false;upply;Phnom Penh;Phnom Penh,Phnom Penh Autonomous Port
+kr_krpus_busan;Busan;KR;KRPUS;true;true;upply;Busan;Busan,Pusan,Port of Busan
+kr_krinc_incheon;Incheon;KR;KRINC;true;true;upply;Incheon;Incheon,Inch'on,Port of Incheon
+kr_krkan_gwangyang;Gwangyang;KR;KRKAN;true;true;upply;Gwangyang;Gwangyang,Port of Gwangyang
+kr_krusn_ulsan;Ulsan;KR;KRUSN;true;false;upply;Ulsan;Ulsan,Port of Ulsan
+kr_krptk_pyeongtaek;Pyeongtaek;KR;KRPTK;true;false;upply;Pyeongtaek;Pyeongtaek,Dangjin,Port of Pyeongtaek
+kr_krkpo_pohang;Pohang;KR;KRKPO;true;false;upply;Pohang;Pohang,Port of Pohang
+kr_kryos_yeosu;Yeosu;KR;KRYOS;true;false;upply;Yeosu;Yeosu,Yeosu-Gwangyang
+kr_krmok_mokpo;Mokpo;KR;KRMOK;true;false;upply;Mokpo;Mokpo,Port of Mokpo
+kr_krmas_masan;Masan;KR;KRMAS;true;false;upply;Masan;Masan,Changwon
+lk_lkcmb_colombo;Colombo;LK;LKCMB;true;true;upply;Colombo;Colombo,Port of Colombo
+mm_mmrgn_yangon;Yangon;MM;MMRGN;true;false;upply;Yangon;Yangon,Rangoon,Thilawa
+mm_mmtla_thilawa;Thilawa;MM;MMTLA;true;false;upply;Thilawa;Thilawa,Myanmar Industrial Port
+my_mypkg_port_klang;Port Klang;MY;MYPKG;true;true;upply;Port Klang;Port Klang,Pelabuhan Klang,Westports,Northport
+my_mytpp_tanjung_pelepas;Tanjung Pelepas;MY;MYTPP;true;true;upply;Tanjung Pelepas;Tanjung Pelepas,PTP
+my_mypen_penang;Penang;MY;MYPEN;true;false;upply;Penang;Penang,Georgetown,Butterworth
+my_mypgu_pasir_gudang;Pasir Gudang;MY;MYPGU;true;false;upply;Pasir Gudang;Pasir Gudang,Johor
+my_mybtu_bintulu;Bintulu;MY;MYBTU;true;false;upply;Bintulu;Bintulu,Sarawak
+my_mykch_kuching;Kuching;MY;MYKCH;true;false;upply;Kuching;Kuching,Kuching Port
+my_mybki_kota_kinabalu;Kota Kinabalu;MY;MYBKI;true;false;upply;Kota Kinabalu;Kota Kinabalu,Sabah
+ph_phmnl_manila;Manila;PH;PHMNL;true;true;upply;Manila;Manila,Port of Manila,North Harbor,South Harbor
+ph_phceb_cebu;Cebu;PH;PHCEB;true;false;upply;Cebu;Cebu,Port of Cebu
+ph_phdvo_davao;Davao;PH;PHDVO;true;false;upply;Davao;Davao,Port of Davao
+ph_phges_general_santos;General Santos;PH;PHGES;true;false;upply;General Santos;General Santos,GenSan
+ph_phsfs_subic_bay;Subic Bay;PH;PHSFS;true;false;upply;Subic Bay;Subic Bay,Subic Bay Freeport
+ph_phbtg_batangas;Batangas;PH;PHBTG;true;false;upply;Batangas;Batangas,Port of Batangas
+pk_pkkhi_karachi;Karachi;PK;PKKHI;true;true;upply;Karachi;Karachi,Port of Karachi,Karachi Port Trust
+pk_pkbqm_bin_qasim;Bin Qasim;PK;PKBQM;true;false;upply;Bin Qasim;Bin Qasim,Port Qasim,Muhammad bin Qasim
+sg_sgjur_singapore;Singapore;SG;SGJUR;true;true;upply;Singapore;Singapore,Jurong,PSA Singapore,Tanjong Pagar
+th_thlch_laem_chabang;Laem Chabang;TH;THLCH;true;true;upply;Laem Chabang;Laem Chabang,Port of Laem Chabang
+th_thbkk_bangkok;Bangkok;TH;THBKK;true;false;upply;Bangkok;Bangkok,Port of Bangkok,Klong Toei
+th_thmat_map_ta_phut;Map Ta Phut;TH;THMAT;true;false;upply;Map Ta Phut;Map Ta Phut,Maptaphut
+th_thsgk_songkhla;Songkhla;TH;THSGK;true;false;upply;Songkhla;Songkhla,Port of Songkhla
+tw_twkhh_kaohsiung;Kaohsiung;TW;TWKHH;true;true;upply;Kaohsiung;Kaohsiung,Gaoxiong,Port of Kaohsiung
+tw_twkel_keelung;Keelung;TW;TWKEL;true;false;upply;Keelung;Keelung,Jilong,Port of Keelung
+tw_twtxg_taichung;Taichung;TW;TWTXG;true;false;upply;Taichung;Taichung,Port of Taichung
+vn_vnhph_haiphong;Haiphong;VN;VNHPH;true;true;upply;Haiphong;Haiphong,Hai Phong,Port of Haiphong
+vn_vnsgn_ho_chi_minh_city;Ho Chi Minh City;VN;VNSGN;true;true;upply;Ho Chi Minh City;Ho Chi Minh City,Saigon,Cat Lai,VICT
+vn_vndad_da_nang;Da Nang;VN;VNDAD;true;false;upply;Da Nang;Da Nang,Danang,Port of Da Nang
+vn_vnvut_vung_tau;Vung Tau;VN;VNVUT;true;false;upply;Vung Tau;Vung Tau,Cai Mep
+vn_vnuih_quy_nhon;Quy Nhon;VN;VNUIH;true;false;upply;Quy Nhon;Quy Nhon,Qui Nhon
+# ── MIDDLE EAST ─────────────────────────────────────────────────
+ae_aejea_jebel_ali;Jebel Ali;AE;AEJEA;true;true;upply;Jebel Ali;Jebel Ali,Port of Jebel Ali,DP World Jebel Ali
+ae_aedxb_dubai;Dubai;AE;AEDXB;true;true;upply;Dubai;Dubai,Port Rashid
+ae_aeauh_abu_dhabi;Abu Dhabi;AE;AEAUH;true;true;upply;Abu Dhabi;Abu Dhabi,Mina Zayed
+ae_aeshj_sharjah;Sharjah;AE;AESHJ;true;false;upply;Sharjah;Sharjah,Khalid Port
+ae_aefjr_fujairah;Fujairah;AE;AEFJR;true;false;upply;Fujairah;Fujairah,Port of Fujairah
+ae_aerwp_ruwais;Ruwais;AE;AERWP;true;false;upply;Ruwais;Ruwais,Ruwais Port
+bh_bhkbs_khalifa_bin_salman;Khalifa Bin Salman;BH;BHKBS;true;false;upply;Khalifa Bin Salman;Khalifa Bin Salman,Bahrain Port,KBSP
+il_ilhfa_haifa;Haifa;IL;ILHFA;true;true;upply;Haifa;Haifa,Port of Haifa
+il_ilash_ashdod;Ashdod;IL;ILASH;true;false;upply;Ashdod;Ashdod,Port of Ashdod
+iq_iquqr_umm_qasr;Umm Qasr;IQ;IQUQR;true;false;upply;Umm Qasr;Umm Qasr,Port of Umm Qasr,Basra
+ir_irbnd_bandar_abbas;Bandar Abbas;IR;IRBND;true;false;upply;Bandar Abbas;Bandar Abbas,Shahid Rajaee,Port of Bandar Abbas
+ir_irbuz_bushehr;Bushehr;IR;IRBUZ;true;false;upply;Bushehr;Bushehr,Port of Bushehr
+ir_irbik_imam_khomeini;Imam Khomeini;IR;IRBIK;true;false;upply;Imam Khomeini;Imam Khomeini Port,Bandar Imam,Mahshahr
+ir_irzbr_chabahar;Chabahar;IR;IRZBR;true;false;upply;Chabahar;Chabahar,Port of Chabahar
+jo_joaqj_aqaba;Aqaba;JO;JOAQJ;true;false;upply;Aqaba;Aqaba,Al Aqabah,Port of Aqaba
+kw_kwswk_shuwaikh;Shuwaikh;KW;KWSWK;true;false;upply;Shuwaikh;Shuwaikh,Kuwait Port,Shuwaikh Port
+kw_kwdoh_doha_kuwait;Doha Kuwait;KW;KWDOH;true;false;upply;Doha Kuwait;Doha Kuwait,Mina Abdullah
+om_omsll_salalah;Salalah;OM;OMSLL;true;true;upply;Salalah;Salalah,Port of Salalah
+om_omsoh_sohar;Sohar;OM;OMSOH;true;false;upply;Sohar;Sohar,Port of Sohar
+om_ommct_muscat;Muscat;OM;OMMCT;true;false;upply;Muscat;Muscat,Port Sultan Qaboos
+qa_qarlf_hamad_port;Hamad Port;QA;QARLF;true;true;upply;Hamad Port;Hamad Port,New Doha Port,Qatar
+qa_qadoh_doha;Doha;QA;QADOH;true;false;upply;Doha;Doha,Old Doha Port
+sa_sajed_jeddah;Jeddah;SA;SAJED;true;true;upply;Jeddah;Jeddah,Jiddah,Islamic Port of Jeddah
+sa_sadmm_dammam;Dammam;SA;SADMM;true;true;upply;Dammam;Dammam,Ad Dammam,King Abdul Aziz Port
+sa_sajub_jubail;Jubail;SA;SAJUB;true;false;upply;Jubail;Jubail,King Fahad Industrial Port
+sa_saynb_yanbu;Yanbu;SA;SAYNB;true;false;upply;Yanbu;Yanbu,Yanbu al-Bahr
+sa_sarta_ras_tanura;Ras Tanura;SA;SARTA;true;false;upply;Ras Tanura;Ras Tanura
+sa_sagiz_jizan;Jizan;SA;SAGIZ;true;false;upply;Jizan;Jizan,Jazan
+tr_trist_istanbul;Istanbul;TR;TRIST;true;true;upply;Istanbul;Istanbul,Ambarli,Haydarpasa,Port of Istanbul
+tr_trmer_mersin;Mersin;TR;TRMER;true;true;upply;Mersin;Mersin,Port of Mersin
+tr_trizm_izmir;Izmir;TR;TRIZM;true;false;upply;Izmir;Izmir,İzmir,Port of Izmir
+tr_trali_aliaga;Aliaga;TR;TRALI;true;false;upply;Aliaga;Aliaga,Aliağa,Nemport
+tr_trisk_iskenderun;Iskenderun;TR;TRISK;true;false;upply;Iskenderun;Iskenderun,İskenderun
+tr_trdrc_derince;Derince;TR;TRDRC;true;false;upply;Derince;Derince,Port of Derince,Kocaeli
+tr_trtzx_trabzon;Trabzon;TR;TRTZX;true;false;upply;Trabzon;Trabzon,Port of Trabzon
+tr_trssx_samsun;Samsun;TR;TRSSX;true;false;upply;Samsun;Samsun,Port of Samsun
+tr_trgem_gemlik;Gemlik;TR;TRGEM;true;false;upply;Gemlik;Gemlik,Port of Gemlik
+tr_trzon_zonguldak;Zonguldak;TR;TRZON;true;false;upply;Zonguldak;Zonguldak,Port of Zonguldak
+tr_trayt_antalya;Antalya;TR;TRAYT;true;false;upply;Antalya;Antalya,Port of Antalya
+tr_trhay_haydarpasa;Haydarpasa;TR;TRHAY;true;false;upply;Haydarpasa;Haydarpasa,Istanbul Asian Side
+ye_yeade_aden;Aden;YE;YEADE;true;false;upply;Aden;Aden,Port of Aden
+ye_yehod_hodeidah;Hodeidah;YE;YEHOD;true;false;upply;Hodeidah;Hodeidah,Hudaydah,Port of Hodeidah
+# ── AFRICA ──────────────────────────────────────────────────────
+ao_aolad_luanda;Luanda;AO;AOLAD;true;false;upply;Luanda;Luanda,Port of Luanda
+ao_aolob_lobito;Lobito;AO;AOLOB;true;false;upply;Lobito;Lobito,Port of Lobito
+ao_aomsz_namibe;Namibe;AO;AOMSZ;true;false;upply;Namibe;Namibe,Mossamedes
+bj_bjcoo_cotonou;Cotonou;BJ;BJCOO;true;false;upply;Cotonou;Cotonou,Port of Cotonou
+ci_ciabj_abidjan;Abidjan;CI;CIABJ;true;false;upply;Abidjan;Abidjan,Port of Abidjan,Port Autonome d'Abidjan
+ci_cispy_san_pedro;San Pedro;CI;CISPY;true;false;upply;San Pedro;San-Pedro,Port of San-Pedro
+cm_cmdla_douala;Douala;CM;CMDLA;true;false;upply;Douala;Douala,Port of Douala
+cm_cmkbi_kribi;Kribi;CM;CMKBI;true;false;upply;Kribi;Kribi,Port of Kribi
+dj_djpod_djibouti;Djibouti;DJ;DJPOD;true;false;upply;Djibouti;Djibouti,Port of Djibouti,Doraleh
+dz_dzalg_algiers;Algiers;DZ;DZALG;true;true;upply;Algiers;Algiers,Alger,Port of Algiers
+dz_dzorn_oran;Oran;DZ;DZORN;true;false;upply;Oran;Oran,Port of Oran
+eg_egaly_alexandria;Alexandria;EG;EGALY;true;true;upply;Alexandria;Alexandria,El Iskandariya,Port of Alexandria
+eg_egpsd_port_said;Port Said;EG;EGPSD;true;true;upply;Port Said;Port Said,Port Said East,Port Said West
+eg_egdam_damietta;Damietta;EG;EGDAM;true;false;upply;Damietta;Damietta,Dumyat
+eg_egsuz_suez;Suez;EG;EGSUZ;true;false;upply;Suez;Suez,Port of Suez
+eg_egsok_sokhna;Sokhna;EG;EGSOK;true;false;upply;Sokhna;Sokhna,Ain Sukhna,Port of Sokhna
+ga_galbv_libreville;Libreville;GA;GALBV;true;false;upply;Libreville;Libreville,Port of Libreville
+gh_ghtem_tema;Tema;GH;GHTEM;true;false;upply;Tema;Tema,Port of Tema
+gh_ghtkd_takoradi;Takoradi;GH;GHTKD;true;false;upply;Takoradi;Takoradi,Port of Takoradi
+ke_kemba_mombasa;Mombasa;KE;KEMBA;true;true;upply;Mombasa;Mombasa,Port of Mombasa
+ly_lytip_tripoli;Tripoli;LY;LYTIP;true;false;upply;Tripoli;Tripoli,Port of Tripoli
+ly_lyben_benghazi;Benghazi;LY;LYben;true;false;upply;Benghazi;Benghazi,Bingazi,Port of Benghazi
+ma_maptm_tanger_med;Tanger Med;MA;MAPTM;true;true;upply;Tanger Med;Tanger Med,Tangier Med,Port Tanger Méditerranée
+ma_macas_casablanca;Casablanca;MA;MACAS;true;true;upply;Casablanca;Casablanca,Port of Casablanca
+ma_maaga_agadir;Agadir;MA;MAAGA;true;false;upply;Agadir;Agadir,Port of Agadir
+ma_matng_tangier;Tangier;MA;MATNG;true;false;upply;Tangier;Tangier,Tanger
+ma_mandr_nador;Nador;MA;MANDR;true;false;upply;Nador;Nador,Beni Ansar
+mg_mgtmm_toamasina;Toamasina;MG;MGTMM;true;false;upply;Toamasina;Toamasina,Tamatave,Port of Toamasina
+mg_mgdie_antsiranana;Antsiranana;MG;MGDIE;true;false;upply;Antsiranana;Antsiranana,Diego Suarez
+mu_muplu_port_louis;Port Louis;MU;MUPLU;true;false;upply;Port Louis;Port Louis,Port of Port Louis,Mauritius
+mz_mzmpm_maputo;Maputo;MZ;MZMPM;true;false;upply;Maputo;Maputo,Port of Maputo
+mz_mzbew_beira;Beira;MZ;MZBEW;true;false;upply;Beira;Beira,Port of Beira
+mz_mzmnc_nacala;Nacala;MZ;MZMNC;true;false;upply;Nacala;Nacala,Port of Nacala
+ng_nglos_lagos;Lagos;NG;NGLOS;true;true;upply;Lagos;Lagos,Apapa,Tin Can Island
+ng_ngonn_onne;Onne;NG;NGONN;true;true;upply;Onne;Onne,Port of Onne
+ng_ngphc_port_harcourt;Port Harcourt;NG;NGPHC;true;false;upply;Port Harcourt;Port Harcourt,PHC
+ng_ngwar_warri;Warri;NG;NGWAR;true;false;upply;Warri;Warri,Port of Warri
+sn_sndkr_dakar;Dakar;SN;SNDKR;true;false;upply;Dakar;Dakar,Port of Dakar
+tg_tglfw_lome;Lome;TG;TGLFW;true;false;upply;Lome;Lome,Lomé,Port of Lome
+tn_tntun_tunis;Tunis;TN;TNTUN;true;false;upply;Tunis;Tunis,Port of Tunis,Rades
+tn_tnsfa_sfax;Sfax;TN;TNSFA;true;false;upply;Sfax;Sfax,Port of Sfax
+tn_tnbiz_bizerte;Bizerte;TN;TNBIZ;true;false;upply;Bizerte;Bizerte,Port of Bizerte
+tn_tnsus_sousse;Sousse;TN;TNSUS;true;false;upply;Sousse;Sousse,Port of Sousse
+tz_tzdar_dar_es_salaam;Dar es Salaam;TZ;TZDAR;true;false;upply;Dar es Salaam;Dar es Salaam,DSM,Port of Dar es Salaam
+tz_tztgt_tanga;Tanga;TZ;TZTGT;true;false;upply;Tanga;Tanga,Port of Tanga
+tz_tzznz_zanzibar;Zanzibar;TZ;TZZNZ;true;false;upply;Zanzibar;Zanzibar,Zanzibar Port
+za_zadur_durban;Durban;ZA;ZADUR;true;true;upply;Durban;Durban,Port of Durban
+za_zacpt_cape_town;Cape Town;ZA;ZACPT;true;true;upply;Cape Town;Cape Town,Port of Cape Town
+za_zarcb_richards_bay;Richards Bay;ZA;ZARCB;true;false;upply;Richards Bay;Richards Bay,Port of Richards Bay
+za_zaplz_port_elizabeth;Port Elizabeth;ZA;ZAPLZ;true;false;upply;Port Elizabeth;Port Elizabeth,Gqeberha,Port of Ngqura
+za_zaels_east_london;East London;ZA;ZAELS;true;false;upply;East London;East London,Port of East London
+# ── OCEANIA ─────────────────────────────────────────────────────
+au_aumel_melbourne;Melbourne;AU;AUMEL;true;true;upply;Melbourne;Melbourne,Port of Melbourne
+au_ausyd_sydney;Sydney;AU;AUSYD;true;true;upply;Sydney;Sydney,Port of Sydney,Botany Bay
+au_aubne_brisbane;Brisbane;AU;AUBNE;true;true;upply;Brisbane;Brisbane,Port of Brisbane
+au_aufre_fremantle;Fremantle;AU;AUFRE;true;true;upply;Fremantle;Fremantle,Perth,Port of Fremantle
+au_auadl_adelaide;Adelaide;AU;AUADL;true;false;upply;Adelaide;Adelaide,Port Adelaide
+au_audrw_darwin;Darwin;AU;AUDRW;true;false;upply;Darwin;Darwin,Port of Darwin
+au_auphe_port_hedland;Port Hedland;AU;AUPHE;true;false;upply;Port Hedland;Port Hedland,Port Hedland Port Authority
+au_auntl_newcastle;Newcastle;AU;AUNTL;true;false;upply;Newcastle;Newcastle NSW,Port of Newcastle
+au_auglt_gladstone;Gladstone;AU;AUGLT;true;false;upply;Gladstone;Gladstone,Port of Gladstone
+au_autsv_townsville;Townsville;AU;AUTSV;true;false;upply;Townsville;Townsville,Port of Townsville
+au_audam_dampier;Dampier;AU;AUDAM;true;false;upply;Dampier;Dampier,Port of Dampier
+au_aupkl_port_kembla;Port Kembla;AU;AUPKL;true;false;upply;Port Kembla;Port Kembla,Wollongong
+au_aumky_mackay;Mackay;AU;AUMKY;true;false;upply;Mackay;Mackay,Port of Mackay
+au_augex_geelong;Geelong;AU;AUGEX;true;false;upply;Geelong;Geelong,Port of Geelong
+au_auhpt_hay_point;Hay Point;AU;AUHPT;true;false;upply;Hay Point;Hay Point,Dalrymple Bay
+au_aubwt_burnie;Burnie;AU;AUBWT;true;false;upply;Burnie;Burnie,Port of Burnie,Tasmania
+au_aubel_bell_bay;Bell Bay;AU;AUBEL;true;false;upply;Bell Bay;Bell Bay,Port of Bell Bay,Launceston
+au_aubtb_botany_bay;Botany Bay;AU;AUBTB;true;false;upply;Botany Bay;Botany Bay,Port Botany
+fj_fjsuv_suva;Suva;FJ;FJSUV;true;false;upply;Suva;Suva,Port of Suva,Fiji
+fj_fjltk_lautoka;Lautoka;FJ;FJLTK;true;false;upply;Lautoka;Lautoka,Port of Lautoka
+nc_ncnou_noumea;Noumea;NC;NCNOU;true;false;upply;Noumea;Noumea,Port of Noumea,New Caledonia
+nz_nzakl_auckland;Auckland;NZ;NZAKL;true;true;upply;Auckland;Auckland,Port of Auckland,Ports of Auckland
+nz_nztrg_tauranga;Tauranga;NZ;NZTRG;true;true;upply;Tauranga;Tauranga,Port of Tauranga
+nz_nzlyt_lyttelton;Lyttelton;NZ;NZLYT;true;false;upply;Lyttelton;Lyttelton,Christchurch,Port of Lyttelton
+nz_nzwlg_wellington;Wellington;NZ;NZWLG;true;false;upply;Wellington;Wellington,Port of Wellington,CentrePort
+nz_nznpe_napier;Napier;NZ;NZNPE;true;false;upply;Napier;Napier,Port of Napier
+pg_pgpom_port_moresby;Port Moresby;PG;PGPOM;true;false;upply;Port Moresby;Port Moresby,Papua New Guinea
+pg_pglae_lae;Lae;PG;PGLAE;true;false;upply;Lae;Lae,Port of Lae
+pg_pgrab_rabaul;Rabaul;PG;PGRAB;true;false;upply;Rabaul;Rabaul,Port of Rabaul
+# ── OTHER ───────────────────────────────────────────────────────
+ec_ecgye_guayaquil;Guayaquil;EC;ECGYE;true;false;upply;Guayaquil;Guayaquil,Port of Guayaquil
+ec_ecmec_manta;Manta;EC;ECMEC;true;false;upply;Manta;Manta,Puerto Manta
+ec_ecesm_esmeraldas;Esmeraldas;EC;ECESM;true;false;upply;Esmeraldas;Esmeraldas
+ge_gebus_batumi;Batumi;GE;GEBUS;true;false;upply;Batumi;Batumi,Port of Batumi
+ge_gepti_poti;Poti;GE;GEPTI;true;false;upply;Poti;Poti,Port of Poti
+lb_lbbey_beirut;Beirut;LB;LBBEY;true;false;upply;Beirut;Beirut,Port of Beirut
+sc_scvic_victoria;Victoria;SC;SCVIC;true;false;upply;Victoria;Victoria,Mahe,Port Victoria,Seychelles
+sk_skbts_bratislava;Bratislava;SK;SKBTS;true;false;upply;Bratislava;Bratislava,Danube,Slovakia river port
+uy_uymvd_montevideo;Montevideo;UY;UYMVD;true;false;upply;Montevideo;Montevideo,Port of Montevideo
+ve_vepbl_puerto_cabello;Puerto Cabello;VE;VEPBL;true;false;upply;Puerto Cabello;Puerto Cabello,Port of Puerto Cabello
+ve_vemar_maracaibo;Maracaibo;VE;VEMAR;true;false;upply;Maracaibo;Maracaibo,Port of Maracaibo
+ve_velag_la_guaira;La Guaira;VE;VELAG;true;false;upply;La Guaira;La Guaira,Puerto La Guaira

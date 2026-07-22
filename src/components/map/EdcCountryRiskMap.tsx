@@ -15,6 +15,7 @@ import {
   TIER_COLORS,
 } from '@/lib/country-risk-data';
 import { mapScrollScale } from '@/lib/animation/presets';
+import { GlowBorder } from '@/components/ui/effects/GlowBorder';
 
 const WORLD_ATLAS_URL =
   'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -58,6 +59,8 @@ export function EdcCountryRiskMap({
 }: EdcCountryRiskMapProps) {
   const [worldData, setWorldData] = useState<FeatureCollection | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+
+  const mapHeight = Math.max(150, height - 70);
 
   useEffect(() => {
     let cancelled = false;
@@ -125,7 +128,7 @@ export function EdcCountryRiskMap({
         <div
           style={{
             width,
-            height,
+            height: mapHeight,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -138,7 +141,7 @@ export function EdcCountryRiskMap({
       ) : (
         <Zoom<SVGSVGElement>
           width={width}
-          height={height}
+          height={mapHeight}
           scaleXMin={1}
           scaleXMax={8}
           scaleYMin={1}
@@ -146,17 +149,18 @@ export function EdcCountryRiskMap({
           initialTransformMatrix={{ scaleX: 1, scaleY: 1, translateX: 0, translateY: 0, skewX: 0, skewY: 0 }}
         >
           {(zoom) => (
-            <div style={{ position: 'relative', width, height, overflow: 'hidden', cursor: zoom.isDragging ? 'grabbing' : 'grab' }}>
+            <GlowBorder className="w-full">
+              <div style={{ position: 'relative', width: '100%', height: mapHeight, overflow: 'hidden', cursor: zoom.isDragging ? 'grabbing' : 'grab', borderRadius: '18px' }}>
               <svg
-                width={width}
-                height={height}
+                width="100%"
+                height={mapHeight}
                 ref={zoom.containerRef}
-                style={{ touchAction: 'none', background: 'var(--map-bg)', borderRadius: 'var(--radius-interactive)' }}
+                style={{ touchAction: 'none', background: 'var(--map-bg)' }}
                 role="img"
                 aria-label="Country risk map"
               >
                 <g transform={zoom.toString()}>
-                  <Mercator data={worldData.features as CountryFeature[]} scale={110} translate={[width / 2, height / 1.55]}>
+                  <Mercator data={worldData.features as CountryFeature[]} scale={110} translate={[width / 2, mapHeight / 1.55]}>
                     {(mercator) => (
                       <g>
                         {mercator.features.map(({ feature: country, path }, i) => {
@@ -222,7 +226,7 @@ export function EdcCountryRiskMap({
                 </g>
                 
                 {/* Legend - stays fixed, outside the zoom group */}
-                <g transform={`translate(12, ${height - 12})`}>
+                <g transform={`translate(12, ${mapHeight - 12})`}>
                   {(['open', 'watch', 'restricted'] as const).map((tier, i) => (
                     <g key={tier} transform={`translate(0, ${-i * 18})`}>
                       <rect width={10} height={10} fill={TIER_COLORS[tier]} rx={2} />
@@ -263,7 +267,8 @@ export function EdcCountryRiskMap({
                   Reset
                 </button>
               </div>
-            </div>
+              </div>
+            </GlowBorder>
           )}
         </Zoom>
       )}

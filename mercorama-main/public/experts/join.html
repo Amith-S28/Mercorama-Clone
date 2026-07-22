@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join as a Trade Expert — Mercorama | Apply to the Verified Expert Network</title>
+  <meta name="description" content="Apply to join Mercorama's verified trade expert network. Connect with Canadian SMEs navigating global expansion.">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --navy: #0B1F3A; --navy-mid: #152d52; --teal: #009CA6; --teal-dark: #007D87;
+      --teal-light: #E6F7F8; --bg: #FFFFFF; --light-bg: #F0F4F8;
+      --text: #0B1F3A; --muted: #5A6A7A; --border: #DDE3EA; --wide: 1200px;
+      --font-head: 'Plus Jakarta Sans', sans-serif; --font-body: 'Inter', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; font-family: var(--font-body); border: none; }
+
+    /* ── DROPDOWN ── */
+    .nav-has-drop { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 4px; font-size: var(--text-sm); font-weight: 500; color: var(--muted); cursor: default; }
+    .nav-drop-trigger:hover { color: var(--navy); }
+    .nav-drop-trigger svg.chevron { width: 14px; height: 14px; transition: transform var(--transition); }
+    .nav-has-drop:hover .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 2px); left: 50%; transform: translateX(-50%) translateY(-4px); background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(11,31,58,0.12); padding: 0.375rem; min-width: 160px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--transition), transform var(--transition); }
+    .nav-dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+    .nav-has-drop:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-has-drop.open .nav-drop-trigger svg.chevron { transform: rotate(180deg); }
+    .nav-has-drop.open .nav-dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: block; padding: 0.55rem 0.875rem; border-radius: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; transition: background var(--transition), color var(--transition); white-space: nowrap; }
+    .nav-drop-item:hover, .nav-drop-item.active { background: var(--light-bg); color: var(--navy); }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--wide); margin: 0 auto; padding: 0 2rem; height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-logo img { height: clamp(44px,4.5vw,60px); width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-ctas { display: flex; gap: 0.75rem; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.5rem 1.25rem; border-radius: 6px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; white-space: nowrap; transition: all var(--transition); }
+    .btn-primary { background: var(--teal); color: white; border: 2px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border); padding: 1rem 2rem 1.5rem; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .nav-mobile a:hover { color: var(--teal); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--light-bg); padding: 3rem 2rem 0; }
+    .footer-inner { max-width: var(--wide); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; }
+    .footer-brand-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-tagline { font-size: 0.8rem; color: var(--muted); line-height: 1.55; max-width: 26ch; }
+    .footer-brand-col img { height: 44px; width: auto; max-width: 160px; display: block; margin-bottom: 0; }
+    .footer-powered { font-size: 0.68rem; color: var(--muted); }
+    .footer-col-head { font-family: var(--font-head); font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 0; }
+    .footer-link { font-size: var(--text-xs); color: #4A5568; display: block; padding: 0.55rem 0; min-height: 44px; display: flex; align-items: center; }
+    .footer-link:hover { color: var(--navy); }
+    .footer-social-icons { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+    .footer-social-icon { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--navy); transition: all var(--transition); }
+    .footer-social-icon:hover { background: var(--teal); color: white; border-color: var(--teal); }
+    .footer-social-icon svg { width: 18px; height: 18px; }
+    .footer-bottom { background: #081629; margin: 0 -2rem; padding: 1.1rem 2rem; }
+    .footer-bottom-inner { max-width: var(--wide); margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; font-size: 0.75rem; color: rgba(255,255,255,0.85); }
+    .footer-bottom-center { color: white; font-weight: 500; white-space: nowrap; }
+    .footer-bottom-right { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; }
+    .footer-bottom-right a { color: rgba(255,255,255,0.85); }
+    .footer-bottom-right a:hover { color: white; }
+    .footer-bottom-divider { color: rgba(255,255,255,0.3); }
+
+    /* ── PAGE HEADER ── */
+    .page-header { background: var(--navy); padding: 3rem 2rem 0; }
+    .page-header-inner { max-width: var(--wide); margin: 0 auto; }
+    .page-header h1 { font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 0.75rem; }
+    .page-header p { font-size: var(--text-sm); color: rgba(255,255,255,0.65); max-width: 58ch; margin-bottom: 0; line-height: 1.65; }
+    .page-header-breadcrumb { font-size: var(--text-xs); color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .page-header-breadcrumb a { color: rgba(255,255,255,0.5); }
+    .page-header-breadcrumb a:hover { color: white; }
+    .page-header-breadcrumb span.sep { opacity: 0.4; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip { background: var(--navy); padding: 1.5rem 2rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .trust-strip-inner { max-width: var(--wide); margin: 0 auto; display: flex; gap: 2rem; flex-wrap: wrap; }
+    .trust-badge { display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-xs); color: rgba(255,255,255,0.6); }
+    .trust-badge svg { width: 15px; height: 15px; color: var(--teal); }
+
+    /* ── WHO WE'RE LOOKING FOR ── */
+    .who-section { background: var(--light-bg); padding: 4rem 2rem; }
+    .who-inner { max-width: var(--wide); margin: 0 auto; }
+    .who-header { text-align: center; margin-bottom: 2.5rem; }
+    .who-header .eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .who-header h2 { font-family: var(--font-head); font-size: var(--text-xl); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 0.75rem; }
+    .who-header p { font-size: var(--text-sm); color: var(--muted); max-width: 54ch; margin: 0 auto; line-height: 1.65; }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+    .who-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color var(--transition), box-shadow var(--transition); }
+    .who-card:hover { border-color: rgba(0,156,166,0.3); box-shadow: 0 4px 20px rgba(11,31,58,0.08); }
+    .who-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--teal-light); border: 1px solid rgba(0,156,166,0.2); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+    .who-card-icon svg { width: 20px; height: 20px; }
+    .who-card h3 { font-family: var(--font-head); font-size: var(--text-sm); font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .who-card p { font-size: var(--text-xs); color: var(--muted); line-height: 1.65; margin: 0; }
+    .who-footer-note { text-align: center; font-size: var(--text-xs); color: var(--muted); line-height: 1.65; max-width: 60ch; margin: 0 auto; padding: 1.5rem 2rem; background: white; border: 1px solid var(--border); border-radius: 12px; }
+
+    /* ── APPLICATION FORM ── */
+    .apply-section { background: var(--bg); padding: 4rem 2rem; }
+    .apply-inner { max-width: 820px; margin: 0 auto; }
+
+    /* ── STEP INDICATOR ── */
+    .step-indicator { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 3rem; }
+    .step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1; position: relative; }
+    .step:not(:last-child)::after { content: ''; position: absolute; top: 18px; left: calc(50% + 18px); right: calc(-50% + 18px); height: 2px; background: var(--border); z-index: 0; }
+    .step.completed:not(:last-child)::after { background: var(--teal); }
+    .step-circle { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; color: var(--muted); position: relative; z-index: 1; transition: all var(--transition); }
+    .step.active .step-circle { border-color: var(--teal); background: var(--teal); color: white; }
+    .step.completed .step-circle { border-color: var(--teal); background: var(--teal); color: white; }
+    .step-label { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-align: center; }
+    .step.active .step-label { color: var(--navy); }
+    .step.completed .step-label { color: var(--teal-dark); }
+
+    /* ── FORM CARD ── */
+    .form-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(11,31,58,0.06); }
+    .form-section-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); margin-top: 2rem; }
+    .form-section-title:first-child { margin-top: 0; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: var(--text-xs); font-weight: 600; color: var(--navy); }
+    .form-label .req { color: var(--teal); margin-left: 2px; }
+    .form-input { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; transition: border-color var(--transition); background: white; }
+    .form-input:focus { border-color: var(--teal); }
+    .form-input::placeholder { color: var(--muted); }
+    .form-select { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; background: white; cursor: pointer; transition: border-color var(--transition); }
+    .form-select:focus { border-color: var(--teal); }
+    .form-textarea { border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.875rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--text); outline: none; width: 100%; min-height: 100px; resize: vertical; transition: border-color var(--transition); }
+    .form-textarea:focus { border-color: var(--teal); }
+    .phone-group { display: flex; gap: 0; }
+    .phone-prefix { border: 1.5px solid var(--border); border-right: none; border-radius: 8px 0 0 8px; padding: 0.6rem 0.875rem; background: var(--light-bg); font-size: var(--text-sm); color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+    .phone-input { border-radius: 0 8px 8px 0; flex: 1; }
+    .form-hint { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+    .form-note { font-size: var(--text-xs); color: var(--muted); margin-bottom: 0; padding: 0.875rem 1rem; background: var(--light-bg); border-radius: 8px; display: flex; align-items: flex-start; gap: 0.5rem; border: 1px solid var(--border); }
+    .form-note svg { width: 14px; height: 14px; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+    .form-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .btn-form-continue { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 2rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: var(--teal); color: white; border: 2px solid var(--teal); cursor: pointer; transition: all var(--transition); }
+    .btn-form-continue:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .btn-form-back { display: inline-flex; align-items: center; gap: 6px; padding: 0.65rem 1.5rem; border-radius: 8px; font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; background: transparent; color: var(--navy); border: 2px solid var(--border); cursor: pointer; transition: all var(--transition); }
+    .btn-form-back:hover { border-color: var(--navy); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav-inner { gap: 1rem; padding: 0 1.25rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-ctas { display: none; }
+      .nav-hamburger { display: flex; }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+      .form-card { padding: 1.5rem; }
+      .trust-strip-inner { gap: 1.25rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .footer-bottom-inner { grid-template-columns: 1fr; text-align: center; gap: 0.5rem; }
+      .footer-bottom-right { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .who-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer { padding: 2rem 1rem 0; }
+      .footer-bottom { margin: 0 -1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">Solutions <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/solutions/foodbeverage.html" class="nav-drop-item">Food &amp; Beverage</a>
+          <a href="/solutions/seafood.html" class="nav-drop-item">Seafood &amp; Ocean Products</a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger active">Experts <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/experts.html#why-experts" class="nav-drop-item">Why Experts?</a>
+          <a href="/experts/search.html" class="nav-drop-item">Find Experts</a>
+          <a href="/experts/join.html" class="nav-drop-item active">
+            <div class="nav-drop-icon"><svg data-lucide="user-plus"></svg></div>
+            <div><div class="nav-drop-title">Join as Expert</div><div class="nav-drop-sub">Apply to the network</div></div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-has-drop">
+        <a href="#" class="nav-drop-trigger">About <svg class="chevron" data-lucide="chevron-down"></svg></a>
+        <div class="nav-dropdown">
+          <a href="/about.html" class="nav-drop-item">Mission &amp; Story</a>
+        </div>
+      </li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="/early-access.html" class="btn btn-primary">Book a Demo</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/">Home</a>
+    <a href="/experts.html">Why Experts?</a>
+    <a href="/experts/search.html">Find Experts</a>
+    <a href="/experts/join.html" class="active">Join as Expert</a>
+    <a href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+    <a href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <div style="margin-top:1rem;">
+      <a href="/early-access.html" style="width:100%;justify-content:center;">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/experts.html">Experts</a><span class="sep">›</span>
+      <span style="color:rgba(255,255,255,0.8)">Join as Expert</span>
+    </div>
+    <h1>Join Mercorama's Verified<br>Trade Expert Network</h1>
+    <p>Mercorama connects verified trade professionals — from customs brokers and CITP/FIBP advisors to market entry strategists and executive consultants — with Canadian SMEs navigating global expansion.</p>
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-badge"><svg data-lucide="shield-check"></svg> Verified Profiles Only</div>
+    <div class="trust-badge"><svg data-lucide="flag"></svg> Canadian SMEs · Global Markets</div>
+    <div class="trust-badge"><svg data-lucide="layers"></svg> Platform-Integrated Collaboration</div>
+  </div>
+</div>
+
+<!-- ── WHO WE'RE LOOKING FOR ── -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="who-header">
+      <div class="eyebrow">Expert Categories</div>
+      <h2>Who We're Looking For</h2>
+      <p>Whether you're an independent consultant, a firm principal, or a seasoned executive — if your work helps companies trade globally, there's a place for you here.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="globe"></svg></div>
+        <h3>Global Expansion &amp; Market Entry</h3>
+        <p>Advisors who help SMEs identify, evaluate, and enter new international markets — from feasibility to go-to-market.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="trending-up"></svg></div>
+        <h3>Growth Strategy &amp; Planning</h3>
+        <p>Strategists who build export growth roadmaps, competitive positioning, and scalable international distribution models.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="bar-chart-2"></svg></div>
+        <h3>Market Intelligence &amp; Research</h3>
+        <p>Analysts with expertise in competitive intelligence, trade data, market sizing, and opportunity mapping across global markets.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="briefcase"></svg></div>
+        <h3>Executive Advisory &amp; Partnerships</h3>
+        <p>Senior leaders who advise on cross-border M&amp;A, strategic alliances, joint ventures, and international partnership structures.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="shield"></svg></div>
+        <h3>Trade Compliance &amp; Customs</h3>
+        <p>Licensed customs brokers, CITP/FIBP professionals, and compliance officers navigating tariffs, FTAs, and regulatory frameworks.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon"><svg data-lucide="package"></svg></div>
+        <h3>Freight, Logistics &amp; Supply Chain</h3>
+        <p>Specialists in international freight, container and bulk shipping, logistics optimization, and multimodal supply chain design.</p>
+      </div>
+    </div>
+    <div class="who-footer-note">Whether you are an independent consultant, a firm principal, or a seasoned executive — if your work helps companies trade globally, there is a place for you here.</div>
+  </div>
+</section>
+
+<!-- ── APPLICATION FORM ── -->
+<section class="apply-section" id="apply-form">
+  <div class="apply-inner">
+
+    <div class="step-indicator">
+      <div class="step active" id="step1-indicator">
+        <div class="step-circle">1</div>
+        <div class="step-label">About You</div>
+      </div>
+      <div class="step" id="step2-indicator">
+        <div class="step-circle">2</div>
+        <div class="step-label">Your Expertise</div>
+      </div>
+      <div class="step" id="step3-indicator">
+        <div class="step-circle">3</div>
+        <div class="step-label">Collaboration</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: About You -->
+    <div class="form-card" id="step1">
+      <div class="form-section-title">Contact Information</div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Work / Professional Email <span class="req">*</span></label>
+          <input class="form-input" type="email" placeholder="jane@company.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <div class="phone-group">
+            <div class="phone-prefix">🇨🇦 +1</div>
+            <input class="form-input phone-input" type="tel" placeholder="(555) 123-4567" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section-title">Professional Presence</div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">LinkedIn Profile URL <span class="req">*</span></label>
+          <input class="form-input" type="url" placeholder="https://linkedin.com/in/yourname" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Personal or Company Website</label>
+          <input class="form-input" type="url" placeholder="https://yourcompany.com (optional)" />
+        </div>
+      </div>
+
+      <div class="form-section-title">Location</div>
+      <div class="form-grid-3">
+        <div class="form-group">
+          <label class="form-label">Country <span class="req">*</span></label>
+          <select class="form-select" id="country-select" onchange="updateProvince()">
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+            <option disabled>──────────</option>
+            <option>Algeria</option><option>Argentina</option><option>Australia</option><option>Austria</option>
+            <option>Bangladesh</option><option>Belgium</option><option>Brazil</option><option>Chile</option>
+            <option>China</option><option>Colombia</option><option>Czech Republic</option><option>Denmark</option>
+            <option>Egypt</option><option>France</option><option>Germany</option><option>Ghana</option>
+            <option>Hong Kong</option><option>India</option><option>Indonesia</option><option>Ireland</option>
+            <option>Italy</option><option>Japan</option><option>Jordan</option><option>Kenya</option>
+            <option>Malaysia</option><option>Mexico</option><option>Morocco</option><option>Netherlands</option>
+            <option>New Zealand</option><option>Nigeria</option><option>Norway</option><option>Pakistan</option>
+            <option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option>
+            <option>Qatar</option><option>Saudi Arabia</option><option>Romania</option><option>Singapore</option>
+            <option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sweden</option>
+            <option>Switzerland</option><option>Taiwan</option><option>Thailand</option><option>Turkey</option>
+            <option>United Arab Emirates</option><option>United Kingdom</option><option>Vietnam</option>
+            <option disabled>──────────</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group" id="province-group">
+          <label class="form-label">Province / State <span class="req">*</span></label>
+          <select class="form-select" id="province-select">
+            <option>Select province</option>
+            <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
+            <option>New Brunswick</option><option>Newfoundland and Labrador</option>
+            <option>Northwest Territories</option><option>Nova Scotia</option><option>Nunavut</option>
+            <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
+            <option>Saskatchewan</option><option>Yukon</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">City <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="e.g., Halifax" />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-form-continue" onclick="goToStep(2)">Continue <svg data-lucide="arrow-right" style="width:15px;height:15px"></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Your Expertise -->
+    <div class="form-card" id="step2" style="display:none">
+      <div class="form-section-title">Expert Category</div>
+      <div class="form-grid-2">
+        <div class="form-group full">
+          <label class="form-label">Primary Expert Category <span class="req">*</span></label>
+          <select class="form-select">
+            <option value="">Select your primary category</option>
+            <option>Global Expansion &amp; Market Entry</option>
+            <option>Growth Strategy &amp; Planning</option>
+            <option>Market Intelligence &amp; Research</option>
+            <option>Executive Advisory &amp; Partnerships</option>
+            <option>Trade Compliance &amp; Customs</option>
+            <option>Freight, Logistics &amp; Supply Chain</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Industries You Serve <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="e.g., Food &amp; Beverage, Technology, Manufacturing" />
+          <span class="form-hint">Separate multiple industries with commas</span>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Target Markets / Regions <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="e.g., Germany, EU, Southeast Asia, MENA" />
+          <span class="form-hint">Countries or regions you have expertise in</span>
+        </div>
+      </div>
+
+      <div class="form-section-title">Credentials &amp; Experience</div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Certifications / Designations</label>
+          <input class="form-input" type="text" placeholder="e.g., CITP, FIBP, CCS, CHB" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Years of Trade Experience <span class="req">*</span></label>
+          <select class="form-select">
+            <option value="">Select range</option>
+            <option>1–3 years</option><option>4–7 years</option><option>8–15 years</option><option>15+ years</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Professional Bio / Summary <span class="req">*</span></label>
+          <textarea class="form-textarea" placeholder="Briefly describe your background, expertise, and the value you bring to exporters..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-section-title">Languages</div>
+      <div class="form-group">
+        <label class="form-label">Languages Spoken <span class="req">*</span></label>
+        <input class="form-input" type="text" placeholder="e.g., English, French, Arabic" />
+        <span class="form-hint">Separate with commas</span>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-form-back" onclick="goToStep(1)"><svg data-lucide="arrow-left" style="width:15px;height:15px"></svg> Back</button>
+        <button class="btn-form-continue" onclick="goToStep(3)">Continue <svg data-lucide="arrow-right" style="width:15px;height:15px"></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Collaboration -->
+    <div class="form-card" id="step3" style="display:none">
+      <div class="form-section-title">Collaboration Preferences</div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Preferred Engagement Type <span class="req">*</span></label>
+          <select class="form-select">
+            <option value="">Select type</option>
+            <option>Project-based consulting</option>
+            <option>Ongoing advisory retainer</option>
+            <option>One-time consultations</option>
+            <option>Platform-integrated collaboration</option>
+            <option>Open to all</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Availability</label>
+          <select class="form-select">
+            <option value="">Select availability</option>
+            <option>Less than 5 hours/week</option>
+            <option>5–10 hours/week</option>
+            <option>10–20 hours/week</option>
+            <option>Full-time availability</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Why do you want to join Mercorama? <span class="req">*</span></label>
+          <textarea class="form-textarea" placeholder="Tell us what motivates you to join and how you want to contribute to Canadian SME growth..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Anything else you'd like us to know?</label>
+          <textarea class="form-textarea" style="min-height:80px" placeholder="Optional — share links, past work, references, or any other relevant information."></textarea>
+        </div>
+      </div>
+
+      <div class="form-note">
+        <svg data-lucide="info"></svg>
+        <span>By submitting this application you agree to our verification process. All approved experts are reviewed by the Mercorama team before appearing on the platform. We will be in touch within 5 business days.</span>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-form-back" onclick="goToStep(2)"><svg data-lucide="arrow-left" style="width:15px;height:15px"></svg> Back</button>
+        <button class="btn-form-continue" type="submit">Submit Application <svg data-lucide="send" style="width:15px;height:15px"></svg></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+      <p class="footer-tagline">AI-powered trade intelligence for Canadian exporters.</p>
+      <div class="footer-social-icons">
+        <a href="https://linkedin.com/company/mercorama" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hello@mercorama.com" class="footer-social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Solutions</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+        <a class="footer-link" href="/solutions/seafood.html">Seafood &amp; Ocean Products</a>
+        <a class="footer-link" href="/auth/signin" target="_blank" rel="noopener">Member Login</a>
+        <a class="footer-link" href="/early-access.html">Early Access</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Experts</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/experts.html">Why Experts?</a>
+        <a class="footer-link" href="/experts/search.html">Find Experts</a>
+        <a class="footer-link" href="/experts/join.html">Join as Expert</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Company</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/about.html">About</a>
+        <a class="footer-link" href="/data-sources.html">Data Sources</a>
+        <a class="footer-link" href="/data-retention.html">Data Retention</a>
+        <a class="footer-link" href="/contact.html">Contact Us</a>
+        <a class="footer-link" href="/early-access.html">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2026 Mercorama. All rights reserved. · Powered by <a href="https://mightyiq.ca" target="_blank" rel="noopener" Inc.</a></div>
+      <div class="footer-bottom-center">Halifax, Nova Scotia, Canada 🍁</div>
+      <div class="footer-bottom-right">
+        <a href="/privacy.html">Privacy Policy</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/terms.html">Terms of Use</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/data-retention.html">Data Retention</a>
+        <span class="footer-bottom-divider">|</span>
+        <a href="/data-sources.html">Data Sources</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobile');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 20 ? '0 4px 16px rgba(11,31,58,0.10)' : '');
+
+  function goToStep(n) {
+    [1,2,3].forEach(i => {
+      document.getElementById('step'+i).style.display = i===n ? 'block' : 'none';
+      const ind = document.getElementById('step'+i+'-indicator');
+      ind.classList.remove('active','completed');
+      if (i < n) ind.classList.add('completed');
+      if (i === n) ind.classList.add('active');
+    });
+    // Update completed circles to checkmarks
+    document.querySelectorAll('.step.completed .step-circle').forEach(c => {
+      if (!c.querySelector('svg')) {
+        c.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      }
+    });
+    document.getElementById('apply-form').scrollIntoView({behavior:'smooth', block:'start'});
+    lucide.createIcons();
+  }
+
+  function updateProvince() {
+    const country = document.getElementById('country-select').value;
+    const group = document.getElementById('province-group');
+    const select = document.getElementById('province-select');
+    const label = group.querySelector('.form-label');
+    if (country === 'Canada') {
+      label.innerHTML = 'Province / State <span class="req">*</span>';
+      select.innerHTML = '<option>Select province</option><option>Alberta</option><option>British Columbia</option><option>Manitoba</option><option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Northwest Territories</option><option>Nova Scotia</option><option>Nunavut</option><option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option><option>Saskatchewan</option><option>Yukon</option>';
+    } else if (country === 'United States') {
+      label.innerHTML = 'State <span class="req">*</span>';
+      select.innerHTML = '<option>Select state</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>';
+    } else {
+      label.innerHTML = 'Region / State';
+      select.innerHTML = '<option>N/A</option>';
+    }
+  }
+
+  // Touch-friendly dropdowns (touch devices lose :hover before tap completes)
+  (function() {
+    var drops = document.querySelectorAll('.nav-has-drop');
+    drops.forEach(function(drop) {
+      var trigger = drop.querySelector('.nav-drop-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        // Only intercept on touch/non-pointer devices
+        if (window.matchMedia('(hover: none)').matches || e.pointerType === 'touch') {
+          e.preventDefault();
+          var isOpen = drop.classList.contains('open');
+          // Close all
+          drops.forEach(function(d) { d.classList.remove('open'); });
+          if (!isOpen) drop.classList.add('open');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-has-drop')) {
+        drops.forEach(function(d) { d.classList.remove('open'); });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

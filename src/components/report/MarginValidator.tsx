@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2 } from '@/components/ui/icons';
 import type { LandedCostResult, SmeRecord } from '@/types';
 import { calculateLandedCost } from '@/lib/landed-cost-calculator';
 import { getCountryFallback } from '@/lib/mock-fallback-data';

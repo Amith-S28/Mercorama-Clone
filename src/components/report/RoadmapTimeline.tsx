@@ -21,6 +21,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { motion } from 'motion/react';
 import type { RoadmapBucket, RoadmapItem } from '@/types';
 import { snappy } from '@/lib/animation/presets';
+import { useGsapStagger } from '@/hooks';
 
 const BUCKETS: RoadmapBucket[] = ['30-day', '60-day', '90-day'];
 
@@ -91,6 +92,13 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
       cancelled = true;
     };
   }, [assessmentId]);
+
+  const gridRef = useGsapStagger<HTMLDivElement>({ 
+    staggerEach: 0.1, 
+    direction: 'up', 
+    distance: 20,
+    triggerValue: items.length
+  });
 
   const byBucket = useMemo(() => {
     const map: Record<RoadmapBucket, RoadmapItem[]> = {
@@ -173,6 +181,7 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
         onDragEnd={onDragEnd}
       >
         <div
+          ref={gridRef}
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
@@ -183,6 +192,7 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
             <div
               key={bucket}
               id={bucket}
+              className="opacity-0"
               style={{
                 border: '1px solid var(--border-low-contrast)',
                 borderRadius: 'var(--radius-interactive)',

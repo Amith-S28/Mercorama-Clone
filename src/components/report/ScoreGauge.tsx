@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import type { ReadinessGrade } from '@/types';
 import { gradeColor, gradeLabel } from '@/lib/scoring-engine';
-import { useCountUp } from '@/hooks/useCountUp';
+import { useCountUp } from '@/hooks';
 import { snappy } from '@/lib/animation/presets';
 
 export interface ScoreGaugeProps {

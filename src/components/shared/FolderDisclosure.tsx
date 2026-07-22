@@ -2,7 +2,7 @@
 
 import { useId, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from '@/components/ui/icons';
 import { smooth } from '@/lib/animation/presets';
 
 export interface FolderDisclosureProps {

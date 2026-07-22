@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Mercorama</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A; --navy-mid: #152d52; --teal: #009CA6; --teal-dark: #007D87;
+      --teal-light: #E6F7F8; --bg: #FFFFFF; --light-bg: #F0F4F8;
+      --text: #0B1F3A; --muted: #5A6A7A; --border: #DDE3EA; --wide: 1200px;
+      --font-head: 'Plus Jakarta Sans', sans-serif; --font-body: 'Inter', sans-serif;
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { height: 100%; }
+    body {
+      font-family: var(--font-body); color: var(--text); background: var(--bg);
+      -webkit-font-smoothing: antialiased; min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+
+    /* NAV */
+    nav {
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--wide); margin: 0 auto;
+      padding: 0 2rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: clamp(44px,4.5vw,60px); width: auto; display: block; }
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.875rem; font-weight: 700;
+      background: var(--teal); color: white; border: 2px solid var(--teal);
+      transition: all var(--transition);
+    }
+    .btn-nav:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+
+    /* MAIN */
+    main {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      padding: 4rem 2rem;
+    }
+    .error-wrap { max-width: 560px; text-align: center; }
+
+    .error-code {
+      font-family: var(--font-head); font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 800; line-height: 1; color: var(--navy);
+      position: relative; display: inline-block; margin-bottom: 1.5rem;
+    }
+    .error-code::after {
+      content: '';
+      position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 6px; background: var(--teal); border-radius: 3px;
+    }
+    .error-zero {
+      color: var(--teal);
+    }
+
+    .error-title {
+      font-family: var(--font-head); font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700; color: var(--navy); margin-bottom: 1rem;
+    }
+    .error-body {
+      font-size: 1rem; color: var(--muted); line-height: 1.7;
+      margin-bottom: 2.5rem; max-width: 42ch; margin-left: auto; margin-right: auto;
+    }
+
+    .error-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 0.7rem 1.75rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.9rem; font-weight: 700;
+      background: var(--navy); color: white; border: 2px solid var(--navy);
+      transition: all var(--transition);
+    }
+    .btn-primary:hover { background: var(--navy-mid); border-color: var(--navy-mid); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 0.7rem 1.75rem; border-radius: 6px;
+      font-family: var(--font-head); font-size: 0.9rem; font-weight: 700;
+      background: transparent; color: var(--navy); border: 2px solid var(--border);
+      transition: all var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--navy); background: var(--light-bg); }
+
+    .error-links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .error-links a { color: var(--teal); font-weight: 500; }
+    .error-links a:hover { color: var(--teal-dark); text-decoration: underline; }
+    .error-links-label { color: var(--muted); width: 100%; margin-bottom: 0.25rem; font-size: 0.8rem; }
+
+    /* COUNTDOWN */
+    .redirect-note {
+      margin-top: 2.5rem; padding: 0.875rem 1.25rem;
+      background: var(--light-bg); border-radius: 8px; border: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted); display: inline-block;
+    }
+    .redirect-note span { font-weight: 700; color: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); padding: 1.25rem 2rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.6); text-align: center;
+    }
+    footer a { color: rgba(255,255,255,0.75); }
+    footer a:hover { color: white; }
+
+    @media (max-width: 480px) {
+      .error-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-outline { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/mercorama-logo-footer.png" alt="Mercorama" />
+    </a>
+    <a href="/" class="btn-nav">Go Home</a>
+  </div>
+</nav>
+
+<main>
+  <div class="error-wrap">
+    <div class="error-code">4<span class="error-zero">0</span>4</div>
+    <h1 class="error-title">This trade route doesn't exist</h1>
+    <p class="error-body">The page you're looking for has moved, been removed, or never existed. Let's get you back on course.</p>
+
+    <div class="error-actions">
+      <a href="/" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Back to Home
+      </a>
+      <a href="/contact.html" class="btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Report Broken Link
+      </a>
+    </div>
+
+    <div class="error-links">
+      <span class="error-links-label">Or try one of these pages</span>
+      <a href="/experts.html">Trade Experts</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/solutions/foodbeverage.html">Food &amp; Beverage</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+    <div class="redirect-note">
+      Redirecting to home in <span id="countdown">10</span> seconds…
+      <a href="/" style="color:var(--teal);font-weight:600;margin-left:0.5rem;">Go now</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Mercorama · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  let s = 10;
+  const el = document.getElementById('countdown');
+  const t = setInterval(() => {
+    s--;
+    el.textContent = s;
+    if (s <= 0) { clearInterval(t); window.location.href = '/'; }
+  }, 1000);
+
+  // Touch-friendly dropdowns (touch devices lose :hover before tap completes)
+  (function() {
+    var drops = document.querySelectorAll('.nav-has-drop');
+    drops.forEach(function(drop) {
+      var trigger = drop.querySelector('.nav-drop-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        // Only intercept on touch/non-pointer devices
+        if (window.matchMedia('(hover: none)').matches || e.pointerType === 'touch') {
+          e.preventDefault();
+          var isOpen = drop.classList.contains('open');
+          // Close all
+          drops.forEach(function(d) { d.classList.remove('open'); });
+          if (!isOpen) drop.classList.add('open');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-has-drop')) {
+        drops.forEach(function(d) { d.classList.remove('open'); });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,19 +1,18 @@
 'use client';
 
-import { motion } from 'motion/react';
 import type { PillarKey } from '@/types';
 import { PILLAR_LABELS } from '@/lib/scoring-engine';
-import { snappy } from '@/lib/animation/presets';
+import { useGsapStagger } from '@/hooks';
 
 export interface PillarsMatrixProps {
   pillarScores: Record<PillarKey, number>;
 }
 
 function pillarColor(score: number): string {
-  if (score >= 70) return '#22C55E';
-  if (score >= 50) return '#2563EB';
-  if (score >= 25) return '#F59E0B';
-  return '#EF4444';
+  if (score >= 70) return 'var(--success)';
+  if (score >= 50) return 'var(--info)';
+  if (score >= 25) return 'var(--warning)';
+  return 'var(--danger)';
 }
 
 export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
@@ -22,6 +21,12 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
     label: PILLAR_LABELS[key],
     score: pillarScores[key] ?? 0,
   }));
+
+  const listRef = useGsapStagger<HTMLDivElement>({
+    staggerEach: 0.05,
+    distance: 10,
+    direction: 'left',
+  });
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -34,9 +39,9 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }} ref={listRef}>
         {entries.map(({ key, label, score }) => (
-          <div key={key}>
+          <div key={key} className="opacity-0">
             <div
               style={{
                 display: 'flex',
@@ -55,12 +60,13 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
               </span>
             </div>
             <div className="progress-track">
-              <motion.div
+              <div
                 className="progress-fill"
-                initial={{ width: 0 }}
-                animate={{ width: `${Math.min(100, Math.max(0, score))}%` }}
-                transition={snappy}
-                style={{ background: pillarColor(score) }}
+                style={{ 
+                  width: `${Math.min(100, Math.max(0, score))}%`,
+                  background: pillarColor(score),
+                  transition: 'width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s'
+                }}
               />
             </div>
           </div>

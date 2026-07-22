@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 
-interface UsdaFreightRecord {
-  year: string;
-  month: string;
-  container_size: string;
-  origin: string;
-  destination_country: string;
-  rate: string;
-  date: string;
-}
+const usdaFreightSchema = z.array(
+  z.object({
+    year: z.string().optional(),
+    month: z.string().optional(),
+    container_size: z.string().optional(),
+    origin: z.string().optional(),
+    destination_country: z.string().optional(),
+    rate: z.string().optional(),
+    date: z.string().optional(),
+  })
+);
 
 export async function GET(request: NextRequest) {
   const origin = request.nextUrl.searchParams.get('origin') ?? 'CAN';
@@ -16,16 +19,25 @@ export async function GET(request: NextRequest) {
 
   let baseRateUsd = 1000;
   let dateString = '';
+  let dataOrigin = 'mock-fallback';
 
   try {
-    const res = await fetch('https://agtransport.usda.gov/resource/dtp5-fwp8.json?$order=date DESC&$limit=20');
+    const res = await fetch('https://agtransport.usda.gov/resource/dtp5-fwp8.json?$order=date DESC&$limit=20', {
+      next: { revalidate: 86400 } // Cache for 24 hours
+    });
+    
     if (res.ok) {
-      const data = await res.json() as UsdaFreightRecord[];
-      // Find the latest 40ft container rate
-      const record = data.find(r => r.container_size === '40ft container');
-      if (record && record.rate) {
-        baseRateUsd = parseFloat(record.rate) || baseRateUsd;
-        dateString = record.date;
+      const rawData = await res.json();
+      const parsedData = usdaFreightSchema.safeParse(rawData);
+      
+      if (parsedData.success) {
+        // Find the latest 40ft container rate
+        const record = parsedData.data.find(r => r.container_size === '40ft container');
+        if (record && record.rate) {
+          baseRateUsd = parseFloat(record.rate) || baseRateUsd;
+          dateString = record.date || '';
+          dataOrigin = 'live-usda-agtransport';
+        }
       }
     }
   } catch (err) {
@@ -58,12 +70,12 @@ export async function GET(request: NextRequest) {
     containerRateCad,
     transitDays: destKey === 'JPN' ? 18 : destKey === 'DEU' || destKey === 'GBR' ? 24 : 28,
     mode: 'ocean-feu',
-    dataOrigin: 'live-usda-agtransport',
+    dataOrigin,
     metadata: {
       usdaBaseRateUsd: baseRateUsd,
       usdaRateDate: dateString,
       usdToCadExchangeApplied: usdToCadFactor,
       laneMultiplier: multiplier,
     }
-  }, { headers: { 'data-origin': 'live-usda-agtransport' } });
+  }, { headers: { 'data-origin': dataOrigin } });
 }

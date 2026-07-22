@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -9,7 +9,7 @@ import {
   ClipboardList,
   FolderOpen,
   Sparkles,
-} from 'lucide-react';
+} from '@/components/ui/icons';
 import { motion } from 'motion/react';
 import { ApiHealthDashboard } from '@/components/health/ApiHealthDashboard';
 import { ThemeToggle } from '@/components/shared/ThemeToggle';
@@ -27,10 +27,10 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export interface AgencySidebarProps {
-  onboardingTrigger?: ReactNode;
+  onOnboardingClick?: () => void;
 }
 
-export function AgencySidebar({ onboardingTrigger }: AgencySidebarProps) {
+export function AgencySidebar({ onOnboardingClick }: AgencySidebarProps) {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
 
@@ -104,10 +104,11 @@ export function AgencySidebar({ onboardingTrigger }: AgencySidebarProps) {
       </nav>
 
       <div className="sidebar__slot">
-        {onboardingTrigger ?? (
+        {onOnboardingClick && (
           <button
             type="button"
             className="sidebar__link"
+            onClick={onOnboardingClick}
             style={{
               width: '100%',
               border: '1px solid var(--border)',

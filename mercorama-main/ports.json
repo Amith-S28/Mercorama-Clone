@@ -1,0 +1,4645 @@
+[
+  {
+    "id": "ca_cavan_vancouver",
+    "name": "Vancouver",
+    "countryCode": "CA",
+    "aliases": [
+      "Vancouver",
+      "Port of Vancouver",
+      "Port Metro Vancouver"
+    ]
+  },
+  {
+    "id": "ca_cahal_halifax",
+    "name": "Halifax",
+    "countryCode": "CA",
+    "aliases": [
+      "Halifax",
+      "Port of Halifax"
+    ]
+  },
+  {
+    "id": "ca_camtr_montreal",
+    "name": "Montreal",
+    "countryCode": "CA",
+    "aliases": [
+      "Montreal",
+      "Port of Montreal"
+    ]
+  },
+  {
+    "id": "ca_caprr_prince_rupert",
+    "name": "Prince Rupert",
+    "countryCode": "CA",
+    "aliases": [
+      "Prince Rupert",
+      "Port of Prince Rupert"
+    ]
+  },
+  {
+    "id": "ca_cator_toronto",
+    "name": "Toronto",
+    "countryCode": "CA",
+    "aliases": [
+      "Toronto",
+      "Port of Toronto"
+    ]
+  },
+  {
+    "id": "ca_caque_quebec_city",
+    "name": "Quebec City",
+    "countryCode": "CA",
+    "aliases": [
+      "Quebec",
+      "Quebec City",
+      "Port of Quebec"
+    ]
+  },
+  {
+    "id": "ca_cavic_victoria",
+    "name": "Victoria",
+    "countryCode": "CA",
+    "aliases": [
+      "Victoria BC",
+      "Port of Victoria"
+    ]
+  },
+  {
+    "id": "ca_casei_sept_iles",
+    "name": "Sept-Iles",
+    "countryCode": "CA",
+    "aliases": [
+      "Sept-Iles",
+      "Sept-Îles",
+      "Port of Sept-Îles"
+    ]
+  },
+  {
+    "id": "ca_canwe_new_westminster",
+    "name": "New Westminster",
+    "countryCode": "CA",
+    "aliases": [
+      "New Westminster",
+      "Fraser River"
+    ]
+  },
+  {
+    "id": "mx_mxzlo_manzanillo",
+    "name": "Manzanillo",
+    "countryCode": "MX",
+    "aliases": [
+      "Manzanillo",
+      "Port of Manzanillo"
+    ]
+  },
+  {
+    "id": "mx_mxver_veracruz",
+    "name": "Veracruz",
+    "countryCode": "MX",
+    "aliases": [
+      "Veracruz",
+      "Port of Veracruz"
+    ]
+  },
+  {
+    "id": "mx_mxatm_altamira",
+    "name": "Altamira",
+    "countryCode": "MX",
+    "aliases": [
+      "Altamira",
+      "Puerto Altamira"
+    ]
+  },
+  {
+    "id": "mx_mxlzc_lazaro_cardenas",
+    "name": "Lazaro Cardenas",
+    "countryCode": "MX",
+    "aliases": [
+      "Lazaro Cardenas",
+      "Lázaro Cárdenas"
+    ]
+  },
+  {
+    "id": "mx_mxese_ensenada",
+    "name": "Ensenada",
+    "countryCode": "MX",
+    "aliases": [
+      "Ensenada",
+      "Port of Ensenada"
+    ]
+  },
+  {
+    "id": "mx_mxtam_tampico",
+    "name": "Tampico",
+    "countryCode": "MX",
+    "aliases": [
+      "Tampico",
+      "Puerto Tampico"
+    ]
+  },
+  {
+    "id": "mx_mxcoa_coatzacoalcos",
+    "name": "Coatzacoalcos",
+    "countryCode": "MX",
+    "aliases": [
+      "Coatzacoalcos",
+      "Puerto Coatzacoalcos"
+    ]
+  },
+  {
+    "id": "mx_mxscx_salina_cruz",
+    "name": "Salina Cruz",
+    "countryCode": "MX",
+    "aliases": [
+      "Salina Cruz",
+      "Puerto Salina Cruz"
+    ]
+  },
+  {
+    "id": "mx_mxtpb_topolobampo",
+    "name": "Topolobampo",
+    "countryCode": "MX",
+    "aliases": [
+      "Topolobampo"
+    ]
+  },
+  {
+    "id": "mx_mxpgo_progreso",
+    "name": "Progreso",
+    "countryCode": "MX",
+    "aliases": [
+      "Progreso",
+      "Puerto Progreso"
+    ]
+  },
+  {
+    "id": "us_usnyc_new_york",
+    "name": "New York",
+    "countryCode": "US",
+    "aliases": [
+      "New York",
+      "NYC",
+      "Port of New York",
+      "New York & New Jersey"
+    ]
+  },
+  {
+    "id": "us_uslax_los_angeles",
+    "name": "Los Angeles",
+    "countryCode": "US",
+    "aliases": [
+      "Los Angeles",
+      "Port of Los Angeles",
+      "LA"
+    ]
+  },
+  {
+    "id": "us_uslgb_long_beach",
+    "name": "Long Beach",
+    "countryCode": "US",
+    "aliases": [
+      "Long Beach",
+      "Port of Long Beach"
+    ]
+  },
+  {
+    "id": "us_ushou_houston",
+    "name": "Houston",
+    "countryCode": "US",
+    "aliases": [
+      "Houston",
+      "Port of Houston"
+    ]
+  },
+  {
+    "id": "us_ussav_savannah",
+    "name": "Savannah",
+    "countryCode": "US",
+    "aliases": [
+      "Savannah",
+      "Port of Savannah"
+    ]
+  },
+  {
+    "id": "us_uschs_charleston",
+    "name": "Charleston",
+    "countryCode": "US",
+    "aliases": [
+      "Charleston",
+      "Port of Charleston"
+    ]
+  },
+  {
+    "id": "us_ussea_seattle",
+    "name": "Seattle",
+    "countryCode": "US",
+    "aliases": [
+      "Seattle",
+      "Port of Seattle"
+    ]
+  },
+  {
+    "id": "us_ustiw_tacoma",
+    "name": "Tacoma",
+    "countryCode": "US",
+    "aliases": [
+      "Tacoma",
+      "Port of Tacoma"
+    ]
+  },
+  {
+    "id": "us_usbal_baltimore",
+    "name": "Baltimore",
+    "countryCode": "US",
+    "aliases": [
+      "Baltimore",
+      "Port of Baltimore"
+    ]
+  },
+  {
+    "id": "us_usorf_norfolk",
+    "name": "Norfolk",
+    "countryCode": "US",
+    "aliases": [
+      "Norfolk",
+      "Port of Virginia",
+      "Virginia Port"
+    ]
+  },
+  {
+    "id": "us_usmia_miami",
+    "name": "Miami",
+    "countryCode": "US",
+    "aliases": [
+      "Miami",
+      "Port of Miami",
+      "PortMiami"
+    ]
+  },
+  {
+    "id": "us_usmsy_new_orleans",
+    "name": "New Orleans",
+    "countryCode": "US",
+    "aliases": [
+      "New Orleans",
+      "Port of New Orleans"
+    ]
+  },
+  {
+    "id": "us_usoak_oakland",
+    "name": "Oakland",
+    "countryCode": "US",
+    "aliases": [
+      "Oakland",
+      "Port of Oakland"
+    ]
+  },
+  {
+    "id": "us_usbos_boston",
+    "name": "Boston",
+    "countryCode": "US",
+    "aliases": [
+      "Boston",
+      "Port of Boston"
+    ]
+  },
+  {
+    "id": "us_usphl_philadelphia",
+    "name": "Philadelphia",
+    "countryCode": "US",
+    "aliases": [
+      "Philadelphia",
+      "Port of Philadelphia"
+    ]
+  },
+  {
+    "id": "us_usjax_jacksonville",
+    "name": "Jacksonville",
+    "countryCode": "US",
+    "aliases": [
+      "Jacksonville",
+      "JAXPORT"
+    ]
+  },
+  {
+    "id": "us_usmob_mobile",
+    "name": "Mobile",
+    "countryCode": "US",
+    "aliases": [
+      "Mobile",
+      "Port of Mobile"
+    ]
+  },
+  {
+    "id": "us_uspef_port_everglades",
+    "name": "Port Everglades",
+    "countryCode": "US",
+    "aliases": [
+      "Port Everglades",
+      "Fort Lauderdale"
+    ]
+  },
+  {
+    "id": "us_uscrp_corpus_christi",
+    "name": "Corpus Christi",
+    "countryCode": "US",
+    "aliases": [
+      "Corpus Christi",
+      "Port of Corpus Christi"
+    ]
+  },
+  {
+    "id": "us_usssi_brunswick",
+    "name": "Brunswick",
+    "countryCode": "US",
+    "aliases": [
+      "Brunswick",
+      "Port of Brunswick",
+      "Georgia Ports"
+    ]
+  },
+  {
+    "id": "us_usilm_wilmington",
+    "name": "Wilmington",
+    "countryCode": "US",
+    "aliases": [
+      "Wilmington NC",
+      "Port of Wilmington"
+    ]
+  },
+  {
+    "id": "us_uspdx_portland",
+    "name": "Portland",
+    "countryCode": "US",
+    "aliases": [
+      "Portland OR",
+      "Port of Portland"
+    ]
+  },
+  {
+    "id": "us_usgpt_gulfport",
+    "name": "Gulfport",
+    "countryCode": "US",
+    "aliases": [
+      "Gulfport",
+      "Port of Gulfport"
+    ]
+  },
+  {
+    "id": "us_usbtr_baton_rouge",
+    "name": "Baton Rouge",
+    "countryCode": "US",
+    "aliases": [
+      "Baton Rouge",
+      "Port of Baton Rouge"
+    ]
+  },
+  {
+    "id": "us_usgls_galveston",
+    "name": "Galveston",
+    "countryCode": "US",
+    "aliases": [
+      "Galveston",
+      "Port of Galveston"
+    ]
+  },
+  {
+    "id": "us_usbpt_beaumont",
+    "name": "Beaumont",
+    "countryCode": "US",
+    "aliases": [
+      "Beaumont",
+      "Port of Beaumont"
+    ]
+  },
+  {
+    "id": "us_uslch_lake_charles",
+    "name": "Lake Charles",
+    "countryCode": "US",
+    "aliases": [
+      "Lake Charles",
+      "Port of Lake Charles"
+    ]
+  },
+  {
+    "id": "us_uspns_pensacola",
+    "name": "Pensacola",
+    "countryCode": "US",
+    "aliases": [
+      "Pensacola",
+      "Port of Pensacola"
+    ]
+  },
+  {
+    "id": "us_uscle_cleveland",
+    "name": "Cleveland",
+    "countryCode": "US",
+    "aliases": [
+      "Cleveland",
+      "Port of Cleveland"
+    ]
+  },
+  {
+    "id": "us_usric_richmond",
+    "name": "Richmond",
+    "countryCode": "US",
+    "aliases": [
+      "Richmond VA",
+      "Port of Richmond"
+    ]
+  },
+  {
+    "id": "cu_cuhav_havana",
+    "name": "Havana",
+    "countryCode": "CU",
+    "aliases": [
+      "Havana",
+      "La Habana",
+      "Port of Havana"
+    ]
+  },
+  {
+    "id": "do_docau_caucedo",
+    "name": "Caucedo",
+    "countryCode": "DO",
+    "aliases": [
+      "Caucedo",
+      "DP World Caucedo",
+      "Boca Chica"
+    ]
+  },
+  {
+    "id": "do_dohai_haina",
+    "name": "Haina",
+    "countryCode": "DO",
+    "aliases": [
+      "Haina",
+      "Rio Haina",
+      "Port of Haina"
+    ]
+  },
+  {
+    "id": "do_dosdq_santo_domingo",
+    "name": "Santo Domingo",
+    "countryCode": "DO",
+    "aliases": [
+      "Santo Domingo",
+      "Port of Santo Domingo"
+    ]
+  },
+  {
+    "id": "gt_gtprq_puerto_quetzal",
+    "name": "Puerto Quetzal",
+    "countryCode": "GT",
+    "aliases": [
+      "Puerto Quetzal",
+      "Port Quetzal"
+    ]
+  },
+  {
+    "id": "gt_gtstc_santo_tomas",
+    "name": "Santo Tomas",
+    "countryCode": "GT",
+    "aliases": [
+      "Santo Tomas",
+      "Puerto Santo Tomas de Castilla"
+    ]
+  },
+  {
+    "id": "hn_hnpcr_puerto_cortes",
+    "name": "Puerto Cortes",
+    "countryCode": "HN",
+    "aliases": [
+      "Puerto Cortes",
+      "Puerto Cortés"
+    ]
+  },
+  {
+    "id": "ht_htpap_port_au_prince",
+    "name": "Port-au-Prince",
+    "countryCode": "HT",
+    "aliases": [
+      "Port-au-Prince",
+      "Port of Port-au-Prince"
+    ]
+  },
+  {
+    "id": "jm_jmkin_kingston",
+    "name": "Kingston",
+    "countryCode": "JM",
+    "aliases": [
+      "Kingston",
+      "Port of Kingston",
+      "Kingston Freeport Terminal"
+    ]
+  },
+  {
+    "id": "jm_jmmbj_montego_bay",
+    "name": "Montego Bay",
+    "countryCode": "JM",
+    "aliases": [
+      "Montego Bay",
+      "Port of Montego Bay"
+    ]
+  },
+  {
+    "id": "ni_nicio_corinto",
+    "name": "Corinto",
+    "countryCode": "NI",
+    "aliases": [
+      "Corinto",
+      "Port of Corinto"
+    ]
+  },
+  {
+    "id": "pa_pablb_balboa",
+    "name": "Balboa",
+    "countryCode": "PA",
+    "aliases": [
+      "Balboa",
+      "Port of Balboa",
+      "Panama Pacific"
+    ]
+  },
+  {
+    "id": "pa_pactb_cristobal",
+    "name": "Cristobal",
+    "countryCode": "PA",
+    "aliases": [
+      "Cristobal",
+      "Port of Cristobal",
+      "Colon"
+    ]
+  },
+  {
+    "id": "pa_pamit_manzanillo_panama",
+    "name": "Manzanillo Panama",
+    "countryCode": "PA",
+    "aliases": [
+      "Manzanillo Panama",
+      "MIT",
+      "Colon Container Terminal"
+    ]
+  },
+  {
+    "id": "sv_svaqj_acajutla",
+    "name": "Acajutla",
+    "countryCode": "SV",
+    "aliases": [
+      "Acajutla",
+      "Port of Acajutla"
+    ]
+  },
+  {
+    "id": "tt_ttpls_point_lisas",
+    "name": "Point Lisas",
+    "countryCode": "TT",
+    "aliases": [
+      "Point Lisas",
+      "Trinidad",
+      "Port of Point Lisas"
+    ]
+  },
+  {
+    "id": "tt_ttptp_port_of_spain",
+    "name": "Port of Spain",
+    "countryCode": "TT",
+    "aliases": [
+      "Port of Spain",
+      "Trinidad",
+      "Port of Spain Terminal"
+    ]
+  },
+  {
+    "id": "ar_arbue_buenos_aires",
+    "name": "Buenos Aires",
+    "countryCode": "AR",
+    "aliases": [
+      "Buenos Aires",
+      "Port of Buenos Aires",
+      "Exolgan"
+    ]
+  },
+  {
+    "id": "ar_arros_rosario",
+    "name": "Rosario",
+    "countryCode": "AR",
+    "aliases": [
+      "Rosario",
+      "Port of Rosario"
+    ]
+  },
+  {
+    "id": "ar_arbhi_bahia_blanca",
+    "name": "Bahia Blanca",
+    "countryCode": "AR",
+    "aliases": [
+      "Bahia Blanca",
+      "Bahía Blanca"
+    ]
+  },
+  {
+    "id": "ar_armdq_mar_del_plata",
+    "name": "Mar del Plata",
+    "countryCode": "AR",
+    "aliases": [
+      "Mar del Plata"
+    ]
+  },
+  {
+    "id": "ar_arush_ushuaia",
+    "name": "Ushuaia",
+    "countryCode": "AR",
+    "aliases": [
+      "Ushuaia",
+      "Puerto Ushuaia"
+    ]
+  },
+  {
+    "id": "br_brssz_santos",
+    "name": "Santos",
+    "countryCode": "BR",
+    "aliases": [
+      "Santos",
+      "Port of Santos"
+    ]
+  },
+  {
+    "id": "br_brpng_paranagua",
+    "name": "Paranagua",
+    "countryCode": "BR",
+    "aliases": [
+      "Paranagua",
+      "Port of Paranagua"
+    ]
+  },
+  {
+    "id": "br_brrio_rio_de_janeiro",
+    "name": "Rio de Janeiro",
+    "countryCode": "BR",
+    "aliases": [
+      "Rio de Janeiro",
+      "Rio",
+      "Port of Rio de Janeiro"
+    ]
+  },
+  {
+    "id": "br_britj_itajai",
+    "name": "Itajai",
+    "countryCode": "BR",
+    "aliases": [
+      "Itajai",
+      "Itajaí",
+      "Port of Itajai"
+    ]
+  },
+  {
+    "id": "br_brfor_fortaleza",
+    "name": "Fortaleza",
+    "countryCode": "BR",
+    "aliases": [
+      "Fortaleza",
+      "Pecém"
+    ]
+  },
+  {
+    "id": "br_brssa_salvador",
+    "name": "Salvador",
+    "countryCode": "BR",
+    "aliases": [
+      "Salvador",
+      "Porto de Salvador"
+    ]
+  },
+  {
+    "id": "br_brsua_suape",
+    "name": "Suape",
+    "countryCode": "BR",
+    "aliases": [
+      "Suape",
+      "Porto de Suape"
+    ]
+  },
+  {
+    "id": "br_brmao_manaus",
+    "name": "Manaus",
+    "countryCode": "BR",
+    "aliases": [
+      "Manaus",
+      "Port of Manaus"
+    ]
+  },
+  {
+    "id": "br_brbel_belem",
+    "name": "Belem",
+    "countryCode": "BR",
+    "aliases": [
+      "Belem",
+      "Belém",
+      "Porto de Belém"
+    ]
+  },
+  {
+    "id": "br_brpoa_porto_alegre",
+    "name": "Porto Alegre",
+    "countryCode": "BR",
+    "aliases": [
+      "Porto Alegre"
+    ]
+  },
+  {
+    "id": "br_bribb_imbituba",
+    "name": "Imbituba",
+    "countryCode": "BR",
+    "aliases": [
+      "Imbituba",
+      "Port of Imbituba"
+    ]
+  },
+  {
+    "id": "br_brvix_vitoria",
+    "name": "Vitoria",
+    "countryCode": "BR",
+    "aliases": [
+      "Vitoria",
+      "Victoria",
+      "Port of Vitoria"
+    ]
+  },
+  {
+    "id": "br_brrec_recife",
+    "name": "Recife",
+    "countryCode": "BR",
+    "aliases": [
+      "Recife",
+      "Port of Recife"
+    ]
+  },
+  {
+    "id": "br_brpec_pecem",
+    "name": "Pecem",
+    "countryCode": "BR",
+    "aliases": [
+      "Pecem",
+      "Pecém",
+      "Port of Pecem"
+    ]
+  },
+  {
+    "id": "br_bradr_angra_dos_reis",
+    "name": "Angra dos Reis",
+    "countryCode": "BR",
+    "aliases": [
+      "Angra dos Reis",
+      "Porto do Açu"
+    ]
+  },
+  {
+    "id": "cl_clvap_valparaiso",
+    "name": "Valparaiso",
+    "countryCode": "CL",
+    "aliases": [
+      "Valparaiso",
+      "Valparaíso",
+      "Port of Valparaíso"
+    ]
+  },
+  {
+    "id": "cl_clsai_san_antonio",
+    "name": "San Antonio",
+    "countryCode": "CL",
+    "aliases": [
+      "San Antonio",
+      "Port of San Antonio"
+    ]
+  },
+  {
+    "id": "cl_cliqq_iquique",
+    "name": "Iquique",
+    "countryCode": "CL",
+    "aliases": [
+      "Iquique",
+      "Puerto Iquique"
+    ]
+  },
+  {
+    "id": "cl_clant_antofagasta",
+    "name": "Antofagasta",
+    "countryCode": "CL",
+    "aliases": [
+      "Antofagasta",
+      "Puerto Antofagasta"
+    ]
+  },
+  {
+    "id": "cl_clari_arica",
+    "name": "Arica",
+    "countryCode": "CL",
+    "aliases": [
+      "Arica",
+      "Puerto Arica"
+    ]
+  },
+  {
+    "id": "cl_cltal_talcahuano",
+    "name": "Talcahuano",
+    "countryCode": "CL",
+    "aliases": [
+      "Talcahuano",
+      "San Vicente"
+    ]
+  },
+  {
+    "id": "cl_clcqq_coquimbo",
+    "name": "Coquimbo",
+    "countryCode": "CL",
+    "aliases": [
+      "Coquimbo",
+      "Port of Coquimbo"
+    ]
+  },
+  {
+    "id": "cl_clpmc_puerto_montt",
+    "name": "Puerto Montt",
+    "countryCode": "CL",
+    "aliases": [
+      "Puerto Montt"
+    ]
+  },
+  {
+    "id": "co_coctg_cartagena",
+    "name": "Cartagena",
+    "countryCode": "CO",
+    "aliases": [
+      "Cartagena",
+      "Puerto Cartagena",
+      "SPRC"
+    ]
+  },
+  {
+    "id": "co_cobun_buenaventura",
+    "name": "Buenaventura",
+    "countryCode": "CO",
+    "aliases": [
+      "Buenaventura",
+      "Puerto Buenaventura"
+    ]
+  },
+  {
+    "id": "co_cobaq_barranquilla",
+    "name": "Barranquilla",
+    "countryCode": "CO",
+    "aliases": [
+      "Barranquilla",
+      "Puerto Colombia"
+    ]
+  },
+  {
+    "id": "pe_pecll_callao",
+    "name": "Callao",
+    "countryCode": "PE",
+    "aliases": [
+      "Callao",
+      "El Callao",
+      "Port of Callao"
+    ]
+  },
+  {
+    "id": "pe_pepai_paita",
+    "name": "Paita",
+    "countryCode": "PE",
+    "aliases": [
+      "Paita",
+      "Puerto Paita"
+    ]
+  },
+  {
+    "id": "pe_peilo_ilo",
+    "name": "Ilo",
+    "countryCode": "PE",
+    "aliases": [
+      "Ilo",
+      "Puerto Ilo"
+    ]
+  },
+  {
+    "id": "at_atbrz_bregenz",
+    "name": "Bregenz",
+    "countryCode": "AT",
+    "aliases": [
+      "Bregenz",
+      "Lake Constance"
+    ]
+  },
+  {
+    "id": "be_beanr_antwerpen",
+    "name": "Antwerpen",
+    "countryCode": "BE",
+    "aliases": [
+      "Antwerp",
+      "Antwerpen",
+      "Port of Antwerp"
+    ]
+  },
+  {
+    "id": "be_bezee_zeebrugge",
+    "name": "Zeebrugge",
+    "countryCode": "BE",
+    "aliases": [
+      "Zeebrugge",
+      "Port of Zeebrugge"
+    ]
+  },
+  {
+    "id": "be_begne_ghent",
+    "name": "Ghent",
+    "countryCode": "BE",
+    "aliases": [
+      "Ghent",
+      "Gent",
+      "Port of Ghent"
+    ]
+  },
+  {
+    "id": "be_belgg_liege",
+    "name": "Liege",
+    "countryCode": "BE",
+    "aliases": [
+      "Liege",
+      "Liège"
+    ]
+  },
+  {
+    "id": "bg_bgvar_varna",
+    "name": "Varna",
+    "countryCode": "BG",
+    "aliases": [
+      "Varna",
+      "Port of Varna"
+    ]
+  },
+  {
+    "id": "bg_bgboj_burgas",
+    "name": "Burgas",
+    "countryCode": "BG",
+    "aliases": [
+      "Burgas",
+      "Port of Burgas"
+    ]
+  },
+  {
+    "id": "ch_chrgu_klingnau",
+    "name": "Klingnau",
+    "countryCode": "CH",
+    "aliases": [
+      "Klingnau",
+      "Rhine river port"
+    ]
+  },
+  {
+    "id": "cy_cylms_limassol",
+    "name": "Limassol",
+    "countryCode": "CY",
+    "aliases": [
+      "Limassol",
+      "Lemesos",
+      "Port of Limassol"
+    ]
+  },
+  {
+    "id": "cy_cylca_larnaca",
+    "name": "Larnaca",
+    "countryCode": "CY",
+    "aliases": [
+      "Larnaca",
+      "Port of Larnaca"
+    ]
+  },
+  {
+    "id": "cz_czuln_usti_nad_labem",
+    "name": "Usti nad Labem",
+    "countryCode": "CZ",
+    "aliases": [
+      "Usti nad Labem",
+      "Ústí nad Labem",
+      "Elbe river port"
+    ]
+  },
+  {
+    "id": "de_deham_hamburg",
+    "name": "Hamburg",
+    "countryCode": "DE",
+    "aliases": [
+      "Hamburg",
+      "Port of Hamburg"
+    ]
+  },
+  {
+    "id": "de_debrv_bremerhaven",
+    "name": "Bremerhaven",
+    "countryCode": "DE",
+    "aliases": [
+      "Bremerhaven",
+      "Port of Bremerhaven"
+    ]
+  },
+  {
+    "id": "de_debre_bremen",
+    "name": "Bremen",
+    "countryCode": "DE",
+    "aliases": [
+      "Bremen",
+      "Port of Bremen"
+    ]
+  },
+  {
+    "id": "de_dedui_duisburg",
+    "name": "Duisburg",
+    "countryCode": "DE",
+    "aliases": [
+      "Duisburg",
+      "Duisport"
+    ]
+  },
+  {
+    "id": "de_dewvn_wilhelmshaven",
+    "name": "Wilhelmshaven",
+    "countryCode": "DE",
+    "aliases": [
+      "Wilhelmshaven",
+      "JadeWeserPort"
+    ]
+  },
+  {
+    "id": "de_dekel_kiel",
+    "name": "Kiel",
+    "countryCode": "DE",
+    "aliases": [
+      "Kiel",
+      "Port of Kiel"
+    ]
+  },
+  {
+    "id": "de_dersk_rostock",
+    "name": "Rostock",
+    "countryCode": "DE",
+    "aliases": [
+      "Rostock",
+      "Port of Rostock"
+    ]
+  },
+  {
+    "id": "de_deeme_emden",
+    "name": "Emden",
+    "countryCode": "DE",
+    "aliases": [
+      "Emden",
+      "Port of Emden"
+    ]
+  },
+  {
+    "id": "de_delbc_lubeck",
+    "name": "Lubeck",
+    "countryCode": "DE",
+    "aliases": [
+      "Lubeck",
+      "Lübeck",
+      "Travemunde"
+    ]
+  },
+  {
+    "id": "dk_dkaar_aarhus",
+    "name": "Aarhus",
+    "countryCode": "DK",
+    "aliases": [
+      "Aarhus",
+      "Århus",
+      "Port of Aarhus"
+    ]
+  },
+  {
+    "id": "dk_dkcph_copenhagen",
+    "name": "Copenhagen",
+    "countryCode": "DK",
+    "aliases": [
+      "Copenhagen",
+      "København",
+      "Port of Copenhagen"
+    ]
+  },
+  {
+    "id": "dk_dkaal_aalborg",
+    "name": "Aalborg",
+    "countryCode": "DK",
+    "aliases": [
+      "Aalborg",
+      "Ålborg"
+    ]
+  },
+  {
+    "id": "dk_dkode_odense",
+    "name": "Odense",
+    "countryCode": "DK",
+    "aliases": [
+      "Odense",
+      "Port of Odense"
+    ]
+  },
+  {
+    "id": "dk_dkfrc_fredericia",
+    "name": "Fredericia",
+    "countryCode": "DK",
+    "aliases": [
+      "Fredericia"
+    ]
+  },
+  {
+    "id": "ee_eetll_tallinn",
+    "name": "Tallinn",
+    "countryCode": "EE",
+    "aliases": [
+      "Tallinn",
+      "Port of Tallinn",
+      "Old City Harbour"
+    ]
+  },
+  {
+    "id": "ee_eemug_muuga",
+    "name": "Muuga",
+    "countryCode": "EE",
+    "aliases": [
+      "Muuga",
+      "Muuga Harbour"
+    ]
+  },
+  {
+    "id": "es_esalg_algeciras",
+    "name": "Algeciras",
+    "countryCode": "ES",
+    "aliases": [
+      "Algeciras",
+      "Port of Algeciras"
+    ]
+  },
+  {
+    "id": "es_esvlc_valencia",
+    "name": "Valencia",
+    "countryCode": "ES",
+    "aliases": [
+      "Valencia",
+      "Port of Valencia"
+    ]
+  },
+  {
+    "id": "es_esbcn_barcelona",
+    "name": "Barcelona",
+    "countryCode": "ES",
+    "aliases": [
+      "Barcelona",
+      "Port of Barcelona"
+    ]
+  },
+  {
+    "id": "es_esbio_bilbao",
+    "name": "Bilbao",
+    "countryCode": "ES",
+    "aliases": [
+      "Bilbao",
+      "Port of Bilbao"
+    ]
+  },
+  {
+    "id": "es_eslpa_las_palmas",
+    "name": "Las Palmas",
+    "countryCode": "ES",
+    "aliases": [
+      "Las Palmas",
+      "Las Palmas de Gran Canaria"
+    ]
+  },
+  {
+    "id": "es_esvgo_vigo",
+    "name": "Vigo",
+    "countryCode": "ES",
+    "aliases": [
+      "Vigo",
+      "Port of Vigo"
+    ]
+  },
+  {
+    "id": "es_escar_cartagena",
+    "name": "Cartagena",
+    "countryCode": "ES",
+    "aliases": [
+      "Cartagena ES",
+      "Port of Cartagena"
+    ]
+  },
+  {
+    "id": "es_estar_tarragona",
+    "name": "Tarragona",
+    "countryCode": "ES",
+    "aliases": [
+      "Tarragona",
+      "Port of Tarragona"
+    ]
+  },
+  {
+    "id": "es_essct_santa_cruz_de_tenerife",
+    "name": "Santa Cruz de Tenerife",
+    "countryCode": "ES",
+    "aliases": [
+      "Tenerife",
+      "Santa Cruz de Tenerife"
+    ]
+  },
+  {
+    "id": "es_eshuv_huelva",
+    "name": "Huelva",
+    "countryCode": "ES",
+    "aliases": [
+      "Huelva",
+      "Port of Huelva"
+    ]
+  },
+  {
+    "id": "es_esgij_gijon",
+    "name": "Gijon",
+    "countryCode": "ES",
+    "aliases": [
+      "Gijon",
+      "Gijón",
+      "Port of Gijon"
+    ]
+  },
+  {
+    "id": "es_essdr_santander",
+    "name": "Santander",
+    "countryCode": "ES",
+    "aliases": [
+      "Santander",
+      "Port of Santander"
+    ]
+  },
+  {
+    "id": "es_esfro_ferrol",
+    "name": "Ferrol",
+    "countryCode": "ES",
+    "aliases": [
+      "Ferrol",
+      "El Ferrol"
+    ]
+  },
+  {
+    "id": "fi_fihel_helsinki",
+    "name": "Helsinki",
+    "countryCode": "FI",
+    "aliases": [
+      "Helsinki",
+      "Port of Helsinki"
+    ]
+  },
+  {
+    "id": "fi_fiktk_kotka",
+    "name": "Kotka",
+    "countryCode": "FI",
+    "aliases": [
+      "Kotka",
+      "HaminaKotka"
+    ]
+  },
+  {
+    "id": "fi_fitku_turku",
+    "name": "Turku",
+    "countryCode": "FI",
+    "aliases": [
+      "Turku",
+      "Port of Turku"
+    ]
+  },
+  {
+    "id": "fi_firau_rauma",
+    "name": "Rauma",
+    "countryCode": "FI",
+    "aliases": [
+      "Rauma",
+      "Port of Rauma"
+    ]
+  },
+  {
+    "id": "fi_fioul_oulu",
+    "name": "Oulu",
+    "countryCode": "FI",
+    "aliases": [
+      "Oulu",
+      "Port of Oulu"
+    ]
+  },
+  {
+    "id": "fi_fivaa_vaasa",
+    "name": "Vaasa",
+    "countryCode": "FI",
+    "aliases": [
+      "Vaasa",
+      "Port of Vaasa"
+    ]
+  },
+  {
+    "id": "fi_fipor_pori",
+    "name": "Pori",
+    "countryCode": "FI",
+    "aliases": [
+      "Pori",
+      "Bjorneborg"
+    ]
+  },
+  {
+    "id": "fr_frleh_le_havre",
+    "name": "Le Havre",
+    "countryCode": "FR",
+    "aliases": [
+      "Le Havre",
+      "Port of Le Havre"
+    ]
+  },
+  {
+    "id": "fr_frmrs_marseille",
+    "name": "Marseille",
+    "countryCode": "FR",
+    "aliases": [
+      "Marseille",
+      "Marseilles",
+      "Port of Marseille"
+    ]
+  },
+  {
+    "id": "fr_frirk_dunkirk",
+    "name": "Dunkirk",
+    "countryCode": "FR",
+    "aliases": [
+      "Dunkirk",
+      "Dunkerque",
+      "Port of Dunkirk"
+    ]
+  },
+  {
+    "id": "fr_fruro_rouen",
+    "name": "Rouen",
+    "countryCode": "FR",
+    "aliases": [
+      "Rouen",
+      "Port of Rouen"
+    ]
+  },
+  {
+    "id": "fr_frnte_nantes",
+    "name": "Nantes",
+    "countryCode": "FR",
+    "aliases": [
+      "Nantes",
+      "Saint-Nazaire"
+    ]
+  },
+  {
+    "id": "fr_frbod_bordeaux",
+    "name": "Bordeaux",
+    "countryCode": "FR",
+    "aliases": [
+      "Bordeaux",
+      "Port of Bordeaux"
+    ]
+  },
+  {
+    "id": "fr_frfos_fos_sur_mer",
+    "name": "Fos-sur-Mer",
+    "countryCode": "FR",
+    "aliases": [
+      "Fos-sur-Mer",
+      "Fos",
+      "Port of Fos"
+    ]
+  },
+  {
+    "id": "fr_frcqf_calais",
+    "name": "Calais",
+    "countryCode": "FR",
+    "aliases": [
+      "Calais",
+      "Port of Calais"
+    ]
+  },
+  {
+    "id": "fr_frsxb_strasbourg",
+    "name": "Strasbourg",
+    "countryCode": "FR",
+    "aliases": [
+      "Strasbourg",
+      "Port of Strasbourg"
+    ]
+  },
+  {
+    "id": "fr_frtln_toulon",
+    "name": "Toulon",
+    "countryCode": "FR",
+    "aliases": [
+      "Toulon",
+      "Port of Toulon"
+    ]
+  },
+  {
+    "id": "fr_frlrh_la_rochelle",
+    "name": "La Rochelle",
+    "countryCode": "FR",
+    "aliases": [
+      "La Rochelle",
+      "Port of La Rochelle",
+      "Pallice"
+    ]
+  },
+  {
+    "id": "gb_gbfxt_felixstowe",
+    "name": "Felixstowe",
+    "countryCode": "GB",
+    "aliases": [
+      "Felixstowe",
+      "Port of Felixstowe"
+    ]
+  },
+  {
+    "id": "gb_gbsou_southampton",
+    "name": "Southampton",
+    "countryCode": "GB",
+    "aliases": [
+      "Southampton",
+      "Port of Southampton"
+    ]
+  },
+  {
+    "id": "gb_gbliv_liverpool",
+    "name": "Liverpool",
+    "countryCode": "GB",
+    "aliases": [
+      "Liverpool",
+      "Port of Liverpool"
+    ]
+  },
+  {
+    "id": "gb_gbtil_tilbury",
+    "name": "Tilbury",
+    "countryCode": "GB",
+    "aliases": [
+      "Tilbury",
+      "London Tilbury",
+      "Port of Tilbury"
+    ]
+  },
+  {
+    "id": "gb_gbtee_teesport",
+    "name": "Teesport",
+    "countryCode": "GB",
+    "aliases": [
+      "Teesport",
+      "Middlesbrough",
+      "Port of Tees"
+    ]
+  },
+  {
+    "id": "gb_gbhul_hull",
+    "name": "Hull",
+    "countryCode": "GB",
+    "aliases": [
+      "Hull",
+      "Kingston upon Hull",
+      "Port of Hull"
+    ]
+  },
+  {
+    "id": "gb_gbabd_aberdeen",
+    "name": "Aberdeen",
+    "countryCode": "GB",
+    "aliases": [
+      "Aberdeen",
+      "Port of Aberdeen"
+    ]
+  },
+  {
+    "id": "gb_gbbel_belfast",
+    "name": "Belfast",
+    "countryCode": "GB",
+    "aliases": [
+      "Belfast",
+      "Belfast Harbour"
+    ]
+  },
+  {
+    "id": "gb_gbgsy_grimsby",
+    "name": "Grimsby",
+    "countryCode": "GB",
+    "aliases": [
+      "Grimsby",
+      "Immingham",
+      "Port of Grimsby"
+    ]
+  },
+  {
+    "id": "gb_gblgp_london_gateway",
+    "name": "London Gateway",
+    "countryCode": "GB",
+    "aliases": [
+      "London Gateway",
+      "DP World London Gateway"
+    ]
+  },
+  {
+    "id": "gb_gbbrs_bristol",
+    "name": "Bristol",
+    "countryCode": "GB",
+    "aliases": [
+      "Bristol",
+      "Avonmouth"
+    ]
+  },
+  {
+    "id": "gb_gbgrg_grangemouth",
+    "name": "Grangemouth",
+    "countryCode": "GB",
+    "aliases": [
+      "Grangemouth",
+      "Forth Ports"
+    ]
+  },
+  {
+    "id": "gb_gbhrw_harwich",
+    "name": "Harwich",
+    "countryCode": "GB",
+    "aliases": [
+      "Harwich",
+      "Parkeston Quay"
+    ]
+  },
+  {
+    "id": "gb_gbncl_newcastle_tyne",
+    "name": "Newcastle Tyne",
+    "countryCode": "GB",
+    "aliases": [
+      "Newcastle",
+      "Tyne",
+      "Port of Tyne"
+    ]
+  },
+  {
+    "id": "gb_gbsun_sunderland",
+    "name": "Sunderland",
+    "countryCode": "GB",
+    "aliases": [
+      "Sunderland",
+      "Port of Sunderland"
+    ]
+  },
+  {
+    "id": "gb_gbdun_dundee",
+    "name": "Dundee",
+    "countryCode": "GB",
+    "aliases": [
+      "Dundee",
+      "Port of Dundee"
+    ]
+  },
+  {
+    "id": "gb_gbnhp_hull_riverside",
+    "name": "Hull Riverside",
+    "countryCode": "GB",
+    "aliases": [
+      "Hull",
+      "North Humber Port"
+    ]
+  },
+  {
+    "id": "gr_grpir_piraeus",
+    "name": "Piraeus",
+    "countryCode": "GR",
+    "aliases": [
+      "Piraeus",
+      "Pireaus",
+      "Port of Piraeus"
+    ]
+  },
+  {
+    "id": "gr_grskg_thessaloniki",
+    "name": "Thessaloniki",
+    "countryCode": "GR",
+    "aliases": [
+      "Thessaloniki",
+      "Salonika",
+      "Port of Thessaloniki"
+    ]
+  },
+  {
+    "id": "gr_grgpa_patras",
+    "name": "Patras",
+    "countryCode": "GR",
+    "aliases": [
+      "Patras",
+      "Port of Patras"
+    ]
+  },
+  {
+    "id": "gr_grvol_volos",
+    "name": "Volos",
+    "countryCode": "GR",
+    "aliases": [
+      "Volos",
+      "Port of Volos"
+    ]
+  },
+  {
+    "id": "gr_grher_heraklion",
+    "name": "Heraklion",
+    "countryCode": "GR",
+    "aliases": [
+      "Heraklion",
+      "Iraklion",
+      "Crete"
+    ]
+  },
+  {
+    "id": "gr_grigo_igoumenitsa",
+    "name": "Igoumenitsa",
+    "countryCode": "GR",
+    "aliases": [
+      "Igoumenitsa"
+    ]
+  },
+  {
+    "id": "gr_grkva_kavala",
+    "name": "Kavala",
+    "countryCode": "GR",
+    "aliases": [
+      "Kavala",
+      "Port of Kavala"
+    ]
+  },
+  {
+    "id": "hr_hrrjk_rijeka",
+    "name": "Rijeka",
+    "countryCode": "HR",
+    "aliases": [
+      "Rijeka",
+      "Port of Rijeka"
+    ]
+  },
+  {
+    "id": "hr_hrspu_split",
+    "name": "Split",
+    "countryCode": "HR",
+    "aliases": [
+      "Split",
+      "Port of Split"
+    ]
+  },
+  {
+    "id": "hr_hrdbv_dubrovnik",
+    "name": "Dubrovnik",
+    "countryCode": "HR",
+    "aliases": [
+      "Dubrovnik"
+    ]
+  },
+  {
+    "id": "hr_hrple_ploce",
+    "name": "Ploce",
+    "countryCode": "HR",
+    "aliases": [
+      "Ploce",
+      "Ploče"
+    ]
+  },
+  {
+    "id": "hr_hrzad_zadar",
+    "name": "Zadar",
+    "countryCode": "HR",
+    "aliases": [
+      "Zadar"
+    ]
+  },
+  {
+    "id": "ie_iedub_dublin",
+    "name": "Dublin",
+    "countryCode": "IE",
+    "aliases": [
+      "Dublin",
+      "Dublin Port"
+    ]
+  },
+  {
+    "id": "ie_ieork_cork",
+    "name": "Cork",
+    "countryCode": "IE",
+    "aliases": [
+      "Cork",
+      "Port of Cork",
+      "Ringaskiddy"
+    ]
+  },
+  {
+    "id": "it_itgoa_genova",
+    "name": "Genova",
+    "countryCode": "IT",
+    "aliases": [
+      "Genoa",
+      "Genova",
+      "Port of Genova"
+    ]
+  },
+  {
+    "id": "it_ittrs_trieste",
+    "name": "Trieste",
+    "countryCode": "IT",
+    "aliases": [
+      "Trieste",
+      "Port of Trieste"
+    ]
+  },
+  {
+    "id": "it_itliv_livorno",
+    "name": "Livorno",
+    "countryCode": "IT",
+    "aliases": [
+      "Livorno",
+      "Leghorn",
+      "Port of Livorno"
+    ]
+  },
+  {
+    "id": "it_itnap_napoli",
+    "name": "Napoli",
+    "countryCode": "IT",
+    "aliases": [
+      "Naples",
+      "Napoli",
+      "Port of Naples"
+    ]
+  },
+  {
+    "id": "it_itgit_gioia_tauro",
+    "name": "Gioia Tauro",
+    "countryCode": "IT",
+    "aliases": [
+      "Gioia Tauro",
+      "Port of Gioia Tauro"
+    ]
+  },
+  {
+    "id": "it_itvce_venezia",
+    "name": "Venezia",
+    "countryCode": "IT",
+    "aliases": [
+      "Venice",
+      "Venezia",
+      "Port of Venice"
+    ]
+  },
+  {
+    "id": "it_itspe_la_spezia",
+    "name": "La Spezia",
+    "countryCode": "IT",
+    "aliases": [
+      "La Spezia",
+      "Port of La Spezia"
+    ]
+  },
+  {
+    "id": "it_ittar_taranto",
+    "name": "Taranto",
+    "countryCode": "IT",
+    "aliases": [
+      "Taranto",
+      "Port of Taranto"
+    ]
+  },
+  {
+    "id": "it_itcvv_civitavecchia",
+    "name": "Civitavecchia",
+    "countryCode": "IT",
+    "aliases": [
+      "Civitavecchia",
+      "Port of Civitavecchia",
+      "Rome"
+    ]
+  },
+  {
+    "id": "it_itsal_salerno",
+    "name": "Salerno",
+    "countryCode": "IT",
+    "aliases": [
+      "Salerno",
+      "Port of Salerno"
+    ]
+  },
+  {
+    "id": "it_itaoi_ancona",
+    "name": "Ancona",
+    "countryCode": "IT",
+    "aliases": [
+      "Ancona",
+      "Port of Ancona"
+    ]
+  },
+  {
+    "id": "it_itpmo_palermo",
+    "name": "Palermo",
+    "countryCode": "IT",
+    "aliases": [
+      "Palermo",
+      "Port of Palermo"
+    ]
+  },
+  {
+    "id": "it_itbri_bari",
+    "name": "Bari",
+    "countryCode": "IT",
+    "aliases": [
+      "Bari",
+      "Port of Bari"
+    ]
+  },
+  {
+    "id": "lt_ltklj_klaipeda",
+    "name": "Klaipeda",
+    "countryCode": "LT",
+    "aliases": [
+      "Klaipeda",
+      "Klaipėda",
+      "Port of Klaipeda"
+    ]
+  },
+  {
+    "id": "lv_lvrix_riga",
+    "name": "Riga",
+    "countryCode": "LV",
+    "aliases": [
+      "Riga",
+      "Port of Riga",
+      "Freeport of Riga"
+    ]
+  },
+  {
+    "id": "lv_lvvnt_ventspils",
+    "name": "Ventspils",
+    "countryCode": "LV",
+    "aliases": [
+      "Ventspils",
+      "Port of Ventspils"
+    ]
+  },
+  {
+    "id": "lv_lvlpx_liepaja",
+    "name": "Liepaja",
+    "countryCode": "LV",
+    "aliases": [
+      "Liepaja",
+      "Liepāja"
+    ]
+  },
+  {
+    "id": "mt_mtmar_marsaxlokk",
+    "name": "Marsaxlokk",
+    "countryCode": "MT",
+    "aliases": [
+      "Marsaxlokk",
+      "Malta Freeport",
+      "Port of Marsaxlokk"
+    ]
+  },
+  {
+    "id": "mt_mtmla_valletta",
+    "name": "Valletta",
+    "countryCode": "MT",
+    "aliases": [
+      "Valletta",
+      "Grand Harbour",
+      "Malta"
+    ]
+  },
+  {
+    "id": "nl_nlrtm_rotterdam",
+    "name": "Rotterdam",
+    "countryCode": "NL",
+    "aliases": [
+      "Rotterdam",
+      "Port of Rotterdam"
+    ]
+  },
+  {
+    "id": "nl_nlams_amsterdam",
+    "name": "Amsterdam",
+    "countryCode": "NL",
+    "aliases": [
+      "Amsterdam",
+      "Port of Amsterdam"
+    ]
+  },
+  {
+    "id": "nl_nlvli_vlissingen",
+    "name": "Vlissingen",
+    "countryCode": "NL",
+    "aliases": [
+      "Vlissingen",
+      "Flushing"
+    ]
+  },
+  {
+    "id": "nl_nltnz_terneuzen",
+    "name": "Terneuzen",
+    "countryCode": "NL",
+    "aliases": [
+      "Terneuzen",
+      "Port of Terneuzen"
+    ]
+  },
+  {
+    "id": "nl_nlmoe_moerdijk",
+    "name": "Moerdijk",
+    "countryCode": "NL",
+    "aliases": [
+      "Moerdijk",
+      "Port of Moerdijk"
+    ]
+  },
+  {
+    "id": "no_nobgo_bergen",
+    "name": "Bergen",
+    "countryCode": "NO",
+    "aliases": [
+      "Bergen",
+      "Port of Bergen"
+    ]
+  },
+  {
+    "id": "no_noosl_oslo",
+    "name": "Oslo",
+    "countryCode": "NO",
+    "aliases": [
+      "Oslo",
+      "Port of Oslo"
+    ]
+  },
+  {
+    "id": "no_nosvg_stavanger",
+    "name": "Stavanger",
+    "countryCode": "NO",
+    "aliases": [
+      "Stavanger",
+      "Port of Stavanger"
+    ]
+  },
+  {
+    "id": "no_nokrs_kristiansand",
+    "name": "Kristiansand",
+    "countryCode": "NO",
+    "aliases": [
+      "Kristiansand"
+    ]
+  },
+  {
+    "id": "no_notrd_trondheim",
+    "name": "Trondheim",
+    "countryCode": "NO",
+    "aliases": [
+      "Trondheim"
+    ]
+  },
+  {
+    "id": "no_noaes_alesund",
+    "name": "Alesund",
+    "countryCode": "NO",
+    "aliases": [
+      "Alesund",
+      "Ålesund"
+    ]
+  },
+  {
+    "id": "no_nohau_haugesund",
+    "name": "Haugesund",
+    "countryCode": "NO",
+    "aliases": [
+      "Haugesund"
+    ]
+  },
+  {
+    "id": "no_nofrk_fredrikstad",
+    "name": "Fredrikstad",
+    "countryCode": "NO",
+    "aliases": [
+      "Fredrikstad"
+    ]
+  },
+  {
+    "id": "no_nonvk_narvik",
+    "name": "Narvik",
+    "countryCode": "NO",
+    "aliases": [
+      "Narvik",
+      "Port of Narvik"
+    ]
+  },
+  {
+    "id": "no_nomon_mongstad",
+    "name": "Mongstad",
+    "countryCode": "NO",
+    "aliases": [
+      "Mongstad"
+    ]
+  },
+  {
+    "id": "no_nopor_porsgrunn",
+    "name": "Porsgrunn",
+    "countryCode": "NO",
+    "aliases": [
+      "Porsgrunn",
+      "Grenland"
+    ]
+  },
+  {
+    "id": "pl_plgdn_gdansk",
+    "name": "Gdansk",
+    "countryCode": "PL",
+    "aliases": [
+      "Gdansk",
+      "Gdańsk",
+      "Port of Gdansk"
+    ]
+  },
+  {
+    "id": "pl_plgdy_gdynia",
+    "name": "Gdynia",
+    "countryCode": "PL",
+    "aliases": [
+      "Gdynia",
+      "Port of Gdynia"
+    ]
+  },
+  {
+    "id": "pl_plszz_szczecin",
+    "name": "Szczecin",
+    "countryCode": "PL",
+    "aliases": [
+      "Szczecin",
+      "Port of Szczecin"
+    ]
+  },
+  {
+    "id": "pl_plswi_swinoujscie",
+    "name": "Swinoujscie",
+    "countryCode": "PL",
+    "aliases": [
+      "Swinoujscie",
+      "Świnoujście"
+    ]
+  },
+  {
+    "id": "pt_ptlis_lisboa",
+    "name": "Lisboa",
+    "countryCode": "PT",
+    "aliases": [
+      "Lisbon",
+      "Lisboa",
+      "Port of Lisbon"
+    ]
+  },
+  {
+    "id": "pt_ptsie_sines",
+    "name": "Sines",
+    "countryCode": "PT",
+    "aliases": [
+      "Sines",
+      "Port of Sines"
+    ]
+  },
+  {
+    "id": "pt_ptlei_leixoes",
+    "name": "Leixoes",
+    "countryCode": "PT",
+    "aliases": [
+      "Leixoes",
+      "Leixões",
+      "Port of Leixoes"
+    ]
+  },
+  {
+    "id": "pt_ptfnc_funchal",
+    "name": "Funchal",
+    "countryCode": "PT",
+    "aliases": [
+      "Funchal",
+      "Madeira"
+    ]
+  },
+  {
+    "id": "pt_ptpdl_ponta_delgada",
+    "name": "Ponta Delgada",
+    "countryCode": "PT",
+    "aliases": [
+      "Ponta Delgada",
+      "Azores"
+    ]
+  },
+  {
+    "id": "pt_ptset_setubal",
+    "name": "Setubal",
+    "countryCode": "PT",
+    "aliases": [
+      "Setubal",
+      "Setúbal"
+    ]
+  },
+  {
+    "id": "ro_rocnd_constanta",
+    "name": "Constanta",
+    "countryCode": "RO",
+    "aliases": [
+      "Constanta",
+      "Constanța",
+      "Port of Constanta"
+    ]
+  },
+  {
+    "id": "ro_rogal_galati",
+    "name": "Galati",
+    "countryCode": "RO",
+    "aliases": [
+      "Galati",
+      "Galați"
+    ]
+  },
+  {
+    "id": "ro_rotce_tulcea",
+    "name": "Tulcea",
+    "countryCode": "RO",
+    "aliases": [
+      "Tulcea"
+    ]
+  },
+  {
+    "id": "ru_runvs_novorossiysk",
+    "name": "Novorossiysk",
+    "countryCode": "RU",
+    "aliases": [
+      "Novorossiysk",
+      "Port of Novorossiysk"
+    ]
+  },
+  {
+    "id": "ru_ruled_saint_petersburg",
+    "name": "Saint Petersburg",
+    "countryCode": "RU",
+    "aliases": [
+      "St Petersburg",
+      "Saint Petersburg",
+      "Leningrad"
+    ]
+  },
+  {
+    "id": "ru_ruvvo_vladivostok",
+    "name": "Vladivostok",
+    "countryCode": "RU",
+    "aliases": [
+      "Vladivostok",
+      "Port of Vladivostok"
+    ]
+  },
+  {
+    "id": "ru_ruvyp_vostochny",
+    "name": "Vostochny",
+    "countryCode": "RU",
+    "aliases": [
+      "Vostochny",
+      "Vostochnyy Port"
+    ]
+  },
+  {
+    "id": "ru_runjk_nakhodka",
+    "name": "Nakhodka",
+    "countryCode": "RU",
+    "aliases": [
+      "Nakhodka"
+    ]
+  },
+  {
+    "id": "ru_rukgd_kaliningrad",
+    "name": "Kaliningrad",
+    "countryCode": "RU",
+    "aliases": [
+      "Kaliningrad",
+      "Koenigsberg"
+    ]
+  },
+  {
+    "id": "ru_rummk_murmansk",
+    "name": "Murmansk",
+    "countryCode": "RU",
+    "aliases": [
+      "Murmansk",
+      "Port of Murmansk"
+    ]
+  },
+  {
+    "id": "se_segot_gothenburg",
+    "name": "Gothenburg",
+    "countryCode": "SE",
+    "aliases": [
+      "Gothenburg",
+      "Göteborg",
+      "Port of Gothenburg"
+    ]
+  },
+  {
+    "id": "se_semma_malmo",
+    "name": "Malmo",
+    "countryCode": "SE",
+    "aliases": [
+      "Malmo",
+      "Malmö",
+      "Port of Malmö"
+    ]
+  },
+  {
+    "id": "se_sesto_stockholm",
+    "name": "Stockholm",
+    "countryCode": "SE",
+    "aliases": [
+      "Stockholm",
+      "Port of Stockholm"
+    ]
+  },
+  {
+    "id": "se_sehel_helsingborg",
+    "name": "Helsingborg",
+    "countryCode": "SE",
+    "aliases": [
+      "Helsingborg",
+      "Port of Helsingborg"
+    ]
+  },
+  {
+    "id": "se_segvx_gavle",
+    "name": "Gavle",
+    "countryCode": "SE",
+    "aliases": [
+      "Gavle",
+      "Gävle",
+      "Port of Gavle"
+    ]
+  },
+  {
+    "id": "se_sella_lulea",
+    "name": "Lulea",
+    "countryCode": "SE",
+    "aliases": [
+      "Lulea",
+      "Luleå",
+      "Port of Lulea"
+    ]
+  },
+  {
+    "id": "se_sekaa_karlskrona",
+    "name": "Karlskrona",
+    "countryCode": "SE",
+    "aliases": [
+      "Karlskrona"
+    ]
+  },
+  {
+    "id": "se_seume_umea",
+    "name": "Umea",
+    "countryCode": "SE",
+    "aliases": [
+      "Umea",
+      "Umeå"
+    ]
+  },
+  {
+    "id": "si_sikop_koper",
+    "name": "Koper",
+    "countryCode": "SI",
+    "aliases": [
+      "Koper",
+      "Capodistria",
+      "Port of Koper"
+    ]
+  },
+  {
+    "id": "ua_uaods_odesa",
+    "name": "Odesa",
+    "countryCode": "UA",
+    "aliases": [
+      "Odessa",
+      "Odesa",
+      "Port of Odessa"
+    ]
+  },
+  {
+    "id": "ua_uailk_chornomorsk",
+    "name": "Chornomorsk",
+    "countryCode": "UA",
+    "aliases": [
+      "Chornomorsk",
+      "Illichivsk",
+      "Port of Chornomorsk"
+    ]
+  },
+  {
+    "id": "ua_uanlv_mykolaiv",
+    "name": "Mykolaiv",
+    "countryCode": "UA",
+    "aliases": [
+      "Mykolaiv",
+      "Nikolaev"
+    ]
+  },
+  {
+    "id": "ua_uakhe_kherson",
+    "name": "Kherson",
+    "countryCode": "UA",
+    "aliases": [
+      "Kherson"
+    ]
+  },
+  {
+    "id": "ua_uampw_mariupol",
+    "name": "Mariupol",
+    "countryCode": "UA",
+    "aliases": [
+      "Mariupol",
+      "Mariupol Port"
+    ]
+  },
+  {
+    "id": "bd_bdcgp_chittagong",
+    "name": "Chittagong",
+    "countryCode": "BD",
+    "aliases": [
+      "Chittagong",
+      "Chattogram",
+      "Port of Chittagong"
+    ]
+  },
+  {
+    "id": "cn_cnsha_shanghai",
+    "name": "Shanghai",
+    "countryCode": "CN",
+    "aliases": [
+      "Shanghai",
+      "Port of Shanghai",
+      "SIPG"
+    ]
+  },
+  {
+    "id": "cn_cntao_qingdao",
+    "name": "Qingdao",
+    "countryCode": "CN",
+    "aliases": [
+      "Qingdao",
+      "Qingdao Port"
+    ]
+  },
+  {
+    "id": "cn_cnnbo_ningbo",
+    "name": "Ningbo",
+    "countryCode": "CN",
+    "aliases": [
+      "Ningbo",
+      "Ningbo-Zhoushan",
+      "Port of Ningbo"
+    ]
+  },
+  {
+    "id": "cn_cnsnz_shenzhen",
+    "name": "Shenzhen",
+    "countryCode": "CN",
+    "aliases": [
+      "Shenzhen",
+      "Port of Shenzhen",
+      "Yantian",
+      "Shekou"
+    ]
+  },
+  {
+    "id": "cn_cntsn_tianjin",
+    "name": "Tianjin",
+    "countryCode": "CN",
+    "aliases": [
+      "Tianjin",
+      "Tianjin Xingang",
+      "Port of Tianjin"
+    ]
+  },
+  {
+    "id": "cn_cnggz_guangzhou",
+    "name": "Guangzhou",
+    "countryCode": "CN",
+    "aliases": [
+      "Guangzhou",
+      "Canton",
+      "Nansha",
+      "Port of Guangzhou"
+    ]
+  },
+  {
+    "id": "cn_cnxmn_xiamen",
+    "name": "Xiamen",
+    "countryCode": "CN",
+    "aliases": [
+      "Xiamen",
+      "Port of Xiamen"
+    ]
+  },
+  {
+    "id": "cn_cndlc_dalian",
+    "name": "Dalian",
+    "countryCode": "CN",
+    "aliases": [
+      "Dalian",
+      "Port of Dalian"
+    ]
+  },
+  {
+    "id": "cn_cnlyg_lianyungang",
+    "name": "Lianyungang",
+    "countryCode": "CN",
+    "aliases": [
+      "Lianyungang"
+    ]
+  },
+  {
+    "id": "cn_cnnji_nanjing",
+    "name": "Nanjing",
+    "countryCode": "CN",
+    "aliases": [
+      "Nanjing",
+      "Nanking"
+    ]
+  },
+  {
+    "id": "cn_cncqi_chongqing",
+    "name": "Chongqing",
+    "countryCode": "CN",
+    "aliases": [
+      "Chongqing",
+      "Chungking"
+    ]
+  },
+  {
+    "id": "cn_cnfzh_fuzhou",
+    "name": "Fuzhou",
+    "countryCode": "CN",
+    "aliases": [
+      "Fuzhou",
+      "Port of Fuzhou"
+    ]
+  },
+  {
+    "id": "cn_cnyat_yantai",
+    "name": "Yantai",
+    "countryCode": "CN",
+    "aliases": [
+      "Yantai",
+      "Port of Yantai"
+    ]
+  },
+  {
+    "id": "cn_cnntg_nantong",
+    "name": "Nantong",
+    "countryCode": "CN",
+    "aliases": [
+      "Nantong"
+    ]
+  },
+  {
+    "id": "cn_cnwnz_wenzhou",
+    "name": "Wenzhou",
+    "countryCode": "CN",
+    "aliases": [
+      "Wenzhou"
+    ]
+  },
+  {
+    "id": "cn_cnzng_zhanjiang",
+    "name": "Zhanjiang",
+    "countryCode": "CN",
+    "aliases": [
+      "Zhanjiang"
+    ]
+  },
+  {
+    "id": "cn_cnhko_haikou",
+    "name": "Haikou",
+    "countryCode": "CN",
+    "aliases": [
+      "Haikou",
+      "Hainan"
+    ]
+  },
+  {
+    "id": "cn_cnrzh_rizhao",
+    "name": "Rizhao",
+    "countryCode": "CN",
+    "aliases": [
+      "Rizhao"
+    ]
+  },
+  {
+    "id": "cn_cnqzl_quanzhou",
+    "name": "Quanzhou",
+    "countryCode": "CN",
+    "aliases": [
+      "Quanzhou"
+    ]
+  },
+  {
+    "id": "cn_cnfan_fangcheng",
+    "name": "Fangcheng",
+    "countryCode": "CN",
+    "aliases": [
+      "Fangcheng",
+      "Fangchenggang"
+    ]
+  },
+  {
+    "id": "cn_cnqsn_zhuhai",
+    "name": "Zhuhai",
+    "countryCode": "CN",
+    "aliases": [
+      "Zhuhai",
+      "Qianshan"
+    ]
+  },
+  {
+    "id": "cn_cnwei_weihai",
+    "name": "Weihai",
+    "countryCode": "CN",
+    "aliases": [
+      "Weihai"
+    ]
+  },
+  {
+    "id": "cn_cnyik_yingkou",
+    "name": "Yingkou",
+    "countryCode": "CN",
+    "aliases": [
+      "Yingkou"
+    ]
+  },
+  {
+    "id": "hk_hkhkg_hong_kong",
+    "name": "Hong Kong",
+    "countryCode": "HK",
+    "aliases": [
+      "Hong Kong",
+      "Kwai Chung",
+      "Hongkong"
+    ]
+  },
+  {
+    "id": "id_idtpp_tanjung_priok",
+    "name": "Tanjung Priok",
+    "countryCode": "ID",
+    "aliases": [
+      "Tanjung Priok",
+      "Jakarta",
+      "Port of Jakarta"
+    ]
+  },
+  {
+    "id": "id_idsub_surabaya",
+    "name": "Surabaya",
+    "countryCode": "ID",
+    "aliases": [
+      "Surabaya",
+      "Tanjung Perak"
+    ]
+  },
+  {
+    "id": "id_idblw_belawan",
+    "name": "Belawan",
+    "countryCode": "ID",
+    "aliases": [
+      "Belawan",
+      "Medan",
+      "Port of Belawan"
+    ]
+  },
+  {
+    "id": "id_idsrg_semarang",
+    "name": "Semarang",
+    "countryCode": "ID",
+    "aliases": [
+      "Semarang",
+      "Tanjung Emas"
+    ]
+  },
+  {
+    "id": "id_idmak_makassar",
+    "name": "Makassar",
+    "countryCode": "ID",
+    "aliases": [
+      "Makassar",
+      "Ujung Pandang"
+    ]
+  },
+  {
+    "id": "id_idbpn_balikpapan",
+    "name": "Balikpapan",
+    "countryCode": "ID",
+    "aliases": [
+      "Balikpapan"
+    ]
+  },
+  {
+    "id": "id_idpnk_pontianak",
+    "name": "Pontianak",
+    "countryCode": "ID",
+    "aliases": [
+      "Pontianak"
+    ]
+  },
+  {
+    "id": "id_idbdj_banjarmasin",
+    "name": "Banjarmasin",
+    "countryCode": "ID",
+    "aliases": [
+      "Banjarmasin"
+    ]
+  },
+  {
+    "id": "id_idbit_bitung",
+    "name": "Bitung",
+    "countryCode": "ID",
+    "aliases": [
+      "Bitung",
+      "Sulawesi"
+    ]
+  },
+  {
+    "id": "id_idplm_palembang",
+    "name": "Palembang",
+    "countryCode": "ID",
+    "aliases": [
+      "Palembang",
+      "Port of Palembang"
+    ]
+  },
+  {
+    "id": "id_idkoe_kupang",
+    "name": "Kupang",
+    "countryCode": "ID",
+    "aliases": [
+      "Kupang",
+      "Timor"
+    ]
+  },
+  {
+    "id": "id_idsoq_sorong",
+    "name": "Sorong",
+    "countryCode": "ID",
+    "aliases": [
+      "Sorong",
+      "West Papua"
+    ]
+  },
+  {
+    "id": "id_idamq_ambon",
+    "name": "Ambon",
+    "countryCode": "ID",
+    "aliases": [
+      "Ambon",
+      "Maluku"
+    ]
+  },
+  {
+    "id": "in_inmun_mundra",
+    "name": "Mundra",
+    "countryCode": "IN",
+    "aliases": [
+      "Mundra",
+      "Port of Mundra"
+    ]
+  },
+  {
+    "id": "in_innsa_nhava_sheva",
+    "name": "Nhava Sheva",
+    "countryCode": "IN",
+    "aliases": [
+      "Nhava Sheva",
+      "JNPT",
+      "Navi Mumbai",
+      "Jawaharlal Nehru Port"
+    ]
+  },
+  {
+    "id": "in_inmaa_chennai",
+    "name": "Chennai",
+    "countryCode": "IN",
+    "aliases": [
+      "Chennai",
+      "Madras",
+      "Port of Chennai"
+    ]
+  },
+  {
+    "id": "in_inccu_kolkata",
+    "name": "Kolkata",
+    "countryCode": "IN",
+    "aliases": [
+      "Kolkata",
+      "Calcutta",
+      "Port of Kolkata"
+    ]
+  },
+  {
+    "id": "in_incok_cochin",
+    "name": "Cochin",
+    "countryCode": "IN",
+    "aliases": [
+      "Cochin",
+      "Kochi",
+      "Port of Cochin"
+    ]
+  },
+  {
+    "id": "in_inixy_kandla",
+    "name": "Kandla",
+    "countryCode": "IN",
+    "aliases": [
+      "Kandla",
+      "Deendayal Port"
+    ]
+  },
+  {
+    "id": "in_inhal_haldia",
+    "name": "Haldia",
+    "countryCode": "IN",
+    "aliases": [
+      "Haldia",
+      "Haldia Dock Complex"
+    ]
+  },
+  {
+    "id": "in_inpav_pipavav",
+    "name": "Pipavav",
+    "countryCode": "IN",
+    "aliases": [
+      "Pipavav",
+      "APM Terminals Pipavav"
+    ]
+  },
+  {
+    "id": "in_inviz_vizag",
+    "name": "Vizag",
+    "countryCode": "IN",
+    "aliases": [
+      "Visakhapatnam",
+      "Vizag",
+      "Port of Visakhapatnam"
+    ]
+  },
+  {
+    "id": "in_intut_tuticorin",
+    "name": "Tuticorin",
+    "countryCode": "IN",
+    "aliases": [
+      "Tuticorin",
+      "Thoothukudi",
+      "V.O.C Port"
+    ]
+  },
+  {
+    "id": "in_inixe_mangalore",
+    "name": "Mangalore",
+    "countryCode": "IN",
+    "aliases": [
+      "Mangalore",
+      "New Mangalore Port"
+    ]
+  },
+  {
+    "id": "in_inppt_paradip",
+    "name": "Paradip",
+    "countryCode": "IN",
+    "aliases": [
+      "Paradip",
+      "Paradeep",
+      "Paradip Port"
+    ]
+  },
+  {
+    "id": "in_inkri_krishnapatnam",
+    "name": "Krishnapatnam",
+    "countryCode": "IN",
+    "aliases": [
+      "Krishnapatnam",
+      "KPCL"
+    ]
+  },
+  {
+    "id": "in_indah_dahej",
+    "name": "Dahej",
+    "countryCode": "IN",
+    "aliases": [
+      "Dahej",
+      "Port of Dahej"
+    ]
+  },
+  {
+    "id": "in_inmrm_mormugao",
+    "name": "Mormugao",
+    "countryCode": "IN",
+    "aliases": [
+      "Mormugao",
+      "Marmagao",
+      "Goa Port"
+    ]
+  },
+  {
+    "id": "in_inenr_ennore",
+    "name": "Ennore",
+    "countryCode": "IN",
+    "aliases": [
+      "Ennore",
+      "Kamarajar Port",
+      "Chennai North"
+    ]
+  },
+  {
+    "id": "jp_jpyok_yokohama",
+    "name": "Yokohama",
+    "countryCode": "JP",
+    "aliases": [
+      "Yokohama",
+      "Port of Yokohama"
+    ]
+  },
+  {
+    "id": "jp_jpngo_nagoya",
+    "name": "Nagoya",
+    "countryCode": "JP",
+    "aliases": [
+      "Nagoya",
+      "Port of Nagoya"
+    ]
+  },
+  {
+    "id": "jp_jpukb_kobe",
+    "name": "Kobe",
+    "countryCode": "JP",
+    "aliases": [
+      "Kobe",
+      "Port of Kobe"
+    ]
+  },
+  {
+    "id": "jp_jptyo_tokyo",
+    "name": "Tokyo",
+    "countryCode": "JP",
+    "aliases": [
+      "Tokyo",
+      "Port of Tokyo"
+    ]
+  },
+  {
+    "id": "jp_jposa_osaka",
+    "name": "Osaka",
+    "countryCode": "JP",
+    "aliases": [
+      "Osaka",
+      "Port of Osaka"
+    ]
+  },
+  {
+    "id": "jp_jphkt_hakata",
+    "name": "Hakata",
+    "countryCode": "JP",
+    "aliases": [
+      "Hakata",
+      "Fukuoka",
+      "Port of Hakata"
+    ]
+  },
+  {
+    "id": "jp_jpsmz_shimizu",
+    "name": "Shimizu",
+    "countryCode": "JP",
+    "aliases": [
+      "Shimizu",
+      "Port of Shimizu"
+    ]
+  },
+  {
+    "id": "jp_jpkij_niigata",
+    "name": "Niigata",
+    "countryCode": "JP",
+    "aliases": [
+      "Niigata",
+      "Port of Niigata"
+    ]
+  },
+  {
+    "id": "jp_jpkkj_kitakyushu",
+    "name": "Kitakyushu",
+    "countryCode": "JP",
+    "aliases": [
+      "Kitakyushu",
+      "Port of Kitakyushu"
+    ]
+  },
+  {
+    "id": "jp_jptmk_tomakomai",
+    "name": "Tomakomai",
+    "countryCode": "JP",
+    "aliases": [
+      "Tomakomai",
+      "Port of Tomakomai"
+    ]
+  },
+  {
+    "id": "jp_jphij_hiroshima",
+    "name": "Hiroshima",
+    "countryCode": "JP",
+    "aliases": [
+      "Hiroshima",
+      "Port of Hiroshima"
+    ]
+  },
+  {
+    "id": "jp_jpmur_muroran",
+    "name": "Muroran",
+    "countryCode": "JP",
+    "aliases": [
+      "Muroran",
+      "Port of Muroran"
+    ]
+  },
+  {
+    "id": "jp_jpchb_chiba",
+    "name": "Chiba",
+    "countryCode": "JP",
+    "aliases": [
+      "Chiba",
+      "Port of Chiba"
+    ]
+  },
+  {
+    "id": "jp_jpngs_nagasaki",
+    "name": "Nagasaki",
+    "countryCode": "JP",
+    "aliases": [
+      "Nagasaki",
+      "Port of Nagasaki"
+    ]
+  },
+  {
+    "id": "kh_khshv_sihanoukville",
+    "name": "Sihanoukville",
+    "countryCode": "KH",
+    "aliases": [
+      "Sihanoukville",
+      "Preah Sihanouk"
+    ]
+  },
+  {
+    "id": "kh_khpnh_phnom_penh",
+    "name": "Phnom Penh",
+    "countryCode": "KH",
+    "aliases": [
+      "Phnom Penh",
+      "Phnom Penh Autonomous Port"
+    ]
+  },
+  {
+    "id": "kr_krpus_busan",
+    "name": "Busan",
+    "countryCode": "KR",
+    "aliases": [
+      "Busan",
+      "Pusan",
+      "Port of Busan"
+    ]
+  },
+  {
+    "id": "kr_krinc_incheon",
+    "name": "Incheon",
+    "countryCode": "KR",
+    "aliases": [
+      "Incheon",
+      "Inch'on",
+      "Port of Incheon"
+    ]
+  },
+  {
+    "id": "kr_krkan_gwangyang",
+    "name": "Gwangyang",
+    "countryCode": "KR",
+    "aliases": [
+      "Gwangyang",
+      "Port of Gwangyang"
+    ]
+  },
+  {
+    "id": "kr_krusn_ulsan",
+    "name": "Ulsan",
+    "countryCode": "KR",
+    "aliases": [
+      "Ulsan",
+      "Port of Ulsan"
+    ]
+  },
+  {
+    "id": "kr_krptk_pyeongtaek",
+    "name": "Pyeongtaek",
+    "countryCode": "KR",
+    "aliases": [
+      "Pyeongtaek",
+      "Dangjin",
+      "Port of Pyeongtaek"
+    ]
+  },
+  {
+    "id": "kr_krkpo_pohang",
+    "name": "Pohang",
+    "countryCode": "KR",
+    "aliases": [
+      "Pohang",
+      "Port of Pohang"
+    ]
+  },
+  {
+    "id": "kr_kryos_yeosu",
+    "name": "Yeosu",
+    "countryCode": "KR",
+    "aliases": [
+      "Yeosu",
+      "Yeosu-Gwangyang"
+    ]
+  },
+  {
+    "id": "kr_krmok_mokpo",
+    "name": "Mokpo",
+    "countryCode": "KR",
+    "aliases": [
+      "Mokpo",
+      "Port of Mokpo"
+    ]
+  },
+  {
+    "id": "kr_krmas_masan",
+    "name": "Masan",
+    "countryCode": "KR",
+    "aliases": [
+      "Masan",
+      "Changwon"
+    ]
+  },
+  {
+    "id": "lk_lkcmb_colombo",
+    "name": "Colombo",
+    "countryCode": "LK",
+    "aliases": [
+      "Colombo",
+      "Port of Colombo"
+    ]
+  },
+  {
+    "id": "mm_mmrgn_yangon",
+    "name": "Yangon",
+    "countryCode": "MM",
+    "aliases": [
+      "Yangon",
+      "Rangoon",
+      "Thilawa"
+    ]
+  },
+  {
+    "id": "mm_mmtla_thilawa",
+    "name": "Thilawa",
+    "countryCode": "MM",
+    "aliases": [
+      "Thilawa",
+      "Myanmar Industrial Port"
+    ]
+  },
+  {
+    "id": "my_mypkg_port_klang",
+    "name": "Port Klang",
+    "countryCode": "MY",
+    "aliases": [
+      "Port Klang",
+      "Pelabuhan Klang",
+      "Westports",
+      "Northport"
+    ]
+  },
+  {
+    "id": "my_mytpp_tanjung_pelepas",
+    "name": "Tanjung Pelepas",
+    "countryCode": "MY",
+    "aliases": [
+      "Tanjung Pelepas",
+      "PTP"
+    ]
+  },
+  {
+    "id": "my_mypen_penang",
+    "name": "Penang",
+    "countryCode": "MY",
+    "aliases": [
+      "Penang",
+      "Georgetown",
+      "Butterworth"
+    ]
+  },
+  {
+    "id": "my_mypgu_pasir_gudang",
+    "name": "Pasir Gudang",
+    "countryCode": "MY",
+    "aliases": [
+      "Pasir Gudang",
+      "Johor"
+    ]
+  },
+  {
+    "id": "my_mybtu_bintulu",
+    "name": "Bintulu",
+    "countryCode": "MY",
+    "aliases": [
+      "Bintulu",
+      "Sarawak"
+    ]
+  },
+  {
+    "id": "my_mykch_kuching",
+    "name": "Kuching",
+    "countryCode": "MY",
+    "aliases": [
+      "Kuching",
+      "Kuching Port"
+    ]
+  },
+  {
+    "id": "my_mybki_kota_kinabalu",
+    "name": "Kota Kinabalu",
+    "countryCode": "MY",
+    "aliases": [
+      "Kota Kinabalu",
+      "Sabah"
+    ]
+  },
+  {
+    "id": "ph_phmnl_manila",
+    "name": "Manila",
+    "countryCode": "PH",
+    "aliases": [
+      "Manila",
+      "Port of Manila",
+      "North Harbor",
+      "South Harbor"
+    ]
+  },
+  {
+    "id": "ph_phceb_cebu",
+    "name": "Cebu",
+    "countryCode": "PH",
+    "aliases": [
+      "Cebu",
+      "Port of Cebu"
+    ]
+  },
+  {
+    "id": "ph_phdvo_davao",
+    "name": "Davao",
+    "countryCode": "PH",
+    "aliases": [
+      "Davao",
+      "Port of Davao"
+    ]
+  },
+  {
+    "id": "ph_phges_general_santos",
+    "name": "General Santos",
+    "countryCode": "PH",
+    "aliases": [
+      "General Santos",
+      "GenSan"
+    ]
+  },
+  {
+    "id": "ph_phsfs_subic_bay",
+    "name": "Subic Bay",
+    "countryCode": "PH",
+    "aliases": [
+      "Subic Bay",
+      "Subic Bay Freeport"
+    ]
+  },
+  {
+    "id": "ph_phbtg_batangas",
+    "name": "Batangas",
+    "countryCode": "PH",
+    "aliases": [
+      "Batangas",
+      "Port of Batangas"
+    ]
+  },
+  {
+    "id": "pk_pkkhi_karachi",
+    "name": "Karachi",
+    "countryCode": "PK",
+    "aliases": [
+      "Karachi",
+      "Port of Karachi",
+      "Karachi Port Trust"
+    ]
+  },
+  {
+    "id": "pk_pkbqm_bin_qasim",
+    "name": "Bin Qasim",
+    "countryCode": "PK",
+    "aliases": [
+      "Bin Qasim",
+      "Port Qasim",
+      "Muhammad bin Qasim"
+    ]
+  },
+  {
+    "id": "sg_sgjur_singapore",
+    "name": "Singapore",
+    "countryCode": "SG",
+    "aliases": [
+      "Singapore",
+      "Jurong",
+      "PSA Singapore",
+      "Tanjong Pagar"
+    ]
+  },
+  {
+    "id": "th_thlch_laem_chabang",
+    "name": "Laem Chabang",
+    "countryCode": "TH",
+    "aliases": [
+      "Laem Chabang",
+      "Port of Laem Chabang"
+    ]
+  },
+  {
+    "id": "th_thbkk_bangkok",
+    "name": "Bangkok",
+    "countryCode": "TH",
+    "aliases": [
+      "Bangkok",
+      "Port of Bangkok",
+      "Klong Toei"
+    ]
+  },
+  {
+    "id": "th_thmat_map_ta_phut",
+    "name": "Map Ta Phut",
+    "countryCode": "TH",
+    "aliases": [
+      "Map Ta Phut",
+      "Maptaphut"
+    ]
+  },
+  {
+    "id": "th_thsgk_songkhla",
+    "name": "Songkhla",
+    "countryCode": "TH",
+    "aliases": [
+      "Songkhla",
+      "Port of Songkhla"
+    ]
+  },
+  {
+    "id": "tw_twkhh_kaohsiung",
+    "name": "Kaohsiung",
+    "countryCode": "TW",
+    "aliases": [
+      "Kaohsiung",
+      "Gaoxiong",
+      "Port of Kaohsiung"
+    ]
+  },
+  {
+    "id": "tw_twkel_keelung",
+    "name": "Keelung",
+    "countryCode": "TW",
+    "aliases": [
+      "Keelung",
+      "Jilong",
+      "Port of Keelung"
+    ]
+  },
+  {
+    "id": "tw_twtxg_taichung",
+    "name": "Taichung",
+    "countryCode": "TW",
+    "aliases": [
+      "Taichung",
+      "Port of Taichung"
+    ]
+  },
+  {
+    "id": "vn_vnhph_haiphong",
+    "name": "Haiphong",
+    "countryCode": "VN",
+    "aliases": [
+      "Haiphong",
+      "Hai Phong",
+      "Port of Haiphong"
+    ]
+  },
+  {
+    "id": "vn_vnsgn_ho_chi_minh_city",
+    "name": "Ho Chi Minh City",
+    "countryCode": "VN",
+    "aliases": [
+      "Ho Chi Minh City",
+      "Saigon",
+      "Cat Lai",
+      "VICT"
+    ]
+  },
+  {
+    "id": "vn_vndad_da_nang",
+    "name": "Da Nang",
+    "countryCode": "VN",
+    "aliases": [
+      "Da Nang",
+      "Danang",
+      "Port of Da Nang"
+    ]
+  },
+  {
+    "id": "vn_vnvut_vung_tau",
+    "name": "Vung Tau",
+    "countryCode": "VN",
+    "aliases": [
+      "Vung Tau",
+      "Cai Mep"
+    ]
+  },
+  {
+    "id": "vn_vnuih_quy_nhon",
+    "name": "Quy Nhon",
+    "countryCode": "VN",
+    "aliases": [
+      "Quy Nhon",
+      "Qui Nhon"
+    ]
+  },
+  {
+    "id": "ae_aejea_jebel_ali",
+    "name": "Jebel Ali",
+    "countryCode": "AE",
+    "aliases": [
+      "Jebel Ali",
+      "Port of Jebel Ali",
+      "DP World Jebel Ali"
+    ]
+  },
+  {
+    "id": "ae_aedxb_dubai",
+    "name": "Dubai",
+    "countryCode": "AE",
+    "aliases": [
+      "Dubai",
+      "Port Rashid"
+    ]
+  },
+  {
+    "id": "ae_aeauh_abu_dhabi",
+    "name": "Abu Dhabi",
+    "countryCode": "AE",
+    "aliases": [
+      "Abu Dhabi",
+      "Mina Zayed"
+    ]
+  },
+  {
+    "id": "ae_aeshj_sharjah",
+    "name": "Sharjah",
+    "countryCode": "AE",
+    "aliases": [
+      "Sharjah",
+      "Khalid Port"
+    ]
+  },
+  {
+    "id": "ae_aefjr_fujairah",
+    "name": "Fujairah",
+    "countryCode": "AE",
+    "aliases": [
+      "Fujairah",
+      "Port of Fujairah"
+    ]
+  },
+  {
+    "id": "ae_aerwp_ruwais",
+    "name": "Ruwais",
+    "countryCode": "AE",
+    "aliases": [
+      "Ruwais",
+      "Ruwais Port"
+    ]
+  },
+  {
+    "id": "bh_bhkbs_khalifa_bin_salman",
+    "name": "Khalifa Bin Salman",
+    "countryCode": "BH",
+    "aliases": [
+      "Khalifa Bin Salman",
+      "Bahrain Port",
+      "KBSP"
+    ]
+  },
+  {
+    "id": "il_ilhfa_haifa",
+    "name": "Haifa",
+    "countryCode": "IL",
+    "aliases": [
+      "Haifa",
+      "Port of Haifa"
+    ]
+  },
+  {
+    "id": "il_ilash_ashdod",
+    "name": "Ashdod",
+    "countryCode": "IL",
+    "aliases": [
+      "Ashdod",
+      "Port of Ashdod"
+    ]
+  },
+  {
+    "id": "iq_iquqr_umm_qasr",
+    "name": "Umm Qasr",
+    "countryCode": "IQ",
+    "aliases": [
+      "Umm Qasr",
+      "Port of Umm Qasr",
+      "Basra"
+    ]
+  },
+  {
+    "id": "ir_irbnd_bandar_abbas",
+    "name": "Bandar Abbas",
+    "countryCode": "IR",
+    "aliases": [
+      "Bandar Abbas",
+      "Shahid Rajaee",
+      "Port of Bandar Abbas"
+    ]
+  },
+  {
+    "id": "ir_irbuz_bushehr",
+    "name": "Bushehr",
+    "countryCode": "IR",
+    "aliases": [
+      "Bushehr",
+      "Port of Bushehr"
+    ]
+  },
+  {
+    "id": "ir_irbik_imam_khomeini",
+    "name": "Imam Khomeini",
+    "countryCode": "IR",
+    "aliases": [
+      "Imam Khomeini Port",
+      "Bandar Imam",
+      "Mahshahr"
+    ]
+  },
+  {
+    "id": "ir_irzbr_chabahar",
+    "name": "Chabahar",
+    "countryCode": "IR",
+    "aliases": [
+      "Chabahar",
+      "Port of Chabahar"
+    ]
+  },
+  {
+    "id": "jo_joaqj_aqaba",
+    "name": "Aqaba",
+    "countryCode": "JO",
+    "aliases": [
+      "Aqaba",
+      "Al Aqabah",
+      "Port of Aqaba"
+    ]
+  },
+  {
+    "id": "kw_kwswk_shuwaikh",
+    "name": "Shuwaikh",
+    "countryCode": "KW",
+    "aliases": [
+      "Shuwaikh",
+      "Kuwait Port",
+      "Shuwaikh Port"
+    ]
+  },
+  {
+    "id": "kw_kwdoh_doha_kuwait",
+    "name": "Doha Kuwait",
+    "countryCode": "KW",
+    "aliases": [
+      "Doha Kuwait",
+      "Mina Abdullah"
+    ]
+  },
+  {
+    "id": "om_omsll_salalah",
+    "name": "Salalah",
+    "countryCode": "OM",
+    "aliases": [
+      "Salalah",
+      "Port of Salalah"
+    ]
+  },
+  {
+    "id": "om_omsoh_sohar",
+    "name": "Sohar",
+    "countryCode": "OM",
+    "aliases": [
+      "Sohar",
+      "Port of Sohar"
+    ]
+  },
+  {
+    "id": "om_ommct_muscat",
+    "name": "Muscat",
+    "countryCode": "OM",
+    "aliases": [
+      "Muscat",
+      "Port Sultan Qaboos"
+    ]
+  },
+  {
+    "id": "qa_qarlf_hamad_port",
+    "name": "Hamad Port",
+    "countryCode": "QA",
+    "aliases": [
+      "Hamad Port",
+      "New Doha Port",
+      "Qatar"
+    ]
+  },
+  {
+    "id": "qa_qadoh_doha",
+    "name": "Doha",
+    "countryCode": "QA",
+    "aliases": [
+      "Doha",
+      "Old Doha Port"
+    ]
+  },
+  {
+    "id": "sa_sajed_jeddah",
+    "name": "Jeddah",
+    "countryCode": "SA",
+    "aliases": [
+      "Jeddah",
+      "Jiddah",
+      "Islamic Port of Jeddah"
+    ]
+  },
+  {
+    "id": "sa_sadmm_dammam",
+    "name": "Dammam",
+    "countryCode": "SA",
+    "aliases": [
+      "Dammam",
+      "Ad Dammam",
+      "King Abdul Aziz Port"
+    ]
+  },
+  {
+    "id": "sa_sajub_jubail",
+    "name": "Jubail",
+    "countryCode": "SA",
+    "aliases": [
+      "Jubail",
+      "King Fahad Industrial Port"
+    ]
+  },
+  {
+    "id": "sa_saynb_yanbu",
+    "name": "Yanbu",
+    "countryCode": "SA",
+    "aliases": [
+      "Yanbu",
+      "Yanbu al-Bahr"
+    ]
+  },
+  {
+    "id": "sa_sarta_ras_tanura",
+    "name": "Ras Tanura",
+    "countryCode": "SA",
+    "aliases": [
+      "Ras Tanura"
+    ]
+  },
+  {
+    "id": "sa_sagiz_jizan",
+    "name": "Jizan",
+    "countryCode": "SA",
+    "aliases": [
+      "Jizan",
+      "Jazan"
+    ]
+  },
+  {
+    "id": "tr_trist_istanbul",
+    "name": "Istanbul",
+    "countryCode": "TR",
+    "aliases": [
+      "Istanbul",
+      "Ambarli",
+      "Haydarpasa",
+      "Port of Istanbul"
+    ]
+  },
+  {
+    "id": "tr_trmer_mersin",
+    "name": "Mersin",
+    "countryCode": "TR",
+    "aliases": [
+      "Mersin",
+      "Port of Mersin"
+    ]
+  },
+  {
+    "id": "tr_trizm_izmir",
+    "name": "Izmir",
+    "countryCode": "TR",
+    "aliases": [
+      "Izmir",
+      "İzmir",
+      "Port of Izmir"
+    ]
+  },
+  {
+    "id": "tr_trali_aliaga",
+    "name": "Aliaga",
+    "countryCode": "TR",
+    "aliases": [
+      "Aliaga",
+      "Aliağa",
+      "Nemport"
+    ]
+  },
+  {
+    "id": "tr_trisk_iskenderun",
+    "name": "Iskenderun",
+    "countryCode": "TR",
+    "aliases": [
+      "Iskenderun",
+      "İskenderun"
+    ]
+  },
+  {
+    "id": "tr_trdrc_derince",
+    "name": "Derince",
+    "countryCode": "TR",
+    "aliases": [
+      "Derince",
+      "Port of Derince",
+      "Kocaeli"
+    ]
+  },
+  {
+    "id": "tr_trtzx_trabzon",
+    "name": "Trabzon",
+    "countryCode": "TR",
+    "aliases": [
+      "Trabzon",
+      "Port of Trabzon"
+    ]
+  },
+  {
+    "id": "tr_trssx_samsun",
+    "name": "Samsun",
+    "countryCode": "TR",
+    "aliases": [
+      "Samsun",
+      "Port of Samsun"
+    ]
+  },
+  {
+    "id": "tr_trgem_gemlik",
+    "name": "Gemlik",
+    "countryCode": "TR",
+    "aliases": [
+      "Gemlik",
+      "Port of Gemlik"
+    ]
+  },
+  {
+    "id": "tr_trzon_zonguldak",
+    "name": "Zonguldak",
+    "countryCode": "TR",
+    "aliases": [
+      "Zonguldak",
+      "Port of Zonguldak"
+    ]
+  },
+  {
+    "id": "tr_trayt_antalya",
+    "name": "Antalya",
+    "countryCode": "TR",
+    "aliases": [
+      "Antalya",
+      "Port of Antalya"
+    ]
+  },
+  {
+    "id": "tr_trhay_haydarpasa",
+    "name": "Haydarpasa",
+    "countryCode": "TR",
+    "aliases": [
+      "Haydarpasa",
+      "Istanbul Asian Side"
+    ]
+  },
+  {
+    "id": "ye_yeade_aden",
+    "name": "Aden",
+    "countryCode": "YE",
+    "aliases": [
+      "Aden",
+      "Port of Aden"
+    ]
+  },
+  {
+    "id": "ye_yehod_hodeidah",
+    "name": "Hodeidah",
+    "countryCode": "YE",
+    "aliases": [
+      "Hodeidah",
+      "Hudaydah",
+      "Port of Hodeidah"
+    ]
+  },
+  {
+    "id": "ao_aolad_luanda",
+    "name": "Luanda",
+    "countryCode": "AO",
+    "aliases": [
+      "Luanda",
+      "Port of Luanda"
+    ]
+  },
+  {
+    "id": "ao_aolob_lobito",
+    "name": "Lobito",
+    "countryCode": "AO",
+    "aliases": [
+      "Lobito",
+      "Port of Lobito"
+    ]
+  },
+  {
+    "id": "ao_aomsz_namibe",
+    "name": "Namibe",
+    "countryCode": "AO",
+    "aliases": [
+      "Namibe",
+      "Mossamedes"
+    ]
+  },
+  {
+    "id": "bj_bjcoo_cotonou",
+    "name": "Cotonou",
+    "countryCode": "BJ",
+    "aliases": [
+      "Cotonou",
+      "Port of Cotonou"
+    ]
+  },
+  {
+    "id": "ci_ciabj_abidjan",
+    "name": "Abidjan",
+    "countryCode": "CI",
+    "aliases": [
+      "Abidjan",
+      "Port of Abidjan",
+      "Port Autonome d'Abidjan"
+    ]
+  },
+  {
+    "id": "ci_cispy_san_pedro",
+    "name": "San Pedro",
+    "countryCode": "CI",
+    "aliases": [
+      "San-Pedro",
+      "Port of San-Pedro"
+    ]
+  },
+  {
+    "id": "cm_cmdla_douala",
+    "name": "Douala",
+    "countryCode": "CM",
+    "aliases": [
+      "Douala",
+      "Port of Douala"
+    ]
+  },
+  {
+    "id": "cm_cmkbi_kribi",
+    "name": "Kribi",
+    "countryCode": "CM",
+    "aliases": [
+      "Kribi",
+      "Port of Kribi"
+    ]
+  },
+  {
+    "id": "dj_djpod_djibouti",
+    "name": "Djibouti",
+    "countryCode": "DJ",
+    "aliases": [
+      "Djibouti",
+      "Port of Djibouti",
+      "Doraleh"
+    ]
+  },
+  {
+    "id": "dz_dzalg_algiers",
+    "name": "Algiers",
+    "countryCode": "DZ",
+    "aliases": [
+      "Algiers",
+      "Alger",
+      "Port of Algiers"
+    ]
+  },
+  {
+    "id": "dz_dzorn_oran",
+    "name": "Oran",
+    "countryCode": "DZ",
+    "aliases": [
+      "Oran",
+      "Port of Oran"
+    ]
+  },
+  {
+    "id": "eg_egaly_alexandria",
+    "name": "Alexandria",
+    "countryCode": "EG",
+    "aliases": [
+      "Alexandria",
+      "El Iskandariya",
+      "Port of Alexandria"
+    ]
+  },
+  {
+    "id": "eg_egpsd_port_said",
+    "name": "Port Said",
+    "countryCode": "EG",
+    "aliases": [
+      "Port Said",
+      "Port Said East",
+      "Port Said West"
+    ]
+  },
+  {
+    "id": "eg_egdam_damietta",
+    "name": "Damietta",
+    "countryCode": "EG",
+    "aliases": [
+      "Damietta",
+      "Dumyat"
+    ]
+  },
+  {
+    "id": "eg_egsuz_suez",
+    "name": "Suez",
+    "countryCode": "EG",
+    "aliases": [
+      "Suez",
+      "Port of Suez"
+    ]
+  },
+  {
+    "id": "eg_egsok_sokhna",
+    "name": "Sokhna",
+    "countryCode": "EG",
+    "aliases": [
+      "Sokhna",
+      "Ain Sukhna",
+      "Port of Sokhna"
+    ]
+  },
+  {
+    "id": "ga_galbv_libreville",
+    "name": "Libreville",
+    "countryCode": "GA",
+    "aliases": [
+      "Libreville",
+      "Port of Libreville"
+    ]
+  },
+  {
+    "id": "gh_ghtem_tema",
+    "name": "Tema",
+    "countryCode": "GH",
+    "aliases": [
+      "Tema",
+      "Port of Tema"
+    ]
+  },
+  {
+    "id": "gh_ghtkd_takoradi",
+    "name": "Takoradi",
+    "countryCode": "GH",
+    "aliases": [
+      "Takoradi",
+      "Port of Takoradi"
+    ]
+  },
+  {
+    "id": "ke_kemba_mombasa",
+    "name": "Mombasa",
+    "countryCode": "KE",
+    "aliases": [
+      "Mombasa",
+      "Port of Mombasa"
+    ]
+  },
+  {
+    "id": "ly_lytip_tripoli",
+    "name": "Tripoli",
+    "countryCode": "LY",
+    "aliases": [
+      "Tripoli",
+      "Port of Tripoli"
+    ]
+  },
+  {
+    "id": "ly_lyben_benghazi",
+    "name": "Benghazi",
+    "countryCode": "LY",
+    "aliases": [
+      "Benghazi",
+      "Bingazi",
+      "Port of Benghazi"
+    ]
+  },
+  {
+    "id": "ma_maptm_tanger_med",
+    "name": "Tanger Med",
+    "countryCode": "MA",
+    "aliases": [
+      "Tanger Med",
+      "Tangier Med",
+      "Port Tanger Méditerranée"
+    ]
+  },
+  {
+    "id": "ma_macas_casablanca",
+    "name": "Casablanca",
+    "countryCode": "MA",
+    "aliases": [
+      "Casablanca",
+      "Port of Casablanca"
+    ]
+  },
+  {
+    "id": "ma_maaga_agadir",
+    "name": "Agadir",
+    "countryCode": "MA",
+    "aliases": [
+      "Agadir",
+      "Port of Agadir"
+    ]
+  },
+  {
+    "id": "ma_matng_tangier",
+    "name": "Tangier",
+    "countryCode": "MA",
+    "aliases": [
+      "Tangier",
+      "Tanger"
+    ]
+  },
+  {
+    "id": "ma_mandr_nador",
+    "name": "Nador",
+    "countryCode": "MA",
+    "aliases": [
+      "Nador",
+      "Beni Ansar"
+    ]
+  },
+  {
+    "id": "mg_mgtmm_toamasina",
+    "name": "Toamasina",
+    "countryCode": "MG",
+    "aliases": [
+      "Toamasina",
+      "Tamatave",
+      "Port of Toamasina"
+    ]
+  },
+  {
+    "id": "mg_mgdie_antsiranana",
+    "name": "Antsiranana",
+    "countryCode": "MG",
+    "aliases": [
+      "Antsiranana",
+      "Diego Suarez"
+    ]
+  },
+  {
+    "id": "mu_muplu_port_louis",
+    "name": "Port Louis",
+    "countryCode": "MU",
+    "aliases": [
+      "Port Louis",
+      "Port of Port Louis",
+      "Mauritius"
+    ]
+  },
+  {
+    "id": "mz_mzmpm_maputo",
+    "name": "Maputo",
+    "countryCode": "MZ",
+    "aliases": [
+      "Maputo",
+      "Port of Maputo"
+    ]
+  },
+  {
+    "id": "mz_mzbew_beira",
+    "name": "Beira",
+    "countryCode": "MZ",
+    "aliases": [
+      "Beira",
+      "Port of Beira"
+    ]
+  },
+  {
+    "id": "mz_mzmnc_nacala",
+    "name": "Nacala",
+    "countryCode": "MZ",
+    "aliases": [
+      "Nacala",
+      "Port of Nacala"
+    ]
+  },
+  {
+    "id": "ng_nglos_lagos",
+    "name": "Lagos",
+    "countryCode": "NG",
+    "aliases": [
+      "Lagos",
+      "Apapa",
+      "Tin Can Island"
+    ]
+  },
+  {
+    "id": "ng_ngonn_onne",
+    "name": "Onne",
+    "countryCode": "NG",
+    "aliases": [
+      "Onne",
+      "Port of Onne"
+    ]
+  },
+  {
+    "id": "ng_ngphc_port_harcourt",
+    "name": "Port Harcourt",
+    "countryCode": "NG",
+    "aliases": [
+      "Port Harcourt",
+      "PHC"
+    ]
+  },
+  {
+    "id": "ng_ngwar_warri",
+    "name": "Warri",
+    "countryCode": "NG",
+    "aliases": [
+      "Warri",
+      "Port of Warri"
+    ]
+  },
+  {
+    "id": "sn_sndkr_dakar",
+    "name": "Dakar",
+    "countryCode": "SN",
+    "aliases": [
+      "Dakar",
+      "Port of Dakar"
+    ]
+  },
+  {
+    "id": "tg_tglfw_lome",
+    "name": "Lome",
+    "countryCode": "TG",
+    "aliases": [
+      "Lome",
+      "Lomé",
+      "Port of Lome"
+    ]
+  },
+  {
+    "id": "tn_tntun_tunis",
+    "name": "Tunis",
+    "countryCode": "TN",
+    "aliases": [
+      "Tunis",
+      "Port of Tunis",
+      "Rades"
+    ]
+  },
+  {
+    "id": "tn_tnsfa_sfax",
+    "name": "Sfax",
+    "countryCode": "TN",
+    "aliases": [
+      "Sfax",
+      "Port of Sfax"
+    ]
+  },
+  {
+    "id": "tn_tnbiz_bizerte",
+    "name": "Bizerte",
+    "countryCode": "TN",
+    "aliases": [
+      "Bizerte",
+      "Port of Bizerte"
+    ]
+  },
+  {
+    "id": "tn_tnsus_sousse",
+    "name": "Sousse",
+    "countryCode": "TN",
+    "aliases": [
+      "Sousse",
+      "Port of Sousse"
+    ]
+  },
+  {
+    "id": "tz_tzdar_dar_es_salaam",
+    "name": "Dar es Salaam",
+    "countryCode": "TZ",
+    "aliases": [
+      "Dar es Salaam",
+      "DSM",
+      "Port of Dar es Salaam"
+    ]
+  },
+  {
+    "id": "tz_tztgt_tanga",
+    "name": "Tanga",
+    "countryCode": "TZ",
+    "aliases": [
+      "Tanga",
+      "Port of Tanga"
+    ]
+  },
+  {
+    "id": "tz_tzznz_zanzibar",
+    "name": "Zanzibar",
+    "countryCode": "TZ",
+    "aliases": [
+      "Zanzibar",
+      "Zanzibar Port"
+    ]
+  },
+  {
+    "id": "za_zadur_durban",
+    "name": "Durban",
+    "countryCode": "ZA",
+    "aliases": [
+      "Durban",
+      "Port of Durban"
+    ]
+  },
+  {
+    "id": "za_zacpt_cape_town",
+    "name": "Cape Town",
+    "countryCode": "ZA",
+    "aliases": [
+      "Cape Town",
+      "Port of Cape Town"
+    ]
+  },
+  {
+    "id": "za_zarcb_richards_bay",
+    "name": "Richards Bay",
+    "countryCode": "ZA",
+    "aliases": [
+      "Richards Bay",
+      "Port of Richards Bay"
+    ]
+  },
+  {
+    "id": "za_zaplz_port_elizabeth",
+    "name": "Port Elizabeth",
+    "countryCode": "ZA",
+    "aliases": [
+      "Port Elizabeth",
+      "Gqeberha",
+      "Port of Ngqura"
+    ]
+  },
+  {
+    "id": "za_zaels_east_london",
+    "name": "East London",
+    "countryCode": "ZA",
+    "aliases": [
+      "East London",
+      "Port of East London"
+    ]
+  },
+  {
+    "id": "au_aumel_melbourne",
+    "name": "Melbourne",
+    "countryCode": "AU",
+    "aliases": [
+      "Melbourne",
+      "Port of Melbourne"
+    ]
+  },
+  {
+    "id": "au_ausyd_sydney",
+    "name": "Sydney",
+    "countryCode": "AU",
+    "aliases": [
+      "Sydney",
+      "Port of Sydney",
+      "Botany Bay"
+    ]
+  },
+  {
+    "id": "au_aubne_brisbane",
+    "name": "Brisbane",
+    "countryCode": "AU",
+    "aliases": [
+      "Brisbane",
+      "Port of Brisbane"
+    ]
+  },
+  {
+    "id": "au_aufre_fremantle",
+    "name": "Fremantle",
+    "countryCode": "AU",
+    "aliases": [
+      "Fremantle",
+      "Perth",
+      "Port of Fremantle"
+    ]
+  },
+  {
+    "id": "au_auadl_adelaide",
+    "name": "Adelaide",
+    "countryCode": "AU",
+    "aliases": [
+      "Adelaide",
+      "Port Adelaide"
+    ]
+  },
+  {
+    "id": "au_audrw_darwin",
+    "name": "Darwin",
+    "countryCode": "AU",
+    "aliases": [
+      "Darwin",
+      "Port of Darwin"
+    ]
+  },
+  {
+    "id": "au_auphe_port_hedland",
+    "name": "Port Hedland",
+    "countryCode": "AU",
+    "aliases": [
+      "Port Hedland",
+      "Port Hedland Port Authority"
+    ]
+  },
+  {
+    "id": "au_auntl_newcastle",
+    "name": "Newcastle",
+    "countryCode": "AU",
+    "aliases": [
+      "Newcastle NSW",
+      "Port of Newcastle"
+    ]
+  },
+  {
+    "id": "au_auglt_gladstone",
+    "name": "Gladstone",
+    "countryCode": "AU",
+    "aliases": [
+      "Gladstone",
+      "Port of Gladstone"
+    ]
+  },
+  {
+    "id": "au_autsv_townsville",
+    "name": "Townsville",
+    "countryCode": "AU",
+    "aliases": [
+      "Townsville",
+      "Port of Townsville"
+    ]
+  },
+  {
+    "id": "au_audam_dampier",
+    "name": "Dampier",
+    "countryCode": "AU",
+    "aliases": [
+      "Dampier",
+      "Port of Dampier"
+    ]
+  },
+  {
+    "id": "au_aupkl_port_kembla",
+    "name": "Port Kembla",
+    "countryCode": "AU",
+    "aliases": [
+      "Port Kembla",
+      "Wollongong"
+    ]
+  },
+  {
+    "id": "au_aumky_mackay",
+    "name": "Mackay",
+    "countryCode": "AU",
+    "aliases": [
+      "Mackay",
+      "Port of Mackay"
+    ]
+  },
+  {
+    "id": "au_augex_geelong",
+    "name": "Geelong",
+    "countryCode": "AU",
+    "aliases": [
+      "Geelong",
+      "Port of Geelong"
+    ]
+  },
+  {
+    "id": "au_auhpt_hay_point",
+    "name": "Hay Point",
+    "countryCode": "AU",
+    "aliases": [
+      "Hay Point",
+      "Dalrymple Bay"
+    ]
+  },
+  {
+    "id": "au_aubwt_burnie",
+    "name": "Burnie",
+    "countryCode": "AU",
+    "aliases": [
+      "Burnie",
+      "Port of Burnie",
+      "Tasmania"
+    ]
+  },
+  {
+    "id": "au_aubel_bell_bay",
+    "name": "Bell Bay",
+    "countryCode": "AU",
+    "aliases": [
+      "Bell Bay",
+      "Port of Bell Bay",
+      "Launceston"
+    ]
+  },
+  {
+    "id": "au_aubtb_botany_bay",
+    "name": "Botany Bay",
+    "countryCode": "AU",
+    "aliases": [
+      "Botany Bay",
+      "Port Botany"
+    ]
+  },
+  {
+    "id": "fj_fjsuv_suva",
+    "name": "Suva",
+    "countryCode": "FJ",
+    "aliases": [
+      "Suva",
+      "Port of Suva",
+      "Fiji"
+    ]
+  },
+  {
+    "id": "fj_fjltk_lautoka",
+    "name": "Lautoka",
+    "countryCode": "FJ",
+    "aliases": [
+      "Lautoka",
+      "Port of Lautoka"
+    ]
+  },
+  {
+    "id": "nc_ncnou_noumea",
+    "name": "Noumea",
+    "countryCode": "NC",
+    "aliases": [
+      "Noumea",
+      "Port of Noumea",
+      "New Caledonia"
+    ]
+  },
+  {
+    "id": "nz_nzakl_auckland",
+    "name": "Auckland",
+    "countryCode": "NZ",
+    "aliases": [
+      "Auckland",
+      "Port of Auckland",
+      "Ports of Auckland"
+    ]
+  },
+  {
+    "id": "nz_nztrg_tauranga",
+    "name": "Tauranga",
+    "countryCode": "NZ",
+    "aliases": [
+      "Tauranga",
+      "Port of Tauranga"
+    ]
+  },
+  {
+    "id": "nz_nzlyt_lyttelton",
+    "name": "Lyttelton",
+    "countryCode": "NZ",
+    "aliases": [
+      "Lyttelton",
+      "Christchurch",
+      "Port of Lyttelton"
+    ]
+  },
+  {
+    "id": "nz_nzwlg_wellington",
+    "name": "Wellington",
+    "countryCode": "NZ",
+    "aliases": [
+      "Wellington",
+      "Port of Wellington",
+      "CentrePort"
+    ]
+  },
+  {
+    "id": "nz_nznpe_napier",
+    "name": "Napier",
+    "countryCode": "NZ",
+    "aliases": [
+      "Napier",
+      "Port of Napier"
+    ]
+  },
+  {
+    "id": "pg_pgpom_port_moresby",
+    "name": "Port Moresby",
+    "countryCode": "PG",
+    "aliases": [
+      "Port Moresby",
+      "Papua New Guinea"
+    ]
+  },
+  {
+    "id": "pg_pglae_lae",
+    "name": "Lae",
+    "countryCode": "PG",
+    "aliases": [
+      "Lae",
+      "Port of Lae"
+    ]
+  },
+  {
+    "id": "pg_pgrab_rabaul",
+    "name": "Rabaul",
+    "countryCode": "PG",
+    "aliases": [
+      "Rabaul",
+      "Port of Rabaul"
+    ]
+  },
+  {
+    "id": "ec_ecgye_guayaquil",
+    "name": "Guayaquil",
+    "countryCode": "EC",
+    "aliases": [
+      "Guayaquil",
+      "Port of Guayaquil"
+    ]
+  },
+  {
+    "id": "ec_ecmec_manta",
+    "name": "Manta",
+    "countryCode": "EC",
+    "aliases": [
+      "Manta",
+      "Puerto Manta"
+    ]
+  },
+  {
+    "id": "ec_ecesm_esmeraldas",
+    "name": "Esmeraldas",
+    "countryCode": "EC",
+    "aliases": [
+      "Esmeraldas"
+    ]
+  },
+  {
+    "id": "ge_gebus_batumi",
+    "name": "Batumi",
+    "countryCode": "GE",
+    "aliases": [
+      "Batumi",
+      "Port of Batumi"
+    ]
+  },
+  {
+    "id": "ge_gepti_poti",
+    "name": "Poti",
+    "countryCode": "GE",
+    "aliases": [
+      "Poti",
+      "Port of Poti"
+    ]
+  },
+  {
+    "id": "lb_lbbey_beirut",
+    "name": "Beirut",
+    "countryCode": "LB",
+    "aliases": [
+      "Beirut",
+      "Port of Beirut"
+    ]
+  },
+  {
+    "id": "sc_scvic_victoria",
+    "name": "Victoria",
+    "countryCode": "SC",
+    "aliases": [
+      "Victoria",
+      "Mahe",
+      "Port Victoria",
+      "Seychelles"
+    ]
+  },
+  {
+    "id": "sk_skbts_bratislava",
+    "name": "Bratislava",
+    "countryCode": "SK",
+    "aliases": [
+      "Bratislava",
+      "Danube",
+      "Slovakia river port"
+    ]
+  },
+  {
+    "id": "uy_uymvd_montevideo",
+    "name": "Montevideo",
+    "countryCode": "UY",
+    "aliases": [
+      "Montevideo",
+      "Port of Montevideo"
+    ]
+  },
+  {
+    "id": "ve_vepbl_puerto_cabello",
+    "name": "Puerto Cabello",
+    "countryCode": "VE",
+    "aliases": [
+      "Puerto Cabello",
+      "Port of Puerto Cabello"
+    ]
+  },
+  {
+    "id": "ve_vemar_maracaibo",
+    "name": "Maracaibo",
+    "countryCode": "VE",
+    "aliases": [
+      "Maracaibo",
+      "Port of Maracaibo"
+    ]
+  },
+  {
+    "id": "ve_velag_la_guaira",
+    "name": "La Guaira",
+    "countryCode": "VE",
+    "aliases": [
+      "La Guaira",
+      "Puerto La Guaira"
+    ]
+  }
+]

@@ -88,11 +88,11 @@ export function classifyGrade(score: number): ReadinessGrade {
 
 export function gradeColor(grade: ReadinessGrade): string {
   const colors: Record<ReadinessGrade, string> = {
-    A: '#10B981',
-    B: '#2563EB',
-    C: '#F59E0B',
-    D: '#EF4444',
-    F: '#991B1B',
+    A: 'var(--success)',
+    B: 'var(--info)',
+    C: 'var(--warning)',
+    D: 'var(--warning-strong)',
+    F: 'var(--danger)',
   };
   return colors[grade];
 }
