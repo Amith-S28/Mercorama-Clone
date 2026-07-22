@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Mercator } from '@visx/geo';
 import { Zoom } from '@visx/zoom';
@@ -59,8 +59,23 @@ export function EdcCountryRiskMap({
 }: EdcCountryRiskMapProps) {
   const [worldData, setWorldData] = useState<FeatureCollection | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const mapHeight = Math.max(150, height - 70);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -150,7 +165,11 @@ export function EdcCountryRiskMap({
         >
           {(zoom) => (
             <GlowBorder className="w-full">
-              <div style={{ position: 'relative', width: '100%', height: mapHeight, overflow: 'hidden', cursor: zoom.isDragging ? 'grabbing' : 'grab', borderRadius: '18px' }}>
+              <div
+                ref={containerRef}
+                data-lenis-prevent
+                style={{ position: 'relative', width: '100%', height: mapHeight, overflow: 'hidden', cursor: zoom.isDragging ? 'grabbing' : 'grab', borderRadius: '18px', touchAction: 'none' }}
+              >
               <svg
                 width="100%"
                 height={mapHeight}

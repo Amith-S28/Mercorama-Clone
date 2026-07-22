@@ -67,7 +67,7 @@ export function LogisticsTrackerMap({ countryIso3 }: LogisticsTrackerMapProps) {
         </div>
       </div>
 
-      <div style={{ position: 'relative', width: '100%', flex: 1, minHeight: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+      <div data-lenis-prevent style={{ position: 'relative', width: '100%', flex: 1, minHeight: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
         {mode === 'sea' ? (
           <iframe
             src={`https://www.marinetraffic.com/en/ais/embed/zoom:${coords.zoom}/centery:${coords.lat}/centerx:${coords.lon}/maptype:1/shownames:false/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:`}
