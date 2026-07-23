@@ -1,10 +1,14 @@
 {
-  "batchCount": 3500,
-  "totalBatches": 3500,
+  "batchCount": 7000,
+  "totalBatches": 7000,
   "progressPct": 100,
+  "progressBar": "[██████████████████████████████] 100.0%",
   "currentReporter": "COMPLETE",
   "currentHsGroup": "ALL",
   "currentYear": "2025",
-  "totalRecords": 5000,
-  "lastUpdated": "2026-07-22T22:43:57.134Z"
+  "totalRecords": 2978294,
+  "countriesCompleted": 50,
+  "totalCountries": 50,
+  "mode": "Public Preview",
+  "lastUpdated": "2026-07-23T14:31:18.587Z"
 }

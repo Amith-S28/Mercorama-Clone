@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large unpartitioned datasets (>100MB)
+src/data/official_global_trade_2019_2025.csv
+src/data/official_hs_trade_by_country.csv
+
