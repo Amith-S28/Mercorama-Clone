@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { ReactNode } from 'react';
-import { motion } from 'motion/react';
-import { snappy } from '@/lib/animation/presets';
+import { ReactNode } from "react";
+import { motion } from "motion/react";
+import { snappy } from "@/lib/animation/presets";
 
 interface GlowBorderProps {
   children: ReactNode;
@@ -10,7 +10,11 @@ interface GlowBorderProps {
   className?: string;
 }
 
-export function GlowBorder({ children, active = false, className = '' }: GlowBorderProps) {
+export function GlowBorder({
+  children,
+  active = false,
+  className = "",
+}: GlowBorderProps) {
   return (
     <motion.div
       className={`relative ${className}`}
@@ -33,13 +37,14 @@ export function GlowBorder({ children, active = false, className = '' }: GlowBor
         }}
         transition={{ duration: 0.3 }}
       >
-        <div 
-          className="w-full h-full rounded-[18px]" 
-          style={{ 
-            background: 'linear-gradient(45deg, var(--accent-vivid), var(--accent), var(--info))',
-            backgroundSize: '200% 200%',
-            animation: 'shimmer 3s linear infinite'
-          }} 
+        <div
+          className="w-full h-full rounded-[18px]"
+          style={{
+            background:
+              "linear-gradient(45deg, var(--accent-vivid), var(--accent), var(--info))",
+            backgroundSize: "200% 200%",
+            animation: "shimmer 3s linear infinite",
+          }}
         />
       </motion.div>
     </motion.div>

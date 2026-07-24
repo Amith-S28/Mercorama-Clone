@@ -1,4 +1,4 @@
-import type { SupabaseClient } from '@supabase/supabase-js';
+import type { SupabaseClient } from "@supabase/supabase-js";
 import type {
   AdvisorNote,
   ApiServiceHealth,
@@ -12,14 +12,14 @@ import type {
   RoadmapItem,
   SanctionsScreeningResult,
   SmeRecord,
-} from '@/types';
+} from "@/types";
 
 type SmeRow = {
   id: string;
   advisor_id: string;
   name: string;
   province: string;
-  industry: SmeRecord['industry'];
+  industry: SmeRecord["industry"];
   product_description: string;
   hs_code: string;
   export_quantity: number;
@@ -65,10 +65,10 @@ function mapSme(row: SmeRow): SmeRecord {
 export async function createSme(
   client: SupabaseClient,
   advisorId: string,
-  input: Omit<SmeRecord, 'id' | 'advisorId' | 'createdAt'>
+  input: Omit<SmeRecord, "id" | "advisorId" | "createdAt">,
 ): Promise<SmeRecord> {
   const { data, error } = await client
-    .from('client_smes')
+    .from("client_smes")
     .insert({
       advisor_id: advisorId,
       name: input.name,
@@ -89,7 +89,7 @@ export async function createSme(
       target_country: input.targetCountry,
       target_country_name: input.targetCountryName,
     })
-    .select('*')
+    .select("*")
     .single();
 
   if (error) throw error;
@@ -98,22 +98,26 @@ export async function createSme(
 
 export async function getSmeById(
   client: SupabaseClient,
-  id: string
+  id: string,
 ): Promise<SmeRecord | null> {
-  const { data, error } = await client.from('client_smes').select('*').eq('id', id).maybeSingle();
+  const { data, error } = await client
+    .from("client_smes")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
   if (error) throw error;
   return data ? mapSme(data as SmeRow) : null;
 }
 
 export async function listSmesForAdvisor(
   client: SupabaseClient,
-  advisorId: string
+  advisorId: string,
 ): Promise<SmeRecord[]> {
   const { data, error } = await client
-    .from('client_smes')
-    .select('*')
-    .eq('advisor_id', advisorId)
-    .order('created_at', { ascending: false });
+    .from("client_smes")
+    .select("*")
+    .eq("advisor_id", advisorId)
+    .order("created_at", { ascending: false });
   if (error) throw error;
   return ((data ?? []) as SmeRow[]).map(mapSme);
 }
@@ -123,15 +127,15 @@ export async function createAssessment(
   input: {
     smeId: string;
     overallScore: number;
-    grade: AssessmentRecord['grade'];
+    grade: AssessmentRecord["grade"];
     pillarScores: Record<PillarKey, number>;
     answers: Record<string, OptionKey>;
     selectedQuestions: string[];
-    aiReport?: AssessmentRecord['aiReport'];
-  }
+    aiReport?: AssessmentRecord["aiReport"];
+  },
 ): Promise<AssessmentRecord> {
   const { data, error } = await client
-    .from('client_readiness_assessments')
+    .from("client_readiness_assessments")
     .insert({
       sme_id: input.smeId,
       overall_score: input.overallScore,
@@ -141,18 +145,18 @@ export async function createAssessment(
       selected_questions: input.selectedQuestions,
       ai_report: input.aiReport ?? null,
     })
-    .select('*')
+    .select("*")
     .single();
   if (error) throw error;
   const row = data as {
     id: string;
     sme_id: string;
     overall_score: number;
-    grade: AssessmentRecord['grade'];
+    grade: AssessmentRecord["grade"];
     pillar_scores: Record<PillarKey, number>;
     answers: Record<string, OptionKey>;
     selected_questions: string[];
-    ai_report: AssessmentRecord['aiReport'];
+    ai_report: AssessmentRecord["aiReport"];
     created_at: string;
   };
   return {
@@ -170,13 +174,13 @@ export async function createAssessment(
 
 export async function getAssessmentBySmeId(
   client: SupabaseClient,
-  smeId: string
+  smeId: string,
 ): Promise<AssessmentRecord | null> {
   const { data, error } = await client
-    .from('client_readiness_assessments')
-    .select('*')
-    .eq('sme_id', smeId)
-    .order('created_at', { ascending: false })
+    .from("client_readiness_assessments")
+    .select("*")
+    .eq("sme_id", smeId)
+    .order("created_at", { ascending: false })
     .limit(1)
     .maybeSingle();
   if (error) throw error;
@@ -185,11 +189,11 @@ export async function getAssessmentBySmeId(
     id: string;
     sme_id: string;
     overall_score: number;
-    grade: AssessmentRecord['grade'];
+    grade: AssessmentRecord["grade"];
     pillar_scores: Record<PillarKey, number>;
     answers: Record<string, OptionKey>;
     selected_questions: string[];
-    ai_report: AssessmentRecord['aiReport'];
+    ai_report: AssessmentRecord["aiReport"];
     created_at: string;
   };
   return {
@@ -207,9 +211,9 @@ export async function getAssessmentBySmeId(
 
 export async function upsertMarketDataCache(
   client: SupabaseClient,
-  snapshot: Omit<MarketDataSnapshot, 'dataOrigin'>
+  snapshot: Omit<MarketDataSnapshot, "dataOrigin">,
 ): Promise<void> {
-  const { error } = await client.from('market_data_cache').upsert({
+  const { error } = await client.from("market_data_cache").upsert({
     hs_code: snapshot.hsCode,
     country: snapshot.country,
     source: snapshot.source,
@@ -224,14 +228,14 @@ export async function getMarketDataCache(
   client: SupabaseClient,
   hsCode: string,
   country: string,
-  source: string
+  source: string,
 ): Promise<MarketDataSnapshot | null> {
   const { data, error } = await client
-    .from('market_data_cache')
-    .select('*')
-    .eq('hs_code', hsCode)
-    .eq('country', country)
-    .eq('source', source)
+    .from("market_data_cache")
+    .select("*")
+    .eq("hs_code", hsCode)
+    .eq("country", country)
+    .eq("source", source)
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
@@ -250,16 +254,16 @@ export async function getMarketDataCache(
     payload: row.payload,
     lastSyncedAt: row.last_synced_at,
     ttlSeconds: row.ttl_seconds,
-    dataOrigin: 'cache',
+    dataOrigin: "cache",
   };
 }
 
 export async function logSanctionsScreening(
   client: SupabaseClient,
   advisorId: string,
-  result: SanctionsScreeningResult
+  result: SanctionsScreeningResult,
 ): Promise<void> {
-  const { error } = await client.from('sanctions_screening_log').insert({
+  const { error } = await client.from("sanctions_screening_log").insert({
     advisor_id: advisorId,
     input_query: result.inputQuery,
     matched_entries: result.matchedEntries,
@@ -272,9 +276,9 @@ export async function logSanctionsScreening(
 
 export async function upsertFxRate(
   client: SupabaseClient,
-  record: FxRateRecord
+  record: FxRateRecord,
 ): Promise<void> {
-  const { error } = await client.from('fx_rate_cache').upsert({
+  const { error } = await client.from("fx_rate_cache").upsert({
     base_currency: record.baseCurrency,
     target_currency: record.targetCurrency,
     rate: record.rate,
@@ -288,13 +292,13 @@ export async function upsertFxRate(
 export async function getFxRate(
   client: SupabaseClient,
   base: string,
-  target: string
+  target: string,
 ): Promise<FxRateRecord | null> {
   const { data, error } = await client
-    .from('fx_rate_cache')
-    .select('*')
-    .eq('base_currency', base)
-    .eq('target_currency', target)
+    .from("fx_rate_cache")
+    .select("*")
+    .eq("base_currency", base)
+    .eq("target_currency", target)
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
@@ -318,10 +322,10 @@ export async function getFxRate(
 
 export async function createAdvisorNote(
   client: SupabaseClient,
-  note: Omit<AdvisorNote, 'id' | 'updatedAt'>
+  note: Omit<AdvisorNote, "id" | "updatedAt">,
 ): Promise<AdvisorNote> {
   const { data, error } = await client
-    .from('advisor_notes')
+    .from("advisor_notes")
     .upsert({
       assessment_id: note.assessmentId,
       advisor_id: note.advisorId,
@@ -329,7 +333,7 @@ export async function createAdvisorNote(
       content: note.content,
       updated_at: new Date().toISOString(),
     })
-    .select('*')
+    .select("*")
     .single();
   if (error) throw error;
   const row = data as {
@@ -352,21 +356,23 @@ export async function createAdvisorNote(
 
 export async function getNotesForAssessment(
   client: SupabaseClient,
-  assessmentId: string
+  assessmentId: string,
 ): Promise<AdvisorNote[]> {
   const { data, error } = await client
-    .from('advisor_notes')
-    .select('*')
-    .eq('assessment_id', assessmentId);
+    .from("advisor_notes")
+    .select("*")
+    .eq("assessment_id", assessmentId);
   if (error) throw error;
-  return ((data ?? []) as Array<{
-    id: string;
-    assessment_id: string;
-    advisor_id: string;
-    pillar: string;
-    content: string;
-    updated_at: string;
-  }>).map((row) => ({
+  return (
+    (data ?? []) as Array<{
+      id: string;
+      assessment_id: string;
+      advisor_id: string;
+      pillar: string;
+      content: string;
+      updated_at: string;
+    }>
+  ).map((row) => ({
     id: row.id,
     assessmentId: row.assessment_id,
     advisorId: row.advisor_id,
@@ -378,10 +384,10 @@ export async function getNotesForAssessment(
 
 export async function createRoadmapItem(
   client: SupabaseClient,
-  item: Omit<RoadmapItem, 'id' | 'createdAt'>
+  item: Omit<RoadmapItem, "id" | "createdAt">,
 ): Promise<RoadmapItem> {
   const { data, error } = await client
-    .from('roadmap_items')
+    .from("roadmap_items")
     .insert({
       assessment_id: item.assessmentId,
       advisor_id: item.advisorId,
@@ -390,7 +396,7 @@ export async function createRoadmapItem(
       sort_order: item.sortOrder,
       completed: item.completed,
     })
-    .select('*')
+    .select("*")
     .single();
   if (error) throw error;
   const row = data as {
@@ -418,18 +424,20 @@ export async function createRoadmapItem(
 export async function updateRoadmapItem(
   client: SupabaseClient,
   id: string,
-  patch: Partial<Pick<RoadmapItem, 'task' | 'bucket' | 'sortOrder' | 'completed'>>
+  patch: Partial<
+    Pick<RoadmapItem, "task" | "bucket" | "sortOrder" | "completed">
+  >,
 ): Promise<RoadmapItem> {
   const { data, error } = await client
-    .from('roadmap_items')
+    .from("roadmap_items")
     .update({
       ...(patch.task !== undefined ? { task: patch.task } : {}),
       ...(patch.bucket !== undefined ? { bucket: patch.bucket } : {}),
       ...(patch.sortOrder !== undefined ? { sort_order: patch.sortOrder } : {}),
       ...(patch.completed !== undefined ? { completed: patch.completed } : {}),
     })
-    .eq('id', id)
-    .select('*')
+    .eq("id", id)
+    .select("*")
     .single();
   if (error) throw error;
   const row = data as {
@@ -456,24 +464,26 @@ export async function updateRoadmapItem(
 
 export async function getRoadmapItems(
   client: SupabaseClient,
-  assessmentId: string
+  assessmentId: string,
 ): Promise<RoadmapItem[]> {
   const { data, error } = await client
-    .from('roadmap_items')
-    .select('*')
-    .eq('assessment_id', assessmentId)
-    .order('sort_order', { ascending: true });
+    .from("roadmap_items")
+    .select("*")
+    .eq("assessment_id", assessmentId)
+    .order("sort_order", { ascending: true });
   if (error) throw error;
-  return ((data ?? []) as Array<{
-    id: string;
-    assessment_id: string;
-    advisor_id: string;
-    task: string;
-    bucket: RoadmapBucket;
-    sort_order: number;
-    completed: boolean;
-    created_at: string;
-  }>).map((row) => ({
+  return (
+    (data ?? []) as Array<{
+      id: string;
+      assessment_id: string;
+      advisor_id: string;
+      task: string;
+      bucket: RoadmapBucket;
+      sort_order: number;
+      completed: boolean;
+      created_at: string;
+    }>
+  ).map((row) => ({
     id: row.id,
     assessmentId: row.assessment_id,
     advisorId: row.advisor_id,
@@ -486,19 +496,21 @@ export async function getRoadmapItems(
 }
 
 export async function getApiHealthStatuses(
-  client: SupabaseClient
+  client: SupabaseClient,
 ): Promise<ApiServiceHealth[]> {
-  const { data, error } = await client.from('api_health_status').select('*');
+  const { data, error } = await client.from("api_health_status").select("*");
   if (error) throw error;
-  return ((data ?? []) as Array<{
-    service_id: ApiServiceId;
-    status: ApiServiceHealth['status'];
-    last_checked_at: string | null;
-    last_success_at: string | null;
-    latency_ms: number | null;
-    error: string | null;
-    is_key_configured: boolean;
-  }>).map((row) => ({
+  return (
+    (data ?? []) as Array<{
+      service_id: ApiServiceId;
+      status: ApiServiceHealth["status"];
+      last_checked_at: string | null;
+      last_success_at: string | null;
+      latency_ms: number | null;
+      error: string | null;
+      is_key_configured: boolean;
+    }>
+  ).map((row) => ({
     serviceId: row.service_id,
     status: row.status,
     lastCheckedAt: row.last_checked_at,
@@ -511,9 +523,9 @@ export async function getApiHealthStatuses(
 
 export async function upsertApiHealthStatus(
   client: SupabaseClient,
-  status: ApiServiceHealth
+  status: ApiServiceHealth,
 ): Promise<void> {
-  const { error } = await client.from('api_health_status').upsert({
+  const { error } = await client.from("api_health_status").upsert({
     service_id: status.serviceId,
     status: status.status,
     last_checked_at: status.lastCheckedAt,

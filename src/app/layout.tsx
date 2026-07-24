@@ -1,32 +1,47 @@
-import type { Metadata } from 'next';
-import { JetBrains_Mono, Outfit, Inter } from 'next/font/google';
-import { GrainOverlay } from '@/components/ambient/GrainOverlay';
-import { LenisProvider } from '@/components/ambient/LenisProvider';
-import { GsapRegistrar } from '@/components/ambient/GsapRegistrar';
-import './globals.css';
-import './theme-overrides.css';
+import type { Metadata } from "next";
+import {
+  Playfair_Display,
+  Space_Grotesk,
+  JetBrains_Mono,
+  Questrial,
+} from "next/font/google";
+import { GrainOverlay } from "@/components/ambient/GrainOverlay";
+import { LenisProvider } from "@/components/ambient/LenisProvider";
+import { GsapRegistrar } from "@/components/ambient/GsapRegistrar";
+import "./globals.css";
+import "./theme-overrides.css";
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter-loaded',
-  display: 'swap',
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-loaded",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  variable: '--font-outfit-loaded',
-  display: 'swap',
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk-loaded",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono-loaded',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono-loaded",
+  display: "swap",
+});
+
+const questrial = Questrial({
+  subsets: ["latin"],
+  variable: "--font-questrial-loaded",
+  display: "swap",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  title: 'Trade Agency Sandbox',
-  description: 'Trade readiness sandbox portal for export advisors',
+  title: "MERCORAMA",
+  description:
+    "Trade readiness intelligence platform for global export advisors",
 };
 
 export default function RootLayout({
@@ -51,7 +66,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body
+        className={`${playfairDisplay.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${questrial.variable}`}
+        suppressHydrationWarning
+      >
         <LenisProvider>
           <GsapRegistrar />
           <GrainOverlay />

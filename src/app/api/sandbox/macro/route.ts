@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
-import { withMockFallback } from '@/lib/api-client';
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { withMockFallback } from "@/lib/api-client";
 
 const wbResponseSchema = z.tuple([
   z.object({
@@ -9,25 +9,27 @@ const wbResponseSchema = z.tuple([
     per_page: z.number(),
     total: z.number(),
   }),
-  z.array(
-    z.object({
-      indicator: z.object({ id: z.string(), value: z.string() }),
-      country: z.object({ id: z.string(), value: z.string() }),
-      countryiso3code: z.string(),
-      date: z.string(),
-      value: z.number().nullable(),
-      unit: z.string(),
-      obs_status: z.string(),
-      decimal: z.number(),
-    })
-  ).nullable(),
+  z
+    .array(
+      z.object({
+        indicator: z.object({ id: z.string(), value: z.string() }),
+        country: z.object({ id: z.string(), value: z.string() }),
+        countryiso3code: z.string(),
+        date: z.string(),
+        value: z.number().nullable(),
+        unit: z.string(),
+        obs_status: z.string(),
+        decimal: z.number(),
+      }),
+    )
+    .nullable(),
 ]);
 
 export async function GET(request: NextRequest) {
-  const country = request.nextUrl.searchParams.get('country') ?? 'USA';
+  const country = request.nextUrl.searchParams.get("country") ?? "USA";
 
   const { data, origin } = await withMockFallback(
-    'macro',
+    "macro",
     async () => {
       const gdpUrl = `https://api.worldbank.org/v2/country/${country}/indicator/NY.GDP.MKTP.CD?format=json&per_page=5`;
       const inflationUrl = `https://api.worldbank.org/v2/country/${country}/indicator/FP.CPI.TOTL.ZG?format=json&per_page=5`;
@@ -38,7 +40,7 @@ export async function GET(request: NextRequest) {
       ]);
 
       if (!gdpRes.ok || !inflationRes.ok) {
-        throw new Error('World Bank API failed');
+        throw new Error("World Bank API failed");
       }
 
       const gdpRaw = await gdpRes.json();
@@ -73,7 +75,7 @@ export async function GET(request: NextRequest) {
         gdpYear,
         inflationPct: inflationValue,
         inflationYear,
-        dataOrigin: 'live',
+        dataOrigin: "live",
       };
     },
     () => {
@@ -81,14 +83,14 @@ export async function GET(request: NextRequest) {
       return {
         country,
         gdpUsd: 2000000000000,
-        gdpYear: '2022',
+        gdpYear: "2022",
         inflationPct: 3.5,
-        inflationYear: '2022',
-        dataOrigin: 'mock-fallback',
+        inflationYear: "2022",
+        dataOrigin: "mock-fallback",
       };
     },
-    true // World bank API doesn't need an API key for basic indicators, so we assume it's always configured
+    true, // World bank API doesn't need an API key for basic indicators, so we assume it's always configured
   );
 
-  return NextResponse.json(data, { headers: { 'data-origin': origin } });
+  return NextResponse.json(data, { headers: { "data-origin": origin } });
 }

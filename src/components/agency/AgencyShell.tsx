@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, type ReactNode } from 'react';
-import { AgencySidebar } from '@/components/shared/AgencySidebar';
-import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
+import { useState, type ReactNode } from "react";
+import { AgencySidebar } from "@/components/shared/AgencySidebar";
+import { OnboardingModal } from "@/components/onboarding/OnboardingModal";
 
 export interface AgencyShellProps {
   children: ReactNode;

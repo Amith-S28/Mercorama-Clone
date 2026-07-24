@@ -1,4 +1,4 @@
-import { env } from '@/lib/env';
+import { env } from "@/lib/env";
 
 /**
  * V1 sandbox auth: returns the seeded mock advisor UUID.
@@ -13,7 +13,7 @@ export async function getAdvisorId(): Promise<string> {
 }
 
 export async function getAuthenticatedAdvisorId(
-  getUser: () => Promise<{ id: string } | null>
+  getUser: () => Promise<{ id: string } | null>,
 ): Promise<string> {
   const user = await getUser();
   if (user?.id) return user.id;

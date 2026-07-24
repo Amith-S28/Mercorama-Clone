@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { checkApiHealth } from '@/lib/health-check';
+import { NextResponse } from "next/server";
+import { checkApiHealth } from "@/lib/health-check";
 
 export async function GET() {
   const services = await checkApiHealth();

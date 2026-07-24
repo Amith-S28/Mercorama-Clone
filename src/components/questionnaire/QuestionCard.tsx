@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import type { OptionKey, Question } from '@/types';
-import { cn } from '@/lib/utils';
-import { buttonSpring } from '@/lib/animation/presets';
+import { motion } from "motion/react";
+import type { OptionKey, Question } from "@/types";
+import { cn } from "@/lib/utils";
+import { buttonSpring } from "@/lib/animation/presets";
 
 export interface QuestionCardProps {
   question: Question;
@@ -14,10 +14,10 @@ export interface QuestionCardProps {
 }
 
 const OPTION_LABELS: Record<OptionKey, string> = {
-  A: 'A',
-  B: 'B',
-  C: 'C',
-  D: 'D',
+  A: "A",
+  B: "B",
+  C: "C",
+  D: "D",
 };
 
 export function QuestionCard({
@@ -38,7 +38,9 @@ export function QuestionCard({
         </h3>
         {question.trap && (
           <p className="mt-2 text-xs text-[var(--text-muted)]">
-            <span className="font-semibold text-[var(--accent-warning)]">Advisory trap: </span>
+            <span className="font-semibold text-[var(--accent-warning)]">
+              Advisory trap:{" "}
+            </span>
             {question.trap}
           </p>
         )}
@@ -56,33 +58,41 @@ export function QuestionCard({
               disabled={disabled}
               onClick={() => onSelect(option.key)}
               className={cn(
-                'flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-3 py-3 text-left transition-colors',
+                "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-3 py-3 text-left transition-colors",
                 isSelected
-                  ? 'border-[var(--accent-premium)] bg-[color-mix(in_srgb,var(--accent-premium)_12%,transparent)]'
-                  : 'border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] hover:border-[var(--border-medium-contrast)]',
-                disabled && 'cursor-not-allowed opacity-60'
+                  ? "border-[var(--accent-premium)] bg-[color-mix(in_srgb,var(--accent-premium)_12%,transparent)]"
+                  : "border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] hover:border-[var(--border-medium-contrast)]",
+                disabled && "cursor-not-allowed opacity-60",
               )}
-              whileHover={disabled ? undefined : { scale: 1.01, borderColor: 'var(--accent-premium)' }}
+              whileHover={
+                disabled
+                  ? undefined
+                  : { scale: 1.01, borderColor: "var(--accent-premium)" }
+              }
               whileTap={disabled ? undefined : { scale: 0.99 }}
               transition={buttonSpring.transition}
             >
               <span
                 className={cn(
-                  'flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold',
+                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold",
                   isSelected
-                    ? 'border-[var(--accent-premium)] bg-[var(--accent-premium)] text-[var(--bg-primary)]'
-                    : 'border-[var(--border-medium-contrast)] text-[var(--text-secondary)]'
+                    ? "border-[var(--accent-premium)] bg-[var(--accent-premium)] text-[var(--bg-primary)]"
+                    : "border-[var(--border-medium-contrast)] text-[var(--text-secondary)]",
                 )}
               >
                 {OPTION_LABELS[option.key]}
               </span>
-              <span className="text-sm leading-relaxed text-[var(--text-primary)]">{option.text}</span>
+              <span className="text-sm leading-relaxed text-[var(--text-primary)]">
+                {option.text}
+              </span>
             </motion.button>
           );
         })}
       </div>
 
-      <p className="text-[10px] text-[var(--text-muted)]">Source: {question.source}</p>
+      <p className="text-[10px] text-[var(--text-muted)]">
+        Source: {question.source}
+      </p>
     </article>
   );
 }

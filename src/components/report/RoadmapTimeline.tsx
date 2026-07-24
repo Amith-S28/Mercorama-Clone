@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from "react";
 import {
   DndContext,
   DragOverlay,
@@ -10,27 +10,34 @@ import {
   useSensors,
   type DragEndEvent,
   type DragStartEvent,
-} from '@dnd-kit/core';
+} from "@dnd-kit/core";
 import {
   SortableContext,
   arrayMove,
   useSortable,
   verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import { motion } from 'motion/react';
-import type { RoadmapBucket, RoadmapItem } from '@/types';
-import { snappy } from '@/lib/animation/presets';
-import { useGsapStagger } from '@/hooks';
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { motion } from "motion/react";
+import type { RoadmapBucket, RoadmapItem } from "@/types";
+import { snappy } from "@/lib/animation/presets";
+import { useGsapStagger } from "@/hooks";
 
-const BUCKETS: RoadmapBucket[] = ['30-day', '60-day', '90-day'];
+const BUCKETS: RoadmapBucket[] = ["30-day", "60-day", "90-day"];
 
 interface RoadmapTimelineProps {
   assessmentId: string;
 }
 
 function SortableCard({ item }: { item: RoadmapItem }) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({
     id: item.id,
   });
 
@@ -41,25 +48,27 @@ function SortableCard({ item }: { item: RoadmapItem }) {
         transform: CSS.Transform.toString(transform),
         transition,
         opacity: isDragging ? 0.5 : 1,
-        border: '1px solid var(--border-low-contrast)',
-        borderRadius: 'var(--radius-interactive)',
-        padding: '0.75rem 1rem',
-        background: 'var(--bg-secondary)',
-        cursor: 'grab',
-        marginBottom: '0.5rem',
+        border: "1px solid var(--border-low-contrast)",
+        borderRadius: "var(--radius-interactive)",
+        padding: "0.75rem 1rem",
+        background: "var(--bg-secondary)",
+        cursor: "grab",
+        marginBottom: "0.5rem",
       }}
       {...attributes}
       {...listeners}
     >
-      <p style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>{item.task}</p>
+      <p style={{ fontSize: "0.875rem", color: "var(--text-primary)" }}>
+        {item.task}
+      </p>
     </div>
   );
 }
 
 async function persistRoadmapItem(item: RoadmapItem) {
-  await fetch('/api/roadmap', {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
+  await fetch("/api/roadmap", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       id: item.id,
       bucket: item.bucket,
@@ -72,14 +81,18 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
   const [items, setItems] = useState<RoadmapItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }));
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+  );
 
   useEffect(() => {
     let cancelled = false;
     async function load() {
       setLoading(true);
       try {
-        const res = await fetch(`/api/roadmap?assessmentId=${encodeURIComponent(assessmentId)}`);
+        const res = await fetch(
+          `/api/roadmap?assessmentId=${encodeURIComponent(assessmentId)}`,
+        );
         if (!res.ok) return;
         const rows = (await res.json()) as RoadmapItem[];
         if (!cancelled) setItems(rows);
@@ -93,18 +106,18 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
     };
   }, [assessmentId]);
 
-  const gridRef = useGsapStagger<HTMLDivElement>({ 
-    staggerEach: 0.1, 
-    direction: 'up', 
+  const gridRef = useGsapStagger<HTMLDivElement>({
+    staggerEach: 0.1,
+    direction: "up",
     distance: 20,
-    triggerValue: items.length
+    triggerValue: items.length,
   });
 
   const byBucket = useMemo(() => {
     const map: Record<RoadmapBucket, RoadmapItem[]> = {
-      '30-day': [],
-      '60-day': [],
-      '90-day': [],
+      "30-day": [],
+      "60-day": [],
+      "90-day": [],
     };
     for (const item of items) {
       map[item.bucket].push(item);
@@ -140,13 +153,15 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
     let nextItems: RoadmapItem[] = [];
     setItems((prev) => {
       const next = prev.map((item) =>
-        item.id === activeItemId ? { ...item, bucket: overBucket } : item
+        item.id === activeItemId ? { ...item, bucket: overBucket } : item,
       );
       const column = next.filter((i) => i.bucket === overBucket);
       const oldIndex = column.findIndex((i) => i.id === activeItemId);
       const newIndex = column.findIndex((i) => i.id === overId);
       const reordered =
-        oldIndex >= 0 && newIndex >= 0 ? arrayMove(column, oldIndex, newIndex) : column;
+        oldIndex >= 0 && newIndex >= 0
+          ? arrayMove(column, oldIndex, newIndex)
+          : column;
       const others = next.filter((i) => i.bucket !== overBucket);
       nextItems = [
         ...others,
@@ -160,18 +175,29 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
 
   if (loading) {
     return (
-      <section className="bento-card" style={{ padding: '1.5rem' }}>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Loading roadmap…</p>
+      <section className="bento-card" style={{ padding: "1.5rem" }}>
+        <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+          Loading roadmap…
+        </p>
       </section>
     );
   }
 
   return (
-    <section className="bento-card" style={{ padding: '1.5rem' }}>
-      <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>
+    <section className="bento-card" style={{ padding: "1.5rem" }}>
+      <p
+        className="mono-label"
+        style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
+      >
         30 / 60 / 90
       </p>
-      <h3 style={{ fontWeight: 300, fontSize: '1.25rem', marginBottom: '1.25rem' }}>
+      <h3
+        style={{
+          fontWeight: 300,
+          fontSize: "1.25rem",
+          marginBottom: "1.25rem",
+        }}
+      >
         Export Roadmap
       </h3>
       <DndContext
@@ -183,9 +209,9 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
         <div
           ref={gridRef}
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: '1rem',
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: "1rem",
           }}
         >
           {BUCKETS.map((bucket) => (
@@ -194,15 +220,18 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
               id={bucket}
               className="opacity-0"
               style={{
-                border: '1px solid var(--border-low-contrast)',
-                borderRadius: 'var(--radius-interactive)',
-                padding: '1rem',
-                minHeight: '220px',
+                border: "1px solid var(--border-low-contrast)",
+                borderRadius: "var(--radius-interactive)",
+                padding: "1rem",
+                minHeight: "220px",
               }}
             >
               <p
                 className="mono-label"
-                style={{ color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}
+                style={{
+                  color: "var(--text-tertiary)",
+                  marginBottom: "0.75rem",
+                }}
               >
                 {bucket}
               </p>
@@ -223,10 +252,10 @@ export function RoadmapTimeline({ assessmentId }: RoadmapTimelineProps) {
               layout
               transition={snappy}
               style={{
-                border: '1px solid var(--accent-premium)',
-                borderRadius: 'var(--radius-interactive)',
-                padding: '0.75rem 1rem',
-                background: 'var(--bg-card)',
+                border: "1px solid var(--accent-premium)",
+                borderRadius: "var(--radius-interactive)",
+                padding: "0.75rem 1rem",
+                background: "var(--bg-card)",
               }}
             >
               {activeItem.task}

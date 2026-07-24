@@ -5,7 +5,7 @@ export function GrainOverlay() {
         width="100%"
         height="100%"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ animation: 'grain 8s steps(10) infinite' }}
+        style={{ animation: "grain 8s steps(10) infinite" }}
       >
         <filter id="grain-noise">
           <feTurbulence

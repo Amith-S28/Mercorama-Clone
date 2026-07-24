@@ -2,10 +2,10 @@
 
 export const gsapPresets = {
   ease: {
-    snappy: 'back.out(1.5)',
-    smooth: 'power3.out',
-    fluid: 'power2.out',
-    elastic: 'elastic.out(1, 0.5)',
+    snappy: "back.out(1.5)",
+    smooth: "power3.out",
+    fluid: "power2.out",
+    elastic: "elastic.out(1, 0.5)",
   },
   duration: {
     fast: 0.2,

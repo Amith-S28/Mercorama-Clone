@@ -1,16 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
-import { env } from '@/lib/env';
-import { getAdvisorId } from '@/lib/auth';
-import { readSmesFromCSV, writeSmesToCSV } from '@/lib/csv-db';
-import type { SmeRecord } from '@/types';
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { env } from "@/lib/env";
+import { getAdvisorId } from "@/lib/auth";
+import { readSmesFromCSV, writeSmesToCSV } from "@/lib/csv-db";
+import type { SmeRecord } from "@/types";
 
 const industrySchema = z.enum([
-  'Food, Beverage & CPG',
-  'Seafood & Ocean Economy',
-  'Advanced Manufacturing & Industrial',
-  'Defence, Dual-Use & Critical Supply Chains',
-  'Other / Unsure',
+  "Food, Beverage & CPG",
+  "Seafood & Ocean Economy",
+  "Advanced Manufacturing & Industrial",
+  "Defence, Dual-Use & Critical Supply Chains",
+  "Other / Unsure",
 ]);
 
 const createSmeSchema = z.object({
@@ -41,7 +41,7 @@ export async function GET() {
     const filtered = smes.filter((sme) => sme.advisorId === advisorId);
     return NextResponse.json(filtered);
   } catch (error) {
-    console.error('Error fetching SMEs from CSV:', error);
+    console.error("Error fetching SMEs from CSV:", error);
     return NextResponse.json([], { status: 500 });
   }
 }
@@ -51,14 +51,14 @@ export async function POST(request: NextRequest) {
   try {
     json = await request.json();
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const parsed = createSmeSchema.safeParse(json);
   if (!parsed.success) {
     return NextResponse.json(
-      { error: 'Validation failed', details: parsed.error.flatten() },
-      { status: 400 }
+      { error: "Validation failed", details: parsed.error.flatten() },
+      { status: 400 },
     );
   }
 
@@ -66,10 +66,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const smes = readSmesFromCSV();
-    
+
     // Generate sequential ID
     const seq = smes.length + 1;
-    const sequentialId = `SME-${String(seq).padStart(6, '0')}`;
+    const sequentialId = `SME-${String(seq).padStart(6, "0")}`;
 
     const newSme: SmeRecord = {
       id: sequentialId,
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newSme, { status: 201 });
   } catch (error) {
-    console.error('Error saving SME to CSV:', error);
-    return NextResponse.json({ error: 'Failed to save SME' }, { status: 500 });
+    console.error("Error saving SME to CSV:", error);
+    return NextResponse.json({ error: "Failed to save SME" }, { status: 500 });
   }
 }

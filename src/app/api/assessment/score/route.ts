@@ -1,12 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
-import { buildAiReport } from '@/lib/ai-report-builder';
-import { readSmesFromCSV, readAssessmentsFromCSV, writeAssessmentsToCSV } from '@/lib/csv-db';
-import { getQuestionPillarMap } from '@/lib/question-pool';
-import { calculateReadinessScore } from '@/lib/scoring-engine';
-import type { AssessmentRecord, OptionKey } from '@/types';
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { buildAiReport } from "@/lib/ai-report-builder";
+import {
+  readSmesFromCSV,
+  readAssessmentsFromCSV,
+  writeAssessmentsToCSV,
+} from "@/lib/csv-db";
+import { getQuestionPillarMap } from "@/lib/question-pool";
+import { calculateReadinessScore } from "@/lib/scoring-engine";
+import type { AssessmentRecord, OptionKey } from "@/types";
 
-const optionKeySchema = z.enum(['A', 'B', 'C', 'D']);
+const optionKeySchema = z.enum(["A", "B", "C", "D"]);
 
 const scoreRequestSchema = z.object({
   smeId: z.string().min(1),
@@ -19,14 +23,14 @@ export async function POST(request: NextRequest) {
   try {
     json = await request.json();
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const parsed = scoreRequestSchema.safeParse(json);
   if (!parsed.success) {
     return NextResponse.json(
-      { error: 'Validation failed', details: parsed.error.flatten() },
-      { status: 400 }
+      { error: "Validation failed", details: parsed.error.flatten() },
+      { status: 400 },
     );
   }
 
@@ -36,8 +40,8 @@ export async function POST(request: NextRequest) {
   const missing = selectedQuestions.filter((id) => !answers[id]);
   if (missing.length > 0) {
     return NextResponse.json(
-      { error: 'All selected questions must have answers', missing },
-      { status: 400 }
+      { error: "All selected questions must have answers", missing },
+      { status: 400 },
     );
   }
 
@@ -59,10 +63,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const assessments = readAssessmentsFromCSV();
-    
+
     // Generate sequential ID
     const seq = assessments.length + 1;
-    const sequentialId = `ASM-${String(seq).padStart(6, '0')}`;
+    const sequentialId = `ASM-${String(seq).padStart(6, "0")}`;
 
     const newAssessment: AssessmentRecord = {
       id: sequentialId,
@@ -81,13 +85,18 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newAssessment, { status: 201 });
   } catch (error) {
-    console.error('Error saving assessment to CSV:', error);
-    return NextResponse.json({ error: 'Failed to score and save assessment' }, { status: 500 });
+    console.error("Error saving assessment to CSV:", error);
+    return NextResponse.json(
+      { error: "Failed to score and save assessment" },
+      { status: 500 },
+    );
   }
 }
 
-async function resolveSmeContext(smeId: string): Promise<{ name: string; targetCountryName: string }> {
-  const fallback = { name: 'Client SME', targetCountryName: 'target market' };
+async function resolveSmeContext(
+  smeId: string,
+): Promise<{ name: string; targetCountryName: string }> {
+  const fallback = { name: "Client SME", targetCountryName: "target market" };
 
   try {
     const smes = readSmesFromCSV();
@@ -96,7 +105,7 @@ async function resolveSmeContext(smeId: string): Promise<{ name: string; targetC
       return { name: sme.name, targetCountryName: sme.targetCountryName };
     }
   } catch (error) {
-    console.error('Error resolving SME context:', error);
+    console.error("Error resolving SME context:", error);
   }
 
   return fallback;

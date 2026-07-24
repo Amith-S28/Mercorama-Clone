@@ -45,3 +45,11 @@ next-env.d.ts
 src/data/official_global_trade_2019_2025.csv
 src/data/official_hs_trade_by_country.csv
 
+
+# Local messy files
+*.mkv
+*.mp4
+OLDSTUFF/
+oldstuff_files.txt
+.gemini-backup/
+.agents/

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { motion } from 'motion/react';
+import { useMemo, useState } from "react";
+import { motion } from "motion/react";
 import {
   AreaChart,
   Area,
@@ -10,17 +10,23 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
-} from 'recharts';
+} from "recharts";
 import {
   getCountryTradeHistory,
   getCountryHsBreakdown,
   getAllTrackedTradeCountries,
-} from '@/lib/country-trade-history';
-import { LiveIndicator } from '@/components/ui/LiveIndicator';
-import { ResizableCard } from '@/components/ui/ResizableCard';
-import { ArrowUpRight, ArrowDownRight, Globe, Layers, Filter } from '@/components/ui/icons';
-import { cn } from '@/lib/utils';
-import { snappy } from '@/lib/animation/presets';
+} from "@/lib/country-trade-history";
+import { LiveIndicator } from "@/components/ui/LiveIndicator";
+import { ResizableCard } from "@/components/ui/ResizableCard";
+import {
+  ArrowUpRight,
+  ArrowDownRight,
+  Globe,
+  Layers,
+  Filter,
+} from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
+import { snappy } from "@/lib/animation/presets";
 
 export interface CountryTradeHistoryDashboardProps {
   countryIso3?: string;
@@ -34,26 +40,34 @@ function formatUsdShort(valueUsd: number): string {
 }
 
 const SECTORS = [
-  'All',
-  'Industrial & Machinery',
-  'Tech & Electronics',
-  'Food & CPG',
-  'Minerals & Energy',
-  'Chemical & Medical',
-  'Textiles & Goods',
+  "All",
+  "Industrial & Machinery",
+  "Tech & Electronics",
+  "Food & CPG",
+  "Minerals & Energy",
+  "Chemical & Medical",
+  "Textiles & Goods",
 ];
 
 export function CountryTradeHistoryDashboard({
-  countryIso3 = 'JPN',
+  countryIso3 = "JPN",
 }: CountryTradeHistoryDashboardProps) {
-  const [selectedIso3, setSelectedIso3] = useState<string>(countryIso3.toUpperCase());
-  const [selectedSector, setSelectedSector] = useState<string>('All');
-  const [flowView, setFlowView] = useState<'exports' | 'imports'>('exports');
+  const [selectedIso3, setSelectedIso3] = useState<string>(
+    countryIso3.toUpperCase(),
+  );
+  const [selectedSector, setSelectedSector] = useState<string>("All");
+  const [flowView, setFlowView] = useState<"exports" | "imports">("exports");
 
   const trackedCountries = useMemo(() => getAllTrackedTradeCountries(), []);
 
-  const history = useMemo(() => getCountryTradeHistory(selectedIso3), [selectedIso3]);
-  const hsBreakdown = useMemo(() => getCountryHsBreakdown(selectedIso3), [selectedIso3]);
+  const history = useMemo(
+    () => getCountryTradeHistory(selectedIso3),
+    [selectedIso3],
+  );
+  const hsBreakdown = useMemo(
+    () => getCountryHsBreakdown(selectedIso3),
+    [selectedIso3],
+  );
 
   const latest = useMemo(() => {
     if (!history || history.timeSeries.length === 0) return null;
@@ -62,8 +76,9 @@ export function CountryTradeHistoryDashboard({
 
   const filteredCategories = useMemo(() => {
     if (!hsBreakdown) return [];
-    const list = flowView === 'exports' ? hsBreakdown.topExports : hsBreakdown.topImports;
-    if (selectedSector === 'All') return list;
+    const list =
+      flowView === "exports" ? hsBreakdown.topExports : hsBreakdown.topImports;
+    if (selectedSector === "All") return list;
     return list.filter((item) => item.sector === selectedSector);
   }, [hsBreakdown, flowView, selectedSector]);
 
@@ -88,7 +103,10 @@ export function CountryTradeHistoryDashboard({
             <span className="mono-label text-xs uppercase tracking-widest text-obsidian/50">
               Country Trade History & HS Breakdown
             </span>
-            <LiveIndicator origin="live" sourceName="UN Comtrade / World Bank" />
+            <LiveIndicator
+              origin="live"
+              sourceName="UN Comtrade / World Bank"
+            />
           </div>
           <h2 className="text-xl font-bold tracking-tight text-obsidian flex items-center gap-2">
             <Globe className="h-5 w-5 text-accent" />
@@ -98,7 +116,10 @@ export function CountryTradeHistoryDashboard({
 
         {/* Country Selector */}
         <div className="flex items-center gap-2">
-          <label htmlFor="country-selector" className="text-xs font-mono uppercase text-obsidian/50">
+          <label
+            htmlFor="country-selector"
+            className="text-xs font-mono uppercase text-obsidian/50"
+          >
             Market:
           </label>
           <select
@@ -127,11 +148,17 @@ export function CountryTradeHistoryDashboard({
           </span>
           <span
             className={cn(
-              'text-xs font-medium inline-flex items-center gap-0.5',
-              latest.yoyExportGrowthPct >= 0 ? 'text-status-healthy' : 'text-status-down'
+              "text-xs font-medium inline-flex items-center gap-0.5",
+              latest.yoyExportGrowthPct >= 0
+                ? "text-status-healthy"
+                : "text-status-down",
             )}
           >
-            {latest.yoyExportGrowthPct >= 0 ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
+            {latest.yoyExportGrowthPct >= 0 ? (
+              <ArrowUpRight size={14} />
+            ) : (
+              <ArrowDownRight size={14} />
+            )}
             {latest.yoyExportGrowthPct}% YoY
           </span>
         </div>
@@ -145,11 +172,17 @@ export function CountryTradeHistoryDashboard({
           </span>
           <span
             className={cn(
-              'text-xs font-medium inline-flex items-center gap-0.5',
-              latest.yoyImportGrowthPct >= 0 ? 'text-status-healthy' : 'text-status-down'
+              "text-xs font-medium inline-flex items-center gap-0.5",
+              latest.yoyImportGrowthPct >= 0
+                ? "text-status-healthy"
+                : "text-status-down",
             )}
           >
-            {latest.yoyImportGrowthPct >= 0 ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
+            {latest.yoyImportGrowthPct >= 0 ? (
+              <ArrowUpRight size={14} />
+            ) : (
+              <ArrowDownRight size={14} />
+            )}
             {latest.yoyImportGrowthPct}% YoY
           </span>
         </div>
@@ -160,15 +193,17 @@ export function CountryTradeHistoryDashboard({
           </span>
           <span
             className={cn(
-              'text-lg font-bold',
-              latest.netBalanceUsd >= 0 ? 'text-status-healthy' : 'text-status-down'
+              "text-lg font-bold",
+              latest.netBalanceUsd >= 0
+                ? "text-status-healthy"
+                : "text-status-down",
             )}
           >
-            {latest.netBalanceUsd >= 0 ? '+' : ''}
+            {latest.netBalanceUsd >= 0 ? "+" : ""}
             {formatUsdShort(latest.netBalanceUsd)}
           </span>
           <span className="text-xs text-obsidian/50 font-mono">
-            {latest.netBalanceUsd >= 0 ? 'Trade Surplus' : 'Trade Deficit'}
+            {latest.netBalanceUsd >= 0 ? "Trade Surplus" : "Trade Deficit"}
           </span>
         </div>
 
@@ -179,9 +214,7 @@ export function CountryTradeHistoryDashboard({
           <span className="text-lg font-bold text-obsidian">
             {latest.tradePctGdp}%
           </span>
-          <span className="text-xs text-obsidian/50 font-mono">
-            % of GDP
-          </span>
+          <span className="text-xs text-obsidian/50 font-mono">% of GDP</span>
         </div>
       </div>
 
@@ -193,12 +226,17 @@ export function CountryTradeHistoryDashboard({
               <Layers className="h-4 w-4 text-accent" />
               10-Year Trade Volume Trends (2015–2024, in USD Billions)
             </span>
-            <span className="text-xs font-mono text-obsidian/45">UN COMTRADE / WDI</span>
+            <span className="text-xs font-mono text-obsidian/45">
+              UN COMTRADE / WDI
+            </span>
           </div>
 
           <div className="flex-1 w-full min-h-0 pt-2">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+              <AreaChart
+                data={chartData}
+                margin={{ top: 10, right: 20, left: 0, bottom: 0 }}
+              >
                 <defs>
                   <linearGradient id="colorExports" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
@@ -209,18 +247,26 @@ export function CountryTradeHistoryDashboard({
                     <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="var(--text-tertiary)" />
-                <YAxis tick={{ fontSize: 12 }} stroke="var(--text-tertiary)" unit="B" />
+                <XAxis
+                  dataKey="year"
+                  tick={{ fontSize: 12 }}
+                  stroke="var(--text-tertiary)"
+                />
+                <YAxis
+                  tick={{ fontSize: 12 }}
+                  stroke="var(--text-tertiary)"
+                  unit="B"
+                />
                 <Tooltip
-                  formatter={(val) => [`$${Number(val ?? 0).toFixed(1)}B`, '']}
+                  formatter={(val) => [`$${Number(val ?? 0).toFixed(1)}B`, ""]}
                   contentStyle={{
-                    backgroundColor: 'var(--paper-white)',
-                    borderColor: 'var(--border-light)',
-                    borderRadius: '12px',
-                    fontSize: '12px',
+                    backgroundColor: "var(--paper-white)",
+                    borderColor: "var(--border-light)",
+                    borderRadius: "12px",
+                    fontSize: "12px",
                   }}
                 />
-                <Legend wrapperStyle={{ fontSize: '12px' }} />
+                <Legend wrapperStyle={{ fontSize: "12px" }} />
                 <Area
                   type="monotone"
                   dataKey="Exports"
@@ -252,7 +298,8 @@ export function CountryTradeHistoryDashboard({
               HS Product Category Breakdown
             </h3>
             <p className="text-xs text-obsidian/60">
-              Top traded commodity chapters for {history.name} by Harmonized System (HS) code
+              Top traded commodity chapters for {history.name} by Harmonized
+              System (HS) code
             </p>
           </div>
 
@@ -260,24 +307,24 @@ export function CountryTradeHistoryDashboard({
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => setFlowView('exports')}
+              onClick={() => setFlowView("exports")}
               className={cn(
-                'px-3 py-1.5 text-xs font-medium rounded-full transition-colors',
-                flowView === 'exports'
-                  ? 'bg-accent text-paper-white shadow-sm'
-                  : 'bg-paper-white text-obsidian/70 border border-border-light hover:bg-accent-muted'
+                "px-3 py-1.5 text-xs font-medium rounded-full transition-colors",
+                flowView === "exports"
+                  ? "bg-accent text-paper-white shadow-sm"
+                  : "bg-paper-white text-obsidian/70 border border-border-light hover:bg-accent-muted",
               )}
             >
               Top Exports
             </button>
             <button
               type="button"
-              onClick={() => setFlowView('imports')}
+              onClick={() => setFlowView("imports")}
               className={cn(
-                'px-3 py-1.5 text-xs font-medium rounded-full transition-colors',
-                flowView === 'imports'
-                  ? 'bg-accent text-paper-white shadow-sm'
-                  : 'bg-paper-white text-obsidian/70 border border-border-light hover:bg-accent-muted'
+                "px-3 py-1.5 text-xs font-medium rounded-full transition-colors",
+                flowView === "imports"
+                  ? "bg-accent text-paper-white shadow-sm"
+                  : "bg-paper-white text-obsidian/70 border border-border-light hover:bg-accent-muted",
               )}
             >
               Top Imports
@@ -296,10 +343,10 @@ export function CountryTradeHistoryDashboard({
               type="button"
               onClick={() => setSelectedSector(sector)}
               className={cn(
-                'px-2.5 py-1 text-xs font-medium rounded-xl whitespace-nowrap transition-colors border',
+                "px-2.5 py-1 text-xs font-medium rounded-xl whitespace-nowrap transition-colors border",
                 selectedSector === sector
-                  ? 'bg-obsidian text-paper-white border-obsidian'
-                  : 'bg-paper-white text-obsidian/60 border-border-light hover:bg-accent-muted'
+                  ? "bg-obsidian text-paper-white border-obsidian"
+                  : "bg-paper-white text-obsidian/60 border-border-light hover:bg-accent-muted",
               )}
             >
               {sector}
@@ -325,11 +372,13 @@ export function CountryTradeHistoryDashboard({
                 </div>
                 <span
                   className={cn(
-                    'text-xs font-medium inline-flex items-center',
-                    item.yoyChangePct >= 0 ? 'text-status-healthy' : 'text-status-down'
+                    "text-xs font-medium inline-flex items-center",
+                    item.yoyChangePct >= 0
+                      ? "text-status-healthy"
+                      : "text-status-down",
                   )}
                 >
-                  {item.yoyChangePct >= 0 ? '+' : ''}
+                  {item.yoyChangePct >= 0 ? "+" : ""}
                   {item.yoyChangePct}%
                 </span>
               </div>
@@ -343,8 +392,8 @@ export function CountryTradeHistoryDashboard({
                 <div className="flex-1 h-2 rounded-full bg-obsidian/5 overflow-hidden">
                   <div
                     className={cn(
-                      'h-full rounded-full',
-                      flowView === 'exports' ? 'bg-blue-500' : 'bg-emerald-500'
+                      "h-full rounded-full",
+                      flowView === "exports" ? "bg-blue-500" : "bg-emerald-500",
                     )}
                     style={{ width: `${Math.min(100, item.sharePct * 3.5)}%` }}
                   />

@@ -1,23 +1,23 @@
 export type IndustrySector =
-  | 'Food, Beverage & CPG'
-  | 'Seafood & Ocean Economy'
-  | 'Advanced Manufacturing & Industrial'
-  | 'Defence, Dual-Use & Critical Supply Chains'
-  | 'Other / Unsure';
+  | "Food, Beverage & CPG"
+  | "Seafood & Ocean Economy"
+  | "Advanced Manufacturing & Industrial"
+  | "Defence, Dual-Use & Critical Supply Chains"
+  | "Other / Unsure";
 
 export type PillarKey =
-  | 'management'
-  | 'product'
-  | 'operations'
-  | 'financial'
-  | 'legal'
-  | 'market'
-  | 'cultural'
-  | 'digital'
-  | 'programs';
+  | "management"
+  | "product"
+  | "operations"
+  | "financial"
+  | "legal"
+  | "market"
+  | "cultural"
+  | "digital"
+  | "programs";
 
-export type ReadinessGrade = 'A' | 'B' | 'C' | 'D' | 'F';
-export type OptionKey = 'A' | 'B' | 'C' | 'D';
+export type ReadinessGrade = "A" | "B" | "C" | "D" | "F";
+export type OptionKey = "A" | "B" | "C" | "D";
 
 export interface QuestionOption {
   key: OptionKey;

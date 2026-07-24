@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ArrowRight as PArrowRight,
@@ -36,13 +36,19 @@ import {
   Globe as PGlobe,
   Stack as PStack,
   Funnel as PFunnel,
-  IconProps
-} from '@phosphor-icons/react';
+  IconProps,
+} from "@phosphor-icons/react";
 
 // Wrapper to set default props (size 16, weight regular)
-const withDefaults = (Icon: React.ElementType) => {
+const withDefaults = (Icon: React.ComponentType<IconProps>) => {
   return function WrappedIcon(props: IconProps) {
-    return <Icon size={props.size || 16} weight={props.weight || 'regular'} {...props} />;
+    return (
+      <Icon
+        size={props.size || 16}
+        weight={props.weight || "regular"}
+        {...props}
+      />
+    );
   };
 };
 

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Search, X } from '@/components/ui/icons';
-import { COUNTRY_OPTIONS, type CountryOption } from '@/lib/countries';
-import { cn } from '@/lib/utils';
-import { snappy } from '@/lib/animation/presets';
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronDown, Search, X } from "@/components/ui/icons";
+import { COUNTRY_OPTIONS, type CountryOption } from "@/lib/countries";
+import { cn } from "@/lib/utils";
+import { snappy } from "@/lib/animation/presets";
 
 export interface CountrySelectProps {
   value: string;
@@ -18,27 +18,28 @@ export function CountrySelect({
   value,
   onChange,
   disabled,
-  label = 'Target market',
+  label = "Target market",
 }: CountrySelectProps) {
   const listboxId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const selected = COUNTRY_OPTIONS.find((c) => c.iso3 === value);
 
   const filtered = COUNTRY_OPTIONS.filter((country) => {
-    const haystack = `${country.iso3} ${country.name} ${country.region}`.toLowerCase();
+    const haystack =
+      `${country.iso3} ${country.name} ${country.region}`.toLowerCase();
     return haystack.includes(query.trim().toLowerCase());
   });
 
   const selectCountry = useCallback(
     (country: CountryOption) => {
       onChange(country.iso3, country.name);
-      setQuery('');
+      setQuery("");
       setOpen(false);
     },
-    [onChange]
+    [onChange],
   );
 
   useEffect(() => {
@@ -47,8 +48,8 @@ export function CountrySelect({
         setOpen(false);
       }
     }
-    document.addEventListener('mousedown', handlePointerDown);
-    return () => document.removeEventListener('mousedown', handlePointerDown);
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => document.removeEventListener("mousedown", handlePointerDown);
   }, []);
 
   return (
@@ -64,24 +65,31 @@ export function CountrySelect({
         aria-controls={listboxId}
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          'flex w-full items-center justify-between gap-2 rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] px-3 py-2.5 text-left text-sm text-[var(--text-primary)]',
-          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-premium)]',
-          disabled && 'cursor-not-allowed opacity-60'
+          "flex w-full items-center justify-between gap-2 rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] px-3 py-2.5 text-left text-sm text-[var(--text-primary)]",
+          "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-premium)]",
+          disabled && "cursor-not-allowed opacity-60",
         )}
       >
         <span className="flex min-w-0 items-center gap-2">
           {selected ? (
             <>
-              <span className="font-mono text-xs text-[var(--accent-premium)]">{selected.iso3}</span>
+              <span className="font-mono text-xs text-[var(--accent-premium)]">
+                {selected.iso3}
+              </span>
               <span className="truncate">{selected.name}</span>
             </>
           ) : (
-            <span className="text-[var(--text-muted)]">Select destination country</span>
+            <span className="text-[var(--text-muted)]">
+              Select destination country
+            </span>
           )}
         </span>
         <ChevronDown
           size={16}
-          className={cn('shrink-0 text-[var(--text-secondary)] transition-transform', open && 'rotate-180')}
+          className={cn(
+            "shrink-0 text-[var(--text-secondary)] transition-transform",
+            open && "rotate-180",
+          )}
         />
       </button>
 
@@ -107,7 +115,7 @@ export function CountrySelect({
               {query && (
                 <button
                   type="button"
-                  onClick={() => setQuery('')}
+                  onClick={() => setQuery("")}
                   className="text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                   aria-label="Clear search"
                 >
@@ -115,25 +123,40 @@ export function CountrySelect({
                 </button>
               )}
             </div>
-            <ul id={listboxId} role="listbox" className="max-h-52 overflow-y-auto py-1">
+            <ul
+              id={listboxId}
+              role="listbox"
+              className="max-h-52 overflow-y-auto py-1"
+            >
               {filtered.length === 0 ? (
-                <li className="px-3 py-2 text-sm text-[var(--text-muted)]">No countries match</li>
+                <li className="px-3 py-2 text-sm text-[var(--text-muted)]">
+                  No countries match
+                </li>
               ) : (
                 filtered.map((country) => (
-                  <li key={country.iso3} role="option" aria-selected={country.iso3 === value}>
+                  <li
+                    key={country.iso3}
+                    role="option"
+                    aria-selected={country.iso3 === value}
+                  >
                     <button
                       type="button"
                       onClick={() => selectCountry(country)}
                       className={cn(
-                        'flex w-full items-center gap-3 px-3 py-2 text-left text-sm transition-colors hover:bg-[var(--bg-elevated)]',
-                        country.iso3 === value && 'bg-[color-mix(in_srgb,var(--accent-premium)_10%,transparent)]'
+                        "flex w-full items-center gap-3 px-3 py-2 text-left text-sm transition-colors hover:bg-[var(--bg-elevated)]",
+                        country.iso3 === value &&
+                          "bg-[color-mix(in_srgb,var(--accent-premium)_10%,transparent)]",
                       )}
                     >
                       <span className="w-10 font-mono text-xs text-[var(--accent-premium)]">
                         {country.iso3}
                       </span>
-                      <span className="flex-1 text-[var(--text-primary)]">{country.name}</span>
-                      <span className="text-xs text-[var(--text-muted)]">{country.region}</span>
+                      <span className="flex-1 text-[var(--text-primary)]">
+                        {country.name}
+                      </span>
+                      <span className="text-xs text-[var(--text-muted)]">
+                        {country.region}
+                      </span>
                     </button>
                   </li>
                 ))

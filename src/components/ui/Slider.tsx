@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useId } from 'react';
-import { cn } from '@/lib/utils';
+import { useId } from "react";
+import { cn } from "@/lib/utils";
 
 export interface SliderProps {
   /** The value of the slider */
@@ -31,12 +31,17 @@ export function Slider({
   className,
 }: SliderProps) {
   const id = useId();
-  
+
   // Calculate percentage of track completion
   const percentage = ((value - min) / (max - min)) * 100;
 
   return (
-    <div className={cn('relative w-full flex items-center py-2 select-none', className)}>
+    <div
+      className={cn(
+        "relative w-full flex items-center py-2 select-none",
+        className,
+      )}
+    >
       <input
         type="range"
         id={id}

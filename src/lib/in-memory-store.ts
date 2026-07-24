@@ -5,8 +5,8 @@ import type {
   PillarKey,
   RoadmapBucket,
   SmeRecord,
-} from '@/types';
-import { env } from '@/lib/env';
+} from "@/types";
+import { env } from "@/lib/env";
 
 export interface CreateSmeInput {
   name: string;
@@ -31,11 +31,11 @@ export interface CreateSmeInput {
 export interface CreateAssessmentInput {
   smeId: string;
   overallScore: number;
-  grade: AssessmentRecord['grade'];
+  grade: AssessmentRecord["grade"];
   pillarScores: Record<PillarKey, number>;
   answers: Record<string, OptionKey>;
   selectedQuestions: string[];
-  aiReport?: AssessmentRecord['aiReport'];
+  aiReport?: AssessmentRecord["aiReport"];
 }
 
 interface InMemoryAdvisorNote {
@@ -80,8 +80,8 @@ export function listInMemorySmes(): SmeRecord[] {
 
 export function createInMemorySme(input: CreateSmeInput): SmeRecord {
   smeCounter++;
-  const sequentialId = `SME-${String(smeCounter).padStart(6, '0')}`;
-  
+  const sequentialId = `SME-${String(smeCounter).padStart(6, "0")}`;
+
   const record: SmeRecord = {
     id: sequentialId,
     advisorId: env.MOCK_ADVISOR_ID,
@@ -108,10 +108,12 @@ export function createInMemorySme(input: CreateSmeInput): SmeRecord {
   return record;
 }
 
-export function createInMemoryAssessment(input: CreateAssessmentInput): AssessmentRecord {
+export function createInMemoryAssessment(
+  input: CreateAssessmentInput,
+): AssessmentRecord {
   asmCounter++;
-  const sequentialId = `ASM-${String(asmCounter).padStart(6, '0')}`;
-  
+  const sequentialId = `ASM-${String(asmCounter).padStart(6, "0")}`;
+
   const record: AssessmentRecord = {
     id: sequentialId,
     smeId: input.smeId,
@@ -131,11 +133,15 @@ export function listInMemoryAssessments(): AssessmentRecord[] {
   return [...assessmentStore];
 }
 
-export function getInMemoryAssessmentBySmeId(smeId: string): AssessmentRecord | undefined {
+export function getInMemoryAssessmentBySmeId(
+  smeId: string,
+): AssessmentRecord | undefined {
   return assessmentStore.find((a) => a.smeId === smeId);
 }
 
-export function getInMemoryAssessmentById(id: string): AssessmentRecord | undefined {
+export function getInMemoryAssessmentById(
+  id: string,
+): AssessmentRecord | undefined {
   return assessmentStore.find((a) => a.id === id);
 }
 
@@ -163,7 +169,7 @@ export function upsertInMemoryAdvisorNote(input: {
   content: string;
 }) {
   const existing = noteStore.find(
-    (n) => n.assessmentId === input.assessmentId && n.pillar === input.pillar
+    (n) => n.assessmentId === input.assessmentId && n.pillar === input.pillar,
   );
   if (existing) {
     existing.content = input.content;
@@ -185,7 +191,9 @@ export function listInMemoryRoadmapItems(assessmentId: string) {
     .sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
-export function createInMemoryRoadmapItem(input: Omit<InMemoryRoadmapItem, 'id' | 'createdAt'>) {
+export function createInMemoryRoadmapItem(
+  input: Omit<InMemoryRoadmapItem, "id" | "createdAt">,
+) {
   const item: InMemoryRoadmapItem = {
     id: crypto.randomUUID(),
     ...input,
@@ -197,7 +205,9 @@ export function createInMemoryRoadmapItem(input: Omit<InMemoryRoadmapItem, 'id' 
 
 export function updateInMemoryRoadmapItem(
   id: string,
-  patch: Partial<Pick<InMemoryRoadmapItem, 'task' | 'bucket' | 'sortOrder' | 'completed'>>
+  patch: Partial<
+    Pick<InMemoryRoadmapItem, "task" | "bucket" | "sortOrder" | "completed">
+  >,
 ) {
   const item = roadmapStore.find((entry) => entry.id === id);
   if (!item) return null;

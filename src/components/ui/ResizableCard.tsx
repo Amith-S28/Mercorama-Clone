@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useCallback, useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export interface ResizableCardProps {
   /** CSS class applied to the outer wrapper */
@@ -14,7 +14,9 @@ export interface ResizableCardProps {
   maxHeight?: number;
   /** Called whenever the height changes during or after a drag */
   onResize?: (height: number) => void;
-  children: React.ReactNode | ((dimensions: { width: number; height: number }) => React.ReactNode);
+  children:
+    | React.ReactNode
+    | ((dimensions: { width: number; height: number }) => React.ReactNode);
 }
 
 /**
@@ -66,7 +68,10 @@ export function ResizableCard({
     (e: React.PointerEvent) => {
       if (!dragState.current) return;
       const delta = e.clientY - dragState.current.startY;
-      const next = Math.max(minHeight, Math.min(maxHeight, dragState.current.startH + delta));
+      const next = Math.max(
+        minHeight,
+        Math.min(maxHeight, dragState.current.startH + delta),
+      );
       setHeight(next);
       onResize?.(next);
     },
@@ -85,19 +90,19 @@ export function ResizableCard({
       dragState.current = null;
       setDragging(false);
     };
-    window.addEventListener('pointerup', onUp);
-    window.addEventListener('pointercancel', onUp);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     return () => {
-      window.removeEventListener('pointerup', onUp);
-      window.removeEventListener('pointercancel', onUp);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
     };
   }, [dragging]);
 
   return (
     <div
       className={cn(
-        'bento-card resizable-card',
-        dragging && 'resizable-card--dragging',
+        "bento-card resizable-card",
+        dragging && "resizable-card--dragging",
         className,
       )}
       style={{ height }}
@@ -106,7 +111,9 @@ export function ResizableCard({
       {dragging && <div className="resizable-card__drag-overlay" aria-hidden />}
 
       <div className="resizable-card__content" ref={contentRef}>
-        {typeof children === 'function' ? children({ width, height }) : children}
+        {typeof children === "function"
+          ? children({ width, height })
+          : children}
       </div>
 
       {/* Grab handle */}

@@ -1,23 +1,41 @@
-import type { CountryProfileFallback } from '@/types';
-import historyData from '@/data/country_trade_history.json';
+import type { CountryProfileFallback } from "@/types";
+import historyData from "@/data/country_trade_history.json";
 
 const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
-function seasonality(peakMonth: number): { month: string; volumeIndex: number }[] {
+function seasonality(
+  peakMonth: number,
+): { month: string; volumeIndex: number }[] {
   return MONTHS.map((month, i) => {
-    const distance = Math.min(Math.abs(i - peakMonth), 12 - Math.abs(i - peakMonth));
-    return { month, volumeIndex: Math.round(100 - distance * 12 + (i % 3) * 4) };
+    const distance = Math.min(
+      Math.abs(i - peakMonth),
+      12 - Math.abs(i - peakMonth),
+    );
+    return {
+      month,
+      volumeIndex: Math.round(100 - distance * 12 + (i % 3) * 4),
+    };
   });
 }
 
 export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
   JPN: {
-    iso3: 'JPN',
-    name: 'Japan',
-    currency: 'JPY',
+    iso3: "JPN",
+    name: "Japan",
+    currency: "JPY",
     tariffRateDefault: 0.12,
     freightRateCadPerFeu: 5800,
     comtradeImportVolumeUsd: 7_810_000_000,
@@ -27,18 +45,18 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
     volatility90d: 0.0182,
     sanctionsClear: true,
     competitors: [
-      { country: 'China', sharePct: 75 },
-      { country: 'Vietnam', sharePct: 12 },
-      { country: 'Thailand', sharePct: 8 },
-      { country: 'United States', sharePct: 3 },
-      { country: 'Canada', sharePct: 2 },
+      { country: "China", sharePct: 75 },
+      { country: "Vietnam", sharePct: 12 },
+      { country: "Thailand", sharePct: 8 },
+      { country: "United States", sharePct: 3 },
+      { country: "Canada", sharePct: 2 },
     ],
     seasonality: seasonality(9),
   },
   DEU: {
-    iso3: 'DEU',
-    name: 'Germany',
-    currency: 'EUR',
+    iso3: "DEU",
+    name: "Germany",
+    currency: "EUR",
     tariffRateDefault: 0.045,
     freightRateCadPerFeu: 4200,
     comtradeImportVolumeUsd: 890_000_000,
@@ -48,18 +66,18 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
     volatility90d: 0.0141,
     sanctionsClear: true,
     competitors: [
-      { country: 'China', sharePct: 24 },
-      { country: 'United States', sharePct: 16 },
-      { country: 'Italy', sharePct: 12 },
-      { country: 'Poland', sharePct: 10 },
-      { country: 'Canada', sharePct: 7 },
+      { country: "China", sharePct: 24 },
+      { country: "United States", sharePct: 16 },
+      { country: "Italy", sharePct: 12 },
+      { country: "Poland", sharePct: 10 },
+      { country: "Canada", sharePct: 7 },
     ],
     seasonality: seasonality(3),
   },
   USA: {
-    iso3: 'USA',
-    name: 'United States',
-    currency: 'USD',
+    iso3: "USA",
+    name: "United States",
+    currency: "USD",
     tariffRateDefault: 0.0,
     freightRateCadPerFeu: 2800,
     comtradeImportVolumeUsd: 4_500_000_000,
@@ -69,18 +87,18 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
     volatility90d: 0.0095,
     sanctionsClear: true,
     competitors: [
-      { country: 'Mexico', sharePct: 22 },
-      { country: 'Canada', sharePct: 19 },
-      { country: 'China', sharePct: 15 },
-      { country: 'Germany', sharePct: 8 },
-      { country: 'Japan', sharePct: 6 },
+      { country: "Mexico", sharePct: 22 },
+      { country: "Canada", sharePct: 19 },
+      { country: "China", sharePct: 15 },
+      { country: "Germany", sharePct: 8 },
+      { country: "Japan", sharePct: 6 },
     ],
     seasonality: seasonality(10),
   },
   GBR: {
-    iso3: 'GBR',
-    name: 'United Kingdom',
-    currency: 'GBP',
+    iso3: "GBR",
+    name: "United Kingdom",
+    currency: "GBP",
     tariffRateDefault: 0.08,
     freightRateCadPerFeu: 3900,
     comtradeImportVolumeUsd: 610_000_000,
@@ -90,18 +108,18 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
     volatility90d: 0.016,
     sanctionsClear: true,
     competitors: [
-      { country: 'Netherlands', sharePct: 18 },
-      { country: 'Germany', sharePct: 15 },
-      { country: 'Ireland', sharePct: 12 },
-      { country: 'Canada', sharePct: 9 },
-      { country: 'France', sharePct: 8 },
+      { country: "Netherlands", sharePct: 18 },
+      { country: "Germany", sharePct: 15 },
+      { country: "Ireland", sharePct: 12 },
+      { country: "Canada", sharePct: 9 },
+      { country: "France", sharePct: 8 },
     ],
     seasonality: seasonality(11),
   },
   ARE: {
-    iso3: 'ARE',
-    name: 'United Arab Emirates',
-    currency: 'AED',
+    iso3: "ARE",
+    name: "United Arab Emirates",
+    currency: "AED",
     tariffRateDefault: 0.05,
     freightRateCadPerFeu: 5100,
     comtradeImportVolumeUsd: 340_000_000,
@@ -111,23 +129,22 @@ export const COUNTRY_FALLBACKS: Record<string, CountryProfileFallback> = {
     volatility90d: 0.006,
     sanctionsClear: true,
     competitors: [
-      { country: 'India', sharePct: 21 },
-      { country: 'China', sharePct: 18 },
-      { country: 'United States', sharePct: 12 },
-      { country: 'Turkey', sharePct: 9 },
-      { country: 'Canada', sharePct: 5 },
+      { country: "India", sharePct: 21 },
+      { country: "China", sharePct: 18 },
+      { country: "United States", sharePct: 12 },
+      { country: "Turkey", sharePct: 9 },
+      { country: "Canada", sharePct: 5 },
     ],
     seasonality: seasonality(2),
   },
 };
-
 
 export function getCountryFallback(iso3: string): CountryProfileFallback {
   const key = iso3.toUpperCase();
   const base = COUNTRY_FALLBACKS[key] ?? {
     iso3: key,
     name: key,
-    currency: 'USD',
+    currency: "USD",
     tariffRateDefault: 0.05,
     freightRateCadPerFeu: 4500,
     comtradeImportVolumeUsd: 250_000_000,
@@ -137,54 +154,72 @@ export function getCountryFallback(iso3: string): CountryProfileFallback {
     volatility90d: 0.022,
     sanctionsClear: true,
     competitors: [
-      { country: 'United States', sharePct: 20 },
-      { country: 'China', sharePct: 18 },
-      { country: 'Germany', sharePct: 12 },
-      { country: 'Canada', sharePct: 8 },
-      { country: 'Japan', sharePct: 6 },
+      { country: "United States", sharePct: 20 },
+      { country: "China", sharePct: 18 },
+      { country: "Germany", sharePct: 12 },
+      { country: "Canada", sharePct: 8 },
+      { country: "Japan", sharePct: 6 },
     ],
     seasonality: seasonality(6),
   };
 
-  const tradeEntry = (historyData as Record<string, { timeSeries: { year: number; importsUsd: number }[] }>)[key];
+  const tradeEntry = (
+    historyData as Record<
+      string,
+      { timeSeries: { year: number; importsUsd: number }[] }
+    >
+  )[key];
   if (tradeEntry && tradeEntry.timeSeries.length > 0) {
     const latest = tradeEntry.timeSeries[tradeEntry.timeSeries.length - 1];
     return {
       ...base,
-      comtradeImportVolumeUsd: latest.importsUsd > 0 ? latest.importsUsd : base.comtradeImportVolumeUsd,
+      comtradeImportVolumeUsd:
+        latest.importsUsd > 0
+          ? latest.importsUsd
+          : base.comtradeImportVolumeUsd,
     };
   }
 
   return base;
 }
 
-export function getWitsCountryTrend(iso3: string): { year: number; value: number }[] {
+export function getWitsCountryTrend(
+  iso3: string,
+): { year: number; value: number }[] {
   const key = iso3.toUpperCase();
-  const tradeEntry = (historyData as Record<string, { timeSeries: { year: number; importsUsd: number }[] }>)[key];
+  const tradeEntry = (
+    historyData as Record<
+      string,
+      { timeSeries: { year: number; importsUsd: number }[] }
+    >
+  )[key];
   if (!tradeEntry) return [];
-  return tradeEntry.timeSeries.map((t) => ({ year: t.year, value: t.importsUsd }));
+  return tradeEntry.timeSeries.map((t) => ({
+    year: t.year,
+    value: t.importsUsd,
+  }));
 }
 
 export function mockComtradePayload(hsCode: string, country: string) {
   const profile = getCountryFallback(country);
-  
+
   const competitors = [...profile.competitors];
   const seen = new Set(competitors.map((c) => c.country));
-  
+
   const additional = [
-    { country: 'United States', sharePct: 15 },
-    { country: 'China', sharePct: 12 },
-    { country: 'Germany', sharePct: 9 },
-    { country: 'Canada', sharePct: 7 },
-    { country: 'Japan', sharePct: 6 },
-    { country: 'Mexico', sharePct: 5 },
-    { country: 'United Kingdom', sharePct: 4 },
-    { country: 'France', sharePct: 3 },
-    { country: 'South Korea', sharePct: 3 },
-    { country: 'Brazil', sharePct: 2 },
-    { country: 'India', sharePct: 2 },
-    { country: 'Australia', sharePct: 2 },
-    { country: 'Netherlands', sharePct: 1 },
+    { country: "United States", sharePct: 15 },
+    { country: "China", sharePct: 12 },
+    { country: "Germany", sharePct: 9 },
+    { country: "Canada", sharePct: 7 },
+    { country: "Japan", sharePct: 6 },
+    { country: "Mexico", sharePct: 5 },
+    { country: "United Kingdom", sharePct: 4 },
+    { country: "France", sharePct: 3 },
+    { country: "South Korea", sharePct: 3 },
+    { country: "Brazil", sharePct: 2 },
+    { country: "India", sharePct: 2 },
+    { country: "Australia", sharePct: 2 },
+    { country: "Netherlands", sharePct: 1 },
   ];
 
   for (const item of additional) {
@@ -225,19 +260,21 @@ export function mockComtradePayload(hsCode: string, country: string) {
     yoyChange: yoy,
     competitors: competitors.sort((a, b) => b.sharePct - a.sharePct),
     seasonality: profile.seasonality,
-    dataOrigin: 'mock-fallback' as const,
+    dataOrigin: "mock-fallback" as const,
   };
 }
 
 export function mockRatesPayload(base: string, target: string) {
-  const profile = Object.values(COUNTRY_FALLBACKS).find((c) => c.currency === target.toUpperCase());
+  const profile = Object.values(COUNTRY_FALLBACKS).find(
+    (c) => c.currency === target.toUpperCase(),
+  );
   return {
     base: base.toUpperCase(),
     target: target.toUpperCase(),
     rate: profile?.fxRateFromCad ?? 1,
     volatility30d: profile?.volatility30d ?? 0.015,
     volatility90d: profile?.volatility90d ?? 0.022,
-    dataOrigin: 'mock-fallback' as const,
+    dataOrigin: "mock-fallback" as const,
   };
 }
 
@@ -248,8 +285,8 @@ export function mockFreightPayload(origin: string, destination: string) {
     destination: profile.iso3,
     containerRateCad: profile.freightRateCadPerFeu,
     transitDays: 28,
-    mode: 'ocean-feu',
-    dataOrigin: 'mock-fallback' as const,
+    mode: "ocean-feu",
+    dataOrigin: "mock-fallback" as const,
   };
 }
 
@@ -260,7 +297,7 @@ export function mockTariffPayload(hsCode: string, country: string) {
     country: profile.iso3,
     rate: profile.tariffRateDefault,
     preferentialRate: Math.max(0, profile.tariffRateDefault - 0.03),
-    dataOrigin: 'mock-fallback' as const,
+    dataOrigin: "mock-fallback" as const,
   };
 }
 
@@ -269,8 +306,8 @@ export function mockSanctionsPayload(query: string) {
     inputQuery: query,
     match: false,
     matchedEntries: [] as { name: string; source: string }[],
-    source: 'CSL mock-fallback',
-    sourceVersion: 'fallback-v1',
-    dataOrigin: 'mock-fallback' as const,
+    source: "CSL mock-fallback",
+    sourceVersion: "fallback-v1",
+    dataOrigin: "mock-fallback" as const,
   };
 }

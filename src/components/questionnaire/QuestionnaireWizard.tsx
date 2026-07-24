@@ -1,22 +1,25 @@
-'use client';
+"use client";
 
-import { useCallback, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from '@/components/ui/icons';
-import type { AssessmentRecord, OptionKey } from '@/types';
+import { useCallback, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  Loader2,
+} from "@/components/ui/icons";
+import type { AssessmentRecord, OptionKey } from "@/types";
 import {
   getQuestionPillarMap,
   getQuestionsByIds,
   selectAssessmentQuestions,
-} from '@/lib/question-pool';
-import {
-  buildPillarCompletion,
-} from '@/lib/scoring-engine';
-import { QuestionCard } from '@/components/questionnaire/QuestionCard';
-import { PillarProgressBar } from '@/components/questionnaire/PillarProgressBar';
-import { cn } from '@/lib/utils';
-import { buttonSpring, snappy } from '@/lib/animation/presets';
-import { MagneticButton } from '@/components/ui/effects/MagneticButton';
+} from "@/lib/question-pool";
+import { buildPillarCompletion } from "@/lib/scoring-engine";
+import { QuestionCard } from "@/components/questionnaire/QuestionCard";
+import { PillarProgressBar } from "@/components/questionnaire/PillarProgressBar";
+import { cn } from "@/lib/utils";
+import { buttonSpring, snappy } from "@/lib/animation/presets";
+import { MagneticButton } from "@/components/ui/effects/MagneticButton";
 
 export interface QuestionnaireWizardProps {
   smeId: string;
@@ -30,11 +33,18 @@ const slideVariants = {
   exit: (direction: number) => ({ x: direction > 0 ? -40 : 40, opacity: 0 }),
 };
 
-export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWizardProps) {
-  const selectedQuestionIds = useMemo(() => selectAssessmentQuestions(seed), [seed]);
+export function QuestionnaireWizard({
+  smeId,
+  seed,
+  onComplete,
+}: QuestionnaireWizardProps) {
+  const selectedQuestionIds = useMemo(
+    () => selectAssessmentQuestions(seed),
+    [seed],
+  );
   const questions = useMemo(
     () => getQuestionsByIds(selectedQuestionIds),
-    [selectedQuestionIds]
+    [selectedQuestionIds],
   );
   const pillarMap = useMemo(() => getQuestionPillarMap(), []);
 
@@ -46,17 +56,22 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
 
   const currentQuestion = questions[currentIndex];
   const isLast = currentIndex >= questions.length - 1;
-  const currentAnswered = Boolean(currentQuestion && answers[currentQuestion.id]);
+  const currentAnswered = Boolean(
+    currentQuestion && answers[currentQuestion.id],
+  );
 
   const pillarCompletion = useMemo(
     () => buildPillarCompletion(selectedQuestionIds, answers, pillarMap),
-    [selectedQuestionIds, answers, pillarMap]
+    [selectedQuestionIds, answers, pillarMap],
   );
 
-  const handleSelect = useCallback((key: OptionKey) => {
-    if (!currentQuestion) return;
-    setAnswers((prev) => ({ ...prev, [currentQuestion.id]: key }));
-  }, [currentQuestion]);
+  const handleSelect = useCallback(
+    (key: OptionKey) => {
+      if (!currentQuestion) return;
+      setAnswers((prev) => ({ ...prev, [currentQuestion.id]: key }));
+    },
+    [currentQuestion],
+  );
 
   const goNext = () => {
     if (!currentAnswered || isLast) return;
@@ -75,9 +90,9 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const res = await fetch('/api/assessment/score', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/assessment/score", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           smeId,
           answers,
@@ -86,12 +101,12 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
       });
       if (!res.ok) {
         const body = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(body.error ?? 'Failed to submit assessment');
+        throw new Error(body.error ?? "Failed to submit assessment");
       }
       const assessment = (await res.json()) as AssessmentRecord;
       onComplete(assessment);
     } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : 'Submission failed');
+      setSubmitError(err instanceof Error ? err.message : "Submission failed");
     } finally {
       setSubmitting(false);
     }
@@ -99,7 +114,9 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
 
   if (!currentQuestion) {
     return (
-      <p className="text-sm text-[var(--text-muted)]">No assessment questions available.</p>
+      <p className="text-sm text-[var(--text-muted)]">
+        No assessment questions available.
+      </p>
     );
   }
 
@@ -116,13 +133,15 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
             </p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-[var(--text-muted)]">Live Score Preview</p>
+            <p className="text-xs text-[var(--text-muted)]">
+              Live Score Preview
+            </p>
             <p className="font-mono text-2xl font-semibold text-[var(--text-tertiary)]">
               —
             </p>
             <p
               className="text-xs font-medium"
-              style={{ color: 'var(--text-muted)' }}
+              style={{ color: "var(--text-muted)" }}
             >
               Hidden during assessment
             </p>
@@ -178,7 +197,7 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
             onClick={goNext}
             disabled={!currentAnswered || submitting}
             className={cn(
-              'inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40'
+              "inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40",
             )}
             strength={15}
           >
@@ -192,7 +211,11 @@ export function QuestionnaireWizard({ smeId, seed, onComplete }: QuestionnaireWi
             className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--success)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40"
             strength={15}
           >
-            {submitting ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle2 size={16} />}
+            {submitting ? (
+              <Loader2 size={16} className="animate-spin" />
+            ) : (
+              <CheckCircle2 size={16} />
+            )}
             Submit assessment
           </MagneticButton>
         )}

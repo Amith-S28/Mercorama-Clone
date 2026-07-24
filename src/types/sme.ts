@@ -1,6 +1,11 @@
-import type { IndustrySector, PillarKey, ReadinessGrade, OptionKey } from './assessment';
+import type {
+  IndustrySector,
+  PillarKey,
+  ReadinessGrade,
+  OptionKey,
+} from "./assessment";
 
-export type RoadmapBucket = '30-day' | '60-day' | '90-day';
+export type RoadmapBucket = "30-day" | "60-day" | "90-day";
 
 export interface SmeRecord {
   id: string;

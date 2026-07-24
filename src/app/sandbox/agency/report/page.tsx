@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import { ReportWorkspace } from '@/components/report/ReportWorkspace';
+import { Suspense } from "react";
+import { ReportWorkspace } from "@/components/report/ReportWorkspace";
 
 export default function AgencyReportPage() {
   return (

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect, type ChangeEvent } from 'react';
-import { cn } from '@/lib/utils';
+import { useState, useEffect, type ChangeEvent } from "react";
+import { cn } from "@/lib/utils";
 
 export interface FormattedNumberInputProps {
   value: number;
@@ -22,10 +22,10 @@ export function FormattedNumberInput({
   max,
   className,
   placeholder,
-  prefix = '',
-  suffix = '',
+  prefix = "",
+  suffix = "",
 }: FormattedNumberInputProps) {
-  const [displayValue, setDisplayValue] = useState('');
+  const [displayValue, setDisplayValue] = useState("");
 
   // Sync external value to internal string representation
   useEffect(() => {
@@ -34,11 +34,11 @@ export function FormattedNumberInput({
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     let raw = e.target.value;
-    
-    // Remove non-digit characters except period and minus
-    raw = raw.replace(/[^\d.-]/g, '');
 
-    if (raw === '' || raw === '-') {
+    // Remove non-digit characters except period and minus
+    raw = raw.replace(/[^\d.-]/g, "");
+
+    if (raw === "" || raw === "-") {
       setDisplayValue(raw);
       onChange(0);
       return;
@@ -50,24 +50,24 @@ export function FormattedNumberInput({
       let bounded = numeric;
       if (max !== undefined && bounded > max) bounded = max;
       if (min !== undefined && bounded < min) bounded = min;
-      
-      // Update string representation for cursor stability during typing, 
+
+      // Update string representation for cursor stability during typing,
       // but if the user reaches max/min, we clamp it immediately.
       if (numeric !== bounded) {
-         setDisplayValue(bounded.toLocaleString());
+        setDisplayValue(bounded.toLocaleString());
       } else {
-         // Add commas to the raw number string
-         const parts = raw.split('.');
-         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-         setDisplayValue(parts.join('.'));
+        // Add commas to the raw number string
+        const parts = raw.split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        setDisplayValue(parts.join("."));
       }
-      
+
       onChange(bounded);
     }
   };
 
   const handleBlur = () => {
-    if (displayValue === '' || displayValue === '-') {
+    if (displayValue === "" || displayValue === "-") {
       setDisplayValue(min.toLocaleString());
       onChange(min);
     } else {
@@ -76,7 +76,7 @@ export function FormattedNumberInput({
   };
 
   return (
-    <div className={cn('relative flex items-center', className)}>
+    <div className={cn("relative flex items-center", className)}>
       {prefix && (
         <span className="absolute left-3 text-[var(--text-secondary)] font-mono text-sm pointer-events-none">
           {prefix}
@@ -89,9 +89,9 @@ export function FormattedNumberInput({
         onBlur={handleBlur}
         placeholder={placeholder}
         className={cn(
-          'w-full bg-[var(--surface-muted)] border border-[var(--border)] rounded-[var(--radius-interactive)] px-3 py-2 text-sm font-mono text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent-premium)] transition-colors',
-          prefix && 'pl-8',
-          suffix && 'pr-8'
+          "w-full bg-[var(--surface-muted)] border border-[var(--border)] rounded-[var(--radius-interactive)] px-3 py-2 text-sm font-mono text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent-premium)] transition-colors",
+          prefix && "pl-8",
+          suffix && "pr-8",
         )}
       />
       {suffix && (

@@ -3,7 +3,7 @@ import type {
   PillarKey,
   ReadinessGrade,
   ScoringResult,
-} from '@/types';
+} from "@/types";
 
 export const PILLAR_WEIGHTS: Record<PillarKey, number> = {
   management: 0.15,
@@ -18,39 +18,42 @@ export const PILLAR_WEIGHTS: Record<PillarKey, number> = {
 };
 
 export const PILLAR_LABELS: Record<PillarKey, string> = {
-  management: 'Staff Knowledge & Training',
-  product: 'Product/Service Readiness',
-  operations: 'Operations & Logistics',
-  financial: 'Trade Finance & Risk',
-  legal: 'Legal & Regulatory',
-  market: 'Strategy & Market Selection',
-  cultural: 'Cultural Readiness',
-  digital: 'Digital & E-Commerce',
-  programs: 'Program & Funding',
+  management: "Staff Knowledge & Training",
+  product: "Product/Service Readiness",
+  operations: "Operations & Logistics",
+  financial: "Trade Finance & Risk",
+  legal: "Legal & Regulatory",
+  market: "Strategy & Market Selection",
+  cultural: "Cultural Readiness",
+  digital: "Digital & E-Commerce",
+  programs: "Program & Funding",
 };
 
 export const PILLAR_KEYS = Object.keys(PILLAR_WEIGHTS) as PillarKey[];
 
 export type PillarProgress = { answered: number; total: number };
 
-export function createEmptyPillarCompletion(): Record<PillarKey, PillarProgress> {
+export function createEmptyPillarCompletion(): Record<
+  PillarKey,
+  PillarProgress
+> {
   return PILLAR_KEYS.reduce(
     (acc, pillar) => {
       acc[pillar] = { answered: 0, total: 0 };
       return acc;
     },
-    Object.create(null) as Record<PillarKey, PillarProgress>
+    Object.create(null) as Record<PillarKey, PillarProgress>,
   );
 }
 
 export function isPillarKey(value: unknown): value is PillarKey {
-  return typeof value === 'string' && (PILLAR_KEYS as string[]).includes(value);
+  return typeof value === "string" && (PILLAR_KEYS as string[]).includes(value);
 }
 
 export function buildPillarCompletion(
   selectedQuestionIds: string[],
   answers: Record<string, OptionKey>,
-  questionPillarMap: Record<string, PillarKey>
+  questionPillarMap: Record<string, PillarKey>,
 ): Record<PillarKey, PillarProgress> {
   const totals = createEmptyPillarCompletion();
 
@@ -79,31 +82,31 @@ export const GRADE_BOUNDARIES = {
 } as const;
 
 export function classifyGrade(score: number): ReadinessGrade {
-  if (score >= GRADE_BOUNDARIES.A) return 'A';
-  if (score >= GRADE_BOUNDARIES.B) return 'B';
-  if (score >= GRADE_BOUNDARIES.C) return 'C';
-  if (score >= GRADE_BOUNDARIES.D) return 'D';
-  return 'F';
+  if (score >= GRADE_BOUNDARIES.A) return "A";
+  if (score >= GRADE_BOUNDARIES.B) return "B";
+  if (score >= GRADE_BOUNDARIES.C) return "C";
+  if (score >= GRADE_BOUNDARIES.D) return "D";
+  return "F";
 }
 
 export function gradeColor(grade: ReadinessGrade): string {
   const colors: Record<ReadinessGrade, string> = {
-    A: 'var(--success)',
-    B: 'var(--info)',
-    C: 'var(--warning)',
-    D: 'var(--warning-strong)',
-    F: 'var(--danger)',
+    A: "var(--success)",
+    B: "var(--info)",
+    C: "var(--warning)",
+    D: "var(--warning-strong)",
+    F: "var(--danger)",
   };
   return colors[grade];
 }
 
 export function gradeLabel(grade: ReadinessGrade): string {
   const labels: Record<ReadinessGrade, string> = {
-    A: 'Export-Ready',
-    B: 'Developing',
-    C: 'Significant Gaps',
-    D: 'Not Ready',
-    F: 'Critical Deficiencies',
+    A: "Export-Ready",
+    B: "Developing",
+    C: "Significant Gaps",
+    D: "Not Ready",
+    F: "Critical Deficiencies",
   };
   return labels[grade];
 }
@@ -115,7 +118,9 @@ export interface ScoringInput {
 }
 
 export function calculateReadinessScore(input: ScoringInput): ScoringResult {
-  const pillarTotals: Partial<Record<PillarKey, { sum: number; count: number }>> = {};
+  const pillarTotals: Partial<
+    Record<PillarKey, { sum: number; count: number }>
+  > = {};
 
   for (const qId of input.selectedQuestions) {
     const key = input.resolvedAnswers[qId];
@@ -131,7 +136,8 @@ export function calculateReadinessScore(input: ScoringInput): ScoringResult {
   const pillarScores = {} as Record<PillarKey, number>;
   (Object.keys(PILLAR_WEIGHTS) as PillarKey[]).forEach((pillar) => {
     const bucket = pillarTotals[pillar];
-    pillarScores[pillar] = bucket && bucket.count > 0 ? bucket.sum / bucket.count : 0;
+    pillarScores[pillar] =
+      bucket && bucket.count > 0 ? bucket.sum / bucket.count : 0;
   });
 
   let overallScore = 0;
@@ -141,7 +147,7 @@ export function calculateReadinessScore(input: ScoringInput): ScoringResult {
 
   overallScore = Math.round(overallScore * 100) / 100;
   const gaps = (Object.keys(pillarScores) as PillarKey[]).filter(
-    (p) => pillarScores[p] < 50
+    (p) => pillarScores[p] < 50,
   );
 
   return {
@@ -155,7 +161,7 @@ export function calculateReadinessScore(input: ScoringInput): ScoringResult {
 export function computeScore(
   answers: Record<string, OptionKey>,
   questionPillarMap: Record<string, PillarKey>,
-  selectedQuestions: string[]
+  selectedQuestions: string[],
 ): ScoringResult {
   return calculateReadinessScore({
     selectedQuestions,

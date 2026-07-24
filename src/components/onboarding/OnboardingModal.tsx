@@ -1,14 +1,21 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Building2, Loader2, Package, X } from '@/components/ui/icons';
-import type { IndustrySector, SmeRecord } from '@/types';
-import { SectorSelector } from '@/components/onboarding/SectorSelector';
-import { CountrySelect } from '@/components/onboarding/CountrySelect';
-import { HsCodeSearch } from '@/components/onboarding/HsCodeSearch';
-import { cn } from '@/lib/utils';
-import { buttonSpring, smooth, snappy } from '@/lib/animation/presets';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  Loader2,
+  Package,
+  X,
+} from "@/components/ui/icons";
+import type { IndustrySector, SmeRecord } from "@/types";
+import { SectorSelector } from "@/components/onboarding/SectorSelector";
+import { CountrySelect } from "@/components/onboarding/CountrySelect";
+import { HsCodeSearch } from "@/components/onboarding/HsCodeSearch";
+import { cn } from "@/lib/utils";
+import { buttonSpring, smooth, snappy } from "@/lib/animation/presets";
 
 export interface SmeOnboardingPayload {
   name: string;
@@ -37,30 +44,30 @@ export interface OnboardingModalProps {
 }
 
 const STEPS = [
-  { id: 'profile', label: 'Company Profile', icon: Building2 },
-  { id: 'sector', label: 'Sector', icon: Building2 },
-  { id: 'product', label: 'Product & Market', icon: Package },
-  { id: 'hscode', label: 'HS Code', icon: Package },
+  { id: "profile", label: "Company Profile", icon: Building2 },
+  { id: "sector", label: "Sector", icon: Building2 },
+  { id: "product", label: "Product & Market", icon: Package },
+  { id: "hscode", label: "HS Code", icon: Package },
 ] as const;
 
 const PROVINCES = [
-  'Alberta',
-  'British Columbia',
-  'Manitoba',
-  'New Brunswick',
-  'Newfoundland and Labrador',
-  'Northwest Territories',
-  'Nova Scotia',
-  'Nunavut',
-  'Ontario',
-  'Prince Edward Island',
-  'Quebec',
-  'Saskatchewan',
-  'Yukon',
+  "Alberta",
+  "British Columbia",
+  "Manitoba",
+  "New Brunswick",
+  "Newfoundland and Labrador",
+  "Northwest Territories",
+  "Nova Scotia",
+  "Nunavut",
+  "Ontario",
+  "Prince Edward Island",
+  "Quebec",
+  "Saskatchewan",
+  "Yukon",
 ];
 
-const EMPLOYEE_RANGES = ['1-9', '10-49', '50-199', '200+'];
-const REVENUE_RANGES = ['Under $1M', '$1M–$5M', '$5M–$20M', '$20M+'];
+const EMPLOYEE_RANGES = ["1-9", "10-49", "50-199", "200+"];
+const REVENUE_RANGES = ["Under $1M", "$1M–$5M", "$5M–$20M", "$20M+"];
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 48 : -48, opacity: 0 }),
@@ -70,11 +77,11 @@ const slideVariants = {
 
 function emptyForm(): SmeOnboardingPayload {
   return {
-    name: '',
-    province: '',
-    industry: 'Other / Unsure',
-    productDescription: '',
-    hsCode: '',
+    name: "",
+    province: "",
+    industry: "Other / Unsure",
+    productDescription: "",
+    hsCode: "",
     exportQuantity: 0,
     productionCost: 0,
     unitPrice: 0,
@@ -85,12 +92,16 @@ function emptyForm(): SmeOnboardingPayload {
     hasLocalAgent: false,
     employeeRange: null,
     revenueRange: null,
-    targetCountry: '',
-    targetCountryName: '',
+    targetCountry: "",
+    targetCountryName: "",
   };
 }
 
-export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalProps) {
+export function OnboardingModal({
+  open,
+  onClose,
+  onComplete,
+}: OnboardingModalProps) {
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState(1);
   const [form, setForm] = useState<SmeOnboardingPayload>(emptyForm);
@@ -160,18 +171,21 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
     }
 
     try {
-      const res = await fetch('/api/sme', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/sme", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submissionForm),
       });
       if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as { error?: string; details?: { fieldErrors?: Record<string, string[]> } };
-        let msg = body.error ?? 'Failed to create SME profile';
+        const body = (await res.json().catch(() => ({}))) as {
+          error?: string;
+          details?: { fieldErrors?: Record<string, string[]> };
+        };
+        let msg = body.error ?? "Failed to create SME profile";
         if (body.details?.fieldErrors) {
           const detailsStr = Object.entries(body.details.fieldErrors)
-            .map(([field, errs]) => `${field}: ${errs.join(', ')}`)
-            .join('; ');
+            .map(([field, errs]) => `${field}: ${errs.join(", ")}`)
+            .join("; ");
           msg += ` (${detailsStr})`;
         }
         throw new Error(msg);
@@ -180,16 +194,17 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
       onComplete(sme);
       onClose();
     } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : 'Submission failed');
+      setSubmitError(err instanceof Error ? err.message : "Submission failed");
     } finally {
       setSubmitting(false);
     }
   };
 
   const inputClass =
-    'w-full rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] px-3 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent-premium)] focus:outline-none';
+    "w-full rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] px-3 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent-premium)] focus:outline-none";
 
-  const labelClass = 'mb-1.5 block text-xs font-medium uppercase tracking-wide text-[var(--text-secondary)]';
+  const labelClass =
+    "mb-1.5 block text-xs font-medium uppercase tracking-wide text-[var(--text-secondary)]";
 
   return (
     <AnimatePresence>
@@ -205,61 +220,136 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
           transition={smooth}
         >
           {/* Left Panel — Visual steps and brand info */}
-          <div className="hidden md:flex md:w-5/12 bg-[var(--obsidian)] text-white p-12 flex-col justify-between border-r border-[var(--border)] relative overflow-hidden" style={{ background: '#09090b' }}>
+          <div
+            className="hidden md:flex md:w-5/12 bg-[var(--obsidian)] text-white p-12 flex-col justify-between border-r border-[var(--border)] relative overflow-hidden"
+            style={{ background: "#09090b" }}
+          >
             {/* Ambient Background Glow */}
-            <div style={{
-              position: 'absolute',
-              top: '-10%',
-              left: '-10%',
-              width: '120%',
-              height: '120%',
-              background: 'radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%)',
-              pointerEvents: 'none',
-            }} />
-            
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <p className="mono-label" style={{ color: 'var(--text-tertiary)', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                position: "absolute",
+                top: "-10%",
+                left: "-10%",
+                width: "120%",
+                height: "120%",
+                background:
+                  "radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%)",
+                pointerEvents: "none",
+              }}
+            />
+
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <p
+                className="mono-label"
+                style={{
+                  color: "var(--text-tertiary)",
+                  letterSpacing: "0.1em",
+                  marginBottom: "1.5rem",
+                }}
+              >
                 Trade Portal Sandbox
               </p>
-              <h1 style={{ fontSize: '2rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '0.5rem', fontFamily: 'var(--font-sans)' }}>
+              <h1
+                style={{
+                  fontSize: "2rem",
+                  fontWeight: 600,
+                  letterSpacing: "-0.02em",
+                  marginBottom: "0.5rem",
+                  fontFamily: "var(--font-sans)",
+                }}
+              >
                 SME Onboarding Hub
               </h1>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: '1.6', maxWidth: '24rem', marginBottom: '3rem' }}>
-                Provide details about your enterprise profile, pricing structures, and export goals to construct a custom market readiness brief.
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  fontSize: "0.9375rem",
+                  lineHeight: "1.6",
+                  maxWidth: "24rem",
+                  marginBottom: "3rem",
+                }}
+              >
+                Provide details about your enterprise profile, pricing
+                structures, and export goals to construct a custom market
+                readiness brief.
               </p>
 
               {/* Steps guide */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1.75rem",
+                }}
+              >
                 {STEPS.map((s, i) => {
                   const isActive = i === step;
                   const isDone = i < step;
                   return (
-                    <div key={s.id} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                      <div style={{
-                        width: '2rem',
-                        height: '2rem',
-                        borderRadius: 'var(--radius-interactive)',
-                        border: '1px solid ' + (isActive ? 'var(--accent-premium)' : isDone ? 'var(--accent-success)' : 'var(--border)'),
-                        background: isActive ? 'var(--accent-muted)' : isDone ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: isActive ? 'var(--accent-premium)' : isDone ? 'var(--accent-success)' : 'var(--text-secondary)',
-                        transition: 'all 0.3s var(--ease-spring)',
-                        fontSize: '0.8125rem',
-                        fontWeight: 600,
-                      }}>
-                        {isDone ? '✓' : i + 1}
+                    <div
+                      key={s.id}
+                      style={{
+                        display: "flex",
+                        gap: "1rem",
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "2rem",
+                          height: "2rem",
+                          borderRadius: "var(--radius-interactive)",
+                          border:
+                            "1px solid " +
+                            (isActive
+                              ? "var(--accent-premium)"
+                              : isDone
+                                ? "var(--accent-success)"
+                                : "var(--border)"),
+                          background: isActive
+                            ? "var(--accent-muted)"
+                            : isDone
+                              ? "rgba(34, 197, 94, 0.1)"
+                              : "transparent",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: isActive
+                            ? "var(--accent-premium)"
+                            : isDone
+                              ? "var(--accent-success)"
+                              : "var(--text-secondary)",
+                          transition: "all 0.3s var(--ease-spring)",
+                          fontSize: "0.8125rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {isDone ? "✓" : i + 1}
                       </div>
                       <div>
-                        <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: 600, color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+                        <p
+                          style={{
+                            margin: 0,
+                            fontSize: "0.875rem",
+                            fontWeight: 600,
+                            color: isActive
+                              ? "var(--text-primary)"
+                              : "var(--text-secondary)",
+                          }}
+                        >
                           {s.label}
                         </p>
-                        <p style={{ margin: '0.125rem 0 0 0', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-                          {i === 0 && 'Legal name and region'}
-                          {i === 1 && 'SME industry domain classification'}
-                          {i === 2 && 'Pricing margins and volume targets'}
-                          {i === 3 && 'Commodity HS matching classification'}
+                        <p
+                          style={{
+                            margin: "0.125rem 0 0 0",
+                            fontSize: "0.75rem",
+                            color: "var(--text-tertiary)",
+                          }}
+                        >
+                          {i === 0 && "Legal name and region"}
+                          {i === 1 && "SME industry domain classification"}
+                          {i === 2 && "Pricing margins and volume targets"}
+                          {i === 3 && "Commodity HS matching classification"}
                         </p>
                       </div>
                     </div>
@@ -268,9 +358,26 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
               </div>
             </div>
 
-            <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid var(--border)', paddingTop: '1.5rem' }}>
-              <p style={{ margin: 0, fontSize: '0.8125rem', color: 'var(--text-secondary)', fontStyle: 'italic', lineHeight: '1.5' }}>
-                &quot;Precise pricing inputs and HS commodity details allow the analysis engine to compute exact landed margins and trade flows.&quot;
+            <div
+              style={{
+                position: "relative",
+                zIndex: 1,
+                borderTop: "1px solid var(--border)",
+                paddingTop: "1.5rem",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "0.8125rem",
+                  color: "var(--text-secondary)",
+                  fontStyle: "italic",
+                  lineHeight: "1.5",
+                }}
+              >
+                &quot;Precise pricing inputs and HS commodity details allow the
+                analysis engine to compute exact landed margins and trade
+                flows.&quot;
               </p>
             </div>
           </div>
@@ -282,7 +389,11 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                 <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] font-mono">
                   Step {step + 1} of {STEPS.length}
                 </p>
-                <h2 id="onboarding-title" className="text-xl font-semibold text-[var(--text-primary)]" style={{ margin: 0 }}>
+                <h2
+                  id="onboarding-title"
+                  className="text-xl font-semibold text-[var(--text-primary)]"
+                  style={{ margin: 0 }}
+                >
                   {STEPS[step].label}
                 </h2>
               </div>
@@ -302,8 +413,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                 <div
                   key={s.id}
                   className={cn(
-                    'h-1 flex-1 rounded-[var(--radius-pill)] transition-colors',
-                    i <= step ? 'bg-[var(--accent-premium)]' : 'bg-[var(--border-low-contrast)]'
+                    "h-1 flex-1 rounded-[var(--radius-pill)] transition-colors",
+                    i <= step
+                      ? "bg-[var(--accent-premium)]"
+                      : "bg-[var(--border-low-contrast)]",
                   )}
                 />
               ))}
@@ -332,7 +445,9 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                         />
                       </div>
                       <div>
-                        <label className={labelClass}>Province / territory</label>
+                        <label className={labelClass}>
+                          Province / territory
+                        </label>
                         <select
                           className={inputClass}
                           value={form.province}
@@ -351,8 +466,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                           <label className={labelClass}>Primary contact</label>
                           <input
                             className={inputClass}
-                            value={form.primaryContact ?? ''}
-                            onChange={(e) => patch({ primaryContact: e.target.value || null })}
+                            value={form.primaryContact ?? ""}
+                            onChange={(e) =>
+                              patch({ primaryContact: e.target.value || null })
+                            }
                             placeholder="Claire Beaumont"
                           />
                         </div>
@@ -361,8 +478,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                           <input
                             type="email"
                             className={inputClass}
-                            value={form.contactEmail ?? ''}
-                            onChange={(e) => patch({ contactEmail: e.target.value || null })}
+                            value={form.contactEmail ?? ""}
+                            onChange={(e) =>
+                              patch({ contactEmail: e.target.value || null })
+                            }
                             placeholder="exports@company.ca"
                           />
                         </div>
@@ -372,8 +491,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                         <input
                           type="url"
                           className={inputClass}
-                          value={form.website ?? ''}
-                          onChange={(e) => patch({ website: e.target.value || null })}
+                          value={form.website ?? ""}
+                          onChange={(e) =>
+                            patch({ website: e.target.value || null })
+                          }
                           placeholder="https://www.company.ca"
                         />
                       </div>
@@ -382,8 +503,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                           <label className={labelClass}>Employees</label>
                           <select
                             className={inputClass}
-                            value={form.employeeRange ?? ''}
-                            onChange={(e) => patch({ employeeRange: e.target.value || null })}
+                            value={form.employeeRange ?? ""}
+                            onChange={(e) =>
+                              patch({ employeeRange: e.target.value || null })
+                            }
                           >
                             <option value="">Select range</option>
                             {EMPLOYEE_RANGES.map((r) => (
@@ -397,8 +520,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                           <label className={labelClass}>Annual revenue</label>
                           <select
                             className={inputClass}
-                            value={form.revenueRange ?? ''}
-                            onChange={(e) => patch({ revenueRange: e.target.value || null })}
+                            value={form.revenueRange ?? ""}
+                            onChange={(e) =>
+                              patch({ revenueRange: e.target.value || null })
+                            }
                           >
                             <option value="">Select range</option>
                             {REVENUE_RANGES.map((r) => (
@@ -413,10 +538,13 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                         <input
                           type="checkbox"
                           checked={form.hasLocalAgent}
-                          onChange={(e) => patch({ hasLocalAgent: e.target.checked })}
+                          onChange={(e) =>
+                            patch({ hasLocalAgent: e.target.checked })
+                          }
                           className="h-4 w-4 rounded border-[var(--border-medium-contrast)] accent-[var(--accent-premium)]"
                         />
-                        We have a local agent or distributor in the target market
+                        We have a local agent or distributor in the target
+                        market
                       </label>
                     </div>
                   )}
@@ -431,52 +559,77 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                   {step === 2 && (
                     <div className="grid gap-4">
                       <div>
-                        <label className={labelClass}>Product description</label>
+                        <label className={labelClass}>
+                          Product description
+                        </label>
                         <textarea
-                          className={cn(inputClass, 'min-h-24 resize-y')}
+                          className={cn(inputClass, "min-h-24 resize-y")}
                           value={form.productDescription}
-                          onChange={(e) => patch({ productDescription: e.target.value })}
+                          onChange={(e) =>
+                            patch({ productDescription: e.target.value })
+                          }
                           placeholder="Describe your export product in detail for classification and market analysis…"
                         />
                       </div>
                       <CountrySelect
                         value={form.targetCountry}
-                        onChange={(iso3, name) => patch({ targetCountry: iso3, targetCountryName: name })}
+                        onChange={(iso3, name) =>
+                          patch({
+                            targetCountry: iso3,
+                            targetCountryName: name,
+                          })
+                        }
                       />
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div>
-                          <label className={labelClass}>Annual export quantity (units)</label>
+                          <label className={labelClass}>
+                            Annual export quantity (units)
+                          </label>
                           <input
                             type="number"
                             min={1}
                             className={inputClass}
-                            value={form.exportQuantity || ''}
-                            onChange={(e) => patch({ exportQuantity: Number(e.target.value) || 0 })}
+                            value={form.exportQuantity || ""}
+                            onChange={(e) =>
+                              patch({
+                                exportQuantity: Number(e.target.value) || 0,
+                              })
+                            }
                           />
                         </div>
                         <div>
-                          <label className={labelClass}>Target profit margin (%)</label>
+                          <label className={labelClass}>
+                            Target profit margin (%)
+                          </label>
                           <input
                             type="number"
                             min={0}
                             max={100}
                             step={0.5}
                             className={inputClass}
-                            value={form.targetProfitMargin || ''}
+                            value={form.targetProfitMargin || ""}
                             onChange={(e) =>
-                              patch({ targetProfitMargin: Number(e.target.value) || 0 })
+                              patch({
+                                targetProfitMargin: Number(e.target.value) || 0,
+                              })
                             }
                           />
                         </div>
                         <div>
-                          <label className={labelClass}>Production cost (CAD / unit)</label>
+                          <label className={labelClass}>
+                            Production cost (CAD / unit)
+                          </label>
                           <input
                             type="number"
                             min={0}
                             step={0.01}
                             className={inputClass}
-                            value={form.productionCost || ''}
-                            onChange={(e) => patch({ productionCost: Number(e.target.value) || 0 })}
+                            value={form.productionCost || ""}
+                            onChange={(e) =>
+                              patch({
+                                productionCost: Number(e.target.value) || 0,
+                              })
+                            }
                           />
                         </div>
                         <div>
@@ -486,8 +639,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                             min={0}
                             step={0.01}
                             className={inputClass}
-                            value={form.unitPrice || ''}
-                            onChange={(e) => patch({ unitPrice: Number(e.target.value) || 0 })}
+                            value={form.unitPrice || ""}
+                            onChange={(e) =>
+                              patch({ unitPrice: Number(e.target.value) || 0 })
+                            }
                           />
                         </div>
                       </div>
@@ -504,7 +659,8 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                       }}
                       onConfirmedChange={setHsConfirmed}
                       showComplianceWarning={
-                        form.industry === 'Defence, Dual-Use & Critical Supply Chains'
+                        form.industry ===
+                        "Defence, Dual-Use & Critical Supply Chains"
                       }
                     />
                   )}
@@ -519,7 +675,10 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
             </div>
 
             {submitError && (
-              <p className="px-5 text-sm text-[var(--accent-danger)]" role="alert">
+              <p
+                className="px-5 text-sm text-[var(--accent-danger)]"
+                role="alert"
+              >
                 {submitError}
               </p>
             )}
@@ -555,7 +714,9 @@ export function OnboardingModal({ open, onClose, onComplete }: OnboardingModalPr
                   className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40"
                   {...buttonSpring}
                 >
-                  {submitting ? <Loader2 size={16} className="animate-spin" /> : null}
+                  {submitting ? (
+                    <Loader2 size={16} className="animate-spin" />
+                  ) : null}
                   Complete onboarding
                 </motion.button>
               )}

@@ -30,7 +30,7 @@ export interface MarketDataSnapshot {
   payload: Record<string, unknown>;
   lastSyncedAt: string;
   ttlSeconds: number;
-  dataOrigin: 'live' | 'cache' | 'mock-fallback';
+  dataOrigin: "live" | "cache" | "mock-fallback";
 }
 
 export interface FxRateRecord {
@@ -50,5 +50,5 @@ export interface SanctionsScreeningResult {
   source: string;
   sourceVersion: string;
   screenedAt: string;
-  dataOrigin: 'live' | 'mock-fallback';
+  dataOrigin: "live" | "mock-fallback";
 }

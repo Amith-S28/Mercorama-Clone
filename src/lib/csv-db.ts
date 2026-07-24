@@ -1,17 +1,25 @@
-import fs from 'fs';
-import path from 'path';
-import type { SmeRecord, AssessmentRecord, AdvisorNote, RoadmapItem, IndustrySector, ReadinessGrade, RoadmapBucket } from '@/types';
+import fs from "fs";
+import path from "path";
+import type {
+  SmeRecord,
+  AssessmentRecord,
+  AdvisorNote,
+  RoadmapItem,
+  IndustrySector,
+  ReadinessGrade,
+  RoadmapBucket,
+} from "@/types";
 
-const DATA_DIR = path.join(process.cwd(), 'src', 'data');
-const SMES_CSV = path.join(DATA_DIR, 'smes.csv');
-const ASSESSMENTS_CSV = path.join(DATA_DIR, 'assessments.csv');
-const ROADMAP_CSV = path.join(DATA_DIR, 'roadmap.csv');
-const NOTES_CSV = path.join(DATA_DIR, 'advisor_notes.csv');
+const DATA_DIR = path.join(process.cwd(), "src", "data");
+const SMES_CSV = path.join(DATA_DIR, "smes.csv");
+const ASSESSMENTS_CSV = path.join(DATA_DIR, "assessments.csv");
+const ROADMAP_CSV = path.join(DATA_DIR, "roadmap.csv");
+const NOTES_CSV = path.join(DATA_DIR, "advisor_notes.csv");
 
 // Standard RFC 4180 CSV Parser
 export function parseCSVLine(line: string): string[] {
   const result: string[] = [];
-  let current = '';
+  let current = "";
   let inQuotes = false;
   for (let i = 0; i < line.length; i++) {
     const char = line[i];
@@ -22,9 +30,9 @@ export function parseCSVLine(line: string): string[] {
       } else {
         inQuotes = !inQuotes;
       }
-    } else if (char === ',' && !inQuotes) {
+    } else if (char === "," && !inQuotes) {
       result.push(current);
-      current = '';
+      current = "";
     } else {
       current += char;
     }
@@ -37,14 +45,19 @@ export function parseCSVLine(line: string): string[] {
 export function formatCSVLine(fields: string[]): string {
   return fields
     .map((field) => {
-      const val = field === null || field === undefined ? '' : String(field);
+      const val = field === null || field === undefined ? "" : String(field);
       const escaped = val.replace(/"/g, '""');
-      if (escaped.includes(',') || escaped.includes('\n') || escaped.includes('\r') || escaped.includes('"')) {
+      if (
+        escaped.includes(",") ||
+        escaped.includes("\n") ||
+        escaped.includes("\r") ||
+        escaped.includes('"')
+      ) {
         return `"${escaped}"`;
       }
       return escaped;
     })
-    .join(',');
+    .join(",");
 }
 
 // Ensure database files exist
@@ -56,37 +69,72 @@ function initDB() {
   // Initialize SMES CSV
   if (!fs.existsSync(SMES_CSV)) {
     const headers = [
-      'id', 'advisorId', 'name', 'province', 'industry', 'productDescription',
-      'hsCode', 'exportQuantity', 'productionCost', 'unitPrice', 'targetProfitMargin',
-      'contactEmail', 'primaryContact', 'website', 'hasLocalAgent', 'employeeRange',
-      'revenueRange', 'targetCountry', 'targetCountryName', 'createdAt'
+      "id",
+      "advisorId",
+      "name",
+      "province",
+      "industry",
+      "productDescription",
+      "hsCode",
+      "exportQuantity",
+      "productionCost",
+      "unitPrice",
+      "targetProfitMargin",
+      "contactEmail",
+      "primaryContact",
+      "website",
+      "hasLocalAgent",
+      "employeeRange",
+      "revenueRange",
+      "targetCountry",
+      "targetCountryName",
+      "createdAt",
     ];
-    fs.writeFileSync(SMES_CSV, formatCSVLine(headers) + '\n', 'utf-8');
+    fs.writeFileSync(SMES_CSV, formatCSVLine(headers) + "\n", "utf-8");
   }
 
   // Initialize ASSESSMENTS CSV
   if (!fs.existsSync(ASSESSMENTS_CSV)) {
     const headers = [
-      'id', 'smeId', 'overallScore', 'grade', 'pillarScores', 'answers',
-      'selectedQuestions', 'aiReport', 'createdAt'
+      "id",
+      "smeId",
+      "overallScore",
+      "grade",
+      "pillarScores",
+      "answers",
+      "selectedQuestions",
+      "aiReport",
+      "createdAt",
     ];
-    fs.writeFileSync(ASSESSMENTS_CSV, formatCSVLine(headers) + '\n', 'utf-8');
+    fs.writeFileSync(ASSESSMENTS_CSV, formatCSVLine(headers) + "\n", "utf-8");
   }
 
   // Initialize ROADMAP CSV
   if (!fs.existsSync(ROADMAP_CSV)) {
     const headers = [
-      'id', 'assessmentId', 'advisorId', 'task', 'bucket', 'sortOrder', 'completed', 'createdAt'
+      "id",
+      "assessmentId",
+      "advisorId",
+      "task",
+      "bucket",
+      "sortOrder",
+      "completed",
+      "createdAt",
     ];
-    fs.writeFileSync(ROADMAP_CSV, formatCSVLine(headers) + '\n', 'utf-8');
+    fs.writeFileSync(ROADMAP_CSV, formatCSVLine(headers) + "\n", "utf-8");
   }
 
   // Initialize NOTES CSV
   if (!fs.existsSync(NOTES_CSV)) {
     const headers = [
-      'id', 'assessmentId', 'advisorId', 'pillar', 'content', 'updatedAt'
+      "id",
+      "assessmentId",
+      "advisorId",
+      "pillar",
+      "content",
+      "updatedAt",
     ];
-    fs.writeFileSync(NOTES_CSV, formatCSVLine(headers) + '\n', 'utf-8');
+    fs.writeFileSync(NOTES_CSV, formatCSVLine(headers) + "\n", "utf-8");
   }
 }
 
@@ -94,8 +142,10 @@ function initDB() {
 export function readSmesFromCSV(): SmeRecord[] {
   initDB();
   try {
-    const content = fs.readFileSync(SMES_CSV, 'utf-8');
-    const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+    const content = fs.readFileSync(SMES_CSV, "utf-8");
+    const lines = content
+      .split(/\r?\n/)
+      .filter((line) => line.trim().length > 0);
     if (lines.length <= 1) return [];
 
     const records: SmeRecord[] = [];
@@ -117,17 +167,17 @@ export function readSmesFromCSV(): SmeRecord[] {
         contactEmail: fields[11] || null,
         primaryContact: fields[12] || null,
         website: fields[13] || null,
-        hasLocalAgent: fields[14] === 'true',
+        hasLocalAgent: fields[14] === "true",
         employeeRange: fields[15] || null,
         revenueRange: fields[16] || null,
         targetCountry: fields[17],
         targetCountryName: fields[18],
-        createdAt: fields[19]
+        createdAt: fields[19],
       });
     }
     return records;
   } catch (error) {
-    console.error('Error reading SMES CSV:', error);
+    console.error("Error reading SMES CSV:", error);
     return [];
   }
 }
@@ -136,12 +186,28 @@ export function writeSmesToCSV(records: SmeRecord[]): void {
   initDB();
   try {
     const headers = [
-      'id', 'advisorId', 'name', 'province', 'industry', 'productDescription',
-      'hsCode', 'exportQuantity', 'productionCost', 'unitPrice', 'targetProfitMargin',
-      'contactEmail', 'primaryContact', 'website', 'hasLocalAgent', 'employeeRange',
-      'revenueRange', 'targetCountry', 'targetCountryName', 'createdAt'
+      "id",
+      "advisorId",
+      "name",
+      "province",
+      "industry",
+      "productDescription",
+      "hsCode",
+      "exportQuantity",
+      "productionCost",
+      "unitPrice",
+      "targetProfitMargin",
+      "contactEmail",
+      "primaryContact",
+      "website",
+      "hasLocalAgent",
+      "employeeRange",
+      "revenueRange",
+      "targetCountry",
+      "targetCountryName",
+      "createdAt",
     ];
-    let content = formatCSVLine(headers) + '\n';
+    let content = formatCSVLine(headers) + "\n";
     for (const record of records) {
       const row = [
         record.id,
@@ -155,21 +221,21 @@ export function writeSmesToCSV(records: SmeRecord[]): void {
         String(record.productionCost),
         String(record.unitPrice),
         String(record.targetProfitMargin),
-        record.contactEmail ?? '',
-        record.primaryContact ?? '',
-        record.website ?? '',
+        record.contactEmail ?? "",
+        record.primaryContact ?? "",
+        record.website ?? "",
         String(record.hasLocalAgent),
-        record.employeeRange ?? '',
-        record.revenueRange ?? '',
+        record.employeeRange ?? "",
+        record.revenueRange ?? "",
         record.targetCountry,
         record.targetCountryName,
-        record.createdAt
+        record.createdAt,
       ];
-      content += formatCSVLine(row) + '\n';
+      content += formatCSVLine(row) + "\n";
     }
-    fs.writeFileSync(SMES_CSV, content, 'utf-8');
+    fs.writeFileSync(SMES_CSV, content, "utf-8");
   } catch (error) {
-    console.error('Error writing SMES CSV:', error);
+    console.error("Error writing SMES CSV:", error);
   }
 }
 
@@ -177,8 +243,10 @@ export function writeSmesToCSV(records: SmeRecord[]): void {
 export function readAssessmentsFromCSV(): AssessmentRecord[] {
   initDB();
   try {
-    const content = fs.readFileSync(ASSESSMENTS_CSV, 'utf-8');
-    const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+    const content = fs.readFileSync(ASSESSMENTS_CSV, "utf-8");
+    const lines = content
+      .split(/\r?\n/)
+      .filter((line) => line.trim().length > 0);
     if (lines.length <= 1) return [];
 
     const records: AssessmentRecord[] = [];
@@ -190,16 +258,16 @@ export function readAssessmentsFromCSV(): AssessmentRecord[] {
         smeId: fields[1],
         overallScore: Number(fields[2]),
         grade: fields[3] as ReadinessGrade,
-        pillarScores: JSON.parse(fields[4] || '{}'),
-        answers: JSON.parse(fields[5] || '{}'),
-        selectedQuestions: JSON.parse(fields[6] || '[]'),
+        pillarScores: JSON.parse(fields[4] || "{}"),
+        answers: JSON.parse(fields[5] || "{}"),
+        selectedQuestions: JSON.parse(fields[6] || "[]"),
         aiReport: fields[7] ? JSON.parse(fields[7]) : null,
-        createdAt: fields[8]
+        createdAt: fields[8],
       });
     }
     return records;
   } catch (error) {
-    console.error('Error reading Assessments CSV:', error);
+    console.error("Error reading Assessments CSV:", error);
     return [];
   }
 }
@@ -208,10 +276,17 @@ export function writeAssessmentsToCSV(records: AssessmentRecord[]): void {
   initDB();
   try {
     const headers = [
-      'id', 'smeId', 'overallScore', 'grade', 'pillarScores', 'answers',
-      'selectedQuestions', 'aiReport', 'createdAt'
+      "id",
+      "smeId",
+      "overallScore",
+      "grade",
+      "pillarScores",
+      "answers",
+      "selectedQuestions",
+      "aiReport",
+      "createdAt",
     ];
-    let content = formatCSVLine(headers) + '\n';
+    let content = formatCSVLine(headers) + "\n";
     for (const record of records) {
       const row = [
         record.id,
@@ -221,14 +296,14 @@ export function writeAssessmentsToCSV(records: AssessmentRecord[]): void {
         JSON.stringify(record.pillarScores),
         JSON.stringify(record.answers),
         JSON.stringify(record.selectedQuestions),
-        record.aiReport ? JSON.stringify(record.aiReport) : '',
-        record.createdAt
+        record.aiReport ? JSON.stringify(record.aiReport) : "",
+        record.createdAt,
       ];
-      content += formatCSVLine(row) + '\n';
+      content += formatCSVLine(row) + "\n";
     }
-    fs.writeFileSync(ASSESSMENTS_CSV, content, 'utf-8');
+    fs.writeFileSync(ASSESSMENTS_CSV, content, "utf-8");
   } catch (error) {
-    console.error('Error writing Assessments CSV:', error);
+    console.error("Error writing Assessments CSV:", error);
   }
 }
 
@@ -236,8 +311,10 @@ export function writeAssessmentsToCSV(records: AssessmentRecord[]): void {
 export function readRoadmapFromCSV(): RoadmapItem[] {
   initDB();
   try {
-    const content = fs.readFileSync(ROADMAP_CSV, 'utf-8');
-    const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+    const content = fs.readFileSync(ROADMAP_CSV, "utf-8");
+    const lines = content
+      .split(/\r?\n/)
+      .filter((line) => line.trim().length > 0);
     if (lines.length <= 1) return [];
 
     const records: RoadmapItem[] = [];
@@ -251,13 +328,13 @@ export function readRoadmapFromCSV(): RoadmapItem[] {
         task: fields[3],
         bucket: fields[4] as RoadmapBucket,
         sortOrder: Number(fields[5]),
-        completed: fields[6] === 'true',
-        createdAt: fields[7]
+        completed: fields[6] === "true",
+        createdAt: fields[7],
       });
     }
     return records;
   } catch (error) {
-    console.error('Error reading Roadmap CSV:', error);
+    console.error("Error reading Roadmap CSV:", error);
     return [];
   }
 }
@@ -265,8 +342,17 @@ export function readRoadmapFromCSV(): RoadmapItem[] {
 export function writeRoadmapToCSV(records: RoadmapItem[]): void {
   initDB();
   try {
-    const headers = ['id', 'assessmentId', 'advisorId', 'task', 'bucket', 'sortOrder', 'completed', 'createdAt'];
-    let content = formatCSVLine(headers) + '\n';
+    const headers = [
+      "id",
+      "assessmentId",
+      "advisorId",
+      "task",
+      "bucket",
+      "sortOrder",
+      "completed",
+      "createdAt",
+    ];
+    let content = formatCSVLine(headers) + "\n";
     for (const record of records) {
       const row = [
         record.id,
@@ -276,13 +362,13 @@ export function writeRoadmapToCSV(records: RoadmapItem[]): void {
         record.bucket,
         String(record.sortOrder),
         String(record.completed),
-        record.createdAt
+        record.createdAt,
       ];
-      content += formatCSVLine(row) + '\n';
+      content += formatCSVLine(row) + "\n";
     }
-    fs.writeFileSync(ROADMAP_CSV, content, 'utf-8');
+    fs.writeFileSync(ROADMAP_CSV, content, "utf-8");
   } catch (error) {
-    console.error('Error writing Roadmap CSV:', error);
+    console.error("Error writing Roadmap CSV:", error);
   }
 }
 
@@ -290,8 +376,10 @@ export function writeRoadmapToCSV(records: RoadmapItem[]): void {
 export function readNotesFromCSV(): AdvisorNote[] {
   initDB();
   try {
-    const content = fs.readFileSync(NOTES_CSV, 'utf-8');
-    const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+    const content = fs.readFileSync(NOTES_CSV, "utf-8");
+    const lines = content
+      .split(/\r?\n/)
+      .filter((line) => line.trim().length > 0);
     if (lines.length <= 1) return [];
 
     const records: AdvisorNote[] = [];
@@ -304,12 +392,12 @@ export function readNotesFromCSV(): AdvisorNote[] {
         advisorId: fields[2],
         pillar: fields[3],
         content: fields[4],
-        updatedAt: fields[5]
+        updatedAt: fields[5],
       });
     }
     return records;
   } catch (error) {
-    console.error('Error reading Notes CSV:', error);
+    console.error("Error reading Notes CSV:", error);
     return [];
   }
 }
@@ -317,8 +405,15 @@ export function readNotesFromCSV(): AdvisorNote[] {
 export function writeNotesToCSV(records: AdvisorNote[]): void {
   initDB();
   try {
-    const headers = ['id', 'assessmentId', 'advisorId', 'pillar', 'content', 'updatedAt'];
-    let content = formatCSVLine(headers) + '\n';
+    const headers = [
+      "id",
+      "assessmentId",
+      "advisorId",
+      "pillar",
+      "content",
+      "updatedAt",
+    ];
+    let content = formatCSVLine(headers) + "\n";
     for (const record of records) {
       const row = [
         record.id,
@@ -326,12 +421,12 @@ export function writeNotesToCSV(records: AdvisorNote[]): void {
         record.advisorId,
         record.pillar,
         record.content,
-        record.updatedAt
+        record.updatedAt,
       ];
-      content += formatCSVLine(row) + '\n';
+      content += formatCSVLine(row) + "\n";
     }
-    fs.writeFileSync(NOTES_CSV, content, 'utf-8');
+    fs.writeFileSync(NOTES_CSV, content, "utf-8");
   } catch (error) {
-    console.error('Error writing Notes CSV:', error);
+    console.error("Error writing Notes CSV:", error);
   }
 }

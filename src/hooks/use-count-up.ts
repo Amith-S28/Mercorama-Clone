@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export interface UseCountUpOptions {
   duration?: number;
@@ -10,7 +10,7 @@ export interface UseCountUpOptions {
 
 export function useCountUp(
   target: number,
-  { duration = 900, decimals = 0, enabled = true }: UseCountUpOptions = {}
+  { duration = 900, decimals = 0, enabled = true }: UseCountUpOptions = {},
 ): number {
   const [value, setValue] = useState(enabled ? 0 : target);
   const frameRef = useRef<number | null>(null);

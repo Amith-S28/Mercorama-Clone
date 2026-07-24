@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useId, type ReactNode } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown } from '@/components/ui/icons';
-import { smooth } from '@/lib/animation/presets';
+import { useId, type ReactNode } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { ChevronDown } from "@/components/ui/icons";
+import { smooth } from "@/lib/animation/presets";
 
 export interface FolderDisclosureProps {
   title: string;
@@ -25,10 +25,10 @@ export function FolderDisclosure({
   return (
     <div
       style={{
-        border: '1px solid var(--border-low-contrast)',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        background: 'var(--bg-primary)',
+        border: "1px solid var(--border-low-contrast)",
+        borderRadius: "16px",
+        overflow: "hidden",
+        background: "var(--bg-primary)",
       }}
     >
       <button
@@ -37,29 +37,33 @@ export function FolderDisclosure({
         aria-expanded={open}
         aria-controls={panelId}
         style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '0.75rem',
-          padding: '0.875rem 1rem',
-          border: 'none',
-          background: 'transparent',
-          color: 'var(--text-primary)',
-          cursor: 'pointer',
-          fontFamily: 'var(--font-outfit)',
-          textAlign: 'left',
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "0.75rem",
+          padding: "0.875rem 1rem",
+          border: "none",
+          background: "transparent",
+          color: "var(--text-primary)",
+          cursor: "pointer",
+          fontFamily: "var(--font-outfit)",
+          textAlign: "left",
         }}
       >
         <span>
-          <span style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600 }}>{title}</span>
+          <span
+            style={{ display: "block", fontSize: "0.875rem", fontWeight: 600 }}
+          >
+            {title}
+          </span>
           {subtitle ? (
             <span
               style={{
-                display: 'block',
-                marginTop: '0.125rem',
-                fontSize: '0.75rem',
-                color: 'var(--text-secondary)',
+                display: "block",
+                marginTop: "0.125rem",
+                fontSize: "0.75rem",
+                color: "var(--text-secondary)",
               }}
             >
               {subtitle}
@@ -69,7 +73,7 @@ export function FolderDisclosure({
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
           transition={smooth}
-          style={{ display: 'flex', color: 'var(--text-tertiary)' }}
+          style={{ display: "flex", color: "var(--text-tertiary)" }}
         >
           <ChevronDown size={18} />
         </motion.span>
@@ -80,15 +84,15 @@ export function FolderDisclosure({
           <motion.div
             id={panelId}
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={smooth}
-            style={{ overflow: 'hidden' }}
+            style={{ overflow: "hidden" }}
           >
             <div
               style={{
-                padding: '0 1rem 1rem',
-                borderTop: '1px solid var(--border-low-contrast)',
+                padding: "0 1rem 1rem",
+                borderTop: "1px solid var(--border-low-contrast)",
               }}
             >
               {children}

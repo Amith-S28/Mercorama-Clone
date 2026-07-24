@@ -1,7 +1,7 @@
 export interface CountryRiskEntry {
   iso3: string;
   name: string;
-  tier: 'open' | 'watch' | 'restricted' | 'blocked' | 'no-data';
+  tier: "open" | "watch" | "restricted" | "blocked" | "no-data";
   fta: string | null;
   ftaNotes?: string;
   region: string;

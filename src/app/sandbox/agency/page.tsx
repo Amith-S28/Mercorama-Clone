@@ -1,9 +1,11 @@
-import { Suspense } from 'react';
-import { AgencyPortfolioClient } from '@/components/agency/AgencyPortfolioClient';
+import { Suspense } from "react";
+import { AgencyPortfolioClient } from "@/components/agency/AgencyPortfolioClient";
 
 export default function AgencyPortfolioPage() {
   return (
-    <Suspense fallback={<div className="page-container">Loading portfolio…</div>}>
+    <Suspense
+      fallback={<div className="page-container">Loading portfolio…</div>}
+    >
       <AgencyPortfolioClient />
     </Suspense>
   );

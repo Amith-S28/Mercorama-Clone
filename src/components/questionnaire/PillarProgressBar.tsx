@@ -1,10 +1,15 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import type { PillarKey } from '@/types';
-import { PILLAR_KEYS, PILLAR_LABELS, createEmptyPillarCompletion, type PillarProgress } from '@/lib/scoring-engine';
-import { cn } from '@/lib/utils';
-import { smooth } from '@/lib/animation/presets';
+import { motion } from "motion/react";
+import type { PillarKey } from "@/types";
+import {
+  PILLAR_KEYS,
+  PILLAR_LABELS,
+  createEmptyPillarCompletion,
+  type PillarProgress,
+} from "@/lib/scoring-engine";
+import { cn } from "@/lib/utils";
+import { smooth } from "@/lib/animation/presets";
 
 export type { PillarProgress };
 
@@ -13,18 +18,25 @@ export interface PillarProgressBarProps {
   className?: string;
 }
 
-export function PillarProgressBar({ completion, className }: PillarProgressBarProps) {
+export function PillarProgressBar({
+  completion,
+  className,
+}: PillarProgressBarProps) {
   const safeCompletion = { ...createEmptyPillarCompletion(), ...completion };
 
   const overallAnswered = PILLAR_KEYS.reduce(
     (sum, key) => sum + safeCompletion[key].answered,
-    0
+    0,
   );
-  const overallTotal = PILLAR_KEYS.reduce((sum, key) => sum + safeCompletion[key].total, 0);
-  const overallPct = overallTotal > 0 ? (overallAnswered / overallTotal) * 100 : 0;
+  const overallTotal = PILLAR_KEYS.reduce(
+    (sum, key) => sum + safeCompletion[key].total,
+    0,
+  );
+  const overallPct =
+    overallTotal > 0 ? (overallAnswered / overallTotal) * 100 : 0;
 
   return (
-    <div className={cn('space-y-4', className)}>
+    <div className={cn("space-y-4", className)}>
       <div className="flex items-center justify-between text-xs text-[var(--text-secondary)]">
         <span>Assessment progress</span>
         <span className="font-mono text-[var(--accent-premium)]">
@@ -58,8 +70,10 @@ export function PillarProgressBar({ completion, className }: PillarProgressBarPr
                 </span>
                 <span
                   className={cn(
-                    'shrink-0 font-mono text-[10px]',
-                    complete ? 'text-[var(--accent-success)]' : 'text-[var(--text-muted)]'
+                    "shrink-0 font-mono text-[10px]",
+                    complete
+                      ? "text-[var(--accent-success)]"
+                      : "text-[var(--text-muted)]",
                   )}
                 >
                   {answered}/{total}
@@ -68,8 +82,10 @@ export function PillarProgressBar({ completion, className }: PillarProgressBarPr
               <div className="mt-2 h-1.5 overflow-hidden rounded-[var(--radius-pill)] bg-[var(--bg-secondary)]">
                 <motion.div
                   className={cn(
-                    'h-full rounded-[var(--radius-pill)]',
-                    complete ? 'bg-[var(--accent-success)]' : 'bg-[var(--accent-premium)]'
+                    "h-full rounded-[var(--radius-pill)]",
+                    complete
+                      ? "bg-[var(--accent-success)]"
+                      : "bg-[var(--accent-premium)]",
                   )}
                   initial={{ width: 0 }}
                   animate={{ width: `${pct}%` }}

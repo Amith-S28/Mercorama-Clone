@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 export interface UseGsapCounterOptions {
   end: number;
@@ -13,18 +13,22 @@ export interface UseGsapCounterOptions {
   suffix?: string;
 }
 
-export function useGsapCounter<T extends HTMLElement = HTMLSpanElement>(options: UseGsapCounterOptions) {
-  const [value, setValue] = useState(options.prefix ? `${options.prefix}0${options.suffix || ''}` : '0');
+export function useGsapCounter<T extends HTMLElement = HTMLSpanElement>(
+  options: UseGsapCounterOptions,
+) {
+  const [value, setValue] = useState(
+    options.prefix ? `${options.prefix}0${options.suffix || ""}` : "0",
+  );
   const ref = useRef<T>(null);
-  
+
   const {
     end,
     duration = 1.5,
     decimals = 0,
     delay = 0,
     threshold = 0.1,
-    prefix = '',
-    suffix = '',
+    prefix = "",
+    suffix = "",
   } = options;
 
   useEffect(() => {
@@ -32,7 +36,9 @@ export function useGsapCounter<T extends HTMLElement = HTMLSpanElement>(options:
     if (!el) return;
 
     // Respect reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReducedMotion) {
       setValue(`${prefix}${end.toFixed(decimals)}${suffix}`);
       return;
@@ -44,14 +50,14 @@ export function useGsapCounter<T extends HTMLElement = HTMLSpanElement>(options:
       val: end,
       duration,
       delay,
-      ease: 'power3.out',
+      ease: "power3.out",
       onUpdate: () => {
         setValue(`${prefix}${obj.val.toFixed(decimals)}${suffix}`);
       },
       scrollTrigger: {
         trigger: el,
         start: `top ${100 - threshold * 100}%`,
-        toggleActions: 'play none none none',
+        toggleActions: "play none none none",
       },
     });
 

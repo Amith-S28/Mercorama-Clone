@@ -1,18 +1,14 @@
 export type ApiServiceId =
-  | 'comtrade'
-  | 'exchange_rate'
-  | 'usda_agtransport'
-  | 'csl'
-  | 'wto'
-  | 'usitc'
-  | 'taric';
+  | "comtrade"
+  | "exchange_rate"
+  | "usda_agtransport"
+  | "csl"
+  | "wto"
+  | "usitc"
+  | "taric";
 
 export type ApiHealthStatus =
-  | 'healthy'
-  | 'degraded'
-  | 'down'
-  | 'unconfigured'
-  | 'unknown';
+  "healthy" | "degraded" | "down" | "unconfigured" | "unknown";
 
 export interface ApiServiceHealth {
   serviceId: ApiServiceId;

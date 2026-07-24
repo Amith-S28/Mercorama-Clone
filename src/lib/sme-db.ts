@@ -1,4 +1,4 @@
-import type { AssessmentRecord, SmeRecord } from '@/types';
+import type { AssessmentRecord, SmeRecord } from "@/types";
 
 export interface DbSmeRow {
   id: string;
@@ -41,7 +41,7 @@ export function mapDbSmeToRecord(row: DbSmeRow): SmeRecord {
     advisorId: row.advisor_id,
     name: row.name,
     province: row.province,
-    industry: row.industry as SmeRecord['industry'],
+    industry: row.industry as SmeRecord["industry"],
     productDescription: row.product_description,
     hsCode: row.hs_code,
     exportQuantity: Number(row.export_quantity),
@@ -61,8 +61,8 @@ export function mapDbSmeToRecord(row: DbSmeRow): SmeRecord {
 }
 
 export function mapSmeToDbInsert(
-  input: Omit<SmeRecord, 'createdAt'>
-): Omit<DbSmeRow, 'created_at'> {
+  input: Omit<SmeRecord, "createdAt">,
+): Omit<DbSmeRow, "created_at"> {
   return {
     id: input.id,
     advisor_id: input.advisorId,
@@ -86,16 +86,18 @@ export function mapSmeToDbInsert(
   };
 }
 
-export function mapDbAssessmentToRecord(row: DbAssessmentRow): AssessmentRecord {
+export function mapDbAssessmentToRecord(
+  row: DbAssessmentRow,
+): AssessmentRecord {
   return {
     id: row.id,
     smeId: row.sme_id,
     overallScore: Number(row.overall_score),
-    grade: row.grade as AssessmentRecord['grade'],
-    pillarScores: row.pillar_scores as AssessmentRecord['pillarScores'],
-    answers: row.answers as AssessmentRecord['answers'],
+    grade: row.grade as AssessmentRecord["grade"],
+    pillarScores: row.pillar_scores as AssessmentRecord["pillarScores"],
+    answers: row.answers as AssessmentRecord["answers"],
     selectedQuestions: row.selected_questions,
-    aiReport: (row.ai_report as AssessmentRecord['aiReport']) ?? null,
+    aiReport: (row.ai_report as AssessmentRecord["aiReport"]) ?? null,
     createdAt: row.created_at,
   };
 }

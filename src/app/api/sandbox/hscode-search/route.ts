@@ -1,17 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export interface HsSearchResult {
   code: string;
   description: string;
 }
 
-const CACHE_KEY = '__holygrail_hs_nomenclature_cache__';
+const CACHE_KEY = "__holygrail_hs_nomenclature_cache__";
 
 function parseCSVLine(line: string) {
   const fields: string[] = [];
-  let current = '';
+  let current = "";
   let inQuotes = false;
   for (let i = 0; i < line.length; i++) {
     const ch = line[i];
@@ -29,9 +29,9 @@ function parseCSVLine(line: string) {
     } else {
       if (ch === '"') {
         inQuotes = true;
-      } else if (ch === ',') {
+      } else if (ch === ",") {
         fields.push(current.trim());
-        current = '';
+        current = "";
       } else {
         current += ch;
       }
@@ -47,9 +47,16 @@ function getNomenclature(): HsSearchResult[] {
   };
   if (!globalCache[CACHE_KEY]) {
     try {
-      const filePath = path.join(process.cwd(), 'src', 'data', 'official_hs_nomenclature.csv');
-      const content = fs.readFileSync(filePath, 'utf-8');
-      const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+      const filePath = path.join(
+        process.cwd(),
+        "src",
+        "data",
+        "official_hs_nomenclature.csv",
+      );
+      const content = fs.readFileSync(filePath, "utf-8");
+      const lines = content
+        .split(/\r?\n/)
+        .filter((line) => line.trim().length > 0);
       const entries: HsSearchResult[] = [];
       for (let i = 1; i < lines.length; i++) {
         const fields = parseCSVLine(lines[i]);
@@ -58,7 +65,7 @@ function getNomenclature(): HsSearchResult[] {
       }
       globalCache[CACHE_KEY] = entries;
     } catch (err) {
-      console.error('Failed to load hs_codes.csv:', err);
+      console.error("Failed to load hs_codes.csv:", err);
       globalCache[CACHE_KEY] = [];
     }
   }
@@ -66,14 +73,14 @@ function getNomenclature(): HsSearchResult[] {
 }
 
 export async function GET(request: NextRequest) {
-  const q = request.nextUrl.searchParams.get('q')?.trim().toLowerCase() ?? '';
+  const q = request.nextUrl.searchParams.get("q")?.trim().toLowerCase() ?? "";
   const entries = getNomenclature();
 
   if (!q) {
     return NextResponse.json(entries);
   }
 
-  const normalizedCode = q.replace(/[\s.]/g, '');
+  const normalizedCode = q.replace(/[\s.]/g, "");
   const isCodeQuery = /^\d+$/.test(normalizedCode);
   const tokens = q.split(/\s+/).filter(Boolean);
 
@@ -90,7 +97,7 @@ export async function GET(request: NextRequest) {
     } else {
       const desc = entry.description.toLowerCase();
       const descMatch = tokens.every((t) => {
-        const stem = t.length > 3 && t.endsWith('s') ? t.slice(0, -1) : t;
+        const stem = t.length > 3 && t.endsWith("s") ? t.slice(0, -1) : t;
         return desc.includes(stem);
       });
       if (descMatch) {

@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { AlertTriangle, Check, Loader2, Search, Sparkles } from '@/components/ui/icons';
-import { cn } from '@/lib/utils';
-import { buttonSpring, snappy } from '@/lib/animation/presets';
+import { useCallback, useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  AlertTriangle,
+  Check,
+  Loader2,
+  Search,
+  Sparkles,
+} from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
+import { buttonSpring, snappy } from "@/lib/animation/presets";
 
 export interface HsCodeResult {
   code: string;
@@ -29,7 +35,7 @@ export interface HsCodeSearchProps {
 const PAGE_SIZE = 60;
 
 function formatHsCode(code: string): string {
-  const digits = code.replace(/\D/g, '');
+  const digits = code.replace(/\D/g, "");
   if (digits.length <= 4) return digits;
   if (digits.length <= 6) return `${digits.slice(0, 4)}.${digits.slice(4)}`;
   return `${digits.slice(0, 4)}.${digits.slice(4, 6)}.${digits.slice(6)}`;
@@ -43,12 +49,14 @@ export function HsCodeSearch({
   disabled,
   showComplianceWarning = false,
 }: HsCodeSearchProps) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState<HsCodeResult[]>([]);
-  const [selectedDescription, setSelectedDescription] = useState('');
+  const [selectedDescription, setSelectedDescription] = useState("");
   const [searching, setSearching] = useState(false);
   const [classifying, setClassifying] = useState(false);
-  const [classification, setClassification] = useState<HsClassification | null>(null);
+  const [classification, setClassification] = useState<HsClassification | null>(
+    null,
+  );
   const [confirmed, setConfirmed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searched, setSearched] = useState(false);
@@ -63,14 +71,16 @@ export function HsCodeSearch({
     setSearching(true);
     setError(null);
     try {
-      const res = await fetch(`/api/sandbox/hscode-search?q=${encodeURIComponent(q.trim())}`);
-      if (!res.ok) throw new Error('Search failed');
+      const res = await fetch(
+        `/api/sandbox/hscode-search?q=${encodeURIComponent(q.trim())}`,
+      );
+      if (!res.ok) throw new Error("Search failed");
       const data = (await res.json()) as HsCodeResult[];
       setResults(data);
       setSearched(true);
       setVisibleCount(PAGE_SIZE);
     } catch {
-      setError('Unable to search HS nomenclature. Try again.');
+      setError("Unable to search HS nomenclature. Try again.");
       setResults([]);
       setSearched(false);
     } finally {
@@ -95,18 +105,18 @@ export function HsCodeSearch({
         setDropdownOpen(false);
       }
     };
-    document.addEventListener('mousedown', handlePointerDown);
-    document.addEventListener('touchstart', handlePointerDown);
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown);
     return () => {
-      document.removeEventListener('mousedown', handlePointerDown);
-      document.removeEventListener('touchstart', handlePointerDown);
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
     };
   }, []);
 
   useEffect(() => {
     if (!value) {
       setConfirmed(false);
-      setSelectedDescription('');
+      setSelectedDescription("");
       onConfirmedChange?.(false);
     }
   }, [value, onConfirmedChange]);
@@ -124,18 +134,18 @@ export function HsCodeSearch({
 
   const handleClassify = async () => {
     if (!productDescription.trim()) {
-      setError('Enter a product description before using AI classification.');
+      setError("Enter a product description before using AI classification.");
       return;
     }
     setClassifying(true);
     setError(null);
     try {
-      const res = await fetch('/api/hscode/classify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/hscode/classify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ productDescription: productDescription.trim() }),
       });
-      if (!res.ok) throw new Error('Classification failed');
+      if (!res.ok) throw new Error("Classification failed");
       const data = (await res.json()) as HsClassification;
       setClassification(data);
       onChange(data.hsCode, data.reasoning);
@@ -144,7 +154,7 @@ export function HsCodeSearch({
       onConfirmedChange?.(false);
       setQuery(data.hsCode);
     } catch {
-      setError('AI classification unavailable. Search manually or try again.');
+      setError("AI classification unavailable. Search manually or try again.");
     } finally {
       setClassifying(false);
     }
@@ -156,7 +166,8 @@ export function HsCodeSearch({
     onConfirmedChange?.(true);
   };
 
-  const lowConfidence = classification !== null && classification.confidence < 0.7;
+  const lowConfidence =
+    classification !== null && classification.confidence < 0.7;
   const needsConfirmation = Boolean(value) && !confirmed;
 
   return (
@@ -179,7 +190,7 @@ export function HsCodeSearch({
             }}
             onFocus={() => setDropdownOpen(true)}
             onKeyDown={(e) => {
-              if (e.key === 'Escape') setDropdownOpen(false);
+              if (e.key === "Escape") setDropdownOpen(false);
             }}
             disabled={disabled}
             placeholder="Browse all HS codes or search by code / description…"
@@ -187,66 +198,76 @@ export function HsCodeSearch({
           />
 
           <AnimatePresence>
-            {dropdownOpen && (results.length > 0 || (searched && !searching)) && (
-              <motion.div
-                initial={{ opacity: 0, y: -4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={snappy}
-                className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-medium-contrast)] bg-[var(--bg-secondary)] shadow-[var(--shadow-elevated)]"
-              >
-                {results.length > 0 ? (
-                  <>
-                    <ul
-                      id="hs-code-listbox"
-                      role="listbox"
-                      aria-label="HS code suggestions"
-                      className="max-h-72 overflow-y-auto"
-                      onScroll={(e) => {
-                        const el = e.currentTarget;
-                        if (
-                          visibleCount < results.length &&
-                          el.scrollTop + el.clientHeight >= el.scrollHeight - 120
-                        ) {
-                          setVisibleCount((c) => Math.min(c + PAGE_SIZE, results.length));
-                        }
-                      }}
-                    >
-                      {results.slice(0, visibleCount).map((result) => (
-                        <li key={`${result.code}-${result.description}`} role="option" aria-selected={value === result.code}>
-                          <button
-                            type="button"
-                            disabled={disabled}
-                            onClick={() => handleSelect(result)}
-                            className={cn(
-                              'flex w-full items-start gap-3 border-b border-[var(--border-low-contrast)] px-3 py-2.5 text-left last:border-b-0 hover:bg-[var(--bg-elevated)]',
-                              value === result.code &&
-                                'bg-[color-mix(in_srgb,var(--accent-premium)_10%,transparent)]'
-                            )}
+            {dropdownOpen &&
+              (results.length > 0 || (searched && !searching)) && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={snappy}
+                  className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-medium-contrast)] bg-[var(--bg-secondary)] shadow-[var(--shadow-elevated)]"
+                >
+                  {results.length > 0 ? (
+                    <>
+                      <ul
+                        id="hs-code-listbox"
+                        role="listbox"
+                        aria-label="HS code suggestions"
+                        className="max-h-72 overflow-y-auto"
+                        onScroll={(e) => {
+                          const el = e.currentTarget;
+                          if (
+                            visibleCount < results.length &&
+                            el.scrollTop + el.clientHeight >=
+                              el.scrollHeight - 120
+                          ) {
+                            setVisibleCount((c) =>
+                              Math.min(c + PAGE_SIZE, results.length),
+                            );
+                          }
+                        }}
+                      >
+                        {results.slice(0, visibleCount).map((result) => (
+                          <li
+                            key={`${result.code}-${result.description}`}
+                            role="option"
+                            aria-selected={value === result.code}
                           >
-                            <span className="shrink-0 pt-0.5 font-mono text-xs text-[var(--accent-premium)]">
-                              {formatHsCode(result.code)}
-                            </span>
-                            <span className="text-sm text-[var(--text-primary)]">
-                              {result.description}
-                            </span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="border-t border-[var(--border-low-contrast)] px-3 py-1.5 font-mono text-[0.625rem] uppercase tracking-wider text-[var(--text-muted)]">
-                      {results.length.toLocaleString()} code{results.length === 1 ? '' : 's'}
-                      {query.trim() ? ' matching' : ' in nomenclature'}
+                            <button
+                              type="button"
+                              disabled={disabled}
+                              onClick={() => handleSelect(result)}
+                              className={cn(
+                                "flex w-full items-start gap-3 border-b border-[var(--border-low-contrast)] px-3 py-2.5 text-left last:border-b-0 hover:bg-[var(--bg-elevated)]",
+                                value === result.code &&
+                                  "bg-[color-mix(in_srgb,var(--accent-premium)_10%,transparent)]",
+                              )}
+                            >
+                              <span className="shrink-0 pt-0.5 font-mono text-xs text-[var(--accent-premium)]">
+                                {formatHsCode(result.code)}
+                              </span>
+                              <span className="text-sm text-[var(--text-primary)]">
+                                {result.description}
+                              </span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="border-t border-[var(--border-low-contrast)] px-3 py-1.5 font-mono text-[0.625rem] uppercase tracking-wider text-[var(--text-muted)]">
+                        {results.length.toLocaleString()} code
+                        {results.length === 1 ? "" : "s"}
+                        {query.trim() ? " matching" : " in nomenclature"}
+                      </p>
+                    </>
+                  ) : searched && !error ? (
+                    <p className="px-3 py-2.5 text-sm text-[var(--text-secondary)]">
+                      No matches for “{query.trim()}”. Try a broader term (e.g.
+                      “coffee”, “rice”) or a partial HS code, or use AI
+                      Classify.
                     </p>
-                  </>
-                ) : searched && !error ? (
-                  <p className="px-3 py-2.5 text-sm text-[var(--text-secondary)]">
-                    No matches for “{query.trim()}”. Try a broader term (e.g. “coffee”,
-                    “rice”) or a partial HS code, or use AI Classify.
-                  </p>
-                ) : null}
-              </motion.div>
-            )}
+                  ) : null}
+                </motion.div>
+              )}
           </AnimatePresence>
         </div>
         <motion.button
@@ -254,12 +275,16 @@ export function HsCodeSearch({
           disabled={disabled || classifying}
           onClick={() => void handleClassify()}
           className={cn(
-            'inline-flex items-center justify-center gap-2 rounded-[var(--radius-card)] border border-[var(--accent-premium)] px-4 py-2.5 text-sm font-medium text-[var(--accent-premium)]',
-            'disabled:cursor-not-allowed disabled:opacity-50'
+            "inline-flex items-center justify-center gap-2 rounded-[var(--radius-card)] border border-[var(--accent-premium)] px-4 py-2.5 text-sm font-medium text-[var(--accent-premium)]",
+            "disabled:cursor-not-allowed disabled:opacity-50",
           )}
           {...buttonSpring}
         >
-          {classifying ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />}
+          {classifying ? (
+            <Loader2 size={16} className="animate-spin" />
+          ) : (
+            <Sparkles size={16} />
+          )}
           AI Classify
         </motion.button>
       </div>
@@ -292,11 +317,15 @@ export function HsCodeSearch({
           transition={snappy}
           className="rounded-[var(--radius-card)] border border-[var(--border-medium-contrast)] bg-[var(--bg-elevated)] p-3"
         >
-          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">AI suggestion</p>
+          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
+            AI suggestion
+          </p>
           <p className="mt-1 font-mono text-sm text-[var(--accent-premium)]">
             {formatHsCode(classification.hsCode)}
           </p>
-          <p className="mt-1 text-sm text-[var(--text-primary)]">{classification.reasoning}</p>
+          <p className="mt-1 text-sm text-[var(--text-primary)]">
+            {classification.reasoning}
+          </p>
           <p className="mt-2 text-xs text-[var(--text-muted)]">
             Confidence: {Math.round(classification.confidence * 100)}%
           </p>
@@ -305,10 +334,16 @@ export function HsCodeSearch({
 
       {value && (
         <div className="rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] p-3">
-          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">Selected HS code</p>
-          <p className="mt-1 font-mono text-lg text-[var(--accent-premium)]">{formatHsCode(value)}</p>
+          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
+            Selected HS code
+          </p>
+          <p className="mt-1 font-mono text-lg text-[var(--accent-premium)]">
+            {formatHsCode(value)}
+          </p>
           {selectedDescription && (
-            <p className="mt-1 text-sm text-[var(--text-secondary)]">{selectedDescription}</p>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">
+              {selectedDescription}
+            </p>
           )}
         </div>
       )}
@@ -318,13 +353,16 @@ export function HsCodeSearch({
           className="flex items-start gap-3 rounded-[var(--radius-card)] border border-[var(--accent-warning)] bg-[color-mix(in_srgb,var(--accent-warning)_12%,transparent)] p-3"
           role="alert"
         >
-          <AlertTriangle size={18} className="shrink-0 text-[var(--accent-warning)]" />
+          <AlertTriangle
+            size={18}
+            className="shrink-0 text-[var(--accent-warning)]"
+          />
           <div className="text-sm text-[var(--text-primary)]">
             <p className="font-medium">Compliance review recommended</p>
             <p className="mt-1 text-[var(--text-secondary)]">
               {showComplianceWarning
-                ? 'Defence and dual-use products may require export permits. Verify classification with CBSA and Global Affairs Canada before shipping.'
-                : 'AI confidence is below 70%. Confirm the HS code with a licensed customs broker or CBSA tariff finder.'}
+                ? "Defence and dual-use products may require export permits. Verify classification with CBSA and Global Affairs Canada before shipping."
+                : "AI confidence is below 70%. Confirm the HS code with a licensed customs broker or CBSA tariff finder."}
             </p>
           </div>
         </div>
@@ -350,7 +388,11 @@ export function HsCodeSearch({
         </p>
       )}
 
-      <input type="hidden" name="hsCodeConfirmed" value={confirmed ? 'true' : 'false'} />
+      <input
+        type="hidden"
+        name="hsCodeConfirmed"
+        value={confirmed ? "true" : "false"}
+      />
     </div>
   );
 }

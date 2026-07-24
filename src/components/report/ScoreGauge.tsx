@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import type { ReadinessGrade } from '@/types';
-import { gradeColor, gradeLabel } from '@/lib/scoring-engine';
-import { useCountUp } from '@/hooks';
-import { snappy } from '@/lib/animation/presets';
+import { motion } from "motion/react";
+import type { ReadinessGrade } from "@/types";
+import { gradeColor, gradeLabel } from "@/lib/scoring-engine";
+import { useCountUp } from "@/hooks";
+import { snappy } from "@/lib/animation/presets";
 
 export interface ScoreGaugeProps {
   score: number;
@@ -22,13 +22,28 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
   const color = gradeColor(grade);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-      <p className="mono-label" style={{ color: 'var(--text-tertiary)', alignSelf: 'flex-start' }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "1rem",
+      }}
+    >
+      <p
+        className="mono-label"
+        style={{ color: "var(--text-tertiary)", alignSelf: "flex-start" }}
+      >
         Readiness Score
       </p>
 
-      <div style={{ position: 'relative', width: SIZE, height: SIZE }}>
-        <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} aria-hidden>
+      <div style={{ position: "relative", width: SIZE, height: SIZE }}>
+        <svg
+          width={SIZE}
+          height={SIZE}
+          viewBox={`0 0 ${SIZE} ${SIZE}`}
+          aria-hidden
+        >
           <circle
             cx={SIZE / 2}
             cy={SIZE / 2}
@@ -55,18 +70,18 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
 
         <div
           style={{
-            position: 'absolute',
+            position: "absolute",
             inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <span
             style={{
-              fontFamily: 'var(--font-jetbrains-mono)',
-              fontSize: '2rem',
+              fontFamily: "var(--font-jetbrains-mono)",
+              fontSize: "2rem",
               fontWeight: 600,
               lineHeight: 1,
               color,
@@ -76,10 +91,10 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
           </span>
           <span
             style={{
-              marginTop: '0.25rem',
-              fontFamily: 'var(--font-jetbrains-mono)',
-              fontSize: '1.125rem',
-              color: 'var(--text-primary)',
+              marginTop: "0.25rem",
+              fontFamily: "var(--font-jetbrains-mono)",
+              fontSize: "1.125rem",
+              color: "var(--text-primary)",
             }}
           >
             {animatedScore.toFixed(1)}
@@ -87,7 +102,14 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
         </div>
       </div>
 
-      <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      <p
+        style={{
+          margin: 0,
+          fontSize: "0.875rem",
+          color: "var(--text-secondary)",
+          textAlign: "center",
+        }}
+      >
         {gradeLabel(grade)}
       </p>
     </div>

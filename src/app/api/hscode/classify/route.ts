@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import hsNomenclature from '@/data/hs-nomenclature.json';
-import { env } from '@/lib/env';
+import { NextRequest, NextResponse } from "next/server";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import hsNomenclature from "@/data/hs-nomenclature.json";
+import { env } from "@/lib/env";
 
 interface HsNomenclatureEntry {
   id: string;
@@ -25,9 +25,34 @@ function hashText(text: string): number {
 }
 
 const STOPWORDS = new Set([
-  'the', 'and', 'for', 'with', 'from', 'not', 'other', 'than', 'whether',
-  'our', 'are', 'was', 'were', 'has', 'have', 'its', 'their', 'this', 'that',
-  'made', 'used', 'use', 'per', 'into', 'such', 'each', 'all', 'any',
+  "the",
+  "and",
+  "for",
+  "with",
+  "from",
+  "not",
+  "other",
+  "than",
+  "whether",
+  "our",
+  "are",
+  "was",
+  "were",
+  "has",
+  "have",
+  "its",
+  "their",
+  "this",
+  "that",
+  "made",
+  "used",
+  "use",
+  "per",
+  "into",
+  "such",
+  "each",
+  "all",
+  "any",
 ]);
 
 function tokenize(text: string): string[] {
@@ -35,10 +60,12 @@ function tokenize(text: string): string[] {
     .toLowerCase()
     .split(/[^a-z0-9]+/)
     .filter((t) => t.length >= 3 && !STOPWORDS.has(t))
-    .map((t) => (t.length > 3 && t.endsWith('s') ? t.slice(0, -1) : t));
+    .map((t) => (t.length > 3 && t.endsWith("s") ? t.slice(0, -1) : t));
 }
 
-function mockClassification(productDescription: string): HsClassificationResponse {
+function mockClassification(
+  productDescription: string,
+): HsClassificationResponse {
   const entries = hsNomenclature as HsNomenclatureEntry[];
   const tokens = tokenize(productDescription);
 
@@ -104,10 +131,10 @@ function mockClassification(productDescription: string): HsClassificationRespons
 }
 
 async function geminiClassification(
-  productDescription: string
+  productDescription: string,
 ): Promise<HsClassificationResponse> {
   const genAI = new GoogleGenerativeAI(env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const prompt = `You are a Canadian export customs classification assistant.
 Given this product description, return ONLY valid JSON with keys:
@@ -121,14 +148,14 @@ Product: ${productDescription}`;
   const text = result.response.text().trim();
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) {
-    throw new Error('Gemini returned non-JSON response');
+    throw new Error("Gemini returned non-JSON response");
   }
 
   const parsed = JSON.parse(jsonMatch[0]) as HsClassificationResponse;
   return {
-    hsCode: String(parsed.hsCode).replace(/\D/g, '').slice(0, 6),
+    hsCode: String(parsed.hsCode).replace(/\D/g, "").slice(0, 6),
     confidence: Math.min(1, Math.max(0, Number(parsed.confidence) || 0.75)),
-    reasoning: parsed.reasoning || 'Classified via Gemini.',
+    reasoning: parsed.reasoning || "Classified via Gemini.",
   };
 }
 
@@ -137,12 +164,15 @@ export async function POST(request: NextRequest) {
   try {
     body = (await request.json()) as { productDescription?: string };
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const productDescription = body.productDescription?.trim();
   if (!productDescription) {
-    return NextResponse.json({ error: 'productDescription is required' }, { status: 400 });
+    return NextResponse.json(
+      { error: "productDescription is required" },
+      { status: 400 },
+    );
   }
 
   try {
@@ -157,7 +187,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       ...fallback,
       reasoning: `${fallback.reasoning} (Live model unavailable: ${
-        error instanceof Error ? error.message : 'unknown error'
+        error instanceof Error ? error.message : "unknown error"
       })`,
     } satisfies HsClassificationResponse);
   }

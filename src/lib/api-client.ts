@@ -1,4 +1,4 @@
-type CircuitState = 'closed' | 'open' | 'half-open';
+type CircuitState = "closed" | "open" | "half-open";
 
 interface CircuitBreaker {
   failures: number;
@@ -16,7 +16,7 @@ const MAX_RETRIES = 3;
 function getCircuit(key: string): CircuitBreaker {
   const existing = circuits.get(key);
   if (existing) return existing;
-  const created: CircuitBreaker = { failures: 0, state: 'closed', openedAt: 0 };
+  const created: CircuitBreaker = { failures: 0, state: "closed", openedAt: 0 };
   circuits.set(key, created);
   return created;
 }
@@ -24,26 +24,26 @@ function getCircuit(key: string): CircuitBreaker {
 function recordSuccess(key: string) {
   const circuit = getCircuit(key);
   circuit.failures = 0;
-  circuit.state = 'closed';
+  circuit.state = "closed";
 }
 
 function recordFailure(key: string) {
   const circuit = getCircuit(key);
   circuit.failures += 1;
   if (circuit.failures >= FAILURE_THRESHOLD) {
-    circuit.state = 'open';
+    circuit.state = "open";
     circuit.openedAt = Date.now();
   }
 }
 
 function canAttempt(key: string): boolean {
   const circuit = getCircuit(key);
-  if (circuit.state === 'closed') return true;
-  if (circuit.state === 'open' && Date.now() - circuit.openedAt >= RESET_MS) {
-    circuit.state = 'half-open';
+  if (circuit.state === "closed") return true;
+  if (circuit.state === "open" && Date.now() - circuit.openedAt >= RESET_MS) {
+    circuit.state = "half-open";
     return true;
   }
-  return circuit.state === 'half-open';
+  return circuit.state === "half-open";
 }
 
 export interface FetchWithRetryOptions {
@@ -55,7 +55,7 @@ export interface FetchWithRetryOptions {
 
 export async function fetchWithRetry(
   url: string,
-  options: FetchWithRetryOptions
+  options: FetchWithRetryOptions,
 ): Promise<Response> {
   const {
     circuitKey,
@@ -104,29 +104,31 @@ export async function fetchWithRetry(
     }
   }
 
-  throw lastError instanceof Error ? lastError : new Error('fetchWithRetry failed');
+  throw lastError instanceof Error
+    ? lastError
+    : new Error("fetchWithRetry failed");
 }
 
 export async function withMockFallback<T>(
   circuitKey: string,
   live: () => Promise<T>,
   fallback: () => T,
-  isConfigured: boolean
-): Promise<{ data: T; origin: 'live' | 'mock-fallback' }> {
+  isConfigured: boolean,
+): Promise<{ data: T; origin: "live" | "mock-fallback" }> {
   if (!isConfigured) {
-    return { data: fallback(), origin: 'mock-fallback' };
+    return { data: fallback(), origin: "mock-fallback" };
   }
 
   try {
     if (!canAttempt(circuitKey)) {
-      return { data: fallback(), origin: 'mock-fallback' };
+      return { data: fallback(), origin: "mock-fallback" };
     }
     const data = await live();
     recordSuccess(circuitKey);
-    return { data, origin: 'live' };
+    return { data, origin: "live" };
   } catch {
     recordFailure(circuitKey);
-    return { data: fallback(), origin: 'mock-fallback' };
+    return { data: fallback(), origin: "mock-fallback" };
   }
 }
 

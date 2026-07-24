@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ReactNode, useRef, useState, MouseEvent } from 'react';
-import { motion } from 'motion/react';
+import { ReactNode, useRef, useState, MouseEvent } from "react";
+import { motion } from "motion/react";
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -14,7 +14,7 @@ interface MagneticButtonProps {
 export function MagneticButton({
   children,
   onClick,
-  className = '',
+  className = "",
   strength = 30,
   disabled = false,
 }: MagneticButtonProps) {
@@ -27,7 +27,10 @@ export function MagneticButton({
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * (strength / width), y: middleY * (strength / height) });
+    setPosition({
+      x: middleX * (strength / width),
+      y: middleY * (strength / height),
+    });
   };
 
   const reset = () => {
@@ -42,16 +45,16 @@ export function MagneticButton({
       onClick={onClick}
       disabled={disabled}
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className={className}
       style={{
-        position: 'relative',
-        transformStyle: 'preserve-3d',
+        position: "relative",
+        transformStyle: "preserve-3d",
       }}
     >
       <motion.div
         animate={{ x: position.x * 0.2, y: position.y * 0.2 }}
-        transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+        transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       >
         {children}
       </motion.div>

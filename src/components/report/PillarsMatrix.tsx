@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import type { PillarKey } from '@/types';
-import { PILLAR_LABELS } from '@/lib/scoring-engine';
-import { useGsapStagger } from '@/hooks';
+import type { PillarKey } from "@/types";
+import { PILLAR_LABELS } from "@/lib/scoring-engine";
+import { useGsapStagger } from "@/hooks";
 
 export interface PillarsMatrixProps {
   pillarScores: Record<PillarKey, number>;
 }
 
 function pillarColor(score: number): string {
-  if (score >= 70) return 'var(--success)';
-  if (score >= 50) return 'var(--info)';
-  if (score >= 25) return 'var(--warning)';
-  return 'var(--danger)';
+  if (score >= 70) return "var(--success)";
+  if (score >= 50) return "var(--info)";
+  if (score >= 25) return "var(--warning)";
+  return "var(--danger)";
 }
 
 export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
@@ -25,36 +25,56 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
   const listRef = useGsapStagger<HTMLDivElement>({
     staggerEach: 0.05,
     distance: 10,
-    direction: 'left',
+    direction: "left",
   });
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <div>
-        <p className="mono-label" style={{ color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>
+        <p
+          className="mono-label"
+          style={{ color: "var(--text-tertiary)", marginBottom: "0.25rem" }}
+        >
           Pillar Matrix
         </p>
-        <p style={{ margin: 0, fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
+        <p
+          style={{
+            margin: 0,
+            fontSize: "0.8125rem",
+            color: "var(--text-secondary)",
+          }}
+        >
           Linear readiness breakdown across nine export pillars
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }} ref={listRef}>
+      <div
+        style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
+        ref={listRef}
+      >
         {entries.map(({ key, label, score }) => (
           <div key={key} className="opacity-0">
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'baseline',
-                marginBottom: '0.375rem',
-                gap: '0.75rem',
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+                marginBottom: "0.375rem",
+                gap: "0.75rem",
               }}
             >
-              <span style={{ fontSize: '0.8125rem', color: 'var(--text-primary)' }}>{label}</span>
+              <span
+                style={{ fontSize: "0.8125rem", color: "var(--text-primary)" }}
+              >
+                {label}
+              </span>
               <span
                 className="mono-label"
-                style={{ fontSize: '0.6875rem', color: pillarColor(score), flexShrink: 0 }}
+                style={{
+                  fontSize: "0.6875rem",
+                  color: pillarColor(score),
+                  flexShrink: 0,
+                }}
               >
                 {Math.round(score)}%
               </span>
@@ -62,10 +82,10 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
             <div className="progress-track">
               <div
                 className="progress-fill"
-                style={{ 
+                style={{
                   width: `${Math.min(100, Math.max(0, score))}%`,
                   background: pillarColor(score),
-                  transition: 'width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s'
+                  transition: "width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s",
                 }}
               />
             </div>
