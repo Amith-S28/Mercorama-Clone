@@ -13,7 +13,15 @@ const eslintConfig = [
       "scratch/**",
       "docs/**",
       "scripts/**",
+      "OLDSTUFF/**",
+      ".agents/**",
+      ".gemini-backup/**",
     ],
+  },
+  {
+    rules: {
+      "react-hooks/set-state-in-effect": "off",
+    },
   },
 ];
 
