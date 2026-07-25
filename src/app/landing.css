@@ -1050,3 +1050,86 @@
     transform: translateX(-50%);
   }
 }
+
+/* ─── Onboarding Section ─────────────────────────────────────────────────── */
+
+.onboarding-container {
+  padding: 0 var(--spacer-12);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.onboarding-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.onboarding-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.onboarding-form__title {
+  font-family: var(--font-questrial-loaded, "Questrial", sans-serif);
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.onboarding-form__fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 799px) {
+  .onboarding-form__fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.onboarding-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 20px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s var(--ease-in-out-sine);
+}
+
+.onboarding-input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.onboarding-input::placeholder {
+  color: var(--grey-300);
+}
+
+.onboarding-submit {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 16px 32px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-spring);
+  margin-top: 16px;
+}
+
+.onboarding-submit:hover {
+  background: var(--accent);
+  color: #000;
+}

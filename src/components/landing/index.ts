@@ -2,6 +2,7 @@ export { AsciiCanvas } from "./AsciiCanvas";
 export { SiteHeader } from "./SiteHeader";
 export { HeroSection } from "./HeroSection";
 export { AboutSection } from "./AboutSection";
+export { OnboardingSection } from "./OnboardingSection";
 export { StatsSection } from "./StatsSection";
 export { StatementSection } from "./StatementSection";
 export { FeaturesSection } from "./FeaturesSection";

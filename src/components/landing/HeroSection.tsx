@@ -58,7 +58,6 @@ export function HeroSection() {
                 fontWeight: "bold",
                 letterSpacing: "2px",
                 color: "#fff",
-                backgroundColor: "rgba(0,0,0,0.6)",
                 padding: "4px 12px",
                 borderRadius: "6px",
               }}
