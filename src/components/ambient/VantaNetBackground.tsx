@@ -23,7 +23,6 @@ export function VantaNetBackground({
   const [vantaLoaded, setVantaLoaded] = useState(false);
   const [threeLoaded, setThreeLoaded] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const vantaEffect = useRef<any>(null);
 
   useEffect(() => {
@@ -32,7 +31,6 @@ export function VantaNetBackground({
     // Respect reduced motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const vantaWindow = window as unknown as { VANTA: any; THREE: any };
 
     if (!vantaEffect.current && vantaWindow.VANTA && vantaWindow.THREE) {

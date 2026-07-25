@@ -403,9 +403,9 @@ export default function OnboardingPage() {
                 letterSpacing: "0.03em",
               }}
             >
-              "Precise pricing inputs and HS commodity details allow the
+              &quot;Precise pricing inputs and HS commodity details allow the
               analysis engine to compute exact landed margins and trade
-              flows."
+              flows.&quot;
             </p>
           </motion.div>
         </motion.div>

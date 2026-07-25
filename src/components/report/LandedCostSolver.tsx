@@ -122,7 +122,7 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
     return () => {
       cancelled = true;
     };
-  }, [sme.targetCountry, sme.hsCode, fallback.currency, refreshKey]);
+  }, [sme.targetCountry, sme.hsCode, sme.exportQuantity, fallback.currency, refreshKey]);
 
   const result = useMemo(
     () =>
