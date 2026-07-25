@@ -25,6 +25,9 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
   const [apiFreight, setApiFreight] = useState<number | null>(null);
   const [apiTariffPct, setApiTariffPct] = useState<number | null>(null);
 
+  const [cbamFeePerUnit, setCbamFeePerUnit] = useState<number>(0);
+  const [cbamApplies, setCbamApplies] = useState<boolean>(false);
+
   const [volatility30d, setVolatility30d] = useState<number | null>(
     fallback.volatility30d,
   );
@@ -50,17 +53,18 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
       });
 
       try {
-        const [freightRes, tariffRes, ratesRes] = await Promise.all([
+        const [freightRes, tariffRes, ratesRes, cbamRes] = await Promise.all([
           fetch(
-            `/api/sandbox/freight?origin=CAN&destination=${sme.targetCountry}`,
+            `/api/portal/freight?origin=CAN&destination=${sme.targetCountry}`,
           ),
-          fetch(`/api/sandbox/tariffs?${params.toString()}`),
-          fetch(`/api/sandbox/rates?base=CAD&target=${fallback.currency}`),
+          fetch(`/api/portal/tariffs?${params.toString()}`),
+          fetch(`/api/portal/rates?base=CAD&target=${fallback.currency}`),
+          fetch(`/api/portal/cbam?hsCode=${sme.hsCode}&country=${sme.targetCountry}&quantity=${sme.exportQuantity}`),
         ]);
 
         if (cancelled) return;
 
-        const origins = [freightRes, tariffRes, ratesRes]
+        const origins = [freightRes, tariffRes, ratesRes, cbamRes]
           .map((res) => res.headers.get("data-origin"))
           .filter(Boolean);
         if (
@@ -99,6 +103,14 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
           if (ratesData.volatility90d != null)
             setVolatility90d(ratesData.volatility90d);
         }
+        if (cbamRes.ok) {
+          const cbamData = (await cbamRes.json()) as {
+            cbamFeePerUnit?: number;
+            applies?: boolean;
+          };
+          setCbamFeePerUnit(cbamData.cbamFeePerUnit || 0);
+          setCbamApplies(cbamData.applies || false);
+        }
       } catch {
         if (!cancelled) setDataOrigin("structured-fallback");
       } finally {
@@ -123,8 +135,9 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
         tariffRate: tariffPct / 100,
         volatility30d,
         volatility90d,
+        cbamFeePerUnit,
       }),
-    [sme, freight, tariffPct, quantity, volatility30d, volatility90d],
+    [sme, freight, tariffPct, quantity, volatility30d, volatility90d, cbamFeePerUnit],
   );
 
   const statusColor = result.insolvent
@@ -365,6 +378,12 @@ export function LandedCostSolver({ sme }: LandedCostSolverProps) {
             label="Tariff / unit"
             value={`$${result.tariffPerUnit.toFixed(2)}`}
           />
+          {cbamApplies && (
+            <Row
+              label="EU CBAM / unit"
+              value={`$${result.cbamFeePerUnit.toFixed(2)}`}
+            />
+          )}
           <Row label="Broker fee" value={`$${result.brokerFee.toFixed(2)}`} />
           <Row label="Insurance" value={`$${result.insuranceFee.toFixed(2)}`} />
           <Row

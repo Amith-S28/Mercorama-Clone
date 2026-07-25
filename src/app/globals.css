@@ -69,20 +69,11 @@
   --font-size-h1: 16px;
   --font-size-h2: 16px;
 
-  --font-sans: var(--font-questrial-loaded, "Questrial", system-ui, sans-serif);
+  --font-sans: var(--font-roboto-loaded, "Roboto", system-ui, sans-serif);
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --font-serif: var(
-    --font-questrial-loaded,
-    "Questrial",
-    ui-serif,
-    Georgia,
-    Cambria,
-    "Times New Roman",
-    Times,
-    serif
-  );
+  --font-serif: var(--font-roboto-loaded, "Roboto", system-ui, sans-serif);
 
   /* Text Hierarchy — high-contrast on near-black */
   --text-primary: #f2f2f2;
@@ -450,7 +441,7 @@ body {
   min-height: 100dvh;
   background: var(--theme-bg);
   color: var(--theme-fg);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 300;
   letter-spacing: -0.32px;
@@ -765,30 +756,8 @@ h3 {
   position: relative;
   height: 2px;
   border-radius: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border) 20%,
-    var(--accent) 50%,
-    var(--border) 80%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: flow 4s ease-in-out infinite;
+  background: #ff5500;
   overflow: hidden;
-}
-
-.shipping-lane::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 77, 0, 0.4),
-    transparent
-  );
-  animation: flow 3s ease-in-out infinite reverse;
 }
 
 /* ─── Progress fill ──────────────────────────────────────────────────────── */
@@ -796,14 +765,7 @@ h3 {
 .progress-fill {
   height: 100%;
   border-radius: 0;
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0%,
-    var(--accent-premium) 50%,
-    var(--accent) 100%
-  );
-  background-size: 200% 100%;
-  animation: progress-fill 2s linear infinite;
+  background: #ff5500;
   transition: width var(--duration-normal) var(--ease-spring);
 }
 

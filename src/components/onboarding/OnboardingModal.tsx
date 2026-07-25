@@ -224,19 +224,6 @@ export function OnboardingModal({
             className="hidden md:flex md:w-5/12 bg-[var(--obsidian)] text-white p-12 flex-col justify-between border-r border-[var(--border)] relative overflow-hidden"
             style={{ background: "#09090b" }}
           >
-            {/* Ambient Background Glow */}
-            <div
-              style={{
-                position: "absolute",
-                top: "-10%",
-                left: "-10%",
-                width: "120%",
-                height: "120%",
-                background:
-                  "radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%)",
-                pointerEvents: "none",
-              }}
-            />
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <p
@@ -247,7 +234,7 @@ export function OnboardingModal({
                   marginBottom: "1.5rem",
                 }}
               >
-                Trade Portal Sandbox
+                Trade Intelligence Portal
               </p>
               <h1
                 style={{

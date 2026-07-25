@@ -1,7 +1,7 @@
 import { env } from "@/lib/env";
 
 /**
- * V1 sandbox auth: returns the seeded mock advisor UUID.
+ * V1 primary auth: returns the seeded mock advisor UUID.
  * V2 path uses Supabase Auth via getAuthenticatedAdvisorId().
  */
 export function getMockAdvisorId(): string {

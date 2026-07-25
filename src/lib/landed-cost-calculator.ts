@@ -32,6 +32,7 @@ export function calculateLandedCost(input: LandedCostInput): LandedCostResult {
     tariffRate,
     volatility30d,
     volatility90d,
+    cbamFeePerUnit = 0,
   } = input;
 
   const fxBufferUsed = resolveFxBuffer(volatility30d, volatility90d);
@@ -46,6 +47,7 @@ export function calculateLandedCost(input: LandedCostInput): LandedCostResult {
       actualMargin: 0,
       currencyAdjustedMargin: 0,
       fxBufferUsed,
+      cbamFeePerUnit,
       insolvent: true,
       meetsTarget: false,
       warning: "Export quantity must be greater than zero.",
@@ -59,7 +61,8 @@ export function calculateLandedCost(input: LandedCostInput): LandedCostResult {
     unitFreightCost +
     BROKER_FEE +
     INSURANCE_FEE +
-    tariffPerUnit;
+    tariffPerUnit +
+    cbamFeePerUnit;
 
   const actualMargin =
     unitPrice > 0 ? ((unitPrice - landedCost) / unitPrice) * 100 : 0;
@@ -85,6 +88,7 @@ export function calculateLandedCost(input: LandedCostInput): LandedCostResult {
     actualMargin: round2(actualMargin),
     currencyAdjustedMargin: round2(currencyAdjustedMargin),
     fxBufferUsed: round2(fxBufferUsed),
+    cbamFeePerUnit: round2(cbamFeePerUnit),
     insolvent,
     meetsTarget,
     warning,

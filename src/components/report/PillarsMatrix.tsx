@@ -33,7 +33,7 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
       <div>
         <p
           className="mono-label"
-          style={{ color: "var(--text-tertiary)", marginBottom: "0.25rem" }}
+          style={{ color: "#ff5500", marginBottom: "0.25rem", fontWeight: 600 }}
         >
           Pillar Matrix
         </p>
@@ -49,7 +49,7 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
       </div>
 
       <div
-        style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
+        style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}
         ref={listRef}
       >
         {entries.map(({ key, label, score }) => (
@@ -64,28 +64,40 @@ export function PillarsMatrix({ pillarScores }: PillarsMatrixProps) {
               }}
             >
               <span
-                style={{ fontSize: "0.8125rem", color: "var(--text-primary)" }}
+                style={{ fontSize: "0.8125rem", color: "var(--text-primary)", fontWeight: 500 }}
               >
                 {label}
               </span>
               <span
                 className="mono-label"
                 style={{
-                  fontSize: "0.6875rem",
-                  color: pillarColor(score),
+                  fontSize: "0.75rem",
+                  color: "#ff5500",
+                  fontWeight: 700,
                   flexShrink: 0,
                 }}
               >
                 {Math.round(score)}%
               </span>
             </div>
-            <div className="progress-track">
+            <div
+              style={{
+                height: "10px",
+                borderRadius: "4px",
+                background: "rgba(255, 255, 255, 0.12)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                overflow: "hidden",
+                width: "100%",
+              }}
+            >
               <div
-                className="progress-fill"
                 style={{
+                  height: "100%",
                   width: `${Math.min(100, Math.max(0, score))}%`,
-                  background: pillarColor(score),
-                  transition: "width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s",
+                  backgroundColor: "#ff5500",
+                  borderRadius: "3px",
+                  boxShadow: "0 0 10px rgba(255, 85, 0, 0.5)",
+                  transition: "width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s",
                 }}
               />
             </div>

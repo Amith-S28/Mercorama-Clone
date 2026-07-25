@@ -22,8 +22,8 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { href: "/sandbox/agency", label: "Portfolio", icon: FolderOpen },
-  { href: "/sandbox/agency/report", label: "Report", icon: ClipboardList },
+  { href: "/portal/agency", label: "Portfolio", icon: FolderOpen },
+  { href: "/portal/agency/report", label: "Report", icon: ClipboardList },
 ];
 
 export interface AgencySidebarProps {
@@ -71,7 +71,7 @@ export function AgencySidebar({ onOnboardingClick }: AgencySidebarProps) {
             exit={{ opacity: 0 }}
           >
             <span className="sidebar__brand-title">Trade Agency</span>
-            <span className="sidebar__brand-subtitle">Sandbox Portal</span>
+            <span className="sidebar__brand-subtitle">Intelligence Portal</span>
           </motion.div>
         ) : null}
         <button
@@ -88,7 +88,7 @@ export function AgencySidebar({ onOnboardingClick }: AgencySidebarProps) {
         {NAV_ITEMS.map((item) => {
           const isActive =
             pathname === item.href ||
-            (item.href !== "/sandbox/agency" && pathname.startsWith(item.href));
+            (item.href !== "/portal/agency" && pathname.startsWith(item.href));
           const Icon = item.icon;
 
           return (

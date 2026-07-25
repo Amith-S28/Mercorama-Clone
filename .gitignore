@@ -55,3 +55,7 @@ oldstuff_files.txt
 .agents/
 mercorama-main/
 scratch/
+Data/
+eslint-results.json
+logs.*.json
+

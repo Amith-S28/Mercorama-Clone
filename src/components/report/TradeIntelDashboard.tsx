@@ -83,9 +83,9 @@ export function TradeIntelDashboard({
 
       try {
         const [summaryRes, partnersRes, trendRes] = await Promise.all([
-          fetch(`/api/sandbox/comtrade?${baseParams.toString()}&type=summary`),
-          fetch(`/api/sandbox/comtrade?${baseParams.toString()}&type=partners`),
-          fetch(`/api/sandbox/comtrade?${baseParams.toString()}&type=trend`),
+          fetch(`/api/portal/comtrade?${baseParams.toString()}&type=summary`),
+          fetch(`/api/portal/comtrade?${baseParams.toString()}&type=partners`),
+          fetch(`/api/portal/comtrade?${baseParams.toString()}&type=trend`),
         ]);
 
         if (cancelled) return;

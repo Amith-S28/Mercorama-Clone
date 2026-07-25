@@ -7,7 +7,6 @@ import {
   Check,
   Loader2,
   Search,
-  Sparkles,
 } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import { buttonSpring, snappy } from "@/lib/animation/presets";
@@ -15,12 +14,6 @@ import { buttonSpring, snappy } from "@/lib/animation/presets";
 export interface HsCodeResult {
   code: string;
   description: string;
-}
-
-export interface HsClassification {
-  hsCode: string;
-  confidence: number;
-  reasoning: string;
 }
 
 export interface HsCodeSearchProps {
@@ -53,10 +46,11 @@ export function HsCodeSearch({
   const [results, setResults] = useState<HsCodeResult[]>([]);
   const [selectedDescription, setSelectedDescription] = useState("");
   const [searching, setSearching] = useState(false);
-  const [classifying, setClassifying] = useState(false);
-  const [classification, setClassification] = useState<HsClassification | null>(
-    null,
-  );
+  
+  // Context Search State
+  const [contextSearching, setContextSearching] = useState(false);
+  const [contextResults, setContextResults] = useState<HsCodeResult[] | null>(null);
+
   const [confirmed, setConfirmed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searched, setSearched] = useState(false);
@@ -72,7 +66,7 @@ export function HsCodeSearch({
     setError(null);
     try {
       const res = await fetch(
-        `/api/sandbox/hscode-search?q=${encodeURIComponent(q.trim())}`,
+        `/api/portal/hscode-search?q=${encodeURIComponent(q.trim())}`,
       );
       if (!res.ok) throw new Error("Search failed");
       const data = (await res.json()) as HsCodeResult[];
@@ -124,7 +118,7 @@ export function HsCodeSearch({
   const handleSelect = (result: HsCodeResult) => {
     onChange(result.code, result.description);
     setSelectedDescription(result.description);
-    setClassification(null);
+    setContextResults(null);
     setConfirmed(false);
     onConfirmedChange?.(false);
     skipNextSearchRef.current = true;
@@ -132,31 +126,26 @@ export function HsCodeSearch({
     setDropdownOpen(false);
   };
 
-  const handleClassify = async () => {
+  const handleContextSearch = async () => {
     if (!productDescription.trim()) {
-      setError("Enter a product description before using AI classification.");
+      setError("Enter a product description to perform a context search.");
       return;
     }
-    setClassifying(true);
+    setContextSearching(true);
     setError(null);
+    setContextResults(null);
     try {
-      const res = await fetch("/api/hscode/classify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productDescription: productDescription.trim() }),
-      });
-      if (!res.ok) throw new Error("Classification failed");
-      const data = (await res.json()) as HsClassification;
-      setClassification(data);
-      onChange(data.hsCode, data.reasoning);
-      setSelectedDescription(data.reasoning);
-      setConfirmed(false);
-      onConfirmedChange?.(false);
-      setQuery(data.hsCode);
+      const res = await fetch(
+        `/api/portal/hscode-search?q=${encodeURIComponent(productDescription.trim())}`,
+      );
+      if (!res.ok) throw new Error("Context search failed");
+      const data = (await res.json()) as HsCodeResult[];
+      // take top 5 closest results
+      setContextResults(data.slice(0, 5));
     } catch {
-      setError("AI classification unavailable. Search manually or try again.");
+      setError("Context search unavailable. Search manually or try again.");
     } finally {
-      setClassifying(false);
+      setContextSearching(false);
     }
   };
 
@@ -166,8 +155,6 @@ export function HsCodeSearch({
     onConfirmedChange?.(true);
   };
 
-  const lowConfidence =
-    classification !== null && classification.confidence < 0.7;
   const needsConfirmation = Boolean(value) && !confirmed;
 
   return (
@@ -194,7 +181,7 @@ export function HsCodeSearch({
             }}
             disabled={disabled}
             placeholder="Browse all HS codes or search by code / description…"
-            className="w-full rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] py-2.5 pl-9 pr-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent-premium)] focus:outline-none"
+            className="w-full rounded-[var(--radius-card)] border border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] py-2.5 pl-9 pr-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[#ff5500] focus:outline-none focus:ring-1 focus:ring-[#ff5500]"
           />
 
           <AnimatePresence>
@@ -240,10 +227,10 @@ export function HsCodeSearch({
                               className={cn(
                                 "flex w-full items-start gap-3 border-b border-[var(--border-low-contrast)] px-3 py-2.5 text-left last:border-b-0 hover:bg-[var(--bg-elevated)]",
                                 value === result.code &&
-                                  "bg-[color-mix(in_srgb,var(--accent-premium)_10%,transparent)]",
+                                  "bg-[color-mix(in_srgb,#ff5500_10%,transparent)]",
                               )}
                             >
-                              <span className="shrink-0 pt-0.5 font-mono text-xs text-[var(--accent-premium)]">
+                              <span className="shrink-0 pt-0.5 font-mono text-xs text-[#ff5500]">
                                 {formatHsCode(result.code)}
                               </span>
                               <span className="text-sm text-[var(--text-primary)]">
@@ -262,8 +249,7 @@ export function HsCodeSearch({
                   ) : searched && !error ? (
                     <p className="px-3 py-2.5 text-sm text-[var(--text-secondary)]">
                       No matches for “{query.trim()}”. Try a broader term (e.g.
-                      “coffee”, “rice”) or a partial HS code, or use AI
-                      Classify.
+                      “coffee”, “rice”) or a partial HS code, or use Context Search.
                     </p>
                   ) : null}
                 </motion.div>
@@ -272,20 +258,20 @@ export function HsCodeSearch({
         </div>
         <motion.button
           type="button"
-          disabled={disabled || classifying}
-          onClick={() => void handleClassify()}
+          disabled={disabled || contextSearching}
+          onClick={() => void handleContextSearch()}
           className={cn(
-            "inline-flex items-center justify-center gap-2 rounded-[var(--radius-card)] border border-[var(--accent-premium)] px-4 py-2.5 text-sm font-medium text-[var(--accent-premium)]",
+            "inline-flex items-center justify-center gap-2 rounded-[var(--radius-card)] border border-[#ff5500] px-4 py-2.5 text-sm font-medium text-[#ff5500] hover:bg-[#ff5500]/10",
             "disabled:cursor-not-allowed disabled:opacity-50",
           )}
           {...buttonSpring}
         >
-          {classifying ? (
+          {contextSearching ? (
             <Loader2 size={16} className="animate-spin" />
           ) : (
-            <Sparkles size={16} />
+            <Search size={16} />
           )}
-          AI Classify
+          Context Search
         </motion.button>
       </div>
 
@@ -310,25 +296,47 @@ export function HsCodeSearch({
         )}
       </AnimatePresence>
 
-      {classification && (
+      {contextResults && contextResults.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={snappy}
           className="rounded-[var(--radius-card)] border border-[var(--border-medium-contrast)] bg-[var(--bg-elevated)] p-3"
         >
-          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
-            AI suggestion
+          <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)] mb-3">
+            Top 5 Context Matches
           </p>
-          <p className="mt-1 font-mono text-sm text-[var(--accent-premium)]">
-            {formatHsCode(classification.hsCode)}
-          </p>
-          <p className="mt-1 text-sm text-[var(--text-primary)]">
-            {classification.reasoning}
-          </p>
-          <p className="mt-2 text-xs text-[var(--text-muted)]">
-            Confidence: {Math.round(classification.confidence * 100)}%
-          </p>
+          <ul className="flex flex-col gap-2">
+            {contextResults.map((result) => (
+              <li key={result.code}>
+                <button
+                  type="button"
+                  onClick={() => handleSelect(result)}
+                  className="flex w-full items-start gap-3 rounded-[var(--radius-interactive)] border border-[var(--border-low-contrast)] p-2 text-left hover:bg-[color-mix(in_srgb,#ff5500_5%,transparent)] hover:border-[#ff5500]"
+                >
+                  <span className="shrink-0 pt-0.5 font-mono text-xs font-semibold text-[#ff5500]">
+                    {formatHsCode(result.code)}
+                  </span>
+                  <span className="text-sm text-[var(--text-primary)]">
+                    {result.description}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
+
+      {contextResults && contextResults.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={snappy}
+          className="rounded-[var(--radius-card)] border border-[var(--border-medium-contrast)] bg-[var(--bg-elevated)] p-3"
+        >
+           <p className="text-sm text-[var(--text-secondary)]">
+             No context matches found for the given description.
+           </p>
         </motion.div>
       )}
 
@@ -337,7 +345,7 @@ export function HsCodeSearch({
           <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
             Selected HS code
           </p>
-          <p className="mt-1 font-mono text-lg text-[var(--accent-premium)]">
+          <p className="mt-1 font-mono text-lg text-[#ff5500]">
             {formatHsCode(value)}
           </p>
           {selectedDescription && (
@@ -348,7 +356,7 @@ export function HsCodeSearch({
         </div>
       )}
 
-      {(showComplianceWarning || lowConfidence) && (
+      {showComplianceWarning && (
         <div
           className="flex items-start gap-3 rounded-[var(--radius-card)] border border-[var(--accent-warning)] bg-[color-mix(in_srgb,var(--accent-warning)_12%,transparent)] p-3"
           role="alert"
@@ -360,9 +368,7 @@ export function HsCodeSearch({
           <div className="text-sm text-[var(--text-primary)]">
             <p className="font-medium">Compliance review recommended</p>
             <p className="mt-1 text-[var(--text-secondary)]">
-              {showComplianceWarning
-                ? "Defence and dual-use products may require export permits. Verify classification with CBSA and Global Affairs Canada before shipping."
-                : "AI confidence is below 70%. Confirm the HS code with a licensed customs broker or CBSA tariff finder."}
+              Defence and dual-use products may require export permits. Verify classification with CBSA and Global Affairs Canada before shipping.
             </p>
           </div>
         </div>
@@ -373,7 +379,7 @@ export function HsCodeSearch({
           type="button"
           disabled={disabled}
           onClick={handleConfirm}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)]"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-card)] bg-[#ff5500] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)]"
           {...buttonSpring}
         >
           <Check size={16} />

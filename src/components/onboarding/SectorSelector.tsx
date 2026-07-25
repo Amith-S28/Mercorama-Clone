@@ -10,6 +10,13 @@ import {
   HelpCircle,
   Shield,
   UtensilsCrossed,
+  Desktop,
+  Car,
+  TShirt,
+  Flask,
+  Heartbeat,
+  Diamond,
+  ShoppingBag
 } from "@/components/ui/icons";
 import { GlowBorder } from "@/components/ui/effects/GlowBorder";
 
@@ -19,6 +26,12 @@ const SECTORS: {
   description: string;
   icon: typeof UtensilsCrossed;
 }[] = [
+  {
+    value: "Technology & Electronics",
+    label: "Technology",
+    description: "Software, hardware, and consumer electronics",
+    icon: Desktop,
+  },
   {
     value: "Food, Beverage & CPG",
     label: "Food & CPG",
@@ -32,10 +45,46 @@ const SECTORS: {
     icon: Fish,
   },
   {
+    value: "Automotive & Transportation",
+    label: "Automotive",
+    description: "Vehicles, parts, and transportation solutions",
+    icon: Car,
+  },
+  {
     value: "Advanced Manufacturing & Industrial",
     label: "Manufacturing",
     description: "Precision parts, machinery, and industrial goods",
     icon: Factory,
+  },
+  {
+    value: "Textiles & Apparel",
+    label: "Textiles",
+    description: "Clothing, fabrics, and related materials",
+    icon: TShirt,
+  },
+  {
+    value: "Chemicals & Plastics",
+    label: "Chemicals",
+    description: "Industrial chemicals, polymers, and plastics",
+    icon: Flask,
+  },
+  {
+    value: "Healthcare & Pharmaceuticals",
+    label: "Healthcare",
+    description: "Medical devices, drugs, and health products",
+    icon: Heartbeat,
+  },
+  {
+    value: "Metals & Minerals",
+    label: "Metals & Minerals",
+    description: "Raw and processed natural resources",
+    icon: Diamond,
+  },
+  {
+    value: "Consumer Goods (FMCG)",
+    label: "Consumer Goods",
+    description: "Fast-moving consumer products and retail items",
+    icon: ShoppingBag,
   },
   {
     value: "Defence, Dual-Use & Critical Supply Chains",
@@ -93,7 +142,7 @@ export function SectorSelector({
                 className={cn(
                   "flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--radius-card)] border",
                   selected
-                    ? "border-[var(--accent-premium)] text-[var(--accent-premium)]"
+                    ? "border-[#ff5500] text-[#ff5500]"
                     : "border-[var(--border-low-contrast)] text-[var(--text-secondary)]",
                 )}
                 aria-hidden

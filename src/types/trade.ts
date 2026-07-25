@@ -7,6 +7,7 @@ export interface LandedCostInput {
   tariffRate: number;
   volatility30d?: number | null;
   volatility90d?: number | null;
+  cbamFeePerUnit?: number;
 }
 
 export interface LandedCostResult {
@@ -20,6 +21,7 @@ export interface LandedCostResult {
   fxBufferUsed: number;
   insolvent: boolean;
   meetsTarget: boolean;
+  cbamFeePerUnit: number;
   warning?: string;
 }
 

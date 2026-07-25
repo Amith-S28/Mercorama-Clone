@@ -4,11 +4,13 @@ import {
   Space_Grotesk,
   JetBrains_Mono,
   Questrial,
+  Roboto,
 } from "next/font/google";
 import { GrainOverlay } from "@/components/ambient/GrainOverlay";
 import { LenisProvider } from "@/components/ambient/LenisProvider";
 import { GsapRegistrar } from "@/components/ambient/GsapRegistrar";
 import "./globals.css";
+import "./landing.css";
 import "./theme-overrides.css";
 
 const playfairDisplay = Playfair_Display({
@@ -36,6 +38,13 @@ const questrial = Questrial({
   variable: "--font-questrial-loaded",
   display: "swap",
   weight: ["400"],
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto-loaded",
+  display: "swap",
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -67,13 +76,15 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfairDisplay.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${questrial.variable}`}
+        className={`${playfairDisplay.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${questrial.variable} ${roboto.variable}`}
         suppressHydrationWarning
       >
         <LenisProvider>
           <GsapRegistrar />
           <GrainOverlay />
-          {children}
+          <main className="relative z-0 flex-1 flex flex-col min-h-screen">
+            {children}
+          </main>
         </LenisProvider>
       </body>
     </html>

@@ -26,7 +26,7 @@ export function SanctionsScreen({ defaultQuery = "" }: SanctionsScreenProps) {
 
     try {
       const res = await fetch(
-        `/api/sandbox/screen?q=${encodeURIComponent(trimmed)}`,
+        `/api/portal/screen?q=${encodeURIComponent(trimmed)}`,
       );
       if (!res.ok) throw new Error("Screening request failed");
       const data = (await res.json()) as SanctionsScreeningResult;

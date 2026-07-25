@@ -180,12 +180,12 @@ export function QuestionnaireWizard({
         </p>
       )}
 
-      <footer className="flex items-center justify-between gap-3">
+      <footer className="flex items-center justify-between gap-3 pt-2">
         <motion.button
           type="button"
           onClick={goBack}
           disabled={currentIndex === 0 || submitting}
-          className="inline-flex items-center gap-2 rounded-[var(--radius-card)] px-3 py-2 text-sm text-[var(--text-secondary)] disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-[var(--radius-card)] border border-[rgba(255,255,255,0.15)] bg-[rgba(30,30,30,0.6)] px-4 py-2.5 text-sm font-medium text-white hover:bg-[rgba(50,50,50,0.8)] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           {...buttonSpring}
         >
           <ArrowLeft size={16} />
@@ -197,7 +197,10 @@ export function QuestionnaireWizard({
             onClick={goNext}
             disabled={!currentAnswered || submitting}
             className={cn(
-              "inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--accent-premium)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40",
+              "inline-flex items-center gap-2 rounded-[var(--radius-card)] px-6 py-2.5 text-sm font-bold text-white transition-all shadow-md",
+              currentAnswered && !submitting
+                ? "bg-[#ff5500] hover:bg-[#e64d00] border border-[#ff5500] cursor-pointer"
+                : "bg-neutral-800 text-neutral-500 border border-neutral-700 cursor-not-allowed opacity-50",
             )}
             strength={15}
           >
@@ -208,7 +211,12 @@ export function QuestionnaireWizard({
           <MagneticButton
             onClick={() => void handleSubmit()}
             disabled={!currentAnswered || submitting}
-            className="inline-flex items-center gap-2 rounded-[var(--radius-card)] bg-[var(--success)] px-4 py-2.5 text-sm font-semibold text-[var(--bg-primary)] disabled:opacity-40"
+            className={cn(
+              "inline-flex items-center gap-2 rounded-[var(--radius-card)] px-6 py-2.5 text-sm font-bold text-white transition-all shadow-md",
+              currentAnswered && !submitting
+                ? "bg-[#ff5500] hover:bg-[#e64d00] border border-[#ff7733] cursor-pointer"
+                : "bg-neutral-800 text-neutral-500 border border-neutral-700 cursor-not-allowed opacity-50",
+            )}
             strength={15}
           >
             {submitting ? (

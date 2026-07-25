@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
   const { id } = parsed.data;
   const origin = resolveOrigin(request);
-  const printUrl = `${origin}/sandbox/agency/report/print/${encodeURIComponent(id)}`;
+  const printUrl = `${origin}/portal/agency/report/print/${encodeURIComponent(id)}`;
 
   let puppeteer: typeof import("puppeteer");
   try {

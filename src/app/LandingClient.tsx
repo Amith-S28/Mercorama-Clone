@@ -5,7 +5,6 @@ import {
   SiteHeader,
   HeroSection,
   AboutSection,
-  OnboardingSection,
   FeaturesSection,
   PortfolioSection,
   FooterSection,
@@ -20,7 +19,6 @@ export function LandingPage() {
         <HeroSection />
         <div className="landing-content-bg">
           <AboutSection />
-          <OnboardingSection />
           <FeaturesSection />
           <PortfolioSection />
           <FooterSection />

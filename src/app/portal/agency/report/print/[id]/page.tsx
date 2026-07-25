@@ -470,7 +470,7 @@ export default async function PrintReportPage({
             justifyContent: "space-between",
           }}
         >
-          <span>Trade Agency Sandbox · Confidential advisory brief</span>
+          <span>Trade Agency Portal · Confidential advisory brief</span>
           <span>Generated {new Date().toLocaleString("en-CA")}</span>
         </footer>
       </article>

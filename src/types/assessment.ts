@@ -1,9 +1,4 @@
-export type IndustrySector =
-  | "Food, Beverage & CPG"
-  | "Seafood & Ocean Economy"
-  | "Advanced Manufacturing & Industrial"
-  | "Defence, Dual-Use & Critical Supply Chains"
-  | "Other / Unsure";
+export type IndustrySector = string;
 
 export type PillarKey =
   | "management"

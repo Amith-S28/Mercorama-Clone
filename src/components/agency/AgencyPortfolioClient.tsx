@@ -73,8 +73,7 @@ export function AgencyPortfolioClient() {
           borderRadius: "var(--radius-card)",
           border: "1px solid var(--border)",
           overflow: "hidden",
-          background:
-            "linear-gradient(to right, var(--success-muted), var(--surface-muted))",
+          background: "#111111",
           boxShadow: "0 4px 20px -2px rgba(1, 105, 111, 0.05)",
         }}
       >
@@ -84,7 +83,7 @@ export function AgencyPortfolioClient() {
             className="mono-label"
             style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
           >
-            Sandbox
+            Trade Agency Portal
           </p>
           <h1
             style={{
@@ -325,7 +324,7 @@ export function AgencyPortfolioClient() {
                         {gradeLabel(assessment.grade)} · HS {sme.hsCode}
                       </p>
                       <Link
-                        href={`/sandbox/agency/report?id=${sme.id}`}
+                        href={`/portal/agency/report?id=${sme.id}`}
                         style={{
                           display: "inline-flex",
                           alignItems: "center",

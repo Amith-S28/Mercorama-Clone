@@ -5,13 +5,7 @@ import { getAdvisorId } from "@/lib/auth";
 import { readSmesFromCSV, writeSmesToCSV } from "@/lib/csv-db";
 import type { SmeRecord } from "@/types";
 
-const industrySchema = z.enum([
-  "Food, Beverage & CPG",
-  "Seafood & Ocean Economy",
-  "Advanced Manufacturing & Industrial",
-  "Defence, Dual-Use & Critical Supply Chains",
-  "Other / Unsure",
-]);
+const industrySchema = z.string().min(1);
 
 const createSmeSchema = z.object({
   name: z.string().min(2),

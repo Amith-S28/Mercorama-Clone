@@ -60,8 +60,8 @@ function getNomenclature(): HsSearchResult[] {
       const entries: HsSearchResult[] = [];
       for (let i = 1; i < lines.length; i++) {
         const fields = parseCSVLine(lines[i]);
-        if (fields.length < 2) continue;
-        entries.push({ code: fields[0], description: fields[1] });
+        if (fields.length < 3) continue;
+        entries.push({ code: fields[1], description: fields[2] });
       }
       globalCache[CACHE_KEY] = entries;
     } catch (err) {
@@ -96,9 +96,10 @@ export async function GET(request: NextRequest) {
       }
     } else {
       const desc = entry.description.toLowerCase();
+      const code = entry.code.toLowerCase();
       const descMatch = tokens.every((t) => {
         const stem = t.length > 3 && t.endsWith("s") ? t.slice(0, -1) : t;
-        return desc.includes(stem);
+        return desc.includes(stem) || code.includes(stem);
       });
       if (descMatch) {
         otherMatches.push(entry);

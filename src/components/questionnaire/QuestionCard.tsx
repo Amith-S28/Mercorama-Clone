@@ -58,26 +58,26 @@ export function QuestionCard({
               disabled={disabled}
               onClick={() => onSelect(option.key)}
               className={cn(
-                "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-3 py-3 text-left transition-colors",
+                "flex w-full items-start gap-3 rounded-[var(--radius-card)] border-2 px-3 py-3 text-left transition-colors",
                 isSelected
-                  ? "border-[var(--accent-premium)] bg-[color-mix(in_srgb,var(--accent-premium)_12%,transparent)]"
-                  : "border-[var(--border-low-contrast)] bg-[var(--bg-elevated)] hover:border-[var(--border-medium-contrast)]",
+                  ? "border-[#ff5500] bg-[rgba(255,85,0,0.2)]"
+                  : "border-[rgba(255,255,255,0.12)] bg-[rgba(20,20,20,0.6)] hover:border-[#ff5500]",
                 disabled && "cursor-not-allowed opacity-60",
               )}
               whileHover={
                 disabled
                   ? undefined
-                  : { scale: 1.01, borderColor: "var(--accent-premium)" }
+                  : { scale: 1.01, borderColor: "#ff5500" }
               }
               whileTap={disabled ? undefined : { scale: 0.99 }}
               transition={buttonSpring.transition}
             >
               <span
                 className={cn(
-                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold",
+                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-bold",
                   isSelected
-                    ? "border-[var(--accent-premium)] bg-[var(--accent-premium)] text-[var(--bg-primary)]"
-                    : "border-[var(--border-medium-contrast)] text-[var(--text-secondary)]",
+                    ? "border-[#ff5500] bg-[#ff5500] text-white"
+                    : "border-[rgba(255,255,255,0.3)] text-[var(--text-secondary)]",
                 )}
               >
                 {OPTION_LABELS[option.key]}

@@ -19,7 +19,6 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
   const animatedScore = useCountUp(score, { decimals: 1 });
   const offset = CIRCUMFERENCE - (animatedScore / 100) * CIRCUMFERENCE;
-  const color = gradeColor(grade);
 
   return (
     <div
@@ -28,11 +27,12 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
         flexDirection: "column",
         alignItems: "center",
         gap: "1rem",
+        width: "100%",
       }}
     >
       <p
         className="mono-label"
-        style={{ color: "var(--text-tertiary)", alignSelf: "flex-start" }}
+        style={{ color: "#ff5500", alignSelf: "flex-start", fontWeight: 600 }}
       >
         Readiness Score
       </p>
@@ -44,20 +44,22 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
           viewBox={`0 0 ${SIZE} ${SIZE}`}
           aria-hidden
         >
+          {/* Visible Track Circle */}
           <circle
             cx={SIZE / 2}
             cy={SIZE / 2}
             r={RADIUS}
             fill="none"
-            stroke="var(--border-low-contrast)"
+            stroke="rgba(255, 255, 255, 0.15)"
             strokeWidth={STROKE}
           />
+          {/* Solid Orange Progress Arc */}
           <motion.circle
             cx={SIZE / 2}
             cy={SIZE / 2}
             r={RADIUS}
             fill="none"
-            stroke={color}
+            stroke="#ff5500"
             strokeWidth={STROKE}
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
@@ -81,10 +83,10 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
           <span
             style={{
               fontFamily: "var(--font-jetbrains-mono)",
-              fontSize: "2rem",
-              fontWeight: 600,
+              fontSize: "2.25rem",
+              fontWeight: 700,
               lineHeight: 1,
-              color,
+              color: "#ff5500",
             }}
           >
             {grade}
@@ -94,24 +96,49 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
               marginTop: "0.25rem",
               fontFamily: "var(--font-jetbrains-mono)",
               fontSize: "1.125rem",
-              color: "var(--text-primary)",
+              color: "#ffffff",
+              fontWeight: 600,
             }}
           >
-            {animatedScore.toFixed(1)}
+            {animatedScore.toFixed(1)}%
           </span>
         </div>
       </div>
 
-      <p
-        style={{
-          margin: 0,
-          fontSize: "0.875rem",
-          color: "var(--text-secondary)",
-          textAlign: "center",
-        }}
-      >
-        {gradeLabel(grade)}
-      </p>
+      {/* Linear progress bar indicator below gauge */}
+      <div style={{ width: "100%", marginTop: "0.5rem" }}>
+        <div
+          style={{
+            height: "10px",
+            borderRadius: "4px",
+            background: "rgba(255, 255, 255, 0.12)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            overflow: "hidden",
+            width: "100%",
+          }}
+        >
+          <div
+            style={{
+              height: "100%",
+              width: `${Math.min(100, Math.max(0, animatedScore))}%`,
+              backgroundColor: "#ff5500",
+              borderRadius: "3px",
+              boxShadow: "0 0 10px rgba(255, 85, 0, 0.5)",
+              transition: "width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s",
+            }}
+          />
+        </div>
+        <p
+          style={{
+            margin: "0.375rem 0 0 0",
+            fontSize: "0.75rem",
+            color: "var(--text-secondary)",
+            textAlign: "center",
+          }}
+        >
+          {gradeLabel(grade)} ({animatedScore.toFixed(1)} / 100)
+        </p>
+      </div>
     </div>
   );
 }

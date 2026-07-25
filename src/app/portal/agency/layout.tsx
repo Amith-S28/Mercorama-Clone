@@ -1,6 +1,6 @@
 import { AgencyShell } from "@/components/agency/AgencyShell";
 
-export default function AgencySandboxLayout({
+export default function AgencyPortalLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

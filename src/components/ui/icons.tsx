@@ -36,6 +36,16 @@ import {
   Globe as PGlobe,
   Stack as PStack,
   Funnel as PFunnel,
+  Desktop as PDesktop,
+  Car as PCar,
+  TShirt as PTShirt,
+  Flask as PFlask,
+  Heartbeat as PHeartbeat,
+  Diamond as PDiamond,
+  ShoppingBag as PShoppingBag,
+  MapPin as PMapPin,
+  Users as PUsers,
+  Calendar as PCalendar,
   IconProps,
 } from "@phosphor-icons/react";
 
@@ -87,3 +97,13 @@ export const ArrowDownRight = withDefaults(TrendDown);
 export const Globe = withDefaults(PGlobe);
 export const Layers = withDefaults(PStack);
 export const Filter = withDefaults(PFunnel);
+export const Desktop = withDefaults(PDesktop);
+export const Car = withDefaults(PCar);
+export const TShirt = withDefaults(PTShirt);
+export const Flask = withDefaults(PFlask);
+export const Heartbeat = withDefaults(PHeartbeat);
+export const Diamond = withDefaults(PDiamond);
+export const ShoppingBag = withDefaults(PShoppingBag);
+export const MapPin = withDefaults(PMapPin);
+export const Users = withDefaults(PUsers);
+export const Calendar = withDefaults(PCalendar);

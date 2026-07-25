@@ -3,7 +3,7 @@
 
   <br />
 
-  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=10B981&center=true&vCenter=true&width=500&lines=Trade+Agency+Sandbox+Portal;Export+Intelligence+Platform;Built+with+Next.js+%26+React)](https://git.io/typing-svg)
+  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=10B981&center=true&vCenter=true&width=500&lines=Trade+Agency+Intelligence+Portal;Export+Intelligence+Platform;Built+with+Next.js+%26+React)](https://git.io/typing-svg)
 
   <p align="center">
     A full-stack advisory intelligence platform designed for Canadian export trade agencies. Manage SME portfolios, assess export readiness, and provide actionable intelligence on target markets.
@@ -72,7 +72,7 @@ Start the Next.js Turbopack development server:
 ```bash
 pnpm dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser. Navigate to `/sandbox/agency` to access the main dashboard.
+Open [http://localhost:3000](http://localhost:3000) with your browser. Navigate to `/portal/agency` to access the main dashboard.
 
 ---
 

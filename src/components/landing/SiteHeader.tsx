@@ -1,45 +1,27 @@
 "use client";
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+import { ApiHealthDashboard } from "@/components/health/ApiHealthDashboard";
 
 const menuItems = [
-  { index: "01", label: "ABOUT", href: "#about" },
-  { index: "02", label: "FEATURES", href: "#features" },
-  { index: "03", label: "MAJOR MARKETS", href: "#markets" },
-  { index: "04", label: "CONTACT", href: "#contact" },
+  { index: "01", label: "ABOUT", href: "/#about" },
+  { index: "02", label: "FEATURES", href: "/#features" },
+  { index: "03", label: "MAJOR MARKETS", href: "/#markets" },
+  { index: "04", label: "START ONBOARDING", href: "/portal/onboarding" },
+  { index: "05", label: "ENTER PORTAL", href: "/portal/agency" },
 ];
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTheme, setActiveTheme] = useState<"orange" | "pink" | "purple">(
-    "orange",
-  );
 
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
-  const handleThemeChange = useCallback(
-    (theme: "orange" | "pink" | "purple") => {
-      setActiveTheme(theme);
-      if (theme === "orange")
-        document.documentElement.removeAttribute("data-accent-theme");
-      else document.documentElement.setAttribute("data-accent-theme", theme);
-    },
-    [],
-  );
-
   return (
     <>
-      {/* Corner Letters */}
-      <div className="corner-letters">
-        <span className="corner-letter corner-letter--tl">M</span>
-        <span
-          className="corner-letter corner-letter--tr"
-          style={{ transform: "scaleX(-1)" }}
-        >
-          A
-        </span>
-        <span className="corner-letter corner-letter--bl">R</span>
-        <span className="corner-letter corner-letter--br">A</span>
+      {/* Top Right API Health Menu */}
+      <div style={{ position: "fixed", top: "12px", right: "16px", zIndex: 90 }}>
+        <ApiHealthDashboard />
       </div>
 
       {/* Nav Pill */}
@@ -76,14 +58,14 @@ export function SiteHeader() {
               <ul>
                 {menuItems.map((item) => (
                   <li key={item.index}>
-                    <a
+                    <Link
                       className="nav-menu__item"
                       href={item.href}
                       data-index={item.index}
                       onClick={() => setMenuOpen(false)}
                     >
                       <span>{item.label}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -95,21 +77,6 @@ export function SiteHeader() {
                 <a className="nav-footer__link" href="#">
                   DISCLOSURES
                 </a>
-              </div>
-
-              <div className="nav-themes">
-                <div
-                  className={activeTheme === "orange" ? "active" : ""}
-                  onClick={() => handleThemeChange("orange")}
-                />
-                <div
-                  className={activeTheme === "pink" ? "active" : ""}
-                  onClick={() => handleThemeChange("pink")}
-                />
-                <div
-                  className={activeTheme === "purple" ? "active" : ""}
-                  onClick={() => handleThemeChange("purple")}
-                />
               </div>
             </motion.div>
           )}

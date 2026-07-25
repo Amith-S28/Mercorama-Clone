@@ -24,7 +24,7 @@ export function MacroEconomicsPanel({ countryIso3 }: MacroEconomicsPanelProps) {
     async function load() {
       setLoading(true);
       try {
-        const res = await fetch(`/api/sandbox/macro?country=${countryIso3}`);
+        const res = await fetch(`/api/portal/macro?country=${countryIso3}`);
         const json = await res.json();
         if (!cancelled) setData(json);
       } catch {

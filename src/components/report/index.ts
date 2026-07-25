@@ -13,3 +13,4 @@ export * from "./RoadmapTimeline";
 export * from "./SanctionsScreen";
 export * from "./ScoreGauge";
 export * from "./TradeIntelDashboard";
+export * from "./BuyerDiscoveryPanel";

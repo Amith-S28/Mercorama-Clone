@@ -23,11 +23,13 @@ import { LogisticsTrackerMap } from "@/components/report/LogisticsTrackerMap";
 import { MacroEconomicsPanel } from "@/components/report/MacroEconomicsPanel";
 import { QuestionnaireWizard } from "@/components/questionnaire/QuestionnaireWizard";
 import { CountryTradeHistoryDashboard } from "@/components/report/CountryTradeHistoryDashboard";
+import { BuyerDiscoveryPanel } from "@/components/report/BuyerDiscoveryPanel";
 import { snappy } from "@/lib/animation/presets";
 import { useGsapReveal } from "@/hooks";
 import { VantaNetBackground } from "@/components/ambient/VantaNetBackground";
 import { ResizableCard } from "@/components/ui/ResizableCard";
 import { DirectionAwareTabs } from "@/components/ui/DirectionAwareTabs";
+import { SiteHeader } from "@/components/landing";
 
 type TabId = "scorecard" | "intel" | "history" | "landed";
 
@@ -91,45 +93,97 @@ export function ReportWorkspace() {
     distance: 15,
   });
 
-  if (loading) {
-    return (
-      <div
-        className="page-container"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.75rem",
-          color: "var(--text-secondary)",
-        }}
-      >
-        <Loader2 size={18} className="animate-spin" />
-        Loading report workspace…
-      </div>
-    );
-  }
+  const renderContent = () => {
+    if (loading) {
+      return (
+        <div
+          className="page-container"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            color: "var(--text-secondary)",
+          }}
+        >
+          <Loader2 size={18} className="animate-spin" />
+          Loading report workspace…
+        </div>
+      );
+    }
 
-  if (!smeId || !sme) {
-    return (
-      <div className="page-container">
-        <p style={{ color: "var(--text-secondary)" }}>
-          Select an SME from the{" "}
+    if (!smeId || !sme) {
+      return (
+        <div className="page-container">
+          <p style={{ color: "var(--text-secondary)" }}>
+            Select an SME from the{" "}
+            <Link
+              href="/portal/agency"
+              style={{ color: "var(--accent-premium)" }}
+            >
+              portfolio
+            </Link>{" "}
+            to open a report.
+          </p>
+        </div>
+      );
+    }
+
+    if (!assessment) {
+      return (
+        <div className="page-container">
           <Link
-            href="/sandbox/agency"
-            style={{ color: "var(--accent-premium)" }}
+            href="/portal/agency"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.375rem",
+              color: "var(--text-secondary)",
+              textDecoration: "none",
+              fontSize: "0.8125rem",
+              marginBottom: "1.5rem",
+            }}
           >
-            portfolio
-          </Link>{" "}
-          to open a report.
-        </p>
-      </div>
-    );
-  }
+            <ArrowLeft size={14} />
+            Back to portfolio
+          </Link>
+          <header style={{ marginBottom: "2rem" }}>
+            <p
+              className="mono-label"
+              style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
+            >
+              Pending Assessment
+            </p>
+            <h1
+              style={{
+                fontSize: "1.75rem",
+                fontWeight: 600,
+                letterSpacing: "-0.02em",
+                margin: 0,
+              }}
+            >
+              {sme.name}
+            </h1>
+            <p style={{ color: "var(--text-secondary)", marginTop: "0.5rem" }}>
+              Complete the readiness questionnaire to unlock the report workspace.
+            </p>
+          </header>
+          <div className="bento-card">
+            <QuestionnaireWizard
+              smeId={sme.id}
+              onComplete={(record) => {
+                setAssessment(record);
+                void loadData();
+              }}
+            />
+          </div>
+        </div>
+      );
+    }
 
-  if (!assessment) {
     return (
       <div className="page-container">
         <Link
-          href="/sandbox/agency"
+          href="/portal/agency"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -143,121 +197,63 @@ export function ReportWorkspace() {
           <ArrowLeft size={14} />
           Back to portfolio
         </Link>
-        <header style={{ marginBottom: "2rem" }}>
-          <p
-            className="mono-label"
-            style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
-          >
-            Pending Assessment
-          </p>
-          <h1
-            style={{
-              fontSize: "1.75rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              margin: 0,
-            }}
-          >
-            {sme.name}
-          </h1>
-          <p style={{ color: "var(--text-secondary)", marginTop: "0.5rem" }}>
-            Complete the readiness questionnaire to unlock the report workspace.
-          </p>
-        </header>
-        <div className="bento-card">
-          <QuestionnaireWizard
-            smeId={sme.id}
-            onComplete={(record) => {
-              setAssessment(record);
-              void loadData();
-            }}
-          />
-        </div>
-      </div>
-    );
-  }
 
-  return (
-    <div className="page-container">
-      <Link
-        href="/sandbox/agency"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.375rem",
-          color: "var(--text-secondary)",
-          textDecoration: "none",
-          fontSize: "0.8125rem",
-          marginBottom: "1.5rem",
-        }}
-      >
-        <ArrowLeft size={14} />
-        Back to portfolio
-      </Link>
-
-      <header
-        ref={headerRef}
-        className="opacity-0"
-        style={{
-          marginBottom: "1.5rem",
-          position: "relative",
-          padding: "2.5rem",
-          borderRadius: "var(--radius-card)",
-          border: "1px solid var(--border)",
-          overflow: "hidden",
-          background:
-            "linear-gradient(to right, var(--success-muted), var(--surface-muted))",
-          boxShadow: "0 4px 20px -2px rgba(1, 105, 111, 0.05)",
-        }}
-      >
-        <VantaNetBackground />
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <p
-            className="mono-label"
-            style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
-          >
-            Report Workspace
-          </p>
-          <h1
-            style={{
-              fontSize: "1.75rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              margin: 0,
-            }}
-          >
-            {sme.name}
-          </h1>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "1rem",
-              marginTop: "0.75rem",
-            }}
-          >
+        <header
+          ref={headerRef}
+          className="opacity-0"
+          style={{
+            marginBottom: "1.5rem",
+            position: "relative",
+            padding: "2.5rem",
+            borderRadius: "var(--radius-card)",
+            border: "1px solid var(--border)",
+            overflow: "hidden",
+            background: "#111111",
+            boxShadow: "0 4px 20px -2px rgba(1, 105, 111, 0.05)",
+          }}
+        >
+          <VantaNetBackground />
+          <div style={{ position: "relative", zIndex: 1 }}>
             <p
+              className="mono-label"
+              style={{ color: "var(--text-tertiary)", marginBottom: "0.5rem" }}
+            >
+              Report Workspace
+            </p>
+            <h1
               style={{
-                color: "var(--text-secondary)",
+                fontSize: "1.75rem",
+                fontWeight: 600,
+                letterSpacing: "-0.02em",
                 margin: 0,
-                fontSize: "0.875rem",
               }}
             >
-              {sme.targetCountryName} · {sme.industry} · Grade{" "}
-              {assessment.grade}
-            </p>
-            <PdfBriefGenerator assessmentId={assessment.id} />
+              {sme.name}
+            </h1>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "1rem",
+                marginTop: "0.75rem",
+              }}
+            >
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  margin: 0,
+                  fontSize: "0.875rem",
+                }}
+              >
+                {sme.targetCountryName} · {sme.industry} · Grade{" "}
+                {assessment.grade}
+              </p>
+              <PdfBriefGenerator assessmentId={assessment.id} />
+            </div>
           </div>
-        </div>
-      </header>
-
-      <div
-        className="shipping-lane"
-        style={{ marginBottom: "1.5rem" }}
-        aria-hidden
-      />
+        </header>
 
       <div style={{ marginBottom: "1.5rem" }}>
         <DirectionAwareTabs
@@ -375,6 +371,11 @@ export function ReportWorkspace() {
               <CountryPlaybook iso3={selectedCountry ?? sme.targetCountry} />
             </div>
           </div>
+          <div className="bento-grid" style={{ marginTop: "1.25rem" }}>
+            <div className="bento-card bento-card--span-12">
+              <BuyerDiscoveryPanel sme={sme} />
+            </div>
+          </div>
         </motion.div>
       ) : null}
 
@@ -415,6 +416,13 @@ export function ReportWorkspace() {
           </div>
         </motion.div>
       ) : null}
+    </div>
+    );
+  };
+
+  return (
+    <div className="w-full relative z-10">
+      {renderContent()}
     </div>
   );
 }
