@@ -58,4 +58,6 @@ scratch/
 Data/
 eslint-results.json
 logs.*.json
+graphify-out/
+
 
