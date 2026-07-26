@@ -83,33 +83,84 @@ export function OnboardingSection() {
           <div className="onboarding-form__group">
             <h3 className="onboarding-form__title">SME Details</h3>
             <div className="onboarding-form__fields">
-              <input type="text" name="name" placeholder="Company Name" required value={formData.name} onChange={handleChange} className="onboarding-input" />
-              <input type="text" name="province" placeholder="Province/State (e.g. Ontario)" required value={formData.province} onChange={handleChange} className="onboarding-input" />
-              
+              <input
+                type="text"
+                name="name"
+                aria-label="Company Name"
+                placeholder="Company Name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="onboarding-input"
+              />
+              <input
+                type="text"
+                name="province"
+                aria-label="Province or State"
+                placeholder="Province/State (e.g. Ontario)"
+                required
+                value={formData.province}
+                onChange={handleChange}
+                className="onboarding-input"
+              />
+
               {/* Custom Translucent Select */}
               <div className="relative" style={{ position: "relative" }}>
-                <div 
-                  className="onboarding-input flex items-center justify-between cursor-pointer" 
-                  style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", color: "var(--text-primary)", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px" }}
+                <div
+                  role="combobox"
+                  tabIndex={0}
+                  aria-expanded={dropdownOpen}
+                  aria-haspopup="listbox"
+                  aria-label="Select Industry"
+                  className="onboarding-input flex items-center justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  style={{
+                    backgroundColor: "rgba(0, 0, 0, 0.2)",
+                    color: "var(--text-primary)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "12px 16px",
+                  }}
                   onClick={() => setDropdownOpen(!dropdownOpen)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setDropdownOpen(!dropdownOpen);
+                    }
+                    if (e.key === "Escape") {
+                      setDropdownOpen(false);
+                    }
+                  }}
                 >
                   <span>{formData.industry}</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </div>
-                
+
                 <AnimatePresence>
                   {dropdownOpen && (
-                    <motion.div 
+                    <motion.div
+                      role="listbox"
+                      aria-label="Industry options"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      style={{ 
-                        position: "absolute", 
-                        top: "calc(100% + 4px)", 
-                        left: 0, 
-                        width: "100%", 
+                      style={{
+                        position: "absolute",
+                        top: "calc(100% + 4px)",
+                        left: 0,
+                        width: "100%",
                         zIndex: 50,
                         backgroundColor: "rgba(10, 10, 10, 0.65)",
                         backdropFilter: "blur(12px)",
@@ -118,26 +169,50 @@ export function OnboardingSection() {
                         borderRadius: "8px",
                         maxHeight: "220px",
                         overflowY: "auto",
-                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)"
+                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)",
                       }}
                     >
                       {INDUSTRIES.map((ind) => (
-                        <div 
+                        <div
                           key={ind}
+                          role="option"
+                          tabIndex={0}
+                          aria-selected={formData.industry === ind}
                           onClick={() => {
-                            setFormData(prev => ({ ...prev, industry: ind }));
+                            setFormData((prev) => ({ ...prev, industry: ind }));
                             setDropdownOpen(false);
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setFormData((prev) => ({ ...prev, industry: ind }));
+                              setDropdownOpen(false);
+                            }
                           }}
                           style={{
                             padding: "10px 16px",
                             cursor: "pointer",
                             fontSize: "14px",
-                            color: formData.industry === ind ? "var(--accent)" : "rgba(255, 255, 255, 0.8)",
-                            backgroundColor: formData.industry === ind ? "rgba(255, 255, 255, 0.05)" : "transparent",
-                            transition: "all 0.2s ease"
+                            color:
+                              formData.industry === ind
+                                ? "var(--accent)"
+                                : "rgba(255, 255, 255, 0.8)",
+                            backgroundColor:
+                              formData.industry === ind
+                                ? "rgba(255, 255, 255, 0.05)"
+                                : "transparent",
+                            transition: "all 0.2s ease",
                           }}
-                          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)" }}
-                          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = formData.industry === ind ? "rgba(255, 255, 255, 0.05)" : "transparent" }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor =
+                              "rgba(255, 255, 255, 0.1)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor =
+                              formData.industry === ind
+                                ? "rgba(255, 255, 255, 0.05)"
+                                : "transparent";
+                          }}
                         >
                           {ind}
                         </div>

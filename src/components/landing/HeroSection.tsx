@@ -36,31 +36,18 @@ export function HeroSection() {
         </motion.h1>
 
         <div
-          style={{
-            height: "30px",
-            position: "relative",
-            marginTop: "16px",
-            display: "flex",
-            justifyContent: "center",
-          }}
+          aria-live="polite"
+          aria-atomic="true"
+          className="relative mt-4 flex h-[30px] justify-center"
         >
           <AnimatePresence mode="wait">
             <motion.div
               key={taglineIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.5 }}
-              style={{
-                position: "absolute",
-                fontFamily: "var(--font-mono)",
-                fontSize: "18px",
-                fontWeight: "bold",
-                letterSpacing: "2px",
-                color: "#fff",
-                padding: "4px 12px",
-                borderRadius: "6px",
-              }}
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 320, damping: 24 }}
+              className="absolute rounded-md bg-white/5 px-3 py-1 font-mono text-[18px] font-bold tracking-[2px] text-white backdrop-blur-sm border border-white/10"
             >
               {TAGLINES[taglineIndex]}
             </motion.div>

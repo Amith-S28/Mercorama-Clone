@@ -26,25 +26,32 @@ export function SiteHeader() {
 
       {/* Nav Pill */}
       <nav className="nav-pill">
-        <div className="nav-pill__main" onClick={toggleMenu}>
-          <div>
-            <span className="df-label" style={{ cursor: "pointer" }}>
+        <button
+          type="button"
+          aria-expanded={menuOpen}
+          aria-label="Toggle Navigation Menu"
+          className="nav-pill__main focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          onClick={toggleMenu}
+        >
+          <div className="flex items-center justify-start">
+            <span className="font-mono text-xs font-bold tracking-widest text-slate-200 hover:text-white">
               &gt;|&lt;
             </span>
           </div>
-          <div>
-            <div className="df-dots">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} />
-              ))}
-            </div>
+          <div className="flex items-center justify-center gap-1.5">
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className="h-1.5 w-1.5 rounded-full bg-[#ff5500] shadow-[0_0_8px_#ff5500]"
+              />
+            ))}
           </div>
-          <div>
-            <span className="df-label" style={{ cursor: "pointer" }}>
+          <div className="flex items-center justify-end">
+            <span className="font-mono text-xs font-bold tracking-widest text-slate-200 hover:text-white">
               {menuOpen ? "CLOSE" : "MENU"}
             </span>
           </div>
-        </div>
+        </button>
 
         <AnimatePresence>
           {menuOpen && (

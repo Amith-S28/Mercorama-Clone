@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import { COUNTRY_RISK_DATA } from "@/lib/country-risk-data";
 
 // Spotlight specific top markets
@@ -60,8 +61,9 @@ export function PortfolioSection() {
         style={{ padding: "0 var(--spacer-12)", marginBottom: "80px" }}
       >
         {spotlight.map((item, i) => (
-          <div
+          <Link
             key={i}
+            href={`/portal/trade-data?reporter=${item.iso3}`}
             className={`portfolio-spotlight__item reveal-up ${visible ? "visible" : ""}`}
             style={{ transitionDelay: `${i * 0.08}s` }}
           >
@@ -69,7 +71,7 @@ export function PortfolioSection() {
             <span className="portfolio-spotlight__category">
               {item.region.replace("-", " ")}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -107,12 +109,16 @@ export function PortfolioSection() {
               </div>
               <div className="portfolio-az" style={{ padding: 0 }}>
                 {regionCountries.map((country, i) => (
-                  <div key={i} className="portfolio-az__item">
+                  <Link
+                    key={i}
+                    href={`/portal/trade-data?reporter=${country.iso3}`}
+                    className="portfolio-az__item"
+                  >
                     <span>{country.name}</span>
                     <span className="portfolio-az__item-category">
                       {country.region.replace("-", " ")}
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -46,6 +46,10 @@ import {
   MapPin as PMapPin,
   Users as PUsers,
   Calendar as PCalendar,
+  Percent as PPercent,
+  ShieldWarning as PShieldWarning,
+  ChartBar as PChartBar,
+  Database as PDatabase,
   IconProps,
 } from "@phosphor-icons/react";
 
@@ -95,6 +99,7 @@ export const Ship = withDefaults(Boat);
 export const ArrowUpRight = withDefaults(TrendUp);
 export const ArrowDownRight = withDefaults(TrendDown);
 export const Globe = withDefaults(PGlobe);
+export const Globe2 = withDefaults(PGlobe);
 export const Layers = withDefaults(PStack);
 export const Filter = withDefaults(PFunnel);
 export const Desktop = withDefaults(PDesktop);
@@ -107,3 +112,8 @@ export const ShoppingBag = withDefaults(PShoppingBag);
 export const MapPin = withDefaults(PMapPin);
 export const Users = withDefaults(PUsers);
 export const Calendar = withDefaults(PCalendar);
+export const Percent = withDefaults(PPercent);
+export const ShieldAlert = withDefaults(PShieldWarning);
+export const BarChart3 = withDefaults(PChartBar);
+export const Database = withDefaults(PDatabase);
+export const TrendingUp = withDefaults(TrendUp);

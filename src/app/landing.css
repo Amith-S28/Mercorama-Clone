@@ -144,26 +144,38 @@
 
 .nav-pill__main {
   align-items: center;
-  backdrop-filter: blur(6px);
-  background-color: var(--grey-100);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 40px;
-  padding: var(--spacer-12);
+  height: 44px;
+  padding: 0 var(--spacer-16);
   width: 100%;
+}
+
+.nav-pill__main > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .nav-pill__main > div:nth-child(2) {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .nav-pill__main > div:nth-child(3) {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: 100%;
 }
 
 /* ─── Nav Dropdown Menu ──────────────────────────────────────────────────── */
@@ -728,6 +740,7 @@
   padding: var(--spacer-4) var(--spacer-12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s var(--ease-spring);
   margin-left: calc(-1 * var(--spacer-12));
   margin-right: calc(-1 * var(--spacer-12));
@@ -824,6 +837,7 @@
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.15s var(--ease-in-out-sine);
 }
 

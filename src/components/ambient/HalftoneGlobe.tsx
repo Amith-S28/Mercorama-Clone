@@ -294,6 +294,12 @@ function GlobeMesh() {
     return tex;
   }, []);
 
+  useEffect(() => {
+    return () => {
+      texture.dispose();
+    };
+  }, [texture]);
+
   useFrame((state) => {
     if (!meshRef.current) return;
 
