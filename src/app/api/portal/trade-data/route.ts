@@ -126,6 +126,46 @@ function deriveMacroMetrics(reporterIso3: string, countryMacro: any) {
   };
 }
 
+// Apply flow filter to dissection and partners data.
+// The dissection and partners are originally computed from total trade volume
+// (exports + imports). When a specific flow is requested, we scale the values
+// proportionally so only the relevant flow's numbers are shown.
+function applyFlowFilter(
+  history: any[],
+  dissection: any[],
+  partners: any[],
+  flow: string,
+): { dissection: any[]; partners: any[] } {
+  if (flow === "all" || !history || history.length === 0) {
+    return { dissection, partners };
+  }
+
+  const latest = history[history.length - 1];
+  const exportsUsd = latest.exportsUsd || 0;
+  const importsUsd = latest.importsUsd || 0;
+  const totalVolume = exportsUsd + importsUsd;
+
+  if (totalVolume === 0) {
+    return { dissection, partners };
+  }
+
+  const ratio =
+    flow === "exports" ? exportsUsd / totalVolume : importsUsd / totalVolume;
+
+  const scaledDissection = dissection.map((item: any) => ({
+    ...item,
+    valueUsd: Math.round(item.valueUsd * ratio),
+  }));
+
+  const scaledPartners = partners.map((item: any) => ({
+    ...item,
+    tradeValueUsd: Math.round(item.tradeValueUsd * ratio),
+    weightKg: Math.round((item.weightKg || 0) * ratio),
+  }));
+
+  return { dissection: scaledDissection, partners: scaledPartners };
+}
+
 export async function GET(request: NextRequest) {
   const searchParams = Object.fromEntries(request.nextUrl.searchParams);
   const parsed = querySchema.safeParse(searchParams);
@@ -179,6 +219,11 @@ export async function GET(request: NextRequest) {
     dataSource = "unindexed-or-restricted";
   }
 
+  // Apply flow filter: scale dissection and partners to show only the
+  // requested flow (exports or imports) when not "all".
+  const { dissection: filteredDissection, partners: filteredPartners } =
+    applyFlowFilter(history, dissection, partners, flow);
+
   return NextResponse.json({
     reporter,
     flowFilter: flow,
@@ -192,7 +237,7 @@ export async function GET(request: NextRequest) {
     macro: countryMacro,
     tariffs: countryTariffs,
     history,
-    dissection,
-    partners,
+    dissection: filteredDissection,
+    partners: filteredPartners,
   });
 }

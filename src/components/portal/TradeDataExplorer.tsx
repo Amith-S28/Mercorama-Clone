@@ -29,6 +29,7 @@ import {
   BarChart3,
   Search,
 } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 
 const COUNTRIES = [
   { iso3: "USA", name: "United States", flag: "🇺🇸" },
@@ -109,6 +110,7 @@ export function TradeDataExplorer() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<TradeDataState | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [activePieIndex, setActivePieIndex] = useState<number | null>(null);
 
   const activeCountryInfo = getCountryDetails(selectedCountry);
 
@@ -162,6 +164,17 @@ export function TradeDataExplorer() {
   ) ?? [];
 
   const isMissing = data?.isMissingData || false;
+
+  // Flow-filtered values for KPI cards and charts
+  const latestHistory = data?.history?.at(-1);
+  const latestExports = latestHistory?.exportsUsd ?? 0;
+  const latestImports = latestHistory?.importsUsd ?? 0;
+  const flowFilteredTotal =
+    activeFlow === "exports"
+      ? latestExports
+      : activeFlow === "imports"
+        ? latestImports
+        : latestExports + latestImports;
 
   return (
     <div className="space-y-8 text-white font-sans">
@@ -268,25 +281,32 @@ export function TradeDataExplorer() {
         >
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase">
-              TOTAL VOLUME ({activeCountryInfo.iso3})
+              {activeFlow === "exports"
+                ? `TOTAL EXPORTS (${activeCountryInfo.iso3})`
+                : activeFlow === "imports"
+                  ? `TOTAL IMPORTS (${activeCountryInfo.iso3})`
+                  : `TOTAL VOLUME (${activeCountryInfo.iso3})`}
             </span>
             <span className="rounded-lg bg-white/10 p-2 text-white">
               <Globe size={18} />
             </span>
           </div>
           <div className="mt-3 text-3xl font-extrabold tracking-tight text-white font-mono">
-            {loading ? "..." : isMissing ? "N/A" : formatCurrency((data?.history.at(-1)?.exportsUsd ?? 0) + (data?.history.at(-1)?.importsUsd ?? 0))}
+            {loading ? "..." : isMissing ? "N/A" : formatCurrency(flowFilteredTotal)}
           </div>
           <div className="mt-2.5 flex items-center gap-1.5 text-xs text-[#ff5500] font-mono font-bold">
             <TrendingUp size={14} />
-            <span>{isMissing ? "UNREPORTED DATA" : "+6.2% YOY GROWTH"}</span>
+            <span>{isMissing ? "UNREPORTED DATA" : activeFlow === "exports" ? "EXPORT VOLUME" : activeFlow === "imports" ? "IMPORT VOLUME" : "+6.2% YOY GROWTH"}</span>
           </div>
         </motion.div>
 
         {/* Total Exports Card */}
         <motion.div
           whileHover={{ scale: 1.01 }}
-          className="group relative overflow-hidden rounded-2xl border border-white/20 bg-[#0a0a0a] p-5"
+          className={cn(
+            "group relative overflow-hidden rounded-2xl border border-white/20 bg-[#0a0a0a] p-5",
+            activeFlow === "imports" && "opacity-40",
+          )}
         >
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase">
@@ -312,7 +332,10 @@ export function TradeDataExplorer() {
         {/* Total Imports Card */}
         <motion.div
           whileHover={{ scale: 1.01 }}
-          className="group relative overflow-hidden rounded-2xl border border-white/20 bg-[#0a0a0a] p-5"
+          className={cn(
+            "group relative overflow-hidden rounded-2xl border border-white/20 bg-[#0a0a0a] p-5",
+            activeFlow === "exports" && "opacity-40",
+          )}
         >
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase">
@@ -403,10 +426,20 @@ export function TradeDataExplorer() {
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
                 <h3 className="text-lg font-bold text-white tracking-tight uppercase font-mono flex items-center gap-2">
-                  <span>HISTORICAL BILATERAL TRADE TREND FOR {activeCountryInfo.name.toUpperCase()} (2019 – 2025)</span>
+                  <span>
+                    {activeFlow === "exports"
+                      ? `EXPORT TREND FOR ${activeCountryInfo.name.toUpperCase()} (2019 – 2025)`
+                      : activeFlow === "imports"
+                        ? `IMPORT TREND FOR ${activeCountryInfo.name.toUpperCase()} (2019 – 2025)`
+                        : `HISTORICAL BILATERAL TRADE TREND FOR ${activeCountryInfo.name.toUpperCase()} (2019 – 2025)`}
+                  </span>
                 </h3>
                 <p className="text-xs text-zinc-400 font-mono">
-                  Annual export vs import volume growth in USD billions for {activeCountryInfo.name} ({activeCountryInfo.iso3})
+                  {activeFlow === "exports"
+                    ? `Annual export volume growth in USD billions for ${activeCountryInfo.name} (${activeCountryInfo.iso3})`
+                    : activeFlow === "imports"
+                      ? `Annual import volume growth in USD billions for ${activeCountryInfo.name} (${activeCountryInfo.iso3})`
+                      : `Annual export vs import volume growth in USD billions for ${activeCountryInfo.name} (${activeCountryInfo.iso3})`}
                 </p>
               </div>
             </div>
@@ -437,8 +470,12 @@ export function TradeDataExplorer() {
                       formatter={(value: any) => [formatCurrency(Number(value)), "Value"]}
                     />
                     <Legend wrapperStyle={{ paddingTop: "10px", fontFamily: "monospace", fontSize: "12px" }} />
-                    <Area type="monotone" dataKey="exportsUsd" name={`${activeCountryInfo.name} Exports (USD)`} stroke="#ff5500" fillOpacity={1} fill="url(#colorExports)" strokeWidth={3} />
-                    <Area type="monotone" dataKey="importsUsd" name={`${activeCountryInfo.name} Imports (USD)`} stroke="#ffffff" fillOpacity={1} fill="url(#colorImports)" strokeWidth={2} />
+                    {(activeFlow === "all" || activeFlow === "exports") && (
+                      <Area type="monotone" dataKey="exportsUsd" name={`${activeCountryInfo.name} Exports (USD)`} stroke="#ff5500" fillOpacity={1} fill="url(#colorExports)" strokeWidth={3} />
+                    )}
+                    {(activeFlow === "all" || activeFlow === "imports") && (
+                      <Area type="monotone" dataKey="importsUsd" name={`${activeCountryInfo.name} Imports (USD)`} stroke="#ffffff" fillOpacity={1} fill="url(#colorImports)" strokeWidth={2} />
+                    )}
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
