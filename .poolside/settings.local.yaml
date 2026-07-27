@@ -1,0 +1,13 @@
+tools:
+    shell:
+        allow:
+            - Get-ChildItem *
+            - Select-Object FullName, Length, *
+            - Sort-Object FullName
+            - Format-Table *
+            - Select-Object FullName
+            - head *
+            - Get-Content *
+            - Select-Object Name, Length, *
+            - python *
+            - Remove-Item *

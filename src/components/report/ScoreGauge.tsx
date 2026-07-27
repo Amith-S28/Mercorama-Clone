@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import type { ReadinessGrade } from "@/types";
-import { gradeColor, gradeLabel } from "@/lib/scoring-engine";
 import { useCountUp } from "@/hooks";
 import { snappy } from "@/lib/animation/presets";
 
@@ -105,40 +104,6 @@ export function ScoreGauge({ score, grade }: ScoreGaugeProps) {
         </div>
       </div>
 
-      {/* Linear progress bar indicator below gauge */}
-      <div style={{ width: "100%", marginTop: "0.5rem" }}>
-        <div
-          style={{
-            height: "10px",
-            borderRadius: "4px",
-            background: "rgba(255, 255, 255, 0.12)",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-            overflow: "hidden",
-            width: "100%",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: `${Math.min(100, Math.max(0, animatedScore))}%`,
-              backgroundColor: "#ff5500",
-              borderRadius: "3px",
-              boxShadow: "0 0 10px rgba(255, 85, 0, 0.5)",
-              transition: "width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s",
-            }}
-          />
-        </div>
-        <p
-          style={{
-            margin: "0.375rem 0 0 0",
-            fontSize: "0.75rem",
-            color: "var(--text-secondary)",
-            textAlign: "center",
-          }}
-        >
-          {gradeLabel(grade)} ({animatedScore.toFixed(1)} / 100)
-        </p>
-      </div>
     </div>
   );
 }
